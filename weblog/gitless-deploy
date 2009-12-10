@@ -1,0 +1,2 @@
+#!/bin/bash
+cd ~/mottram && jekyll && rsync -avz --delete --exclude='*.textdrive' _site/ mottram@howe.textdrive.com:domains/mottr.am/web/public

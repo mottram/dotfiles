@@ -1,21 +1,32 @@
-							" This is a very simple .vimrc file, but it suits me fine!
-set confirm						" show save dialog if command won't work with unsaved changes
-set hidden						" switch from unsaved buffer without saving, undo history for multiple files, warning on closing without saving
-set laststatus=2					" always display the status line
-set mouse=a						" enables the mouse in all modes, for scrolling and clicking on tabs
-set nocompatible					" makes sure all new features are enabled
-set number						" show line numbers
-set showcmd						" show commands on last line of screen
-syntax on						" highlighting
-filetype indent plugin on				" auto-indenting based on filetype
-:imap jj <Esc>						" exit insert mode with jj instead of the escape key
-map Y y$						" makes Y copy until the end of the line, instead of doing yy
-map <F2> :bnext<CR>					" F2 to cycle through open buffers
-map <F3> :r !pbpaste<CR>				" F3 to paste the Mac clipboard contents
-map <F4> :setlocal spell spelllang=en_gb<CR>		" Turn on spellcheck
-map <F5> :set nospell<CR>				" Turn off spellcheck
-au BufWinLeave *.html,*.css mkview			" saves folds in html and css
-au BufWinEnter *.html,*.css silent loadview		" ditto
-augroup mkd						" Markdown highlighting with http://plasticboy.com/markdown-vim-mode/
+									" This is a very simple .vimrc file, but it suits me fine!
+colorscheme fruidle							" Use Fruidle colourscheme
+set autoindent
+set smartindent
+set confirm								" Show save dialog if command won't work with unsaved changes
+set hidden								" Switch from unsaved buffer without saving, undo history for multiple files, warning on closing without saving
+set history=1000							" Lots of history
+set laststatus=2							" Always display the status line
+set mouse=a								" Enables the mouse in all modes, for scrolling and clicking on tabs (doesn't work in Terminal.app)
+set number								" Show line numbers
+set ruler								" Always show the cursor position
+set showcmd								" Show commands on last line of screen
+set nobackup								" Don't keep backups after closing
+set writebackup								" Keep backups while open
+set backupdir=~/.vim/backup						" Keep backups in ~/.vim/backup
+set wildmenu								" Turn on the handy wildmenu
+syntax on								" Highlighting
+filetype indent plugin on						" Auto-indenting based on filetype
+:imap jj <Esc>								" Exit insert mode with jj as well as the escape key
+map Y y$								" Makes Y copy until the end of the line, instead of doing yy
+map ,t :tabnew<CR>							" ,t to open a New tab
+map ,n :bnext<CR>							" ,n to cycle through open buffers
+map ,m :tabnext<CR>							" ,m to cycle through tabs
+map <F3> :r !pbpaste<CR>						" <F3> to paste the Mac clipboard contents
+map <F4> :setlocal spell spelllang=en_gb<CR>				" <F4> to turn on spellcheck
+map <F5> :set nospell<CR>						" <F5> to turn off spellcheck
+au BufWinLeave *.html,*.css mkview					" Saves folds in html and css
+au BufWinEnter *.html,*.css silent loadview				" Opens html and css files with folds
+autocmd FileType html,xhtml,xml source ~/.vim/plugin/closetag.vim	" Close tags in HTML and XML files with http://www.vim.org/scripts/script.php?script_id=13
+augroup mkd								" Markdown highlighting with http://plasticboy.com/markdown-vim-mode/
  autocmd BufRead *.markdown  set ai formatoptions=tcroqn2 comments=n:>
 augroup END

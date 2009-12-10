@@ -1,0 +1,2 @@
+#!/bin/bash
+cd ~/mottram && git add . && git commit -a -m "Minor change (typo, Markdown fix, etc.)" && git push && jekyll && rsync -avz --delete --exclude='*.textdrive' _site/ mottram@howe.textdrive.com:domains/mottr.am/web/public
