@@ -2,11 +2,10 @@
 set confirm						" show save dialog if command won't work with unsaved changes
 set hidden						" switch from unsaved buffer without saving, undo history for multiple files, warning on closing without saving
 set laststatus=2					" always display the status line
-set mouse=a						" enables the mouse in all modes
+set mouse=a						" enables the mouse in all modes, for scrolling and clicking on tabs
 set nocompatible					" makes sure all new features are enabled
 set number						" show line numbers
 set showcmd						" show commands on last line of screen
-set title						" show title in Terminal
 syntax on						" highlighting
 filetype indent plugin on				" auto-indenting based on filetype
 :imap jj <Esc>						" exit insert mode with jj instead of the escape key
