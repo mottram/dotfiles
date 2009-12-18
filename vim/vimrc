@@ -6,7 +6,7 @@ set confirm								" Show save dialog if command won't work with unsaved changes
 set hidden								" Switch from unsaved buffer without saving, undo history for multiple files, warning on closing without saving
 set history=1000							" Lots of history
 set laststatus=2							" Always display the status line
-set statusline=%-(%F%m%r%h%w%)\ %{&ff}/%Y/%{&encoding}\ %=%(@\%03.3b\ %Ll\ %l,%v\ (%p%%)%)
+set statusline=%-(%F%m%r%h%w%)\ %{&ff}/%Y/%{&encoding}\ %=%(@\%03.3b\ %Ll\ %l,%v\ (%p%%)%) 
 set mouse=a								" Enables the mouse in all modes, for scrolling and clicking on tabs (doesn't work in Terminal.app)
 set number								" Show line numbers
 set ruler								" Always show the cursor position
@@ -18,6 +18,7 @@ set directory=~/.vim/temp						" Keep temp files in ~/.vim/temp
 set wildmenu								" Turn on the handy wildmenu
 set wildignore+=*.DS_Store						" Ignore DS_Store files in wildmenu
 set nomodeline								" Security fix
+set tabpagemax=20							" Limit number of displayed tabs to 20 
 set ffs=mac,unix,dos							" Support all filetypes, Mac first
 syntax on								" Highlighting
 filetype indent plugin on						" Detect filetype, indent according to filetype, switch on filetype plugins
