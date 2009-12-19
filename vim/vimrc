@@ -1,44 +1,42 @@
-									" This is a very simple .vimrc file, but it suits me fine!
-colorscheme fruidle							" Use Fruidle colourscheme
+colorscheme fruidle	" Use Fruidle colourscheme
 set autoindent
 set smartindent
-set confirm								" Show save dialog if command won't work with unsaved changes
-set hidden								" Switch from unsaved buffer without saving, undo history for multiple files, warning on closing without saving
-set history=1000							" Lots of history
-set laststatus=2							" Always display the status line
+set confirm	" Show save dialog if command won't work with unsaved changes
+set hidden	" Switch from unsaved buffer without saving, undo history for multiple files, warning on closing without saving
+set history=1000	" Lots of history
+set incsearch	" Search incrementally
+set ignorecase	" Make search case insensitive...
+set smartcase	" ... unless there's capital letters in the search
+set laststatus=2	" Always display the status line
 set statusline=%-(%F%m%r%h%w%)\ %{&ff}/%Y/%{&encoding}\ %=%(@\%03.3b\ %Ll\ %l,%v\ (%p%%)%) 
-set mouse=a								" Enables the mouse in all modes, for scrolling and clicking on tabs (doesn't work in Terminal.app)
-set number								" Show line numbers
-set ruler								" Always show the cursor position
-set showcmd								" Show commands on last line of screen
-set nobackup								" Don't keep backups after closing
-set writebackup								" Keep backups while open
-set backupdir=~/.vim/backup						" Keep backups in ~/.vim/backup
-set directory=~/.vim/temp						" Keep temp files in ~/.vim/temp
-set wildmenu								" Turn on the handy wildmenu
-set wildignore+=*.DS_Store						" Ignore DS_Store files in wildmenu
-set nomodeline								" Security fix
-set tabpagemax=20							" Limit number of displayed tabs to 20 
-set ffs=mac,unix,dos							" Support all filetypes, Mac first
-syntax on								" Highlighting
-filetype indent plugin on						" Detect filetype, indent according to filetype, switch on filetype plugins
-imap jj <Esc>								" Exit insert mode with jj as well as the escape key (easier to reach)
-map Y y$								" Makes Y copy until the end of the line, instead of doing yy
-map ,t :tabnew<CR>							" ,t to open a New tab
-map ,n :bnext<CR>							" ,n to cycle through open buffers
-map ,m :tabnext<CR>							" ,m to cycle through tabs
-map <F3> :r !pbpaste<CR>						" <F3> to paste the Mac clipboard contents
-map <F4> :setlocal spell spelllang=en_gb<CR>				" <F4> to turn on spellcheck
-map <F5> :set nospell<CR>						" <F5> to turn off spellcheck
-au BufWinLeave *.html,*.css mkview					" Saves folds in html and css
-au BufWinEnter *.html,*.css silent loadview				" Opens html and css files with folds
-au CursorHoldI * stopinsert						" Automatically leave insert mode after 'updatetime' milliseconds - forces me to use vim properly! 
+set mouse=a	" Enables the mouse in all modes, for scrolling and clicking on tabs (doesn't work in Terminal.app)
+set number	" Show line numbers
+set ruler	" Always show the cursor position
+set showcmd	" Show commands on last line of screen
+set nobackup	" Don't keep backups after closing
+set writebackup	" Keep backups while open
+set backupdir=~/.vim/backup " Keep backups in ~/.vim/backup
+set directory=~/.vim/temp   " Keep temp files in ~/.vim/temp
+set wildmenu	" Turn on the handy wildmenu
+set wildignore+=*.DS_Store	" Ignore DS_Store files in wildmenu
+set nomodeline	" Security fix
+set tabpagemax=20	" Limit number of displayed tabs to 20 
+set showtabline=2	" Always show tabs
+set showmatch	" Show matching parentheses
+set ffs=mac,unix,dos	" Support all filetypes, Mac first
+syntax on	" Highlighting
+filetype indent plugin on	" Detect filetype, indent according to filetype, switch on filetype plugins
+imap jj <Esc>	" Exit insert mode with jj as well as the escape key (easier to reach)
+map Y y$	" Make Y copy until the end of the line, instead of doing yy
+map ,t :tabnew<CR>	" ,t to open a New tab
+map ,n :bnext<CR>	" ,n to cycle through open buffers
+map <F3> :r !pbpaste<CR>	" <F3> to paste the Mac clipboard contents
+map <F4> :setlocal spell spelllang=en_gb<CR>	" <F4> to turn on spellcheck
+map <F5> :set nospell<CR>	" <F5> to turn off spellcheck
+au BufWinLeave *.html,*.css mkview	" Saves folds in html and css
+au BufWinEnter *.html,*.css silent loadview	" Opens html and css files with folds
+"au CursorHoldI * stopinsert	" Automatically leave insert mode after 'updatetime' milliseconds - forces me to use vim properly! 
 autocmd FileType html,xhtml,xml source ~/.vim/plugin/closetag.vim	" Close tags in HTML and XML files with http://www.vim.org/scripts/script.php?script_id=13
-augroup mkd								" Markdown highlighting with http://plasticboy.com/markdown-vim-mode/
+augroup mkd	" Markdown highlighting with http://plasticboy.com/markdown-vim-mode/
  autocmd BufRead *.markdown  set ai formatoptions=tcroqn2 comments=n:>
 augroup END
-
-if version >= 700							" Change the statusbar colour depending on mode
-  au InsertEnter * hi StatusLine term=reverse ctermbg=5 gui=undercurl guisp=Magenta
-  au InsertLeave * hi StatusLine term=reverse ctermfg=0 ctermbg=2 gui=bold,reverse
-endif
