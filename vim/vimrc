@@ -23,7 +23,7 @@ set nomodeline	" Security fix
 set tabpagemax=20	" Limit number of displayed tabs to 20 
 set showtabline=2	" Always show tabs
 set showmatch	" Show matching parentheses
-set ffs=mac,unix,dos	" Support all filetypes, Mac first
+set ffs=unix,mac 	" Support all filetypes, Mac first
 syntax on	" Highlighting
 filetype indent plugin on	" Detect filetype, indent according to filetype, switch on filetype plugins
 imap jj <Esc>	" Exit insert mode with jj as well as the escape key (easier to reach)

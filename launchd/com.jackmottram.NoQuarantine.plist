@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Label</key>
+	<string>com.jackmottram.NoQuarantine</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>xattr</string>
+		<string>-d</string>
+		<string>-r</string>
+		<string>com.apple.quarantine</string>
+		<string>~/Downloads</string>
+	</array>
+	<key>QueueDirectories</key>
+	<array>
+		<string>/Users/jack/Downloads</string>
+	</array>
+	<key>WatchPaths</key>
+	<array/>
+</dict>
+</plist>

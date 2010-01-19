@@ -1,2 +1,2 @@
 #!/bin/bash
-cd ~/mottram && git add . && git commit -a -m "Added a new post" && git push && jekyll && rsync -avz --delete --exclude='*.textdrive' _site/ mottram@howe.textdrive.com:domains/mottr.am/web/public
+cd ~/mottram && git add . && git commit -a -m "Added a new post" && git push && rm -rf ~/mottram/_site/* && jekyll && rsync -avz --delete --exclude='*.textdrive' _site/ mottram@howe.textdrive.com:domains/mottr.am/web/public
