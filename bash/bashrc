@@ -1,0 +1,57 @@
+PATH=$PATH:"~/dotfiles/"
+PATH=$PATH:"/usr/local/mysql/bin/"
+PATH=$PATH:"/Users/jack/.gem/ruby/1.8/bin"
+# General
+alias ls='ls -G'
+alias ..='cd ..'
+alias ...='cd .. ; cd ..'
+alias ll='ls -hl'
+alias la='ls -a'
+alias lla='ls -lah'
+alias matey='mate .'
+
+# Weblog stuff
+alias jek='cd ~/mottram/ && jekyll'
+alias jekauto='cd ~/mottram/ && jekyll --auto'
+alias jadsf='cd ~/mottram/_site/ && adsf'
+alias jlocal='~/dotfiles/weblog/local'
+alias jdep='~/dotfiles/weblog/deploy'
+alias jfix='~/dotfiles/weblog/fix'
+alias jsimp='~/dotfiles/weblog/gitless-deploy'
+
+# todo.txt
+alias t='~/Dropbox/todo/scripts/todo.sh -d ~/dotfiles/todo/todo.cfg'
+
+# SSH
+alias avimsh='ssh -p 30300 jack@67.23.46.82'
+alias textdrivesh='ssh mottram@howe.textdrive.com'
+alias remotedb='ssh -p30300 -L 3307:localhost:3306 jack@83.170.85.158 -N'
+
+# Remind me who I am, what computer I'm on and where I am, and what git branch I'm on
+
+function parse_git_branch {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+ 
+function proml {
+  local        BLUE="\[\033[0;34m\]"
+  local         RED="\[\033[0;31m\]"
+  local   LIGHT_RED="\[\033[1;31m\]"
+  local       GREEN="\[\033[0;32m\]"
+  local LIGHT_GREEN="\[\033[1;32m\]"
+  local       WHITE="\[\033[1;37m\]"
+  local  	   GRAY="\[\033[0;37m\]"
+  case $TERM in
+    xterm*)
+    TITLEBAR='\[\033]0;\u@\h:\w\007\]'
+    ;;
+    *)
+    TITLEBAR=""
+    ;;
+  esac
+
+PS1="\[\033[38m\]\u@\h\[\033[01;34m\] \w \[\033[0;32m\]\`ruby -e \"print (%x{git branch 2> /dev/null}.grep(/^\*/).first || '').gsub(/^\* (.+)$/, '(\1) ')\"\`\[\033[37m\]$\[\033[00m\] "
+PS2='> '
+PS4='+ '
+}
+proml
