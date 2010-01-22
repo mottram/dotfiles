@@ -1,4 +1,3 @@
-PATH=$PATH:"~/dotfiles/"
 PATH=$PATH:"/usr/local/mysql/bin/"
 PATH=$PATH:"/Users/jack/.gem/ruby/1.8/bin"
 
@@ -10,6 +9,7 @@ alias ll='ls -hl'
 alias la='ls -a'
 alias lla='ls -lah'
 alias matey='mate .'
+alias n='~/dotfiles/bash/notify'
 
 # Weblog stuff
 alias jek='cd ~/mottram/ && jekyll'
