@@ -1,5 +1,0 @@
-#! /bin/bash
-echo -n "Filename: "
-read -e FILENAME
-cp ~/mottram/_drafts/link.markdown ~/mottram/_posts/$FILENAME.markdown
-vim ~/mottram/_posts/$FILENAME.markdown
