@@ -1,4 +1,5 @@
 PATH=$PATH:"/usr/local/mysql/bin/"
+PATH=$PATH:"/Users/jack/dotfiles"
 PATH=$PATH:"/Users/jack/.gem/ruby/1.8/bin"
 
 # General laziness
@@ -19,6 +20,8 @@ alias jlocal='~/dotfiles/weblog/local'
 alias jdep='~/dotfiles/weblog/deploy'
 alias jfix='~/dotfiles/weblog/fix'
 alias jsimp='~/dotfiles/weblog/gitless-deploy'
+alias bblog='~/dotfiles/weblog/bblog'
+alias lblog='~/dotfiles/weblog/lblog'
 
 # todo.txt
 alias t='~/Dropbox/todo/scripts/todo.sh -d ~/dotfiles/todo/todo.cfg'

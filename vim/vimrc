@@ -30,6 +30,7 @@ imap jj <Esc>	" Exit insert mode with jj as well as the escape key (easier to re
 map Y y$	" Make Y copy until the end of the line, instead of doing yy
 map ,t :tabnew<CR>	" ,t to open a New tab
 map ,n :bnext<CR>	" ,n to cycle through open buffers
+map <F2> :NERDTreeToggle<CR> " 
 map <F3> :r !pbpaste<CR>	" <F3> to paste the Mac clipboard contents
 map <F4> :setlocal spell spelllang=en_gb<CR>	" <F4> to turn on spellcheck
 map <F5> :set nospell<CR>	" <F5> to turn off spellcheck
@@ -40,3 +41,4 @@ autocmd FileType html,xhtml,xml source ~/.vim/plugin/closetag.vim	" Close tags i
 augroup mkd	" Markdown highlighting with http://plasticboy.com/markdown-vim-mode/
  autocmd BufRead *.markdown  set ai formatoptions=tcroqn2 comments=n:>
 augroup END
+let g:jekyll_path = "~/mottram" "For jekyll.vim
