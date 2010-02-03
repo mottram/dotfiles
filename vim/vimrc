@@ -30,6 +30,10 @@ imap jj <Esc>	" Exit insert mode with jj as well as the escape key (easier to re
 map Y y$	" Make Y copy until the end of the line, instead of doing yy
 map ,t :tabnew<CR>	" ,t to open a New tab
 map ,n :bnext<CR>	" ,n to cycle through open buffers
+map ,jl :JekyllLink<CR> " ,jl to make a new link post to mottr.am
+map ,jp :JekyllPost<CR> " ,jp to make a new post to mottr.am
+map ,ji :JekyllPic<CR>  " ,ji to make a new image post to mottr.am
+map ,jc :JekyllCommit<CR> " ,jc to commit changes to the mottr.am git repo
 map <F2> :NERDTreeToggle<CR> " 
 map <F3> :r !pbpaste<CR>	" <F3> to paste the Mac clipboard contents
 map <F4> :setlocal spell spelllang=en_gb<CR>	" <F4> to turn on spellcheck
