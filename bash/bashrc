@@ -1,5 +1,5 @@
 PATH=$PATH:"/usr/local/mysql/bin/"
-PATH=$PATH:"/Users/jack/dotfiles"
+PATH=$PATH:"/Users/jack/dotfiles/weblog"
 PATH=$PATH:"/Users/jack/.gem/ruby/1.8/bin"
 
 # General laziness
@@ -11,6 +11,7 @@ alias la='ls -a'
 alias lla='ls -lah'
 alias matey='mate .'
 alias n='~/dotfiles/bash/notify'
+alias v='vim'
 
 # Weblog stuff
 alias jek='cd ~/mottram/ && jekyll'

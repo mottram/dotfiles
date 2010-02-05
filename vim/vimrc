@@ -34,7 +34,7 @@ map ,jl :JekyllLink<CR> " ,jl to make a new link post to mottr.am
 map ,jp :JekyllPost<CR> " ,jp to make a new post to mottr.am
 map ,ji :JekyllPic<CR>  " ,ji to make a new image post to mottr.am
 map ,jc :JekyllCommit<CR> " ,jc to commit changes to the mottr.am git repo
-map <F2> :NERDTreeToggle<CR> " 
+map <F2> :NERDTreeToggle<CR> " <F2> to toggle NERD Tree sidebar 
 map <F3> :r !pbpaste<CR>	" <F3> to paste the Mac clipboard contents
 map <F4> :setlocal spell spelllang=en_gb<CR>	" <F4> to turn on spellcheck
 map <F5> :set nospell<CR>	" <F5> to turn off spellcheck

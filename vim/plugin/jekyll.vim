@@ -54,7 +54,7 @@ function JekyllLink()
         let file_name = strftime("%Y-%m-%d-") . substitute(tolower(title), ' ', '-', 'g') . ".markdown"
         echo "Making that post " . file_name
         exe "e " . g:jekyll_path . "/_posts/" . file_name
-        let err = append(0, ['---', 'title: ' . title, 'layout: post', 'type: link', 'time: ', 'description: ', 'tags: ', ' -', ' -', '---', ''])
+        let err = append(0, ['---', 'title: ' . title, 'layout: post', 'type: link', 'time: ', 'linkto: ', 'description: ', 'tags: ', ' -', ' -', '---', ''])
     else
         echo "You must specify a title"
     endif
