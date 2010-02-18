@@ -1,4 +1,4 @@
-colorscheme vylight	" Use Fruidle colourscheme
+colorscheme macvim " Use the macvim colourscheme
 set autoindent
 set smartindent
 set confirm	" Show save dialog if command won't work with unsaved changes
@@ -24,6 +24,7 @@ set tabpagemax=20	" Limit number of displayed tabs to 20
 set showtabline=2	" Always show tabs
 set showmatch	" Show matching parentheses
 set ffs=unix,mac 	" Support all filetypes, Mac first
+set guifont=Monaco:h12 " Set the font for MacVim
 syntax on	" Highlighting
 filetype indent plugin on	" Detect filetype, indent according to filetype, switch on filetype plugins
 imap jj <Esc>  " Exit insert mode with jj as well as the escape key (easier to reach)
@@ -43,9 +44,12 @@ map <F4> :setlocal spell spelllang=en_gb<CR>	" <F4> to turn on spellcheck
 map <F5> :set nospell<CR>	" <F5> to turn off spellcheck
 au BufWinLeave *.html,*.css mkview	" Saves folds in html and css
 au BufWinEnter *.html,*.css silent loadview	" Opens html and css files with folds
-"au CursorHoldI * stopinsert	" Automatically leave insert mode after 'updatetime' milliseconds - forces me to use vim properly! 
+au CursorHoldI * stopinsert	" Automatically leave insert mode after 'updatetime' ms - 4s by default - forces me to use vim properly! 
 autocmd FileType html,xhtml,xml source ~/.vim/plugin/closetag.vim	" Close tags in HTML and XML files with http://www.vim.org/scripts/script.php?script_id=13
 augroup mkd	" Markdown highlighting with http://plasticboy.com/markdown-vim-mode/
  autocmd BufRead *.markdown  set ai formatoptions=tcroqn2 comments=n:>
 augroup END
 let g:jekyll_path = "~/mottram" "For jekyll.vim
+let delimitMate_autoclose = 1 " Automatically close tags and quotes with delimitMate plugin
+let delimitMate = "(:),[:],{:},<:>" "The tags in question
+let b:delimitMate_quotes = "\" ' ` *"
