@@ -2,6 +2,9 @@ PATH=$PATH:"/usr/local/mysql/bin/"
 PATH=$PATH:"/Users/jack/dotfiles/weblog"
 PATH=$PATH:"/Users/jack/.gem/ruby/1.8/bin"
 
+# Remove ls, cd, built in stuff and commands prefixed with a space from history
+HISTIGNORE="&:ls:[bf]g:exit:[ \t]*"
+
 # General laziness
 alias ls='ls -G'
 alias ..='cd ..'
