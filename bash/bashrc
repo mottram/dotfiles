@@ -9,6 +9,8 @@ export EDITOR="mvim"
 HISTIGNORE="&:ls:[bf]g:exit:[ \t]*"
 
 # General laziness
+alias g='git status'
+alias h='history'
 alias ls='ls -G'
 alias ..='cd ..'
 alias ...='cd .. ; cd ..'
