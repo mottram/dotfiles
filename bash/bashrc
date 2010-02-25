@@ -1,6 +1,9 @@
 PATH=$PATH:"/usr/local/mysql/bin/"
-PATH=$PATH:"/Users/jack/dotfiles/weblog"
-PATH=$PATH:"/Users/jack/.gem/ruby/1.8/bin"
+PATH=$PATH:"~/dotfiles/weblog"
+PATH=$PATH:"~/dotfiles/vim"
+PATH=$PATH:"~/.gem/ruby/1.8/bin"
+
+export EDITOR="mvim"
 
 # Remove ls, cd, built in stuff and commands prefixed with a space from history
 HISTIGNORE="&:ls:[bf]g:exit:[ \t]*"
