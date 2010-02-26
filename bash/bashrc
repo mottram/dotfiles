@@ -41,7 +41,8 @@ alias bblog='~/dotfiles/weblog/bblog'
 alias lblog='~/dotfiles/weblog/lblog'
 
 # todo.txt
-alias t='~/Dropbox/todo/scripts/todo.sh -d ~/dotfiles/todo/todo.cfg'
+alias t='~/dotfiles/todo/todo.sh -d ~/dotfiles/todo/todo.cfg'
+alias tt='~/dotfiles/todo/todo.sh -d ~/dotfiles/eee/todo.cfg'
 
 # SSH
 alias avimsh='ssh -p 30300 jack@67.23.46.82'
