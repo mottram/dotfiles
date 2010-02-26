@@ -1,12 +1,19 @@
-PATH=$PATH:"/usr/local/mysql/bin/"
 PATH=$PATH:"~/dotfiles/weblog"
 PATH=$PATH:"~/dotfiles/vim"
 PATH=$PATH:"~/.gem/ruby/1.8/bin"
 
-export EDITOR="mvim"
+export EDITOR="vim"
+
+unset MAILCHECK
 
 # Remove ls, cd, built in stuff and commands prefixed with a space from history
 HISTIGNORE="&:ls:[bf]g:exit:[ \t]*"
+
+### Aliases
+
+# Meta
+alias ebs='vim ~/.bashrc'
+alias reload='source ~/.bashrc'
 
 # General laziness
 alias g='git status'
@@ -40,12 +47,30 @@ alias avimsh='ssh -p 30300 jack@67.23.46.82'
 alias textdrivesh='ssh mottram@howe.textdrive.com'
 alias remotedb='ssh -p30300 -L 3307:localhost:3306 jack@83.170.85.158 -N'
 
+### Functions
+
+# Quick git commit
+function gg {
+  git commit -v -a -m "$*"
+}
+
 # View source files with pygments syntax colouring
 function pless {
   pygmentize $1 | less -r
 }
 
-# Remind me who I am, what computer I'm on, and where I am, and what git branch I'm on.
+# mkdir, cd into it
+function mkcd {
+  mkdir $1
+  cd $1
+}
+
+# list and grep
+function lgr {
+  ls -a | grep $1 
+}
+
+# Remind me who I am, what computer I'm on, where I am, and what git branch I'm on.
 # Also, pretty colours.
 
 function parse_git_branch {

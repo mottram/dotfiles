@@ -64,4 +64,3 @@ if [ "$gui" ]; then
 else
   exec "$binary" $opts ${1:+"$@"}
 fi
-
