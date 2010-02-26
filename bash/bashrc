@@ -1,5 +1,6 @@
 PATH=$PATH:"~/dotfiles/weblog"
 PATH=$PATH:"~/dotfiles/vim"
+PATH=$PATH:"~/dotfiles/eee"
 PATH=$PATH:"~/.gem/ruby/1.8/bin"
 
 export EDITOR="vim"
@@ -13,7 +14,7 @@ HISTIGNORE="&:ls:[bf]g:exit:[ \t]*"
 
 # Meta
 alias ebs='vim ~/.bashrc'
-alias reload='source ~/.bashrc'
+alias rld='source ~/.bashrc'
 
 # General laziness
 alias g='git status'
@@ -46,6 +47,11 @@ alias t='~/Dropbox/todo/scripts/todo.sh -d ~/dotfiles/todo/todo.cfg'
 alias avimsh='ssh -p 30300 jack@67.23.46.82'
 alias textdrivesh='ssh mottram@howe.textdrive.com'
 alias remotedb='ssh -p30300 -L 3307:localhost:3306 jack@83.170.85.158 -N'
+
+# Eee
+alias bg="feh --bg-scale ~/Pictures/misty-danube.jpg"
+alias dvlo="cnetworkmanager --unprotected -C devolo &"
+
 
 ### Functions
 
