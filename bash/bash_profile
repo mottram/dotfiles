@@ -1,2 +1,2 @@
-source /Users/jack/.bashrc
-source /Users/jack/dotfiles/git-completion/git-completion.bash
+source ~/.bashrc
+source ~/dotfiles/git-completion/git-completion.bash
