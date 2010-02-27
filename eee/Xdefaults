@@ -1,0 +1,10 @@
+mrxvt*loginShell:true
+mrxvt*shading:40
+mrxvt*background:White
+mrxvt*foreground:Black
+mrxvt*scrollBar:true
+mrxvt*scrollBar_right:true
+mrxvt*transpscrollbar:true
+mrxvt*saveLines:32767
+mrxvt*font:*-*-fixed-medium-r-normal--*-110-*-*-*-*-iso8859-1
+mrxvt*boldFont:*-*-fixed-bold-r-normal--*-*-110-*-*-*-*-iso8859-1

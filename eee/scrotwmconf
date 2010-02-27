@@ -1,1 +1,8 @@
-color_focus = black	
+color_focus = black
+
+bar_enabled= 1
+bar_border[1]= rgb:AA/AA/AA
+bar_color[1]= rgb:FF/FF/FF
+bar_font_color[1]= rgb:00/00/00
+
+bar_font = -adobe-helvetica-*-r-normal-*-12-*-*-*-*-*-*-*
