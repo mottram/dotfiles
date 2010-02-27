@@ -1,4 +1,0 @@
-color_focus = black
-
-program[ch] = /usr/bin/chromium-browser
-bind[ch] = Mod+b 
