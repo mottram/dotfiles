@@ -6,5 +6,17 @@ mrxvt*scrollBar:true
 mrxvt*scrollBar_right:true
 mrxvt*transpscrollbar:true
 mrxvt*saveLines:32767
-mrxvt*font:*-*-fixed-medium-r-normal--*-110-*-*-*-*-iso8859-1
-mrxvt*boldFont:*-*-fixed-bold-r-normal--*-*-110-*-*-*-*-iso8859-1
+mrxvt*autohideTabbar:true
+mrxvt*hideButtons:true
+mrxvt*transparent:true
+mrxvt*transparentScrollbar:true
+mrxvt*transparentTabbar:true
+mrxvt*transparentMenubar:true
+mrxvt*tintColor:#FAFAFA
+mrxvt*shading:90
+mrxvt*xft:1
+mrxvt*xftFont:DejaVu Sans Mono
+mrxvt*xftSize:10
+mrxvt*xftAntialias:1
+
+
