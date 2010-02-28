@@ -196,3 +196,4 @@ zstyle ':completion:*:ssh:*' group-order \
 zstyle '*' single-ignored show
 
 source ~/dotfiles/bash/aliases
+source ~/dotfiles/bash/func
