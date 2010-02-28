@@ -10,49 +10,7 @@ unset MAILCHECK
 # Remove ls, cd, built in stuff and commands prefixed with a space from history
 HISTIGNORE="&:ls:[bf]g:exit:[ \t]*"
 
-### Aliases
-
-# Meta
-alias ebs='vim ~/.bashrc'
-alias rld='source ~/.bashrc'
-
-# General laziness
-alias g='git status'
-alias h='history'
-alias ls='ls -G'
-alias ..='cd ..'
-alias ...='cd .. ; cd ..'
-alias ll='ls -hl'
-alias la='ls -a'
-alias lla='ls -lah'
-alias matey='mate .'
-alias n='~/dotfiles/bash/notify'
-alias v='vim'
-
-# Weblog stuff
-alias jek='cd ~/mottram/ && jekyll'
-alias jekauto='cd ~/mottram/ && jekyll --auto'
-alias jadsf='cd ~/mottram/_site/ && adsf'
-alias jlocal='~/dotfiles/weblog/local'
-alias jdep='~/dotfiles/weblog/deploy'
-alias jfix='~/dotfiles/weblog/fix'
-alias jsimp='~/dotfiles/weblog/gitless-deploy'
-alias bblog='~/dotfiles/weblog/bblog'
-alias lblog='~/dotfiles/weblog/lblog'
-
-# todo.txt
-alias t='~/dotfiles/todo/todo.sh -d ~/dotfiles/todo/todo.cfg'
-alias tt='~/dotfiles/todo/todo.sh -d ~/dotfiles/eee/todo.cfg'
-
-# SSH
-alias avimsh='ssh -p 30300 jack@67.23.46.82'
-alias textdrivesh='ssh mottram@howe.textdrive.com'
-alias remotedb='ssh -p30300 -L 3307:localhost:3306 jack@83.170.85.158 -N'
-
-# Eee
-alias bg="feh --bg-scale ~/Pictures/misty-danube.jpg"
-alias dvlo="cnetworkmanager --unprotected -C devolo &"
-
+source ~/dotfiles/bash/aliases
 
 ### Functions
 
@@ -101,7 +59,7 @@ function proml {
     ;;
   esac
 
-PS1="\[\033[38m\]\u@\h\[\033[01;34m\] \w \[\033[0;32m\]\`ruby -e \"print (%x{git branch 2> /dev/null}.grep(/^\*/).first || '').gsub(/^\* (.+)$/, '(\1) ')\"\`\[\033[37m\]$\[\033[00m\] "
+PS1="\[\033[38m\]\u@\h\[\033[01;34m\] \w \[\033[0;32m\]\`ruby -e \"print (%x{git branch 2> /dev/null}.grep(/^\*/).first || '').gsub(/^\* (.+)$/, '(\1) ')\"\`\[\033[37m\]$\[\033[00m\] \n~:"
 PS2='> '
 PS4='+ '
 }
