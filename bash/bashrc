@@ -11,29 +11,7 @@ unset MAILCHECK
 HISTIGNORE="&:ls:[bf]g:exit:[ \t]*"
 
 source ~/dotfiles/bash/aliases
-
-### Functions
-
-# Quick git commit
-function gg {
-  git commit -v -a -m "$*"
-}
-
-# View source files with pygments syntax colouring
-function pless {
-  pygmentize $1 | less -r
-}
-
-# mkdir, cd into it
-function mkcd {
-  mkdir $1
-  cd $1
-}
-
-# list and grep
-function lgr {
-  ls -a | grep $1 
-}
+source ~/dotfiles/bash/func
 
 # Remind me who I am, what computer I'm on, where I am, and what git branch I'm on.
 # Also, pretty colours.
