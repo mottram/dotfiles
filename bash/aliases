@@ -42,4 +42,4 @@ alias bg="feh --bg-scale ~/Pictures/misty-danube.jpg"
 alias dvlo="cnetworkmanager --unprotected -C devolo &"
 
 # IP Address
-alias myip="wget http://checkip.dyndns.org/ -q -O - | grep --color=never -Eo '\  [[:digit:]]{1,3}(\  [[:digit:]]{1,3}){3}\>'"
+alias myip="curl whatismyip.org;echo"
