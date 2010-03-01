@@ -1,0 +1,9 @@
+## Some additions to the grml .zshrc, symbolically linked to ~/.zshrc.pre
+
+# Source my bash aliases and functions
+source ~/dotfiles/bash/aliases
+source ~/dotfiles/bash/func
+
+# Open text and markdown files with vim
+alias -s markdown=vim
+alias -s txt=vim
