@@ -4453,3 +4453,6 @@ zrclocal
 # Local variables:
 # mode: sh
 # End:
+
+source ~/dotfiles/bash/aliases
+source ~/dotfiles/bash/func
