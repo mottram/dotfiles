@@ -2,7 +2,6 @@ PATH=$PATH:"~/dotfiles/weblog"
 PATH=$PATH:"~/dotfiles/vim"
 PATH=$PATH:"~/dotfiles/eee"
 PATH=$PATH:"~/.gem/ruby/1.8/bin"
-
 export EDITOR="vim"
 
 unset MAILCHECK
