@@ -20,3 +20,8 @@ function mkcd {
 function lgr {
   ls -a | grep $1 
 }
+
+#pwsafe show username and password
+function pp {
+  pwsafe -upE $1
+}
