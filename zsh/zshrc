@@ -4455,5 +4455,3 @@ zrclocal
 # Local variables:
 # mode: sh
 # End:
-
-source ~/dotfiles/zsh/myzshrc

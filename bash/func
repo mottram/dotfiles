@@ -25,3 +25,8 @@ function lgr {
 function pp {
   pwsafe -upE $1
 }
+
+# quick google from the command line
+function googler {
+  w3m google.com/search?q=$1 
+}
