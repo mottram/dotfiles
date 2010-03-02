@@ -1,16 +1,16 @@
  
 background yes 
 use_xft yes 
-xftfont Sans:size=8 
+xftfont Sans:size=10 
 xftalpha 1 
 update_interval 1.0 
 total_run_times 0 
-own_window yes 
-own_window_transparent yes 
+own_window no 
+own_window_transparent no 
 own_window_type desktop 
 own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager 
 double_buffer yes 
-maximum_width 300 
+maximum_width 700 
 draw_shades no 
 draw_outline no 
 draw_borders no 
@@ -27,9 +27,9 @@ cpu_avg_samples 2
 override_utf8_locale yes 
 text_buffer_size 5000 
 TEXT 
-${color}${time %I:%M:%p, %A %d %B}$hr 
-${color}${execi 3600 conkyForecast -l UKXX1743 --datatype=CC}, ${execi 
-3600 conkyForecast -l UKXX1743 --datatype=HT}$hr 
+${color}${font DejaVu Sans Mono:size=20}${time %I:%M:%p, %A %d %B}${font}$hr 
+#${color}${execi 3600 conkyForecast -l UKXX1743 --datatype=CC}, ${execi 
+#3600 conkyForecast -l UKXX1743 --datatype=HT}$hr 
 CPU:${color}$cpu% $alignr${color}${top name 1} 
 ${cpugraph 15,300 cccccc 000000} 
 ${color}RAM:${color}$memperc% $alignr${color}${top_mem name 1} 
@@ -43,10 +43,13 @@ ${wireless_link_bar wlan0}
 ${color}Up: ${upspeed wlan0}$alignr${color}Down: ${downspeed wlan0} 
 ${upspeedgraph wlan0 15,140 cccccc 
 000000}$alignr${color}${downspeedgraph wlan0 15,140 cccccc 000000} 
+Battery: ${battery_bar}
 $hr 
-${execi 300 tail -n3 /home/jack/Dropbox/todo/todo.txt}${if_mpd_playing} 
-$hr 
-$mpd_smart 
-$mpd_album 
-$mpd_status $mpd_elapsed/$mpd_length $mpd_bar 
-$endif
+${color white}${execi 300 tail -n10 /home/jack/Dropbox/todo/todo.txt}${color}
+# MPD not installed
+#${if_mpd_playing} 
+#$hr 
+#$mpd_smart 
+#$mpd_album 
+#$mpd_status $mpd_elapsed/$mpd_length $mpd_bar 
+#$endif

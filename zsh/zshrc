@@ -2098,10 +2098,10 @@ ${BLUE}%n${NO_COLOUR}@%m %40<...<%B%~%b%<< "'${VCS_INFO_message_0_}'"%# "
         # This assembles the primary prompt string
         if (( EUID != 0 )); then
             PROMPT="${RED}${EXITCODE}${WHITE}${debian_chroot:+($debian_chroot)}${BLUE}%n@%m${NO_COLOUR} %40<...<%B%~%b%<<"' ${VCS_INFO_message_0_}'"
-↳ "
+: "
         else
             PROMPT="${BLUE}${EXITCODE}${WHITE}${debian_chroot:+($debian_chroot)}${RED}%n@%m${NO_COLOUR} %40<...<%B%~%b%<<"' ${VCS_INFO_message_0_}'"
-↳ "
+: "
         fi
     fi
 fi
