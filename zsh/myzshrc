@@ -1,5 +1,8 @@
 ## Some additions to the grml .zshrc, symbolically linked to ~/.zshrc.pre
 
+PATH="$HOME/dotfiles/weblog:$HOME/dotfiles/eee:$HOME/.gem/ruby/1.8/bin:$PATH"
+
+
 # Source my bash aliases and functions
 source ~/dotfiles/bash/aliases
 source ~/dotfiles/bash/func
