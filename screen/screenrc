@@ -1,4 +1,4 @@
 crlf off		# !Microsoft
 startup_message off	# Bored now bye
 defscrollback 10000	# See what I've done
-hardstatus alwayslastline "%=%c %D %d/%m/%y"	# Date, time for when I'm fullscreen
+hardstatus alwayslastline "%(b) %=%c %D %d/%m/%y"	# Date, time for when I'm fullscreen
