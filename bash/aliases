@@ -2,6 +2,8 @@
 
 # Meta
 alias ebs='vim ~/.bashrc'
+alias eal='vim ~/dotfiles/bash/aliases'
+alias efu='vim ~/dotfiles/bash/func'
 alias rld='source ~/.bashrc'
 
 # General laziness
@@ -16,6 +18,9 @@ alias lla='ls -lah'
 alias matey='mate .'
 alias n='~/dotfiles/bash/notify'
 alias v='vim'
+
+# Moving around
+alias cod='cd /usr/local/code/'
 
 # Weblog stuff
 alias jek='cd ~/mottram/ && jekyll'
