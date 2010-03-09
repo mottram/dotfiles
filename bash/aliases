@@ -38,6 +38,7 @@ alias t='~/dotfiles/todo/todo.sh -d ~/dotfiles/todo/todo.cfg'
 alias tt='~/dotfiles/todo/todo.sh -d ~/dotfiles/eee/todo.cfg'
 
 # SSH
+alias surlysh='ssh -p 30300 jack@sur.ly'
 alias avimsh='ssh -p 30300 jack@67.23.46.82'
 alias textdrivesh='ssh mottram@howe.textdrive.com'
 alias remotedb='ssh -p30300 -L 3307:localhost:3306 jack@83.170.85.158 -N'
