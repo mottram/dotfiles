@@ -23,7 +23,7 @@ function lgr {
 
 #pwsafe show username and password
 function pp {
-  pwsafe -upE $1
+  pwsafe -xpE $1
 }
 
 # quick google from the command line
