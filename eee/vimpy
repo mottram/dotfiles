@@ -1,0 +1,2 @@
+#!/bin/sh
+tabbed=$(tabbed -d); vimprobable2 -e $tabbed $*
