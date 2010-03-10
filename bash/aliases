@@ -18,6 +18,7 @@ alias lla='ls -lah'
 alias matey='mate .'
 alias n='~/dotfiles/bash/notify'
 alias v='vim'
+alias news='newsbeuter -r'
 
 # Moving around
 alias cod='cd /usr/local/code/'

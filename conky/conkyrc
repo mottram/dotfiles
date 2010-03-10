@@ -17,7 +17,7 @@ draw_graph_borders yes
 default_color 555555 
 default_shade_color black 
 default_outline_color 555555 
-alignment top_right 
+alignment top_right
 gap_x 12 
 gap_y 12 
 no_buffers yes 
@@ -25,7 +25,8 @@ uppercase no
 cpu_avg_samples 2 
 override_utf8_locale yes 
 text_buffer_size 5000 
-TEXT 
+TEXT
+
 ${color}${time %I:%M:%p, %A %d %B}${font}$hr 
 #${color}${execi 3600 conkyForecast -l UKXX1743 --datatype=CC}, ${execi 
 #3600 conkyForecast -l UKXX1743 --datatype=HT}$hr 
@@ -44,9 +45,7 @@ ${color}Up: ${upspeed wlan0}$alignr${color}Down: ${downspeed wlan0}
 ${upspeedgraph wlan0 15,140 cccccc 000000}$alignr${color}${downspeedgraph wlan0 15,140 cccccc 000000} 
 
 Battery:
-${battery_bar}
-$hr
-${execi 1000 cat /home/jack/Dropbox/todo/todo.txt|sort|head -n5}
+${battery_bar}${execi 1000 cat /home/jack/Dropbox/todo/todo.txt|sort|head -n20}
 # MPD not installed
 #${if_mpd_playing} 
 #$hr 

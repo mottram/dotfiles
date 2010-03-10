@@ -21,7 +21,7 @@ mrxvt*xftAntialias:1
 
 Rxvt*background:White
 Rxvt*foreground:Black
-Rxvt*font: xft:DejaVu Sans Mono:pixelsize=14
+Rxvt*font: xft:DejaVu Sans Mono:pixelsize=13
 Rxvt*buffered: true
 Rxvt*cursorColor: #aaaaaa
 Rxvt*scrollBar:false
