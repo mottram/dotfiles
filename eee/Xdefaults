@@ -45,18 +45,5 @@ Rxvt*buffered: true
 Rxvt*cursorColor: #aaaaaa
 Rxvt*scrollBar: false
 
-urxvt*transparent: true
-urxvt*background: white
-urxvt*shading: 95
-
 Xft*antialias: true
 Xft*hinting: full
-
-
-
-
-
-
-
-
-
