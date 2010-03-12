@@ -17,7 +17,6 @@
 *color14:     #71bebe
 *color15:     #ffffff
 
-mrxvt*loginShell:true
 mrxvt*shading:40
 mrxvt*background:White
 mrxvt*foreground:Black
@@ -38,9 +37,26 @@ mrxvt*xftFont:DejaVu Sans Mono
 mrxvt*xftSize:10
 mrxvt*xftAntialias:1
 
+Rxvt*loginShell: true
 Rxvt*background:White
 Rxvt*foreground:Black
-Rxvt*font: xft:DejaVu Sans Mono:pixelsize=13
+Rxvt*font: xft:DejaVu Sans Mono:pixelsize=14
 Rxvt*buffered: true
 Rxvt*cursorColor: #aaaaaa
 Rxvt*scrollBar: false
+
+urxvt*transparent: true
+urxvt*background: white
+urxvt*shading: 95
+
+Xft*antialias: true
+Xft*hinting: full
+
+
+
+
+
+
+
+
+
