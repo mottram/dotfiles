@@ -21,7 +21,7 @@ function lgr {
   ls -a | grep $1 
 }
 
-#pwsafe show username and password
+# pwsafe show username and password
 function pp {
   pwsafe -xpE $1
 }
@@ -29,4 +29,9 @@ function pp {
 # quick google from the command line
 function googler {
   w3m google.com/search?q=$1 
+}
+
+# new tmux sesh
+function tmn {
+  tmux new -s $1 
 }

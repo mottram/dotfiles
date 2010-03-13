@@ -45,7 +45,7 @@ alias remotedb='ssh -p30300 -L 3307:localhost:3306 jack@83.170.85.158 -N'
 
 # Eee
 alias bg="feh --bg-scale ~/Pictures/misty-danube.jpg && conky &"
-alis clp="autocutsel -f"
+alias clp="autocutsel -f"
 alias dvlo="cnetworkmanager --unprotected -C devolo &"
 
 # IP Address
