@@ -1,4 +1,22 @@
-mrxvt*loginShell:true
+*background:  #fefefe
+*foreground:  #111111
+*color0:      #000000
+*color1:      #9e1828
+*color2:      #aece92
+*color3:      #968a38
+*color4:      #414171
+*color5:      #963c59
+*color6:      #418179
+*color7:      #bebebe
+*color8:      #666666
+*color9:      #cf6171
+*color10:     #c5f779
+*color11:     #fff796
+*color12:     #4186be
+*color13:     #cf9ebe
+*color14:     #71bebe
+*color15:     #ffffff
+
 mrxvt*shading:40
 mrxvt*background:White
 mrxvt*foreground:Black
@@ -19,9 +37,13 @@ mrxvt*xftFont:DejaVu Sans Mono
 mrxvt*xftSize:10
 mrxvt*xftAntialias:1
 
+Rxvt*loginShell: true
 Rxvt*background:White
 Rxvt*foreground:Black
-Rxvt*font: xft:DejaVu Sans Mono:pixelsize=13
+Rxvt*font: xft:DejaVu Sans Mono:pixelsize=14
 Rxvt*buffered: true
 Rxvt*cursorColor: #aaaaaa
-Rxvt*scrollBar:false
+Rxvt*scrollBar: false
+
+Xft*antialias: true
+Xft*hinting: full
