@@ -1,0 +1,7 @@
+!/bin/sh
+tmux new-session -d -s main
+tmux send-keys  -t main:0 'cd ~/ ; clear' C-m
+tmux new-window -t main:1 alpine
+tmux new-window -t main:2 cmus
+tmux select-window -t main:0
+tmux att -t main

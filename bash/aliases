@@ -44,13 +44,12 @@ alias textdrivesh='ssh mottram@howe.textdrive.com'
 alias remotedb='ssh -p30300 -L 3307:localhost:3306 jack@83.170.85.158 -N'
 
 # Eee
-alias bg="feh --bg-scale ~/Pictures/misty-danube.jpg && conky &"
+alias bg="feh --bg-scale ~/img/misty-danube.jpg && conky &"
 alias clp="autocutsel -f"
-alias dvlo="cnetworkmanager --unprotected -C devolo &"
+alias mnt="sudo mount /dev/sdb1 /media/SD -o async,rw,users,umask=000"
+alias radio4="mplayer -playlist http://www.bbc.co.uk/radio/listen/live/r4.asx"
+alias radio6="mplayer -playlist http://www.bbc.co.uk/radio/listen/live/r6.asx"
+alias radiows="mplayer -playlist http://www.bbc.co.uk/worldservice/meta/tx/nb/live_infent_au_nb.asx"
 
 # IP Address
-alias myip="curl whatismyip.org;echo"
-
-# Because I can't get rxvt-unicode config files to work
-
-alias rx="rxvt-unicode -fn \"xft:Bitstream Vera Sans Mono:pixelsize=12\""
+alias myip="curl whatismyip.com/automation/n09230945.asp;echo"
