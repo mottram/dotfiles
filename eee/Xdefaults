@@ -1,4 +1,6 @@
-*background: rgb:eb/ea/ec
+! colours
+
+*background: rgb:f5/f5/f5
 *foreground: rgb:33/33/33
 *color0:  rgb:00/00/00
 *color1:  rgb:9e/18/28
@@ -7,7 +9,7 @@
 *color4:  rgb:41/61/a0
 *color5:  rgb:9b/76/8e
 *color6:  rgb:41/91/89
-*color7:  rgb:be/be/be   
+*color7:  rgb:cc/cc/cc   
 *color8:  rgb:66/66/66
 *color9:  rgb:cf/61/71
 *color10: rgb:c5/a7/79
@@ -17,23 +19,7 @@
 *color14: rgb:71/be/be
 *color15: rgb:dd/dd/dd
 
-mrxvt*shading:40
-mrxvt*scrollBar:true
-mrxvt*scrollBar_right:true
-mrxvt*transpscrollbar:true
-mrxvt*saveLines:32767
-mrxvt*autohideTabbar:true
-mrxvt*hideButtons:true
-mrxvt*transparent:true
-mrxvt*transparentScrollbar:true
-mrxvt*transparentTabbar:true
-mrxvt*transparentMenubar:true
-mrxvt*tintColor:#FAFAFA
-mrxvt*shading:90
-mrxvt*xft:1
-mrxvt*xftFont:DejaVu Sans Mono
-mrxvt*xftSize:10
-mrxvt*xftAntialias:1
+! rxvt-unicode 
 
 Rxvt*loginShell: true
 Rxvt*font: xft:DejaVu Sans Mono:pixelsize=14
@@ -42,7 +28,10 @@ Rxvt*cursorColor: #aaaaaa
 Rxvt*scrollBar: false
 Rxvt*pointerBlank: true
 
+! Xft
+
 Xft*antialias: true
 Xft*dpi: 96
+Xft*rgba: rgb
 Xft*hinting: true
 Xft*hintstyle: hintslight

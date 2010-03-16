@@ -1,12 +1,5 @@
-### Aliases
-
-# Meta
-alias ebs='vim ~/.bashrc'
-alias eal='vim ~/dotfiles/bash/aliases'
-alias efu='vim ~/dotfiles/bash/func'
-alias rld='source ~/.bashrc'
-
-# General laziness
+# Aliases for bash and zsh-------------------------------------------------
+# General laziness---------------------------------------------------------
 alias g='git status'
 alias h='history'
 alias ls='ls -G'
@@ -15,14 +8,25 @@ alias ...='cd .. ; cd ..'
 alias ll='ls -hl'
 alias la='ls -a'
 alias lla='ls -lah'
-alias matey='mate .'
-alias n='~/dotfiles/bash/notify'
 alias v='vim'
-alias news='newsbeuter -r'
 
+# SSH----------------------------------------------------------------------
+alias avimsh='ssh -p 30300 jack@67.23.46.82'
+alias textdrivesh='ssh mottram@howe.textdrive.com'
+alias remotedb='ssh -p30300 -L 3307:localhost:3306 jack@83.170.85.158 -N'
+
+# IP Address---------------------------------------------------------------
+alias myip='curl whatismyip.com/automation/n09230945.asp;echo'
+
+# Specific to the MacBook--------------------------------------------------
+# Open current dir as TextMate project
+alias matey='mate .'
+# Growl when done 
+alias n='~/dotfiles/bash/notify'
 # Moving around
-alias cod='cd /usr/local/code/'
-
+alias cod='cd /usr/local/code'
+# Todo.txt
+alias t='~/dotfiles/todo/todo.sh -d ~/dotfiles/todo/todo.cfg'
 # Weblog stuff
 alias jek='cd ~/mottram/ && jekyll'
 alias jekauto='cd ~/mottram/ && jekyll --auto'
@@ -34,22 +38,24 @@ alias jsimp='~/dotfiles/weblog/gitless-deploy'
 alias bblog='~/dotfiles/weblog/bblog'
 alias lblog='~/dotfiles/weblog/lblog'
 
-# todo.txt
-alias t='~/dotfiles/todo/todo.sh -d ~/dotfiles/todo/todo.cfg'
+# Specific to the Eee PC 701-----------------------------------------------
+# Start clipboard manager, set background, start conky, start urxvtd
+alias hello='autocutsel -f && feh --bg-scale ~/img/misty-danube.jpg && conky &'
+# Turn off the display
+alias dispoff='sleep 1 && xset dpms force off' 
+# Suspend
+alias bye='sudo pm-suspend'
+# WiFi
+alias wifi='wicd-curses'
+#Mount the SD card with write permissions
+alias mnt='sudo mount /dev/sdb1 /media/SD -o async,rw,users,umask=000'
+# Stream Radio 4, 6 and the World Service with mplayer
+alias radio4='mplayer -playlist http://www.bbc.co.uk/radio/listen/live/r4.asx'
+alias radio6='mplayer -playlist http://www.bbc.co.uk/radio/listen/live/r6.asx'
+alias radiows='mplayer -playlist http://www.bbc.co.uk/worldservice/meta/tx/nb/live_infent_au_nb.asx'
+# Todo.txt
 alias tt='~/dotfiles/todo/todo.sh -d ~/dotfiles/eee/todo.cfg'
-
-# SSH
-alias avimsh='ssh -p 30300 jack@67.23.46.82'
-alias textdrivesh='ssh mottram@howe.textdrive.com'
-alias remotedb='ssh -p30300 -L 3307:localhost:3306 jack@83.170.85.158 -N'
-
-# Eee
-alias bg="feh --bg-scale ~/img/misty-danube.jpg && conky &"
-alias clp="autocutsel -f"
-alias mnt="sudo mount /dev/sdb1 /media/SD -o async,rw,users,umask=000"
-alias radio4="mplayer -playlist http://www.bbc.co.uk/radio/listen/live/r4.asx"
-alias radio6="mplayer -playlist http://www.bbc.co.uk/radio/listen/live/r6.asx"
-alias radiows="mplayer -playlist http://www.bbc.co.uk/worldservice/meta/tx/nb/live_infent_au_nb.asx"
-
-# IP Address
-alias myip="curl whatismyip.com/automation/n09230945.asp;echo"
+# View PDF files
+alias pdf='apvlv'
+# Newsbeuter
+alias news='newsbeuter -r'
