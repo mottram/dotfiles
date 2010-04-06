@@ -1,4 +1,4 @@
-### Functions
+# Functions for bash and zsh-----------------------------------------------
 
 # Quick git commit
 function gg {
@@ -21,11 +21,6 @@ function lgr {
   ls -a | grep $1 
 }
 
-# pwsafe show username and password
-function pp {
-  pwsafe -xpE $1
-}
-
 # quick google from the command line
 function googler {
   w3m google.com/search?q=$1 
@@ -35,3 +30,17 @@ function googler {
 function tmn {
   tmux new -s $1 
 }
+
+# Attach a tmux Session
+function tma {
+  tmux att -t $1	
+} 
+
+# Poor man's Notational Velocity!
+function n {
+  nano ~/notes/$1.txt	
+}
+
+function nls {
+  ls -c ~/notes | grep $1
+	} 

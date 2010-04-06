@@ -1,49 +1,41 @@
-*background:  #fefefe
-*foreground:  #111111
-*color0:      #000000
-*color1:      #9e1828
-*color2:      #aece92
-*color3:      #968a38
-*color4:      #414171
-*color5:      #963c59
-*color6:      #418179
-*color7:      #bebebe
-*color8:      #666666
-*color9:      #cf6171
-*color10:     #c5f779
-*color11:     #fff796
-*color12:     #4186be
-*color13:     #cf9ebe
-*color14:     #71bebe
-*color15:     #ffffff
+! colours
 
-mrxvt*shading:40
-mrxvt*background:White
-mrxvt*foreground:Black
-mrxvt*scrollBar:true
-mrxvt*scrollBar_right:true
-mrxvt*transpscrollbar:true
-mrxvt*saveLines:32767
-mrxvt*autohideTabbar:true
-mrxvt*hideButtons:true
-mrxvt*transparent:true
-mrxvt*transparentScrollbar:true
-mrxvt*transparentTabbar:true
-mrxvt*transparentMenubar:true
-mrxvt*tintColor:#FAFAFA
-mrxvt*shading:90
-mrxvt*xft:1
-mrxvt*xftFont:DejaVu Sans Mono
-mrxvt*xftSize:10
-mrxvt*xftAntialias:1
+*background: rgb:f5/f5/f5
+*foreground: rgb:44/44/44
+*color0:  rgb:00/00/00
+*color1:  rgb:9e/18/28
+*color2:  rgb:5c/b2/47
+*color3:  rgb:96/8a/38
+*color4:  rgb:41/61/a0
+*color5:  rgb:9b/76/8e
+*color6:  rgb:41/91/89
+*color7:  rgb:ee/ea/ea
+*color8:  rgb:66/66/66
+*color9:  rgb:cf/61/71
+*color10: rgb:c5/a7/79
+*color11: rgb:ff/f7/96
+*color12: rgb:41/86/be
+*color13: rgb:cf/9e/be
+*color14: rgb:71/be/be
+*color15: rgb:dd/dd/dd
 
-Rxvt*loginShell: true
-Rxvt*background:White
-Rxvt*foreground:Black
-Rxvt*font: xft:DejaVu Sans Mono:pixelsize=14
-Rxvt*buffered: true
-Rxvt*cursorColor: #aaaaaa
-Rxvt*scrollBar: false
+! rxvt-unicode 
 
+urxvt*loginShell: true
+urxvt*font: xft:Inconsolata:pixelsize=15
+urxvt*buffered: true
+urxvt*cursorColor: #aeaeae
+urxvt*scrollBar: false
+urxvt*pointerBlank: true
+urxvt*termName: rxvt-unicode
+urxvt*urllauncher:vimprobable2
+urxvt*saveLines: 9999
+urxvt*scrollstyle: rxvt 
+urxvt*buffered: true
+
+! Xft
 Xft*antialias: true
-Xft*hinting: full
+Xft*dpi: 96
+Xft*rgba: rgb
+Xft*hinting: true
+Xft*hintstyle: hintslight
