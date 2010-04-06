@@ -1,7 +1,11 @@
-!/bin/sh
+#!/bin/sh
 tmux new-session -d -s main
 tmux send-keys  -t main:0 'cd ~/ ; clear' C-m
 tmux new-window -t main:1 alpine
-tmux new-window -t main:2 cmus
+tmux rename-window -t main:1 mail
+tmux new-window -t main:2 'newsbeuter -r'
+tmux rename-window -t main:2 news
+tmux new-window -t main:3 'sudo cmus'
+tmux rename-window -t main:3 music
 tmux select-window -t main:0
 tmux att -t main

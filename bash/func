@@ -37,10 +37,10 @@ function tma {
 } 
 
 # Poor man's Notational Velocity!
-function note {
-  vim ~/Dropbox/Notes/$1.txt	
+function n {
+  nano ~/notes/$1.txt	
 }
 
-function nts {
-  ls -c ~/Dropbox/Notes | grep $1
+function nls {
+  ls -c ~/notes | grep $1
 	} 

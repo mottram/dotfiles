@@ -1,7 +1,7 @@
 ! colours
 
 *background: rgb:f5/f5/f5
-*foreground: rgb:33/33/33
+*foreground: rgb:44/44/44
 *color0:  rgb:00/00/00
 *color1:  rgb:9e/18/28
 *color2:  rgb:5c/b2/47
@@ -9,7 +9,7 @@
 *color4:  rgb:41/61/a0
 *color5:  rgb:9b/76/8e
 *color6:  rgb:41/91/89
-*color7:  rgb:cc/cc/cc   
+*color7:  rgb:ee/ea/ea
 *color8:  rgb:66/66/66
 *color9:  rgb:cf/61/71
 *color10: rgb:c5/a7/79
@@ -21,15 +21,19 @@
 
 ! rxvt-unicode 
 
-Rxvt*loginShell: true
-Rxvt*font: xft:DejaVu Sans Mono:pixelsize=14
-Rxvt*buffered: true
-Rxvt*cursorColor: #aaaaaa
-Rxvt*scrollBar: false
-Rxvt*pointerBlank: true
+urxvt*loginShell: true
+urxvt*font: xft:Inconsolata:pixelsize=15
+urxvt*buffered: true
+urxvt*cursorColor: #aeaeae
+urxvt*scrollBar: false
+urxvt*pointerBlank: true
+urxvt*termName: rxvt-unicode
+urxvt*urllauncher:vimprobable2
+urxvt*saveLines: 9999
+urxvt*scrollstyle: rxvt 
+urxvt*buffered: true
 
 ! Xft
-
 Xft*antialias: true
 Xft*dpi: 96
 Xft*rgba: rgb

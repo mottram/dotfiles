@@ -39,14 +39,16 @@ alias bblog='~/dotfiles/weblog/bblog'
 alias lblog='~/dotfiles/weblog/lblog'
 
 # Specific to the Eee PC 701-----------------------------------------------
-# Start clipboard manager, set background, start conky, start urxvtd
-alias hello='autocutsel -f && feh --bg-scale ~/img/misty-danube.jpg && conky &'
+# Start clipboard manager, set background, start conky, urxvtd, Dropbox
+alias hello='autocutsel -f && feh --bg-scale ~/img/misty-danube.jpg && ~/bin/drp start && conky &'
 # Turn off the display
 alias dispoff='sleep 1 && xset dpms force off' 
 # Suspend
 alias bye='sudo pm-suspend'
 # WiFi
 alias wifi='wicd-curses'
+# Start Dropbox
+alias drs '~/bin/drp start'
 #Mount the SD card with write permissions
 alias mnt='sudo mount /dev/sdb1 /media/SD -o async,rw,users,umask=000'
 # Stream Radio 4, 6 and the World Service with mplayer
