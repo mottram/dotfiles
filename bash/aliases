@@ -57,7 +57,6 @@ alias radio6='mplayer -playlist http://www.bbc.co.uk/radio/listen/live/r6.asx'
 alias radiows='mplayer -playlist http://www.bbc.co.uk/worldservice/meta/tx/nb/live_infent_au_nb.asx'
 # Todo.txt
 alias tt='~/dotfiles/todo/todo.sh -d ~/dotfiles/eee/todo.cfg'
-<<<<<<< HEAD
 
 # SSH
 alias surlysh='ssh -p 30300 jack@sur.ly'
