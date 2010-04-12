@@ -37,7 +37,7 @@ function tma {
 } 
 
 # Poor man's Notational Velocity!
-function n {
+function note {
   nano ~/notes/$1.txt	
 }
 

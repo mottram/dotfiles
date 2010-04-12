@@ -5,7 +5,9 @@ tmux new-window -t main:1 alpine
 tmux rename-window -t main:1 mail
 tmux new-window -t main:2 'newsbeuter -r'
 tmux rename-window -t main:2 news
-tmux new-window -t main:3 'sudo cmus'
+tmux new-window -t main:3 'cmus'
 tmux rename-window -t main:3 music
+tmux new-window -t main:4 'wicd-curses'
+tmux rename-window -t main:4 wifi
 tmux select-window -t main:0
 tmux att -t main
