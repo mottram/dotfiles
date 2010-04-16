@@ -38,7 +38,7 @@ function tma {
 
 # Poor man's Notational Velocity!
 function note {
-  nano ~/notes/$1.txt	
+  vim ~/notes/$1.txt	
 }
 
 function nls {
