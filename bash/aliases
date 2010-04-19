@@ -57,17 +57,15 @@ alias radio6='mplayer -playlist http://www.bbc.co.uk/radio/listen/live/r6.asx'
 alias radiows='mplayer -playlist http://www.bbc.co.uk/worldservice/meta/tx/nb/live_infent_au_nb.asx'
 # Todo.txt
 alias tt='~/dotfiles/todo/todo.sh -d ~/dotfiles/eee/todo.cfg'
+# Ranger FM
+alias ranger='~/src/ranger/ranger.py'
+
 
 # SSH
 alias surlysh='ssh -p 30300 jack@sur.ly'
 alias avimsh='ssh -p 30300 jack@67.23.46.82'
 alias textdrivesh='ssh mottram@howe.textdrive.com'
 alias remotedb='ssh -p30300 -L 3307:localhost:3306 jack@83.170.85.158 -N'
-
-# Eee
-alias bg="feh --bg-scale ~/Pictures/misty-danube.jpg && conky &"
-alias clp="autocutsel -f"
-alias dvlo="cnetworkmanager --unprotected -C devolo &"
 
 # IP Address
 alias myip="curl whatismyip.org;echo"
