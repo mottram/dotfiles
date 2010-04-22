@@ -13,3 +13,6 @@ alias rldz='source ~/.zshrc'
 # Open text and markdown files with vim
 alias -s markdown=vim
 alias -s txt=vim
+
+# colfm
+source ~/src/colfm/colfm.zsh 
