@@ -1,11 +1,11 @@
 # Functions for bash and zsh-----------------------------------------------
 
-# Quick git commit
+# quick git commit
 function gg {
   git commit -v -a -m "$*"
 }
 
-# View source files with pygments syntax colouring
+# view source files with pygments syntax colouring
 function pless {
   pygmentize $1 | less -r
 }
@@ -26,12 +26,12 @@ function googler {
   w3m google.com/search?q=$1 
 }
 
-# new tmux sesh
+# new tmux session
 function tmn {
   tmux new -s $1 
 }
 
-# Attach a tmux Session
+# attach a tmux Session
 function tma {
   tmux att -t $1	
 } 
@@ -43,4 +43,4 @@ function note {
 
 function nls {
   ls -c ~/notes | grep $1
-	} 
+	}
