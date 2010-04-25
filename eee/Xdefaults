@@ -22,7 +22,7 @@
 ! rxvt-unicode 
 
 urxvt*loginShell: true
-urxvt*font: xft:Inconsolata:pixelsize=14
+urxvt*font: xft:Inconsolata:pixelsize=15
 urxvt*buffered: true
 urxvt*cursorColor: #aeaeae
 urxvt*scrollBar: false
