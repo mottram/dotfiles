@@ -14,9 +14,9 @@ draw_shades no
 draw_outline no 
 draw_borders no 
 draw_graph_borders yes 
-default_color 555555 
+default_color 888888 
 default_shade_color black 
-default_outline_color 555555 
+default_outline_color 888888 
 alignment top_right
 gap_x 12 
 gap_y 12 
@@ -28,16 +28,14 @@ text_buffer_size 5000
 TEXT
 
 ${color}${time %I:%M:%p, %A %d %B}${font}$hr 
-#${color}${execi 3600 conkyForecast -l UKXX1743 --datatype=CC}, ${execi 
-#3600 conkyForecast -l UKXX1743 --datatype=HT}$hr 
 CPU:${color}$cpu% $alignr${color}${top name 1} 
 ${cpugraph 15,300 cccccc 000000} 
 ${color}
 RAM:${color}$memperc% $alignr${color}${top_mem name 1} 
 ${membar} 
-${color}Disk usage: $color${fs_used /} of ${fs_size /} 
+${color}Disk: $color${fs_used /} of ${fs_size /} 
 ${fs_bar 6 /} 
-${color}SD usage: ${fs_used /media/SD} of ${fs_size /media/SD} 
+${color}SD: ${fs_used /media/SD} of ${fs_size /media/SD} 
 ${fs_bar 6 /media/SD} 
 Wifi: ${wireless_essid wlan0}/${addr wlan0} 
 ${wireless_link_bar wlan0} 
@@ -45,7 +43,9 @@ ${color}Up: ${upspeed wlan0}$alignr${color}Down: ${downspeed wlan0}
 ${upspeedgraph wlan0 15,140 cccccc 000000}$alignr${color}${downspeedgraph wlan0 15,140 cccccc 000000} 
 
 Battery:
-${battery_bar}${execi 1000 cat /home/jack/Dropbox/todo/todo.txt|sort|head -n20}
+${battery_bar}$
+
+#{execi 1000 cat /home/jack/Dropbox/todo/todo.txt|sort|head -n20}
 # MPD not installed
 #${if_mpd_playing} 
 #$hr 
