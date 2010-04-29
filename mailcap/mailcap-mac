@@ -1,4 +1,4 @@
-nks -dump %s ; copiousoutput 
+text/html; elinks -dump %s ; copiousoutput 
 document/pdf; view_attachment.sh %s -
 application/octet-stream; view_attachment.sh %s -
 mime_lookup application/octet-stream 
