@@ -8,7 +8,5 @@ ln -s ~/dotfiles/vim/vimrc ~/.vimrc
 ln -s ~/dotfiles/screen/screenrc ~/.screenrc
 
 ### Todo
-mpd
-ncmpd
 mutt - doable without password?
-git-completion.bash
+
