@@ -1,0 +1,7 @@
+nks -dump %s ; copiousoutput 
+document/pdf; view_attachment.sh %s -
+application/octet-stream; view_attachment.sh %s -
+mime_lookup application/octet-stream 
+video/*; view_attachment.sh %s -
+image/*; view_attachment.sh %s -
+application/*; view_attachment.sh %s -
