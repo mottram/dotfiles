@@ -73,4 +73,4 @@ alias myip="curl whatismyip.org;echo"
 # View PDF files
 alias pdf='apvlv'
 # Newsbeuter
-alias news='newsbeuter -r'
+alias news='cd ~/notes && newsbeuter -r'
