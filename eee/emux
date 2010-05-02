@@ -3,7 +3,7 @@ tmux new-session -d -s main
 tmux send-keys  -t main:0 'cd ~/ ; clear' C-m
 tmux new-window -t main:1 '~/src/ranger/ranger.py'
 tmux rename-window -t main:1 files 
-tmux new-window -t main:2 alpine
+tmux new-window -t main:2 mutt
 tmux rename-window -t main:2 mail
 tmux new-window -t main:3 'newsbeuter -r'
 tmux rename-window -t main:3 news

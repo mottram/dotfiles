@@ -2,6 +2,9 @@
 # General laziness---------------------------------------------------------
 alias g='git status'
 alias h='history'
+alias hgs='hg status'
+alias hgp='hg push'
+alias hgc='hg commit'
 alias ls='ls -G'
 alias ..='cd ..'
 alias ...='cd .. ; cd ..'
