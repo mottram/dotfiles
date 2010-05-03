@@ -1,4 +1,4 @@
-text/html; elinks -dump %s ; copiousoutput 
+text/html; w3m -dump -T %t ; copiousoutput 
 document/pdf; view_attachment.sh %s -
 application/octet-stream; view_attachment.sh %s -
 mime_lookup application/octet-stream 
