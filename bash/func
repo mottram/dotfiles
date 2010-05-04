@@ -11,14 +11,14 @@ function pless {
 }
 
 # mkdir, cd into it
-function mkcd {
-  mkdir $1
-  cd $1
+mkcd () {
+mkdir -p "$1"
+cd "$1"
 }
 
 # list and grep
 function lgr {
-  ls -a | grep $1 
+  ls -a | grep -i $1 
 }
 
 # quick google from the command line
