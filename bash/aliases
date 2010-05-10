@@ -18,9 +18,6 @@ alias avimsh='ssh -p 30300 jack@67.23.46.82'
 alias textdrivesh='ssh mottram@howe.textdrive.com'
 alias remotedb='ssh -p30300 -L 3307:localhost:3306 jack@83.170.85.158 -N'
 
-# IP Address---------------------------------------------------------------
-alias myip='curl whatismyip.com/automation/n09230945.asp;echo'
-
 # Specific to the MacBook--------------------------------------------------
 # Open current dir as TextMate project
 alias matey='mate .'
