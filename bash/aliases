@@ -12,6 +12,9 @@ alias ll='ls -hl'
 alias la='ls -a'
 alias lla='ls -lah'
 alias v='vim'
+alias dto='dtach -A /tmp/o offlineimap'
+alias dtm='dtach -A /tmp/m mutt'
+alias sg='surfraw google'
 
 # SSH----------------------------------------------------------------------
 alias avimsh='ssh -p 30300 jack@67.23.46.82'
@@ -19,6 +22,8 @@ alias textdrivesh='ssh mottram@howe.textdrive.com'
 alias remotedb='ssh -p30300 -L 3307:localhost:3306 jack@83.170.85.158 -N'
 
 # Specific to the MacBook--------------------------------------------------
+# Lock screen
+alias lock='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
 # Open current dir as TextMate project
 alias matey='mate .'
 # Growl when done 
