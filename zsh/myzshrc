@@ -16,7 +16,3 @@ alias -s txt=vim
 
 # colfm
 source ~/src/colfm/colfm.zsh
-
-# heritrix
-
-export HERITRIX_HOME=/Users/jack/heritrix-3.0.0 
