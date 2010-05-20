@@ -25,6 +25,8 @@ set showtabline=2	" Always show tabs
 set showmatch	" Show matching parentheses
 set ffs=unix,mac 	" Support all filetypes, Mac first
 set guifont=Monaco:h12 " Set the font for MacVim
+set incsearch " incremental search
+set hlsearch " highlight search terms
 if has("gui_running")
 	set lines=60
 	set columns=120
