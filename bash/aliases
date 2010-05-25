@@ -15,7 +15,7 @@ alias v='vim'
 alias dto='dtach -A /tmp/o offlineimap'
 alias dtm='dtach -A /tmp/m mutt'
 alias sg='surfraw google'
-
+alias d='cat ~/.t'
 # SSH----------------------------------------------------------------------
 alias avimsh='ssh -p 30300 jack@67.23.46.82'
 alias textdrivesh='ssh mottram@howe.textdrive.com'

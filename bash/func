@@ -44,3 +44,9 @@ function note {
 function nls {
   ls -c ~/notes | grep $1
 	}
+
+# Stupidly Simple Todo
+function td {
+  rm ~/.t ; echo "$*" > ~/.t
+	}
+
