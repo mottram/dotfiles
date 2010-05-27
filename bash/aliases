@@ -79,3 +79,5 @@ alias myip="curl whatismyip.org;echo"
 alias pdf='apvlv'
 # Newsbeuter
 alias news='cd ~/notes && newsbeuter -r'
+# Play songs
+alias play='mplayer -playlist <(find "$PWD" -type f | sort -n)'
