@@ -38,11 +38,11 @@ function tma {
 
 # Poor man's Notational Velocity!
 function note {
-  vim ~/notes/$1.txt	
+  vim ~/notes/"$*".txt	
 }
 
 function nls {
-  ls -c ~/notes | grep $1
+  ls -c ~/notes | grep "$*"
 	}
 
 # Stupidly Simple Todo
@@ -50,3 +50,7 @@ function td {
   rm ~/.t ; echo "$*" > ~/.t
 	}
 
+# Alex's NV
+function notey {
+vim   "/Users/jack/testnv/`date -d "$*" +%F`.txt"
+}
