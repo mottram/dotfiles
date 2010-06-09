@@ -52,5 +52,5 @@ function td {
 
 # Alex's NV
 function notey {
-vim   "/Users/jack/testnv/`date -d "$*" +%F`.txt"
+nano "~/testnv/`date -d "$*" +%F`.txt"
 }
