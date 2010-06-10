@@ -10,7 +10,7 @@ static const char selbgcolor[]      = "#aeaeae";
 static const char selfgcolor[]      = "#444444";
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
-static const Bool showbar           = True;     /* False means no bar */
+static const Bool showbar           = False;     /* False means no bar */
 static const Bool topbar            = False;     /* False means bottom bar */
 
 /* tagging */
@@ -47,6 +47,7 @@ static const Layout layouts[] = {
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "urxvtcd", NULL };
+static const char *clipcmd[] = { "xfce4-popup-clipman", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -81,6 +82,7 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	{ MODKEY|ShiftMask,             XK_v, 	   spawn,          {.v = clipcmd } },
 };
 
 /* button definitions */
