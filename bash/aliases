@@ -45,7 +45,7 @@ alias lblog='~/dotfiles/weblog/lblog'
 
 # Specific to the Eee PC 701-----------------------------------------------
 # Start clipboard manager, set background, start conky, urxvtd, Dropbox
-alias hello='autocutsel -f && feh --bg-scale ~/img/misty-danube.jpg && ~/bin/drp start && conky &'
+#alias hello='autocutsel -f && feh --bg-scale ~/img/misty-danube.jpg && ~/bin/drp start && conky && xfce4-clipman &'
 # Turn off the display
 alias dispoff='sleep 1 && xset dpms force off' 
 # Suspend

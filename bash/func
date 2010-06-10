@@ -46,11 +46,20 @@ function nls {
 	}
 
 # Stupidly Simple Todo
-function td {
-  rm ~/.t ; echo "$*" > ~/.t
-	}
+#function td {
+#  rm ~/.t ; echo "$*" > ~/.t
+#	}
+
+td() {
+	if [[ "$*" == "" ]] ; then
+		cat ~/.t
+	else
+		#sed '1d' ~/.t > ~/.t && echo "$*" > ~/.t
+		rm ~/.t ; echo "$*" > ~/.t
+	fi
+}
 
 # Alex's NV
-function notey {
+function log {
 nano "~/testnv/`date -d "$*" +%F`.txt"
 }

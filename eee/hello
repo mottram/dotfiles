@@ -1,0 +1,7 @@
+#!/bin/sh
+autocutsel -f
+feh --bg-scale ~/img/misty-danube.jpg
+~/bin/drp start
+xfce4-panel &
+xfce4-clipman &
+conky &
