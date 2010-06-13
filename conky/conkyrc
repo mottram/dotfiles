@@ -44,6 +44,7 @@ ${upspeedgraph wlan0 15,140 cccccc 000000}$alignr${color}${downspeedgraph wlan0 
 
 Battery:
 ${battery_bar}$
+Dropbox: ${execi 1000 cat /home/jack/.dropbox-status}
 
 #{execi 1000 cat /home/jack/Dropbox/todo/todo.txt|sort|head -n20}
 # MPD not installed
