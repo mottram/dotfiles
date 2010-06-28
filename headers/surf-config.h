@@ -1,20 +1,30 @@
 /* modifier 0 means no modifier */
-static char *useragent      = "Mozilla/5.0 (X11; U; Linux; en-us) AppleWebKit/531.2+ (KHTML, like Gecko, surf-"VERSION") Safari/531.2+";
+static char *useragent      = "Surf/"VERSION" (X11; U; Unix; en-US) AppleWebKit/531.2+ Compatible (Safari)";
 static char *progress       = "#FF0000";
 static char *progress_trust = "#00FF00";
 static char *stylefile      = ".surf/style.css";
 static char *scriptfile     = ".surf/script.js";
 static char *cookiefile     = ".surf/cookies.txt";
-static char *dldir          = ".surf/dl/";
-static time_t sessiontime   = 3600;
+static time_t sessiontime   = 9999999;
+#define NOBACKGROUND 0
 
-#define SETPROP(p)       { .v = (char *[]){ "/bin/sh", "-c", \
-	"prop=\"`xprop -id $1 $0 | cut -d '\"' -f 2 | dmenu`\" &&" \
-	"xprop -id $1 -f $0 8s -set $0 \"$prop\"", \
+#define SETPROP(p, q)     { .v = (char *[]){ "/bin/sh", "-c", \
+	"prop=\"`xprop -id $2 $0 | cut -d '\"' -f 2 | dmenu`\" &&" \
+	"xprop -id $2 -f $1 8s -set $1 \"$prop\"", \
+	p, q, winid, NULL } }
+#define DOWNLOAD(p)       { \
+	.v = (char *[]){ "/bin/sh", "-c", \
+	"prop=\"`xprop -id $1 $0 | cut -d '\"' -f 2`\";" \
+	"xterm -e \"wget --load-cookies ~/.surf/cookies.txt $prop;\"", \
 	p, winid, NULL } }
+#define BM_PICK { .v = (char *[]){ "/bin/sh", "-c", \
+"xprop -id $0 -f _SURF_GO 8s -set _SURF_GO \
+`cat ~/.surf/bookmarks | dmenu || exit 0`", \
+winid, NULL } }
 #define MODKEY GDK_CONTROL_MASK
 static Key keys[] = {
     /* modifier	            keyval      function    arg             Focus */
+    { MODKEY,               GDK_s,      spawn,      DOWNLOAD("_SURF_HILIGHT") },
     { MODKEY|GDK_SHIFT_MASK,GDK_r,      reload,     { .b = TRUE } },
     { MODKEY,               GDK_r,      reload,     { .b = FALSE } },
     { MODKEY|GDK_SHIFT_MASK,GDK_p,      print,      { 0 } },
@@ -29,19 +39,9 @@ static Key keys[] = {
     { MODKEY,               GDK_k,      scroll,     { .i = -1 } },
     { 0,                    GDK_Escape, stop,       { 0 } },
     { MODKEY,               GDK_o,      source,     { 0 } },
-    { MODKEY,               GDK_g,      spawn,      SETPROP("_SURF_URI") },
-    { MODKEY,               GDK_slash,  spawn,      SETPROP("_SURF_FIND") },
+    { MODKEY,               GDK_g,      spawn,      SETPROP("_SURF_URI", "_SURF_GO") },
+    { MODKEY,               GDK_slash,  spawn,      SETPROP("_SURF_FIND", "_SURF_FIND") },
     { MODKEY,               GDK_n,      find,       { .b = TRUE } },
     { MODKEY|GDK_SHIFT_MASK,GDK_n,      find,       { .b = FALSE } },
-};
-
-static Item items[] = {
-    { "Back",           navigate,  { .i = -1 } },
-    { "Forward",        navigate,  { .i = +1 } },
-    { "New Window",     newwindow, { .v = NULL } },
-    { "Reload",         reload,    { .b = FALSE } },
-    { "Stop",           stop,      { 0 } },
-    { "Paste URI",      clipboard, { .b = TRUE } },
-    { "Copy URI",       clipboard, { .b = FALSE } },
-    { "Download",       download,  { 0 } },
+    { MODKEY,               GDK_b,      spawn,      BM_PICK },
 };
