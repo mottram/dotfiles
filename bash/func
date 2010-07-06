@@ -45,20 +45,6 @@ function nls {
   ls -c ~/notes | grep "$*"
 	}
 
-# Stupidly Simple Todo
-#function td {
-#  rm ~/.t ; echo "$*" > ~/.t
-#	}
-
-td() {
-	if [[ "$*" == "" ]] ; then
-		cat ~/.t
-	else
-		#sed '1d' ~/.t > ~/.t && echo "$*" > ~/.t
-		rm ~/.t ; echo "$*" > ~/.t
-	fi
-}
-
 # Alex's NV
 function log {
 nano "~/testnv/`date -d "$*" +%F`.txt"
