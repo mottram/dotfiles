@@ -1,10 +1,12 @@
 # Some additions to the grml .zshrc, symbolically linked to ~/.zshrc.pre
 
-PATH="$HOME/bin:$HOME/dotfiles/weblog:$HOME/dotfiles/eee:$HOME/.gem/ruby/1.8/bin:$HOME/.gem/ruby/1.9.1/bin:$PATH"
+PATH="$PATH:/usr/local/bin/:$HOME/bin:$HOME/dotfiles/weblog:$HOME/dotfiles/eee:$HOME/.gem/ruby/1.8/bin:$HOME/.gem/ruby/1.9.1/bin"
 
 # Source my bash aliases and functions
 source ~/dotfiles/bash/aliases
 source ~/dotfiles/bash/func
+
+source /etc/profile
 
 # Meta
 alias emz='vim ~/dotfiles/zsh/myzshrc'
@@ -19,3 +21,16 @@ if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then
   startx
   logout
 fi
+
+# pip zsh completion start
+function _pip_completion {
+  local words cword
+  read -Ac words
+  read -cn cword
+  reply=( $( COMP_WORDS="$words[*]" \ 
+             COMP_CWORD=$(( cword-1 )) \
+             PIP_AUTO_COMPLETE=1 $words[1] ) )
+}
+compctl -K _pip_completion pip
+# pip zsh completion end
+
