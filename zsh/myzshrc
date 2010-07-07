@@ -6,7 +6,14 @@ PATH="$PATH:/usr/local/bin/:$HOME/bin:$HOME/dotfiles/weblog:$HOME/dotfiles/eee:$
 source ~/dotfiles/bash/aliases
 source ~/dotfiles/bash/func
 
-source /etc/profile
+
+
+# Source profile for autojump
+if [ `uname` = "Darwin" ]; then
+	source /etc/profile
+elif [ `uname` = "Linux" ]; then
+	source /etc/profile.d/autojump.zsh
+fi
 
 # Meta
 alias emz='vim ~/dotfiles/zsh/myzshrc'
