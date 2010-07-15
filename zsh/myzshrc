@@ -6,8 +6,6 @@ PATH="$PATH:/usr/local/bin/:$HOME/bin:$HOME/dotfiles/weblog:$HOME/dotfiles/eee:$
 source ~/dotfiles/bash/aliases
 source ~/dotfiles/bash/func
 
-
-
 # Source profile for autojump
 if [ `uname` = "Darwin" ]; then
 	source /etc/profile
