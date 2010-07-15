@@ -1,6 +1,6 @@
 # Some additions to the grml .zshrc, symbolically linked to ~/.zshrc.pre
 
-PATH="$PATH:/usr/local/bin/:$HOME/bin:$HOME/dotfiles/weblog:$HOME/dotfiles/eee:$HOME/.gem/ruby/1.8/bin:$HOME/.gem/ruby/1.9.1/bin"
+PATH="$PATH:/usr/local/bin/:$HOME/bin:$HOME/dotfiles/weblog:$HOME/dotfiles/eee:$HOME/.gem/ruby/1.8/bin"
 
 # Source my bash aliases and functions
 source ~/dotfiles/bash/aliases
@@ -40,4 +40,3 @@ function _pip_completion {
 }
 compctl -K _pip_completion pip
 # pip zsh completion end
-

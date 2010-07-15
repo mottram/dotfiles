@@ -81,3 +81,5 @@ alias pdf='apvlv'
 alias news='cd ~/notes && newsbeuter -r'
 # Play songs
 alias play='mplayer -playlist <(find "$PWD" -type f | sort -n)'
+
+alias pw='sudo pwsafe -p' 
