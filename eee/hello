@@ -1,7 +1,5 @@
 #!/bin/sh
 autocutsel -f
-feh --bg-scale ~/img/misty-danube.jpg
-~/bin/drp start
-xfce4-panel &
-xfce4-clipman &
+feh --bg-scale ~/pics/misty-danube.jpg
+dropboxd &
 conky &
