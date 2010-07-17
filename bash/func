@@ -55,3 +55,6 @@ nano "~/testnv/`date -d "$*" +%F`.txt"
 tman () {
   MANWIDTH=160 MANPAGER='col -bx' man $@ | mate
 }
+
+# Calc
+calc(){ awk "BEGIN{ print $* }" ;}

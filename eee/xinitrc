@@ -7,4 +7,5 @@ feh --bg-scale ~/pics/misty-danube.jpg
 dropboxd &
 autocutsel -f
 conky &>/dev/null &
+setxkbmap gb
 exec dwm

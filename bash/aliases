@@ -44,27 +44,22 @@ alias bblog='~/dotfiles/weblog/bblog'
 alias lblog='~/dotfiles/weblog/lblog'
 
 # Specific to the Eee PC 701-----------------------------------------------
-# Start clipboard manager, set background, start conky, urxvtd, Dropbox
-#alias hello='autocutsel -f && feh --bg-scale ~/img/misty-danube.jpg && ~/bin/drp start && conky && xfce4-clipman &'
 # Turn off the display
 alias dispoff='sleep 1 && xset dpms force off' 
+
 # Suspend
 alias bye='sudo pm-suspend'
-# WiFi
-alias wifi='wicd-curses'
-# Start Dropbox
-alias drs '~/bin/drp start'
+
 #Mount the SD card with write permissions
 alias mnt='sudo mount /dev/sdb1 /media/SD -o async,rw,users,umask=000'
+
 # Stream Radio 4, 6 and the World Service with mplayer
 alias radio4='mplayer -playlist http://www.bbc.co.uk/radio/listen/live/r4.asx'
 alias radio6='mplayer -playlist http://www.bbc.co.uk/radio/listen/live/r6.asx'
 alias radiows='mplayer -playlist http://www.bbc.co.uk/worldservice/meta/tx/nb/live_infent_au_nb.asx'
+
 # Todo.txt
 alias tt='~/dotfiles/todo/todo.sh -d ~/dotfiles/eee/todo.cfg'
-# Ranger FM
-alias ranger='~/src/ranger/ranger.py'
-
 
 # SSH
 alias surlysh='ssh -p 30300 jack@sur.ly'
@@ -77,9 +72,15 @@ alias myip="curl whatismyip.org;echo"
 
 # View PDF files
 alias pdf='apvlv'
-# Newsbeuter
-alias news='cd ~/notes && newsbeuter -r'
+
 # Play songs
 alias play='mplayer -playlist <(find "$PWD" -type f | sort -n)'
 
+# Passwords
 alias pw='sudo pwsafe -p' 
+
+# Bauerbill
+
+alias bb='bauerbill'
+alias bbs='bauerbill -Ss --aur'
+alias bbu='sudo bauerbill -Syu --aur'
