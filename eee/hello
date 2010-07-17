@@ -1,5 +1,0 @@
-#!/bin/sh
-autocutsel -f
-feh --bg-scale ~/pics/misty-danube.jpg
-dropboxd &
-conky &
