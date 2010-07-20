@@ -1,5 +1,6 @@
 # Aliases for bash and zsh-------------------------------------------------
 # General laziness---------------------------------------------------------
+alias c='clear'
 alias g='git status'
 alias h='history'
 alias hgs='hg status'
@@ -20,7 +21,8 @@ alias tdn='cat ~/.t'
 alias avimsh='ssh -p 30300 jack@67.23.46.82'
 alias textdrivesh='ssh mottram@howe.textdrive.com'
 alias remotedb='ssh -p30300 -L 3307:localhost:3306 jack@83.170.85.158 -N'
-
+alias mbp='ssh mottram@192.168.0.8'
+alias dyn='ssh mottram@mottram.ath.cx'
 # Specific to the MacBook--------------------------------------------------
 # Lock screen
 alias lock='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
@@ -28,8 +30,6 @@ alias lock='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resourc
 alias matey='mate .'
 # Growl when done 
 alias n='~/dotfiles/bash/notify'
-# Moving around
-alias cod='cd /usr/local/code'
 # Todo.txt
 alias t='~/dotfiles/todo/todo.sh -d ~/dotfiles/todo/todo.cfg'
 # Weblog stuff
@@ -44,27 +44,22 @@ alias bblog='~/dotfiles/weblog/bblog'
 alias lblog='~/dotfiles/weblog/lblog'
 
 # Specific to the Eee PC 701-----------------------------------------------
-# Start clipboard manager, set background, start conky, urxvtd, Dropbox
-#alias hello='autocutsel -f && feh --bg-scale ~/img/misty-danube.jpg && ~/bin/drp start && conky && xfce4-clipman &'
 # Turn off the display
 alias dispoff='sleep 1 && xset dpms force off' 
+
 # Suspend
 alias bye='sudo pm-suspend'
-# WiFi
-alias wifi='wicd-curses'
-# Start Dropbox
-alias drs '~/bin/drp start'
+
 #Mount the SD card with write permissions
 alias mnt='sudo mount /dev/sdb1 /media/SD -o async,rw,users,umask=000'
+
 # Stream Radio 4, 6 and the World Service with mplayer
 alias radio4='mplayer -playlist http://www.bbc.co.uk/radio/listen/live/r4.asx'
 alias radio6='mplayer -playlist http://www.bbc.co.uk/radio/listen/live/r6.asx'
 alias radiows='mplayer -playlist http://www.bbc.co.uk/worldservice/meta/tx/nb/live_infent_au_nb.asx'
+
 # Todo.txt
 alias tt='~/dotfiles/todo/todo.sh -d ~/dotfiles/eee/todo.cfg'
-# Ranger FM
-alias ranger='~/src/ranger/ranger.py'
-
 
 # SSH
 alias surlysh='ssh -p 30300 jack@sur.ly'
@@ -77,7 +72,15 @@ alias myip="curl whatismyip.org;echo"
 
 # View PDF files
 alias pdf='apvlv'
-# Newsbeuter
-alias news='cd ~/notes && newsbeuter -r'
+
 # Play songs
 alias play='mplayer -playlist <(find "$PWD" -type f | sort -n)'
+
+# Passwords
+alias pw='sudo pwsafe -p' 
+
+# Bauerbill
+
+alias bb='bauerbill'
+alias bbs='bauerbill -Ss --aur'
+alias bbu='sudo bauerbill -Syu --aur'

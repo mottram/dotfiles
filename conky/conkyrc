@@ -33,8 +33,8 @@ ${cpugraph 15,300 cccccc 000000}
 ${color}
 RAM:${color}$memperc% $alignr${color}${top_mem name 1} 
 ${membar} 
-${color}Disk: $color${fs_used /} of ${fs_size /} 
-${fs_bar 6 /} 
+${color}Home: $color${fs_used /home/jack} of ${fs_size /home/jack} 
+${fs_bar 6 /home/jack} 
 ${color}SD: ${fs_used /media/SD} of ${fs_size /media/SD} 
 ${fs_bar 6 /media/SD} 
 Wifi: ${wireless_essid wlan0}/${addr wlan0} 
@@ -44,4 +44,3 @@ ${upspeedgraph wlan0 15,140 cccccc 000000}$alignr${color}${downspeedgraph wlan0 
 
 Battery:
 ${battery_bar}$
-Dropbox: ${execi 1000 cat /home/jack/.dropbox-status}

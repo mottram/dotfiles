@@ -1,0 +1,13 @@
+while true; do
+	xsetroot -name "$( date +"%F %R" )"
+	sleep 1m
+done &
+urxvtd &
+feh --bg-scale ~/pics/misty-danube.jpg
+dropboxd &
+autocutsel -f
+parcellite &
+trayer --heighttype pixel --height 20 &
+conky &>/dev/null &
+setxkbmap gb
+exec dwm
