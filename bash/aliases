@@ -1,5 +1,6 @@
 # Aliases for bash and zsh-------------------------------------------------
 # General laziness---------------------------------------------------------
+alias c='clear'
 alias g='git status'
 alias h='history'
 alias hgs='hg status'
@@ -21,6 +22,7 @@ alias avimsh='ssh -p 30300 jack@67.23.46.82'
 alias textdrivesh='ssh mottram@howe.textdrive.com'
 alias remotedb='ssh -p30300 -L 3307:localhost:3306 jack@83.170.85.158 -N'
 alias mbp='ssh mottram@192.168.0.8'
+alias dyn='ssh mottram@mottram.ath.cx'
 # Specific to the MacBook--------------------------------------------------
 # Lock screen
 alias lock='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
@@ -28,8 +30,6 @@ alias lock='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resourc
 alias matey='mate .'
 # Growl when done 
 alias n='~/dotfiles/bash/notify'
-# Moving around
-alias cod='cd /usr/local/code'
 # Todo.txt
 alias t='~/dotfiles/todo/todo.sh -d ~/dotfiles/todo/todo.cfg'
 # Weblog stuff
