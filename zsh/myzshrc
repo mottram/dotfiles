@@ -2,6 +2,9 @@
 
 PATH="$PATH:/usr/local/bin/:$HOME/bin:$HOME/dotfiles/weblog:$HOME/dotfiles/eee:$HOME/.gem/ruby/1.8/bin:$HOME/.gem/ruby/1.9.1/bin"
 
+# Fixes unknow parameter issue on OS X - why? 
+zmodload zsh/terminfo
+
 # Source my bash aliases and functions
 source ~/dotfiles/bash/aliases
 source ~/dotfiles/bash/func
