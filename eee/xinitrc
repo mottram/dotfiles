@@ -6,8 +6,7 @@ urxvtd &
 feh --bg-scale ~/pics/misty-danube.jpg
 dropboxd &
 autocutsel -f
-parcellite &
-trayer --heighttype pixel --height 20 &
 conky &>/dev/null &
 setxkbmap gb
+xfce4-clipman &
 exec dwm
