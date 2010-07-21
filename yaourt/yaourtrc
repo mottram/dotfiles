@@ -1,3 +1,0 @@
-ABS_REPO=(testing core extra community-testing community gnome-unstable kde-unstable)
-COLORMODE="lightbg"
-EDITFILES=0
