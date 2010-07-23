@@ -12,7 +12,7 @@ static const Bool foreground   = False;
 static Key keys[] = { \
 	/* modifier                     key        function        argument */
 	{ MODKEY|ShiftMask,             XK_Return, focusonce,      { 0 } },
-	{ MODKEY|ShiftMask,             XK_Return, spawn,          { .v = (char*[]){ "surf", "-e", winid, NULL} } },
+	{ MODKEY, 		        XK_n, spawn,          { .v = (char*[]){ "surf", "-e", winid, NULL} } },
 	{ MODKEY|ShiftMask,             XK_s, spawn,          { .v = (char*[]){ "sandy", "-e", winid, NULL} } },
 	{ MODKEY|ShiftMask,             XK_u, spawn,          { .v = (char*[]){ "urxvtc", "-embed", winid, NULL} } },
 	{ MODKEY|ShiftMask,             XK_l,      rotate,         { .i = +1 } },
