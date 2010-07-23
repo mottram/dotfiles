@@ -8,5 +8,6 @@ dropboxd &
 autocutsel -f
 conky &>/dev/null &
 setxkbmap gb
+xfce4-panel &
 xfce4-clipman &
-exec dwm
+exec dwm-start
