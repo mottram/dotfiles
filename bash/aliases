@@ -31,7 +31,7 @@ alias matey='mate .'
 # Growl when done 
 alias n='~/dotfiles/bash/notify'
 # Todo.txt
-alias t='~/dotfiles/todo/todo.sh -d ~/dotfiles/todo/todo.cfg'
+alias t='~/dotfiles/todo/todo.sh -d ~/dotfiles/todo/mac-todo.cfg'
 # Weblog stuff
 alias jek='cd ~/mottram/ && jekyll'
 alias jekauto='cd ~/mottram/ && jekyll --auto'
@@ -59,7 +59,7 @@ alias radio6='mplayer -playlist http://www.bbc.co.uk/radio/listen/live/r6.asx'
 alias radiows='mplayer -playlist http://www.bbc.co.uk/worldservice/meta/tx/nb/live_infent_au_nb.asx'
 
 # Todo.txt
-alias tt='~/dotfiles/todo/todo.sh -d ~/dotfiles/eee/todo.cfg'
+alias tt='~/dotfiles/todo/todo.sh -d ~/dotfiles/todo/eee-todo.cfg'
 
 # SSH
 alias surlysh='ssh -p 30300 jack@sur.ly'
