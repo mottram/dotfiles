@@ -51,9 +51,15 @@ alias dispoff='sleep 1 && xset dpms force off'
 # Suspend
 alias bye='sudo pm-suspend'
 
-#Mount the SD card with write permissions
+# Mount the SD card with write permissions
 alias mnt='sudo mount /dev/sdb1 /media/SD -o async,rw,users,umask=000'
+
+# Mount my iDisk
 alias idisk='sudo mount -t davfs https://idisk.mac.com/jack_mottram idisk -o rw,uid=1000,gid=100'
+
+# Mplaer without X
+alias cmplayer='mplayer -vo fbdev'
+alias fbmplayer='mplayer -vo fbdev -fs -zoom'
 
 # Stream Radio 4, 6 and the World Service with mplayer
 alias radio4='mplayer -playlist http://www.bbc.co.uk/radio/listen/live/r4.asx'
