@@ -32,6 +32,7 @@ urxvt*urllauncher:vimprobable2
 urxvt*saveLines: 9999
 urxvt*scrollstyle: rxvt 
 urxvt*buffered: true
+urxvt*perl-ext-common: default,matcher,clipboard
 
 ! Xft
 Xft*antialias: true

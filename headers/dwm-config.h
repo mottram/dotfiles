@@ -20,7 +20,6 @@ static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "Gimp",     NULL,       NULL,       0,            True,        -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       False,       -1 },
-	{ "xfce4-panel", NULL,       NULL,     1 << 8,         False },
 };
 
 /* layout(s) */
@@ -29,9 +28,9 @@ static const Bool resizehints = False; /* True means respect size hints in tiled
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
-	{ "[M]",      monocle },
+	{ "M",      monocle },
+	{ "T",      tile },    /* first entry is default */
+	{ "F",      NULL },    /* no layout function means floating behavior */
 };
 
 /* key definitions */
@@ -49,7 +48,8 @@ static const Layout layouts[] = {
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "urxvtc", NULL };
 static const char *tabcmd[]  = { "tabbed", NULL };
-static const char *clipcmd[] = { "xfce4-popup-clipman", NULL };
+static const char *dclipcmd[] = { "dmenuclip", NULL };
+static const char *lockcmd[] = { "slock", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -84,8 +84,9 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-	{ MODKEY|ShiftMask,             XK_v, 	   spawn,          {.v = clipcmd } },
 	{ MODKEY|ShiftMask,             XK_t, 	   spawn,          {.v = tabcmd } },
+	{ MODKEY|ShiftMask,           	XK_v, 	   spawn,          {.v = dclipcmd } },
+	{ MODKEY|ShiftMask,           	XK_l, 	   spawn,          {.v = lockcmd } },
 };
 
 /* button definitions */
@@ -104,4 +105,3 @@ static Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
-
