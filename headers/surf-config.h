@@ -1,6 +1,6 @@
 /* modifier 0 means no modifier */
 static char *useragent      = "Surf/"VERSION" (X11; U; Unix; en-US) AppleWebKit/531.2+ Compatible (Safari)";
-static char *progress       = "#FF0000";
+static char *progress       = "#000000";
 static char *progress_trust = "#00FF00";
 static char *stylefile      = ".surf/style.css";
 static char *scriptfile     = ".surf/script.js";
@@ -44,4 +44,5 @@ static Key keys[] = {
     { MODKEY,               GDK_n,      find,       { .b = TRUE } },
     { MODKEY|GDK_SHIFT_MASK,GDK_n,      find,       { .b = FALSE } },
     { MODKEY,               GDK_b,      spawn,      BM_PICK },
+    { MODKEY,   GDK_i,  spawn,  { .v = (char *[]){ "/bin/sh", "-c", "curl -s -d username=\"$(cat ~/.surf/instapaper | sed -n '1p')\" -d password=\"$(cat ~/.surf/instapaper | sed -n '2p')\" -d url=\"$(xprop -id $0 _SURF_URI | cut -d '\"' -f 2)\" https://www.instapaper.com/api/add > /dev/null", winid, NULL } } },
 };
