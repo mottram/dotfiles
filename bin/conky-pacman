@@ -1,0 +1,16 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+my $n = ((`pacman -Qu` =~ m/^[^\s]+\s\((\d+)\):/m) ? $1 : 0);
+if ($n == 0)
+{
+     print "nothing to update"
+}
+elsif($n == 1)
+{
+     print "1 new package"
+}
+else
+{
+     print "$n new packages"
+}
