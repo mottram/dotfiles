@@ -85,4 +85,4 @@ alias pdf='apvlv'
 alias play='mplayer -playlist <(find "$PWD" -type f | sort -n)'
 
 # Passwords
-alias pw='sudo pwsafe -p' 
+alias pw='sudo pwsafe -p'

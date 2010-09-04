@@ -27,9 +27,10 @@ set ffs=unix,mac 	" Support all filetypes, Mac first
 set guifont=Monaco:h12 " Set the font for MacVim
 set incsearch " incremental search
 set hlsearch " highlight search terms
+set visualbell t_vb=
 if has("gui_running")
 	set lines=60
-	set columns=120
+	set columns=100
 endif
 syntax on	" Highlighting
 filetype indent plugin on	" Detect filetype, indent according to filetype, switch on filetype plugins
