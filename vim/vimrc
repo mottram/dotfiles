@@ -28,6 +28,7 @@ set guifont=Monaco:h12 " Set the font for MacVim
 set incsearch " incremental search
 set hlsearch " highlight search terms
 set visualbell t_vb=
+set pastetoggle=<F6>
 if has("gui_running")
 	set lines=60
 	set columns=100
