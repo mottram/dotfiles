@@ -44,3 +44,7 @@ ${upspeedgraph wlan0 15,140 cccccc 000000}$alignr${color}${downspeedgraph wlan0 
 
 Battery:
 ${battery_bar}$
+
+Pacman: ${execi 600 ~/bin/conky-pacman}
+Dropbox: ${execi 600 ~/bin/conky-dropbox}
+OTW: ${rss http://onethingwell.org/rss 30 item_titles 1}

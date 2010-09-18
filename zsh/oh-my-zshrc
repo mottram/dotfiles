@@ -8,6 +8,7 @@ PATH="$PATH:/usr/local/bin/:$HOME/bin:$HOME/dotfiles/weblog:$HOME/.gem/ruby/1.8/
 # Set to the name theme to load.
 # Look in ~/.oh-my-zsh/themes/
 export ZSH_THEME="jack"
+#export ZSH_THEME="clean"
 
 # Set to this to use case-sensitive completion
 # export CASE_SENSITIVE="true"
