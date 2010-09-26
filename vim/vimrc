@@ -9,7 +9,7 @@ set ignorecase	" Make search case insensitive...
 set smartcase	" ... unless there's capital letters in the search
 set laststatus=2	" Always display the status line
 set statusline=%-(%F%m%r%h%w%)\ %{&ff}/%Y/%{&encoding}\ %=%(@\%03.3b\ %Ll\ %l,%v\ (%p%%)%) 
-set mouse=a	" Enables the mouse in all modes, for scrolling and clicking on tabs (doesn't work in Terminal.app)
+set mouse=a	" Enables the mouse in all modes, for scrolling and clicking on tabs
 set number	" Show line numbers
 set ruler	" Always show the cursor position
 set showcmd	" Show commands on last line of screen
@@ -27,6 +27,7 @@ set ffs=unix,mac 	" Support all filetypes, Mac first
 set guifont=Monaco:h12 " Set the font for MacVim
 set incsearch " incremental search
 set hlsearch " highlight search terms
+set relativenumber
 if has("gui_running")
 	set lines=60
 	set columns=120
