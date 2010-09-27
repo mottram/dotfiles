@@ -14,18 +14,20 @@ export ZSH_THEME="jack"
 # export CASE_SENSITIVE="true"
 
 # Comment this out to disable weekly auto-update checks
-# export DISABLE_AUTO_UPDATE="true"
+#export DISABLE_AUTO_UPDATE="true"
 
 # Uncomment following line if you want to disable colors in ls
-# export DISABLE_LS_COLORS="true"
+export DISABLE_LS_COLORS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git osx)
+plugins=(git textmate osx)
 
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+
+#source ~/src/mercurial-for-zsh/zshrc ~/src/mercurial-for-zsh 
 
 # Source my aliases and functions
 source ~/dotfiles/bash/aliases

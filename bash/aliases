@@ -6,7 +6,7 @@ alias h='history'
 alias hgs='hg status'
 alias hgp='hg push'
 alias hgc='hg commit'
-alias ls='ls -G --color'
+alias ls='ls -G'
 alias ..='cd ..'
 alias ...='cd .. ; cd ..'
 alias ll='ls -hl'
@@ -86,6 +86,9 @@ alias pdf='apvlv'
 
 # Play songs
 alias play='mplayer -playlist <(find "$PWD" -type f | sort -n)'
+
+# Passwords
+alias pw='sudo pwsafe -p'
 
 # Clyde
 alias upg='sudo clyde -Syua'

@@ -1,2 +1,6 @@
 #!/bin/bash
-cd ~/mottram && rm -rf ~/mottram/_site/* && ejekyll && rsync -avz --delete --exclude='*.textdrive' _site/ mottram@howe.textdrive.com:domains/mottr.am/web/public
+cd ~/mottram
+rm -rf ~/mottram/_site/*
+ejekyll
+mv ~/mottram/_site/htaccess.txt ~/mottram/_site/.htaccess
+rsync -avz --delete --exclude='*.textdrive' _site/ mottram@howe.textdrive.com:domains/mottr.am/web/public
