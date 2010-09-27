@@ -51,6 +51,9 @@ alias dispoff='sleep 1 && xset dpms force off'
 # Suspend
 alias bye='sudo pm-suspend'
 
+# Battery
+alias bat='acpi -b'
+
 # Mount the SD card with write permissions
 alias mnt='sudo mount /dev/sdb1 /media/SD -o async,rw,users,umask=000'
 
@@ -86,3 +89,8 @@ alias play='mplayer -playlist <(find "$PWD" -type f | sort -n)'
 
 # Passwords
 alias pw='sudo pwsafe -p'
+
+# Clyde
+alias upg='sudo clyde -Syua'
+alias cs='sudo clyde -Si'
+alias cr='sudo clyde -R'
