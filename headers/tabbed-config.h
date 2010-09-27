@@ -5,16 +5,16 @@ static const char *selbgcolor  = "#eeeeee";
 static const char *selfgcolor  = "#333333";
 static const char *before      = "<";
 static const char *after       = ">";
-static const int tabwidth      = 100;
+static const int tabwidth      = 200;
 static const Bool foreground   = False;
 
 #define MODKEY ControlMask
 static Key keys[] = { \
 	/* modifier                     key        function        argument */
 	{ MODKEY|ShiftMask,             XK_Return, focusonce,      { 0 } },
-	{ MODKEY, 		        XK_n, spawn,          { .v = (char*[]){ "surf", "-e", winid, NULL} } },
-	{ MODKEY|ShiftMask,             XK_s, spawn,          { .v = (char*[]){ "sandy", "-e", winid, NULL} } },
-	{ MODKEY|ShiftMask,             XK_u, spawn,          { .v = (char*[]){ "urxvtc", "-embed", winid, NULL} } },
+	{ MODKEY|ShiftMask, 		XK_Return, spawn,          { .v = (char*[]){ "surf", "-e", winid, NULL} } },
+	{ MODKEY|ShiftMask,             XK_v, spawn,          { .v = (char*[]){ "vimprobable2", "-e", winid, NULL} } },
+	{ MODKEY,             XK_u, spawn,          { .v = (char*[]){ "urxvtc", "-embed", winid, NULL} } },
 	{ MODKEY|ShiftMask,             XK_l,      rotate,         { .i = +1 } },
 	{ MODKEY|ShiftMask,             XK_l,      rotate,         { .i = +1 } },
 	{ MODKEY|ShiftMask,             XK_h,      rotate,         { .i = -1 } },

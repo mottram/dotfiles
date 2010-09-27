@@ -51,7 +51,6 @@ map <F4> :setlocal spell spelllang=en_gb<CR>	" <F4> to turn on spellcheck
 map <F5> :set nospell<CR>	" <F5> to turn off spellcheck
 au BufWinLeave *.html,*.css mkview	" Saves folds in html and css
 au BufWinEnter *.html,*.css silent loadview	" Opens html and css files with folds
-au CursorHoldI * stopinsert	" Automatically leave insert mode after 'updatetime' ms - 4s by default - forces me to use vim properly! 
 autocmd FileType html,xhtml,xml source ~/.vim/plugin/closetag.vim	" Close tags in HTML and XML files with http://www.vim.org/scripts/script.php?script_id=13
 augroup mkd	" Markdown highlighting with http://plasticboy.com/markdown-vim-mode/
  autocmd BufRead *.markdown  set ai formatoptions=tcroqn2 comments=n:>

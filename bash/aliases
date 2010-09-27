@@ -60,7 +60,7 @@ alias mnt='sudo mount /dev/sdb1 /media/SD -o async,rw,users,umask=000'
 # Mount my iDisk
 alias idisk='sudo mount -t davfs https://idisk.mac.com/jack_mottram idisk -o rw,uid=1000,gid=100'
 
-# Mplaer without X
+# Mplayer without X
 alias cmplayer='mplayer -vo fbdev'
 alias fbmplayer='mplayer -vo fbdev -fs -zoom'
 
@@ -89,5 +89,6 @@ alias play='mplayer -playlist <(find "$PWD" -type f | sort -n)'
 
 # Clyde
 alias upg='sudo clyde -Syua'
-alias cs='sudo clyde -Si'
+alias cs='clyde -Si'
 alias cr='sudo clyde -R'
+alias ccl='sudo clyde -Sc'
