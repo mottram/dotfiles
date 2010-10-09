@@ -1,6 +1,8 @@
 # Aliases for bash and zsh-------------------------------------------------
 # General laziness---------------------------------------------------------
 alias c='clear'
+alias x='exit'
+alias m='man'
 alias g='git status'
 alias h='history'
 alias hgs='hg status'
@@ -15,7 +17,6 @@ alias lla='ls -lah'
 alias v='vim'
 alias dto='dtach -A /tmp/o offlineimap'
 alias dtm='dtach -A /tmp/m mutt'
-alias sg='surfraw google'
 alias tdn='cat ~/.t'
 alias rg='~/src/ranger/ranger.py'
 # SSH----------------------------------------------------------------------
@@ -92,6 +93,10 @@ alias pw='sudo pwsafe -p'
 
 # Clyde
 alias upg='sudo clyde -Syua'
+alias inst='sudo clyde -S'
 alias cs='clyde -Si'
-alias cr='sudo clyde -R'
+alias cr='sudo clyde -Rs'
 alias ccl='sudo clyde -Sc'
+
+# Wordnet lookup
+alias wn='dict -d wn'

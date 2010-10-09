@@ -69,6 +69,17 @@ bk() {
     cp -a "$1" "${1}_$(date -u)"
 }
 
+# timer
+alarm() {
+    utimer -c $1 ; espeak $2 	
+}
+
+# Instapaper
+
+insta() {
+ricepaper -u "jack.mottram@gmail.com" -p "$1" $2
+}
+
 # grep for running process
 
 any() {

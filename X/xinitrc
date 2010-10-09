@@ -1,1 +1,10 @@
-exec catwm
+while true; do
+	xsetroot -name "$( date +"%F %R" )"
+	sleep 1m
+done &
+urxvtd &
+feh --bg-scale ~/pics/misty-danube.jpg
+autocutsel -f
+setxkbmap gb
+clipbored
+exec scrotwm
