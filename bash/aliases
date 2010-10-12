@@ -94,9 +94,10 @@ alias pw='sudo pwsafe -p'
 # Clyde
 alias upg='sudo clyde -Syua'
 alias inst='sudo clyde -S'
-alias cs='clyde -Si'
+alias cs='clyde -Ss'
+alias ci='clyde -Si'
 alias cr='sudo clyde -Rs'
 alias ccl='sudo clyde -Sc'
 
-# Wordnet lookup
-alias wn='dict -d wn'
+# Launch chromium
+alias chrom='chromium --proxy-server=127.0.0.1:8118 --user-data-dir=/dev/shm/.chromium/chromium &>/dev/null &'
