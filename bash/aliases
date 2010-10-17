@@ -100,4 +100,7 @@ alias cr='sudo clyde -Rs'
 alias ccl='sudo clyde -Sc'
 
 # Launch chromium
-alias chrom='chromium --proxy-server=127.0.0.1:8118 --user-data-dir=/dev/shm/.chromium/chromium &>/dev/null &'
+alias chrom='chromium --proxy-server=127.0.0.1:8118 &>/dev/null &'
+
+# Start Transmission daemon
+alias tran='sudo /etc/rc.d/transmissiond start'
