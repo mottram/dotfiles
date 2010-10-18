@@ -63,13 +63,3 @@ let g:jekyll_path = "~/mottram" "For jekyll.vim
 "let delimitMate = "(:),[:],{:},<:>" "The tags in question
 "let b:delimitMate_quotes = "\" ' ` *"
 au FileType mail set tw=65
-
-" Disable arrow keys
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
-imap <up> <nop>
-imap <down> <nop>
-imap <left> <nop>
-imap <right> <nop>
