@@ -27,6 +27,11 @@ set ffs=unix,mac 	" Support all filetypes, Mac first
 set guifont=Monaco:h12 " Set the font for MacVim
 set incsearch " incremental search
 set hlsearch " highlight search terms
+set tabstop=4
+set shiftwidth=4
+set smarttab
+set expandtab
+set softtabstop=4
 set visualbell t_vb=
 set pastetoggle=<F6>
 "set relativenumber
