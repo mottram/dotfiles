@@ -83,7 +83,7 @@ alias remotedb='ssh -p30300 -L 3307:localhost:3306 jack@83.170.85.158 -N'
 alias myip="curl whatismyip.org;echo"
 
 # View PDF files
-alias pdf='apvlv'
+alias pdf='zathura'
 
 # Play songs
 alias play='mplayer -playlist <(find "$PWD" -type f | sort -n)'
