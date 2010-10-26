@@ -30,4 +30,12 @@ if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then
   logout
 fi
 
-export http_proxy=127.0.0.1:8118
+# Privoxy on the Eee
+if [ `uname` = "Linux" ]; then
+    export http_proxy=127.0.0.1:8118
+fi
+
+# ls on OpenBSD
+if [ `uname` = "OpenBSD" ]; then
+    alias ls='ls'
+fi
