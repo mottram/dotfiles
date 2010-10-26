@@ -25,6 +25,7 @@ alias textdrivesh='ssh mottram@howe.textdrive.com'
 alias remotedb='ssh -p30300 -L 3307:localhost:3306 jack@83.170.85.158 -N'
 alias mbp='ssh mottram@192.168.0.8'
 alias dyn='ssh mottram@mottram.ath.cx'
+alias socks='ssh -vND 9999 -p 22 mot@devio.us'
 # Specific to the MacBook--------------------------------------------------
 # Lock screen
 alias lock='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
