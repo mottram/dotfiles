@@ -34,3 +34,9 @@ fi
 if [ `uname` = "Linux" ]; then
     export http_proxy=127.0.0.1:8118
 fi
+
+# OpenBSD Stuff
+
+if [ `uname` = "OpenBSD" ]; then
+    alias ls='ls'
+fi
