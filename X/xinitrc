@@ -7,4 +7,4 @@ feh --bg-scale ~/pics/misty-danube.jpg
 autocutsel -f
 setxkbmap gb
 clipbored
-exec scrotwm
+exec dwm
