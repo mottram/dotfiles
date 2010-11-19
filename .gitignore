@@ -1,6 +1,6 @@
 .DS_Store
 vim/view
-vim/backups
+vim/backup
 vim/temp
 vim/.netrwhist
 surf/cookies.txt

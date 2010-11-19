@@ -2,7 +2,7 @@
 # General laziness---------------------------------------------------------
 alias c='clear'
 alias x='exit'
-alias m='man'
+alias m='~/.clitwi/main.py'
 alias g='git status'
 alias h='history'
 alias hgs='hg status'
@@ -99,6 +99,9 @@ alias cs='clyde -Ss'
 alias ci='clyde -Si'
 alias cr='sudo clyde -Rs'
 alias ccl='sudo clyde -Sc'
+
+# bauerbill
+alias bb='sudo bauerbill --aur'
 
 # Launch chromium
 alias chrom='chromium --proxy-server=127.0.0.1:8118 &>/dev/null &'

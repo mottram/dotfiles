@@ -34,7 +34,7 @@ set expandtab
 set softtabstop=4
 set visualbell t_vb=
 set pastetoggle=<F6>
-set dictionary=/usr/share/dict/british
+set dictionary=/usr/share/dict/words
 if has("gui_running")
 	set lines=60
 	set columns=100

@@ -14,7 +14,7 @@ static const Bool showbar           = False;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "web", "vim", "term", "video", "5", "6", "7", "8", "9"};
 
 static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
@@ -50,6 +50,8 @@ static const char *termcmd[]  = { "urxvtc", NULL };
 static const char *tabcmd[]  = { "tabbed", NULL };
 static const char *dclipcmd[] = { "dmenuclip", NULL };
 static const char *lockcmd[] = { "slock", NULL };
+static const char *chromcmd[] = { "chrom", NULL };
+static const char *jumanjicmd[] = { "jumanji", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -87,6 +89,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_t, 	   spawn,          {.v = tabcmd } },
 	{ MODKEY|ShiftMask,           	XK_v, 	   spawn,          {.v = dclipcmd } },
 	{ MODKEY|ShiftMask,           	XK_l, 	   spawn,          {.v = lockcmd } },
+	{ MODKEY,           	XK_c, 	   spawn,          {.v = chromcmd } },
+	{ MODKEY|ShiftMask,           	XK_j, 	   spawn,          {.v = jumanjicmd } },
 };
 
 /* button definitions */

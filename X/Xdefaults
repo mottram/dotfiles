@@ -28,7 +28,7 @@ urxvt*cursorColor: #aeaeae
 urxvt*scrollBar: false
 urxvt*pointerBlank: true
 urxvt*termName: rxvt-unicode
-urxvt*urllauncher:vimprobable2
+urxvt*urllauncher: jumanji
 urxvt*saveLines: 9999
 urxvt*scrollstyle: rxvt 
 urxvt*buffered: true

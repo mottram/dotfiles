@@ -24,6 +24,9 @@ alias rldz='source ~/.zshrc'
 alias -s markdown=vim
 alias -s txt=vim
 
+# Keep crap out of history
+export HISTIGNORE="&:ls:[bf]g:exit:reset:clear:cd*"
+
 # Start X at login
 if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then
   startx
