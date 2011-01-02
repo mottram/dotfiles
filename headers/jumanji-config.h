@@ -32,8 +32,8 @@ int history_limit          = 0;
 
 /* download settings */
 char* download_dir     = "~/dl/";
-char* download_command = "xterm -e sh -c \"wget --load-cookies ~/.config/jumanji/cookies '%s' -O '%s'\"";
-char* spawn_editor = "xterm -e -sh -c \"vim %s\"";
+char* download_command = "urxvtc -e sh -c \"wget --load-cookies ~/.config/jumanji/cookies '%s' -O '%s'\"";
+char* spawn_editor = "urxvtc -e -sh -c \"vim %s\"";
 
 /* look */
 char* font                   = "monospace normal 9";
