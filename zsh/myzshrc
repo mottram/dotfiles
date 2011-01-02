@@ -42,3 +42,7 @@ fi
 if [ `uname` = "OpenBSD" ]; then
     alias ls='ls'
 fi
+
+if [ `hostname` = "pest" ]; then
+    source /usr/lib/surfraw
+fi
