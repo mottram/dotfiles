@@ -1,5 +1,5 @@
 while true; do
-	xsetroot -name "$( date +"%F %R" )"
+	xsetroot -name "$( date +"%a %b %d %R" )"
 	sleep 1m
 done &
 urxvtd &

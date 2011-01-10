@@ -44,5 +44,8 @@ if [ `uname` = "OpenBSD" ]; then
 fi
 
 if [ `hostname` = "pest" ]; then
+    BATTERY=1
+    MAILCHECK=0
     source /usr/lib/surfraw
+    export IPLAYER_OUTDIR="/home/jack/dl/iplayer"
 fi

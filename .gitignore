@@ -3,5 +3,6 @@ vim/view
 vim/backup
 vim/temp
 vim/.netrwhist
+vim/.VimballRecord
 surf/cookies.txt
 surf/dl

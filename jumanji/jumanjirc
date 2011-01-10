@@ -1,0 +1,53 @@
+# search engines
+searchengine gg http://www.google.com/search?q=%s
+searchengine dd https://duckduckgo.com/?q=%s&ka=h&kb=n&ke=-1&kf=-1&kh=1&kj=w&kl=uk-en&ko=-1&kp=-1&kq=-1&kr=-1&ks=s&kt=h&kz=-1
+
+# browser settings
+set homepage /home/jack/.config/jumanji/index.html
+set auto_save 60
+#set user_agent Mozilla/5.0 (iPad; U; CPU OS 3_2 like Mac OS X; en-us) AppleWebKit/531.21.10 (KHTML, like Gecko) Version/4.0.4 Mobile/7B334b Safari/531.21.10
+
+# Quit
+map <C-q> quit
+
+# Add to Pinboard
+map <C-p> script if(document.getSelection){s=document.getSelection();}else{s='';};document.location='https://pinboard.in/add?next=same&url='+encodeURIComponent(location.href)+'&description='+encodeURIComponent(s)+'&title='+encodeURIComponent(document.title)  
+
+# View with Readability
+map <C-t> script (function(){readConvertLinksToFootnotes=false;readStyle='style-newspaper';readSize='size-medium';readMargin='margin-wide';_readability_script=document.createElement('script');_readability_script.type='text/javascript';_readability_script.src='http://lab.arc90.com/experiments/readability/js/readability.js?x='+(Math.random());document.documentElement.appendChild(_readability_script);_readability_css=document.createElement('link');_readability_css.rel='stylesheet';_readability_css.href='http://lab.arc90.com/experiments/readability/css/readability.css';_readability_css.type='text/css';_readability_css.media='all';document.documentElement.appendChild(_readability_css);_readability_print_css=document.createElement('link');_readability_print_css.rel='stylesheet';_readability_print_css.href='http://lab.arc90.com/experiments/readability/css/readability-print.css';_readability_print_css.media='print';_readability_print_css.type='text/css';document.getElementsByTagName('head')[0].appendChild(_readability_print_css);})(); 
+
+# Follow hints
+script ~/.config/jumanji/scripts/dwb2_hints.js
+
+# Proxy - set up no new Eee
+#set proxy 127.0.0.1:8118
+
+default_session_name main
+
+# UI
+set font monospace normal 8
+set default_bgcolor #FFFFFF
+set default_fgcolor #444444
+set inputbar_bgcolor #FFFFFF
+set inputbar_fgcolor #444444
+# These don't work for some reason
+#set statusbar_bgcolor blue 
+#set statusbar_fgcolor magenta 
+#set statusbar_ssl_bgcolor green 
+#set statusbar_ssl_fgcolor green
+set tabbar_bgcolor #FFFFFF
+set tabbar_fgcolor #444444
+set tabbar_focus_bgcolor #EEEEEE
+set tabbar_focus_fgcolor #111111
+set tabbar_separator_color #EEEEEE 
+set completion_fgcolor #444444 
+set completion_bgcolor #EEEEEE
+set completion_g_fgcolor #444444 
+set completion_g_bgcolor #EEEEEE
+set completion_hl_fgcolor #444444
+set completion_hl_bgcolor #FFFFFF
+set notification_e_bgcolor #FFFFFF
+set notification_e_fgcolor #444444
+set notification_w_bgcolor #FFFFFF
+set notification_w_fgcolor #444444
+set statusbar true

@@ -54,6 +54,9 @@ alias dispoff='sleep 1 && xset dpms force off'
 # Suspend
 alias bye='sudo pm-suspend'
 
+# Wifi select
+alias wifi-select='sudo wifi-select eth1'
+
 # Battery
 alias bat='acpi -b'
 
