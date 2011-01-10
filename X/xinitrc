@@ -3,7 +3,7 @@ while true; do
 	sleep 1m
 done &
 urxvtd &
-feh --bg-scale ~/pics/misty-danube.jpg
+feh --bg-scale ~/img/misty-danube.jpg
 autocutsel -f
 setxkbmap gb
 clipbored

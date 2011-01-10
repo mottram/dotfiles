@@ -42,4 +42,4 @@ Xft*hinting: true
 Xft*hintstyle: hintslight
 
 ! xterm
-xterm*font: -*-fixed-medium-r-*-*-14-*-*-*-*-*-iso8859-*
+xterm*font: -*-terminus-medium-*-*-*-14-*-72-72-*-*-*-*
