@@ -94,13 +94,3 @@ any() {
         ps xauwww| grep "[$FIRSCHAR]$REST"
     fi
 }
-
-# clyde sans sudo
-clyde() {
-   case $1 in
-       -S | -S[^sih]* | -R* | -U*)
-           /usr/bin/sudo /usr/bin/clyde "$@" ;;
-       *)
-           /usr/bin/clyde "$@" ;;
-   esac
-}
