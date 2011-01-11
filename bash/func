@@ -51,7 +51,6 @@ nano "~/testnv/`date -d "$*" +%F`.txt"
 }
 
 # View man pages in TextMate
-
 tman () {
   MANWIDTH=160 MANPAGER='col -bx' man $@ | mate
 }
@@ -94,4 +93,14 @@ any() {
         local REST=$(echo $(expr substr $STRING 2 $LENGTH))
         ps xauwww| grep "[$FIRSCHAR]$REST"
     fi
+}
+
+# clyde sans sudo
+clyde() {
+   case $1 in
+       -S | -S[^sih]* | -R* | -U*)
+           /usr/bin/sudo /usr/bin/clyde "$@" ;;
+       *)
+           /usr/bin/clyde "$@" ;;
+   esac
 }
