@@ -49,10 +49,11 @@ static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, 
 static const char *termcmd[]  = { "urxvtc", NULL };
 static const char *tabcmd[]  = { "tabbed", NULL };
 static const char *dclipcmd[] = { "dmenuclip", NULL };
-static const char *lockcmd[] = { "slock", NULL };
+static const char *lockcmd[] = { "sflock", NULL };
 static const char *chromcmd[] = { "chrom", NULL };
 static const char *jumanjicmd[] = { "jumanji", NULL };
 static const char *dmpccmd[] = { "dmpc", NULL };
+static const char *opwcmd[] = { "surf file:///home/jack/Dropbox/1Password/1Password.html", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -93,6 +94,7 @@ static Key keys[] = {
 	{ MODKEY,           	XK_c, 	   spawn,          {.v = chromcmd } },
 	{ MODKEY|ShiftMask,           	XK_j, 	   spawn,          {.v = jumanjicmd } },
     { MODKEY|ShiftMask,             XK_m,       spawn, {.v = dmpccmd } },
+    { MODKEY|ShiftMask,             XK_1,       spawn, {.v = opwcmd } },
 };
 
 /* button definitions */
