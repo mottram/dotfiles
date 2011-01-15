@@ -109,3 +109,4 @@ alias sab='sudo /etc/rc.d/sabnzbd start'
 
 # Newsbeuter
 alias rss='newsbeuter -r -C ~/.config/newsbeuter/config'
+alias pycp='pycp -i'
