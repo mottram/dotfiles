@@ -32,7 +32,13 @@ urxvt*urllauncher: jumanji
 urxvt*saveLines: 9999
 urxvt*scrollstyle: rxvt 
 urxvt*buffered: true
-urxvt*perl-ext-common: default,matcher,clipboard
+urxvt*perl-ext-common: default,matcher,clipboard,tabbed
+URxvt.tabbed.tabbar-fg: 2
+URxvt.tabbed.tabbar-bg: 15 
+URxvt.tabbed.tab-fg:    0
+URxvt.tabbed.tab-bg: 15  
+urxvt*urlLauncher: /usr/bin/jumanji
+urxvt.matcher.button: 1
 
 ! Xft
 Xft*antialias: true
@@ -42,4 +48,4 @@ Xft*hinting: true
 Xft*hintstyle: hintslight
 
 ! xterm
-xterm*font: -*-terminus-medium-*-*-*-14-*-72-72-*-*-*-*
+xterm*faceName: terminusbold:pixelsize=12
