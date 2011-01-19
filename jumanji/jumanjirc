@@ -2,6 +2,8 @@
 set homepage /home/jack/.config/jumanji/index.html
 set auto_save 60
 set proxy 192.168.0.10:8118
+#set proxy 192.168.0.10:3128
+#set proxy 127.0.0.1:8118
 set default_session_name main
 map <C-q> quit
 set font inconsolata normal 9
@@ -35,8 +37,8 @@ set statusbar true
 script ~/.config/jumanji/scripts/dwb2_hints.js
 
 # search engines
-searchengine gg http://www.google.com/search?q=%s
-searchengine dd https://duckduckgo.com/?q=%s&ka=h&kb=n&ke=-1&kf=-1&kh=1&kj=w&kl=uk-en&ko=-1&kp=-1&kq=-1&kr=-1&ks=s&kt=h&kz=-1
+#searchengine gg http://www.google.com/search?q=%s
+searchengine dd http://duckduckgo.com/?q=%s&ka=h&kb=n&ke=-1&kf=-1&kh=1&kj=w&kl=uk-en&ko=-1&kp=-1&kq=-1&kr=-1&ks=s&kt=h&kz=-1
 
 # pinboard
 map <C-p> script if(document.getSelection){s=document.getSelection();}else{s='';};document.location='https://pinboard.in/add?next=same&url='+encodeURIComponent(location.href)+'&description='+encodeURIComponent(s)+'&title='+encodeURIComponent(document.title)  
