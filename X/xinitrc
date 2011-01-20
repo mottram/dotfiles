@@ -4,7 +4,7 @@ while true; do
 done &
 urxvtd &
 feh --bg-scale ~/img/misty-danube.jpg
-autocutsel -f
 setxkbmap gb
+autocutsel -f
 clipbored
 exec start-dwm

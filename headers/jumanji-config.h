@@ -20,7 +20,7 @@ static const char JUMANJI_SESSIONS[]  = "sessions";
 /* browser specific settings */
 char* user_agent           = NULL;
 char* browser_name         = "jumanji/0.0";
-char* home_page            = "http://pwmt.org";
+char* home_page            = "http://onethingwell.org";
 char* proxy                = NULL;
 gboolean private_browsing  = FALSE;
 gboolean plugin_blocker    = TRUE;
@@ -44,7 +44,7 @@ char* inputbar_fgcolor       = "#9FBC00";
 char* statusbar_bgcolor      = "#FFFFFF";
 char* statusbar_fgcolor      = "#000000";
 char* statusbar_ssl_bgcolor  = "#FFFFFF";
-char* statusbar_ssl_fgcolor  = "#9FBC00";
+char* statusbar_ssl_fgcolor  = "#000000";
 char* tabbar_bgcolor         = "#000000";
 char* tabbar_fgcolor         = "#FFFFFF";
 char* tabbar_focus_bgcolor   = "#000000";
