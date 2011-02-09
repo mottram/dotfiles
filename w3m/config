@@ -1,3 +1,4 @@
+simple_preserve_space 0
 gb18030_as_ucs 0
 strict_iso2022 1
 use_jisx0213 0
@@ -11,6 +12,7 @@ search_conv 1
 pre_conv 0
 ucs_conv 1
 use_language_tag 1
+east_asian_width 0
 use_combining 1
 use_wide 1
 ext_halfdump 0
@@ -19,6 +21,7 @@ system_charset UTF-8
 auto_detect 2
 document_charset UTF-8
 display_charset UTF-8
+cookie_avoid_wrong_number_of_dots 
 cookie_accept_domains 
 cookie_reject_domains 
 accept_bad_cookie 0
@@ -63,6 +66,7 @@ extbrowser3
 extbrowser2 
 extbrowser /usr/bin/mozilla
 mailer /usr/bin/mail
+mailto_options 1
 editor /usr/bin/vi
 urimethodmap ~/.w3m/urimethodmap, /usr/etc/w3m/urimethodmap
 mailcap ~/.w3m/mailcap, /usr/etc/w3m/mailcap
@@ -110,6 +114,7 @@ image_scale 100
 ext_image_viewer 1
 max_load_image 4
 auto_image 0
+pseudo_inlines 1
 display_image 1
 view_unseenobject 0
 ignore_null_img_alt 1
@@ -124,12 +129,13 @@ dirlist_cmd file:///$LIB/dirlist.cgi
 ext_dirlist 1
 display_lineinfo 0
 decode_url 0
+display_link_number 0
 display_link 0
 open_tab_dl_list 0
 open_tab_blank 0
 target_self 0
 frame 0
-pixel_per_line 18
-pixel_per_char 8
+pixel_per_line 14
+pixel_per_char 7
 indent_incr 4
 tabstop 8
