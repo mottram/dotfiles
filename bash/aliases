@@ -107,5 +107,8 @@ alias tran='sudo /etc/rc.d/transmissiond start'
 # Start Sabnzbd
 alias sab='sudo /etc/rc.d/sabnzbd start'
 
-# Newsbeuter
-alias rss='newsbeuter -r -C ~/.config/newsbeuter/config'
+# Pycp interactive
+alias pycp='pycp -i'
+
+# Limited speed download
+alias tpd='trickle -s -d 100 plowdown'

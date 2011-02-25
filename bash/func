@@ -94,3 +94,9 @@ any() {
         ps xauwww| grep "[$FIRSCHAR]$REST"
     fi
 }
+
+# Volume control on the 701/1018
+
+vol() { 
+    amixer set 'Master' "$1%" &>/dev/null
+}
