@@ -18,7 +18,7 @@ cd "$*"
 
 # list and grep
 function lgr {
-  ls -a | grep -i $1 
+  ls -a | ack -i $1 
 }
 
 # quick google from the command line

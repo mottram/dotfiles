@@ -19,7 +19,7 @@ alias sv='sudo vim'
 alias dto='dtach -A /tmp/o offlineimap'
 alias dtm='dtach -A /tmp/m mutt'
 alias tdn='cat ~/.t'
-alias rg='~/src/ranger/ranger.py'
+alias p='ping -c 4 google.com'
 # SSH----------------------------------------------------------------------
 alias avimsh='ssh -p 30300 jack@67.23.46.82'
 alias textdrivesh='ssh mottram@howe.textdrive.com'
@@ -55,7 +55,7 @@ alias dispoff='sleep 1 && xset dpms force off'
 alias bye='sudo pm-suspend'
 
 # Wifi select
-alias wifi-select='sudo wifi-select eth1'
+alias wifi-select='sudo wifi-select wlan0'
 
 # Battery
 alias bat='acpi -b'
