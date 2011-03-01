@@ -24,9 +24,9 @@ alias rg='~/src/ranger/ranger.py'
 alias avimsh='ssh -p 30300 jack@67.23.46.82'
 alias textdrivesh='ssh mottram@howe.textdrive.com'
 alias remotedb='ssh -p30300 -L 3307:localhost:3306 jack@83.170.85.158 -N'
-alias mbp='ssh mottram@192.168.0.8'
 alias dyn='ssh mottram@mottram.ath.cx'
 alias socks='ssh -vND 9999 -p 22 mot@devio.us'
+
 # Specific to the MacBook--------------------------------------------------
 # Lock screen
 alias lock='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
@@ -47,7 +47,7 @@ alias jsimp='~/dotfiles/weblog/gitless-deploy'
 alias bblog='~/dotfiles/weblog/bblog'
 alias lblog='~/dotfiles/weblog/lblog'
 
-# Specific to the Eee PC 701-----------------------------------------------
+# Specific to the Eee PC-----------------------------------------------
 # Turn off the display
 alias dispoff='sleep 1 && xset dpms force off' 
 
@@ -55,13 +55,13 @@ alias dispoff='sleep 1 && xset dpms force off'
 alias bye='sudo pm-suspend'
 
 # Wifi select
-alias wifi-select='sudo wifi-select eth1'
+alias wifiselect='sudo wifi-select wlan0'
 
 # Battery
 alias bat='acpi -b'
 
-# Mount the SD card with write permissions
-alias mnt='sudo mount /dev/sdb1 /media/SD -o async,rw,users,umask=000'
+# Mount USB stick
+alias mt16='sudo mount /dev/disk/by-label/16 /home/jack/usb -o rw,users,async,noatime,umask=000'
 
 # Mount my iDisk
 alias idisk='sudo mount -t davfs https://idisk.mac.com/jack_mottram idisk -o rw,uid=1000,gid=100'
@@ -87,9 +87,6 @@ alias pdf='zathura'
 # Play songs
 alias play='mplayer -playlist <(find "$PWD" -type f | sort -n)'
 
-# muss
-alias muss='~/src/muss/muss'
-
 # Clyde
 alias upg='sudo clyde -Syua'
 alias inst='sudo clyde -S'
@@ -101,14 +98,8 @@ alias ccl='sudo clyde -Sc'
 # Bauerbill
 alias bb='sudo bauerbill --aur'
 
-# Start Transmission daemon
-alias tran='sudo /etc/rc.d/transmissiond start'
-
-# Start Sabnzbd
-alias sab='sudo /etc/rc.d/sabnzbd start'
-
 # Pycp interactive
 alias pycp='pycp -i'
 
-# Limited speed download
+# Limited speed plowdownload
 alias tpd='trickle -s -d 100 plowdown'
