@@ -1,4 +1,4 @@
-colorscheme macvim " Use the macvim colourscheme
+colorscheme macvim  " Use the macvim colourscheme
 set autoindent
 set smartindent
 set confirm	" Show save dialog if command won't work with unsaved changes
