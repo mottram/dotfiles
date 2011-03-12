@@ -45,11 +45,6 @@ function nls {
   ls -c ~/notes | ack "$*"
 	}
 
-# Alex's NV
-function log {
-nano "~/testnv/`date -d "$*" +%F`.txt"
-}
-
 # View man pages in TextMate
 tman () {
   MANWIDTH=160 MANPAGER='col -bx' man $@ | mate

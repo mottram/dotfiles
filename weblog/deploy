@@ -3,4 +3,4 @@ cd ~/mottram
 rm -rf ~/mottram/_site/*
 ejekyll
 mv ~/mottram/_site/htaccess.txt ~/mottram/_site/.htaccess
-rsync -avz --delete --exclude='*.textdrive' _site/ mottram@howe.textdrive.com:domains/mottr.am/web/public
+rsync -avz --delete --exclude='*.textdrive' _site/ mottram@chestnut.joyent.us:domains/mottr.am/web/public
