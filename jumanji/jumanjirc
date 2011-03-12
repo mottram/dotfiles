@@ -1,7 +1,7 @@
 # browser settings
 set homepage /home/jack/.config/jumanji/index.html
 set auto_save 60
-set proxy 192.168.0.10:8118
+#set proxy 192.168.0.10:8118
 set default_session_name main
 map <C-q> quit
 set font inconsolata normal 8
@@ -30,6 +30,8 @@ set notification_e_fgcolor #444444
 set notification_w_bgcolor #FFFFFF
 set notification_w_fgcolor #444444
 set statusbar true
+# Flash blocker off
+set plugin_blocker false
 
 # link hinting
 script ~/.config/jumanji/scripts/dwb2_hints.js
