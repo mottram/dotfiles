@@ -27,14 +27,17 @@ alias textdrivesh='ssh mottram@howe.textdrive.com'
 alias remotedb='ssh -p30300 -L 3307:localhost:3306 jack@83.170.85.158 -N'
 alias dyn='ssh mottram@mottram.ath.cx'
 alias socks='ssh -vND 9999 -p 22 mot@devio.us'
-
+# Nag
+alias n='nag'
+alias na='nag -a'
+alias nl='nag -l'
+alias nd='nag -d'
+alias nc='nag -c'
 # Specific to the MacBook--------------------------------------------------
 # Lock screen
 alias lock='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
 # Open current dir as TextMate project
 alias matey='mate .'
-# Growl when done 
-alias n='~/dotfiles/bash/notify'
 # Todo.txt
 alias t='~/dotfiles/todo/todo.sh -d ~/dotfiles/todo/mac-todo.cfg'
 # Weblog stuff
