@@ -1,7 +1,6 @@
 # browser settings
-set homepage /home/jack/.config/jumanji/index.html
 set auto_save 60
-#set proxy 192.168.0.10:8118
+set proxy 192.168.0.10:8118
 set default_session_name main
 map <C-q> quit
 set font inconsolata normal 8

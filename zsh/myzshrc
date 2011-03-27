@@ -9,13 +9,6 @@ zmodload zsh/terminfo
 source ~/dotfiles/bash/func
 source ~/dotfiles/bash/aliases
 
-# Source profile for autojump
-if [ `uname` = "Darwin" ]; then
-	source /etc/profile
-elif [ `hostname` = "pest" ]; then
-	source /etc/profile.d/autojump.zsh
-fi
-
 # Meta
 alias emz='vim ~/dotfiles/zsh/myzshrc'
 alias rldz='source ~/.zshrc'
