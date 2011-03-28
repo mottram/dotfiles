@@ -1,2 +1,0 @@
-delimitMate.vba: call delete('/Users/jack/.vim/doc/delimitMate.txt')|call delete('/Users/jack/.vim/plugin/delimitMate.vim')
-markdown-1.2.1.vba: call delete('/home/jack/.vim/ftdetect/markdown.vim')|call delete('/home/jack/.vim/snippets/markdown.snippets')|call delete('/home/jack/.vim/syntax/markdown.vim')
