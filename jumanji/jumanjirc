@@ -1,4 +1,5 @@
 # browser settings
+set homepage /home/jack/.config/jumanji/home.html
 set auto_save 60
 set proxy 192.168.0.10:8118
 set default_session_name main
