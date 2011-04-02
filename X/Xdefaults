@@ -1,24 +1,3 @@
-! rxvt-unicode 
-
-urxvt*loginShell: true
-urxvt*font: xft:Inconsolata:pixelsize=13
-urxvt*buffered: true
-urxvt*cursorColor: #aeaeae
-urxvt*scrollBar: false
-urxvt*pointerBlank: true
-urxvt*termName: rxvt-unicode
-urxvt*urllauncher: jumanji
-urxvt*saveLines: 9999
-urxvt*scrollstyle: rxvt 
-urxvt*buffered: true
-urxvt*perl-ext-common: default,matcher,clipboard,tabbed
-URxvt.tabbed.tabbar-fg: 2
-URxvt.tabbed.tabbar-bg: 15 
-URxvt.tabbed.tab-fg:    0
-URxvt.tabbed.tab-bg: 15  
-urxvt*urlLauncher: /usr/bin/jumanji
-urxvt.matcher.button: 1
-
 ! Xft
 Xft*antialias: true
 Xft*dpi: 96
@@ -27,30 +6,9 @@ Xft*hinting: true
 Xft*hintstyle: hintslight
 
 ! xterm
-!xterm*faceName: terminusbold:pixelsize=11
 xterm*faceName: Inconsolata:pixelsize=13
 
-!Theme Twenty-Four
-! http://phraktured.net/terminal-colors/
-!*color0:  rgb:00/00/00
-!*color1:  rgb:cd/5c/5c
-!*color2:  rgb:8e/ae/71
-!*color3:  rgb:d2/b4/8c
-!*color4:  rgb:5f/7b/8a
-!*color5:  rgb:cd/cd/b4
-!*color6:  rgb:68/68/68
-!*color7:  rgb:dd/dd/dd
-!*color8:  rgb:00/00/00
-!*color9:  rgb:ee/63/63
-!*color10: rgb:95/c7/49
-!*color11: rgb:cd/cd/c1
-!*color12: rgb:6b/7b/8a
-!*color13: rgb:cd/cd/b4
-!*color14: rgb:77/87/98
-!*color15: rgb:ca/ca/ca
-
-
-! my colours
+! Colours
 *background: rgb:F5/F5/F5
 *foreground: rgb:44/44/44
 *color0:  rgb:00/00/00
@@ -69,23 +27,3 @@ xterm*faceName: Inconsolata:pixelsize=13
 *color13: rgb:cf/9e/be
 *color14: rgb:71/be/be
 *color15: rgb:dd/dd/dd
-
-!Theme Four
-!*background: rgb:00/00/00
-!*foreground: rgb:ff/ff/ff
-!*color0:     rgb:00/00/00
-!*color1:     rgb:d3/62/65
-!*color2:     rgb:ae/ce/91
-!*color3:     rgb:e7/e1/8c
-!*color4:     rgb:7a/7a/b0
-!*color5:     rgb:96/3c/59
-!*color6:     rgb:41/81/79
-!*color7:     rgb:be/be/be
-!*color8:     rgb:66/66/66
-!*color9:     rgb:ef/81/71
-!*color10:    rgb:e5/f7/79
-!*color11:    rgb:ff/f7/96
-!*color12:    rgb:41/86/be
-!*color13:    rgb:ef/9e/be
-!*color14:    rgb:71/be/be
-!*color15:    rgb:ff/ff/ff
