@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const char font[]            = "-*-inconsolata-medium-*-*-*-12-*-*-*-*-*-*-*";
+static const char font[]            = "xft:Inconsolata-10";
 static const char normbordercolor[] = "#ffffff";
 static const char normbgcolor[]     = "#ffffff";
 static const char normfgcolor[]     = "#444444";
@@ -46,9 +46,9 @@ static const Layout layouts[] = {
 
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
-static const char *termcmd[]  = { "urxvtc", NULL };
+static const char *termcmd[]  = { "xterm", NULL };
 static const char *tabcmd[]  = { "tabbed", NULL };
-static const char *dclipcmd[] = { "dmenuclip", NULL };
+static const char *dclipcmd[] = { "mydmenuclip", NULL };
 static const char *lockcmd[] = { "sflock", NULL };
 static const char *chromcmd[] = { "chrom", NULL };
 static const char *jumanjicmd[] = { "jumanji", NULL };
@@ -94,10 +94,10 @@ static Key keys[] = {
 	{ MODKEY,           	XK_c, 	   spawn,          {.v = chromcmd } },
 	{ MODKEY|ShiftMask,           	XK_j, 	   spawn,          {.v = jumanjicmd } },
     { MODKEY|ShiftMask,             XK_m,       spawn, {.v = dmpccmd } },
-    { MODKEY|ShiftMask,             XK_1,       spawn, {.v = opwcmd } },
+    { MODKEY|ShiftMask,             XK_p,       spawn, {.v = opwcmd } },
 };
 
-/* button definitions */
+/* button definitions *#/
 /* click can be ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
 static Button buttons[] = {
 	/* click                event mask      button          function        argument */

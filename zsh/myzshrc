@@ -9,13 +9,6 @@ zmodload zsh/terminfo
 source ~/dotfiles/bash/func
 source ~/dotfiles/bash/aliases
 
-# Source profile for autojump
-if [ `uname` = "Darwin" ]; then
-	source /etc/profile
-elif [ `hostname` = "pest" ]; then
-	source /etc/profile.d/autojump.zsh
-fi
-
 # Meta
 alias emz='vim ~/dotfiles/zsh/myzshrc'
 alias rldz='source ~/.zshrc'
@@ -48,4 +41,25 @@ if [ `hostname` = "pest" ]; then
     MAILCHECK=0
     source /usr/lib/surfraw
     export IPLAYER_OUTDIR="/home/jack/dl/iplayer"
+fi
+
+# Colours for TTY courtesy of jwr
+if [ "$TERM" = "linux" ]; then
+    echo -en "\e]P0000000" #black
+    echo -en "\e]P83d3d3d" #darkgrey
+    echo -en "\e]P18c4665" #darkred
+    echo -en "\e]P9bf4d80" #red
+    echo -en "\e]P2287373" #darkgreen
+    echo -en "\e]PA53a6a6" #green
+    echo -en "\e]P37c7c99" #brown
+    echo -en "\e]PB9e9ecb" #yellow
+    echo -en "\e]P4395573" #darkblue
+    echo -en "\e]PC477ab3" #blue
+    echo -en "\e]P55e468c" #darkmagenta
+    echo -en "\e]PD7e62b3" #magenta
+    echo -en "\e]P631658c" #darkcyan
+    echo -en "\e]PE6096bf" #cyan
+    echo -en "\e]P7899ca1" #lightgrey
+    echo -en "\e]PFc0c0c0" #white
+    clear # bring us back to default input colours
 fi

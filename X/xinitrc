@@ -2,9 +2,9 @@ while true; do
 	xsetroot -name "$( date +"%a %b %d %R" )"
 	sleep 1m
 done &
-urxvtd &
-feh --bg-scale ~/img/misty-danube.jpg
+feh --bg-scale ~/.desktop.jpg
 setxkbmap gb
+unclutter &
 autocutsel -f
 clipbored
-exec start-dwm
+exec dwm-start

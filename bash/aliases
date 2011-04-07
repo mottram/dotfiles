@@ -68,7 +68,7 @@ alias dispoff='sleep 1 && xset dpms force off'
 alias bye='sudo pm-suspend'
 
 # Wifi select
-alias wifiselect='sudo wifi-select wlan0'
+alias wifiselect='sudo wifi-select eth1'
 
 # Battery
 alias bat='acpi -b'
@@ -98,21 +98,10 @@ alias myip="curl whatismyip.org;echo"
 alias pdf='zathura'
 
 # Play songs
-alias play='mplayer -playlist <(find "$PWD" -type f | sort -n)'
-
-# Clyde
-alias upg='sudo clyde -Syua'
-alias inst='sudo clyde -S'
-alias cs='clyde -Ss'
-alias ci='clyde -Si'
-alias cr='sudo clyde -Rs'
-alias ccl='sudo clyde -Sc'
-
-# Bauerbill
-alias bb='sudo bauerbill --aur'
-
-# Pycp interactive
-alias pycp='pycp -i'
+#alias play='mplayer -playlist <(find "$PWD" -type f | sort -n)'
 
 # Limited speed plowdownload
 alias tpd='trickle -s -d 100 plowdown'
+
+# Packer
+alias ug='packer -Syu'
