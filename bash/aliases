@@ -1,4 +1,13 @@
 # Aliases for bash and zsh-------------------------------------------------
+# Christian's nag
+
+alias n='head -1 ~/.nag'
+alias na='echo >> ~/.nag'
+alias nl='nl ~/.nag'
+function nd() { sed -i -e ${1:-1}d ~/.nag }
+alias nc='true > ~/.nag'
+
+
 # General laziness---------------------------------------------------------
 alias c='clear'
 alias x='exit'
@@ -28,11 +37,11 @@ alias remotedb='ssh -p30300 -L 3307:localhost:3306 jack@83.170.85.158 -N'
 alias dyn='ssh mottram@mottram.ath.cx'
 alias socks='ssh -vND 9999 -p 22 mot@devio.us'
 # Nag
-alias n='nag'
-alias na='nag -a'
-alias nl='nag -l'
-alias nd='nag -d'
-alias nc='nag -c'
+#alias n='nag'
+#alias na='nag -a'
+#alias nl='nag -l'
+#alias nd='nag -d'
+#alias nc='nag -c'
 # Specific to the MacBook--------------------------------------------------
 # Lock screen
 alias lock='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
