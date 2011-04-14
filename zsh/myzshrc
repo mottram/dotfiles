@@ -1,4 +1,3 @@
-# Some additions to the grml .zshrc, symbolically linked to ~/.zshrc.pre
 
 PATH="$PATH:/usr/local/bin/:$HOME/bin:$HOME/dotfiles/weblog:$HOME/.gem/ruby/1.8/bin:$HOME/.gem/ruby/1.9.1/bin"
 
@@ -36,6 +35,6 @@ if [ `uname` = "Linux" ]; then
 fi
 
 # ls on OpenBSD
-if [ `uname` = "OpenBSD" ]; then
-    alias ls='ls'
+if [ `uname` = OpenBSD ]; then
+    alias lll='/bin/ls'
 fi
