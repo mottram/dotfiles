@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const char font[]            = "-*-*-medium-*-*-*-12-*-*-*-*-*-*-*";
+static const char font[]            = "xft:Inconsolata-10";
 static const char normbordercolor[] = "#ffffff";
 static const char normbgcolor[]     = "#ffffff";
 static const char normfgcolor[]     = "#444444";
@@ -14,7 +14,7 @@ static const Bool showbar           = False;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9"};
 
 static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
@@ -23,7 +23,7 @@ static const Rule rules[] = {
 };
 
 /* layout(s) */
-static const float mfact      = 0.55; /* factor of master area size [0.05..0.95] */
+static const float mfact      = 0.50; /* factor of master area size [0.05..0.95] */
 static const Bool resizehints = False; /* True means respect size hints in tiled resizals */
 
 static const Layout layouts[] = {
@@ -46,10 +46,14 @@ static const Layout layouts[] = {
 
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
-static const char *termcmd[]  = { "urxvtc", NULL };
+static const char *termcmd[]  = { "xterm", NULL };
 static const char *tabcmd[]  = { "tabbed", NULL };
-static const char *dclipcmd[] = { "dmenuclip", NULL };
-static const char *lockcmd[] = { "slock", NULL };
+static const char *dclipcmd[] = { "mydmenuclip", NULL };
+static const char *lockcmd[] = { "sflock", NULL };
+static const char *chromcmd[] = { "chrom", NULL };
+static const char *jumanjicmd[] = { "jumanji", NULL };
+static const char *dmpccmd[] = { "dmpc", NULL };
+static const char *opwcmd[] = { "surf file:///home/jack/Dropbox/1Password/1Password.html", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -63,9 +67,9 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
-	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
-	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
+	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[1]} },
+	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[3]} },
+	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[0]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
@@ -87,9 +91,13 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_t, 	   spawn,          {.v = tabcmd } },
 	{ MODKEY|ShiftMask,           	XK_v, 	   spawn,          {.v = dclipcmd } },
 	{ MODKEY|ShiftMask,           	XK_l, 	   spawn,          {.v = lockcmd } },
+	{ MODKEY,           	XK_c, 	   spawn,          {.v = chromcmd } },
+	{ MODKEY|ShiftMask,           	XK_j, 	   spawn,          {.v = jumanjicmd } },
+    { MODKEY|ShiftMask,             XK_m,       spawn, {.v = dmpccmd } },
+    { MODKEY|ShiftMask,             XK_p,       spawn, {.v = opwcmd } },
 };
 
-/* button definitions */
+/* button definitions *#/
 /* click can be ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
 static Button buttons[] = {
 	/* click                event mask      button          function        argument */

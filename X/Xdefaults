@@ -1,6 +1,15 @@
-! colours
+! Xft
+Xft*antialias: true
+Xft*dpi: 96
+Xft*rgba: rgb
+Xft*hinting: true
+Xft*hintstyle: hintslight
 
-*background: rgb:f5/f5/f5
+! xterm
+xterm*faceName: Inconsolata:pixelsize=13
+
+! Colours
+*background: rgb:F5/F5/F5
 *foreground: rgb:44/44/44
 *color0:  rgb:00/00/00
 *color1:  rgb:9e/18/28
@@ -18,28 +27,3 @@
 *color13: rgb:cf/9e/be
 *color14: rgb:71/be/be
 *color15: rgb:dd/dd/dd
-
-! rxvt-unicode 
-
-urxvt*loginShell: true
-urxvt*font: xft:Inconsolata:pixelsize=15
-urxvt*buffered: true
-urxvt*cursorColor: #aeaeae
-urxvt*scrollBar: false
-urxvt*pointerBlank: true
-urxvt*termName: rxvt-unicode
-urxvt*urllauncher:vimprobable2
-urxvt*saveLines: 9999
-urxvt*scrollstyle: rxvt 
-urxvt*buffered: true
-urxvt*perl-ext-common: default,matcher,clipboard
-
-! Xft
-Xft*antialias: true
-Xft*dpi: 96
-Xft*rgba: rgb
-Xft*hinting: true
-Xft*hintstyle: hintslight
-
-! xterm
-xterm*font: -*-fixed-medium-r-*-*-14-*-*-*-*-*-iso8859-*

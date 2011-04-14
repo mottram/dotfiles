@@ -18,7 +18,7 @@ cd "$*"
 
 # list and grep
 function lgr {
-  ls -a | grep -i $1 
+  ls -a | ack -i $1 
 }
 
 # quick google from the command line
@@ -42,16 +42,10 @@ function note {
 }
 
 function nls {
-  ls -c ~/notes | grep "$*"
+  ls -c ~/notes | ack "$*"
 	}
 
-# Alex's NV
-function log {
-nano "~/testnv/`date -d "$*" +%F`.txt"
-}
-
 # View man pages in TextMate
-
 tman () {
   MANWIDTH=160 MANPAGER='col -bx' man $@ | mate
 }
@@ -74,10 +68,10 @@ alarm() {
     utimer -c $1 ; espeak $2 	
 }
 
-# Instapaper
+# Instapaper - $1 is pw, $2 url
 
 insta() {
-ricepaper -u "jack.mottram@gmail.com" -p "$1" $2
+ricepaper -u "jack.mottram@gmail.com" -p "$1" "$2"
 }
 
 # grep for running process
@@ -85,13 +79,19 @@ ricepaper -u "jack.mottram@gmail.com" -p "$1" $2
 any() {
     emulate -L zsh
     if [[ -z "$1" ]] ; then
-        echo "any - grep for process(es) by keyword" >&2
+        echo "any - ack for process(es) by keyword" >&2
         echo "Usage: any <keyword>" >&2 ; return 1
     else
         local STRING=$1
         local LENGTH=$(expr length $STRING)
         local FIRSCHAR=$(echo $(expr substr $STRING 1 1))
         local REST=$(echo $(expr substr $STRING 2 $LENGTH))
-        ps xauwww| grep "[$FIRSCHAR]$REST"
+        ps xauwww| ack "[$FIRSCHAR]$REST"
     fi
+}
+
+# Volume control on the 701/1018
+
+vol() { 
+    amixer set 'Master' "$1%" &>/dev/null
 }

@@ -1,0 +1,49 @@
+# browser settings
+set homepage /home/jack/.config/jumanji/home.html
+set auto_save 60
+set proxy 192.168.0.10:8118
+set default_session_name main
+map <C-q> quit
+set font inconsolata normal 8
+set default_bgcolor #FFFFFF
+set default_fgcolor #444444
+set inputbar_bgcolor #FFFFFF
+set inputbar_fgcolor #444444
+# These don't work, set in config.h
+#set statusbar_bgcolor blue 
+#set statusbar_fgcolor magenta 
+#set statusbar_ssl_bgcolor green 
+#set statusbar_ssl_fgcolor green
+set tabbar_bgcolor #FFFFFF
+set tabbar_fgcolor #444444
+set tabbar_focus_bgcolor #EEEEEE
+set tabbar_focus_fgcolor #111111
+set tabbar_separator_color #EEEEEE 
+set completion_fgcolor #444444 
+set completion_bgcolor #EEEEEE
+set completion_g_fgcolor #444444 
+set completion_g_bgcolor #EEEEEE
+set completion_hl_fgcolor #444444
+set completion_hl_bgcolor #FFFFFF
+set notification_e_bgcolor #FFFFFF
+set notification_e_fgcolor #444444
+set notification_w_bgcolor #FFFFFF
+set notification_w_fgcolor #444444
+set statusbar true
+# Flash blocker off
+set plugin_blocker false
+
+# link hinting
+script ~/.config/jumanji/scripts/dwb2_hints.js
+
+# search engines
+#searchengine gg http://www.google.com/search?q=%s
+searchengine dd http://duckduckgo.com/?q=%s&ka=h&kb=n&ke=-1&kf=-1&kh=1&kj=w&kl=uk-en&ko=-1&kp=-1&kq=-1&kr=-1&ks=s&kt=h&kz=-1
+
+# pinboard
+map <C-p> script if(document.getSelection){s=document.getSelection();}else{s='';};document.location='https://pinboard.in/add?next=same&url='+encodeURIComponent(location.href)+'&description='+encodeURIComponent(s)+'&title='+encodeURIComponent(document.title)  
+
+# readability
+map <C-r> script (function(){readConvertLinksToFootnotes=false;readStyle='style-newspaper';readSize='size-medium';readMargin='margin-wide';_readability_script=document.createElement('script');_readability_script.type='text/javascript';_readability_script.src='http://lab.arc90.com/experiments/readability/js/readability.js?x='+(Math.random());document.documentElement.appendChild(_readability_script);_readability_css=document.createElement('link');_readability_css.rel='stylesheet';_readability_css.href='http://lab.arc90.com/experiments/readability/css/readability.css';_readability_css.type='text/css';_readability_css.media='all';document.documentElement.appendChild(_readability_css);_readability_print_css=document.createElement('link');_readability_print_css.rel='stylesheet';_readability_print_css.href='http://lab.arc90.com/experiments/readability/css/readability-print.css';_readability_print_css.media='print';_readability_print_css.type='text/css';document.getElementsByTagName('head')[0].appendChild(_readability_print_css);})(); 
+
+set download_command xterm -e sh -c "wget --load-cookies ~/.config/jumanji/cookies '%s' -O '%s'"

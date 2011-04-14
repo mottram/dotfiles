@@ -1,7 +1,10 @@
 .DS_Store
 vim/view
-vim/backups
+vim/backup
 vim/temp
 vim/.netrwhist
+vim/.VimballRecord
 surf/cookies.txt
 surf/dl
+surf/instapaper
+surf/bookmarks

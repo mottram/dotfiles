@@ -14,7 +14,7 @@ static Key keys[] = { \
 	{ MODKEY|ShiftMask,             XK_Return, focusonce,      { 0 } },
 	{ MODKEY|ShiftMask, 		XK_Return, spawn,          { .v = (char*[]){ "surf", "-e", winid, NULL} } },
 	{ MODKEY|ShiftMask,             XK_v, spawn,          { .v = (char*[]){ "vimprobable2", "-e", winid, NULL} } },
-	{ MODKEY,             XK_u, spawn,          { .v = (char*[]){ "urxvtc", "-embed", winid, NULL} } },
+	{ MODKEY,             XK_u, spawn,          { .v = (char*[]){ "xterm", "-into", winid, NULL} } },
 	{ MODKEY|ShiftMask,             XK_l,      rotate,         { .i = +1 } },
 	{ MODKEY|ShiftMask,             XK_l,      rotate,         { .i = +1 } },
 	{ MODKEY|ShiftMask,             XK_h,      rotate,         { .i = -1 } },
