@@ -1,0 +1,10 @@
+#!/bin/bash
+if [ $(id -u) != 0 ]; then
+    err "this script should be run as root."
+    exit 1
+fi
+ifconfig wlan0 down
+ifconfig wlan0 up
+wpa_supplicant -B -i wlan0 -Dwext -c/etc/wpa_supplicant.conf
+sleep 10
+dhcpcd
