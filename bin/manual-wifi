@@ -1,4 +1,8 @@
 #!/bin/bash
+. /etc/rc.d/functions
+err() {
+   printhl "$*"
+}
 if [ $(id -u) != 0 ]; then
     err "this script should be run as root."
     exit 1
