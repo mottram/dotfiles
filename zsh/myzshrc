@@ -42,6 +42,11 @@ if [ `hostname` = "pest" ]; then
     source /usr/lib/surfraw
 fi
 
+# Use MacVim's vim on OS X
+if [ `uname` = "Darwin" ]; then
+    alias v="/Applications/MacVim.app/Contents/MacOS/Vim"
+fi
+
 # Colours for TTY courtesy of jwr
 if [ "$TERM" = "linux" ]; then
     echo -en "\e]P0000000" #black
