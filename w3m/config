@@ -38,8 +38,8 @@ no_cache 0
 noproxy_netaddr 1
 no_proxy 
 ftp_proxy 
-https_proxy 
-http_proxy 127.0.0.1:8118
+https_proxy 192.168.1.71:8118
+http_proxy 192.168.1.71:8118
 use_proxy 0
 max_news 50
 nntpmode 
