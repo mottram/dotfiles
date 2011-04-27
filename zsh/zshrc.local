@@ -1,0 +1,4 @@
+# bsd ls is different
+if [ `uname` = "OpenBSD" ]; then
+    alias ls="/bin/ls"
+fi
