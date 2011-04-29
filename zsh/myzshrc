@@ -1,20 +1,19 @@
-
 PATH="$PATH:/usr/local/bin/:$HOME/bin:$HOME/dotfiles/weblog:$HOME/.gem/ruby/1.8/bin:$HOME/.gem/ruby/1.9.1/bin"
 
 # Fixes unknown parameter issue on OS X - why? 
 zmodload zsh/terminfo
 
-# Source my bash aliases and functions
+# Source my aliases and functions
 source ~/dotfiles/bash/func
 source ~/dotfiles/bash/aliases
 
-# Meta
-alias emz='vim ~/dotfiles/zsh/myzshrc'
-alias rldz='source ~/.zshrc'
-
-# Open text and markdown files with vim
+# Open various files in vim
+alias -s md=vim
 alias -s markdown=vim
 alias -s txt=vim
+alias -s css=vim
+alias -s html=vim
+alias -s py=vim
 
 # Keep crap out of history
 export HISTIGNORE="&:ls:[bf]g:exit:reset:clear:cd*"
@@ -25,16 +24,7 @@ if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then
   logout
 fi
 
-# Privoxy on the Eee
-#if [ `uname` = "Linux" ]; then
-#    export http_proxy=192.168.0.10:8118
-#fi
-
-# ls on OpenBSD
-if [ `uname` = OpenBSD ]; then
-    alias lll='/bin/ls'
-fi
-
+# Show battery level on the 1018P
 if [ `hostname` = "pest" ]; then
     BATTERY=1
     MAILCHECK=0
