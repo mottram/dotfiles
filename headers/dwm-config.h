@@ -1,12 +1,12 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const char font[]            = "xft:Inconsolata-10";
+static const char font[]            = "Inconsolata-9";
 static const char normbordercolor[] = "#ffffff";
 static const char normbgcolor[]     = "#ffffff";
 static const char normfgcolor[]     = "#444444";
-static const char selbordercolor[]  = "#aeaeae";
-static const char selbgcolor[]      = "#aeaeae";
+static const char selbordercolor[]  = "#CDD3F7";
+static const char selbgcolor[]      = "#CDD3F7";
 static const char selfgcolor[]      = "#444444";
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
@@ -47,13 +47,12 @@ static const Layout layouts[] = {
 /* commands */
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "xterm", NULL };
-static const char *tabcmd[]  = { "tabbed", NULL };
 static const char *dclipcmd[] = { "mydmenuclip", NULL };
-static const char *lockcmd[] = { "sflock", NULL };
-static const char *chromcmd[] = { "chrom", NULL };
-static const char *jumanjicmd[] = { "jumanji", NULL };
+static const char *lockcmd[] = { "slock", NULL };
+static const char *chromcmd[] = { "chr", NULL };
 static const char *dmpccmd[] = { "dmpc", NULL };
-static const char *opwcmd[] = { "surf file:///home/jack/Dropbox/1Password/1Password.html", NULL };
+static const char *datecmd[] = { "datey", NULL };
+static const char *calccmd[] = { "calcy", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -88,13 +87,12 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-	{ MODKEY|ShiftMask,             XK_t, 	   spawn,          {.v = tabcmd } },
 	{ MODKEY|ShiftMask,           	XK_v, 	   spawn,          {.v = dclipcmd } },
 	{ MODKEY|ShiftMask,           	XK_l, 	   spawn,          {.v = lockcmd } },
 	{ MODKEY,           	XK_c, 	   spawn,          {.v = chromcmd } },
-	{ MODKEY|ShiftMask,           	XK_j, 	   spawn,          {.v = jumanjicmd } },
     { MODKEY|ShiftMask,             XK_m,       spawn, {.v = dmpccmd } },
-    { MODKEY|ShiftMask,             XK_p,       spawn, {.v = opwcmd } },
+	{ MODKEY,             XK_d, 	   spawn,          {.v = datecmd } },
+	{ MODKEY|ShiftMask,             XK_d, 	   spawn,          {.v = calccmd } },
 };
 
 /* button definitions *#/
