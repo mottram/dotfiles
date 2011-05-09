@@ -1,0 +1,12 @@
+keymap y EXTERN     
+keymap Y EXTERN_LINK    
+keymap b BACK
+keymap m NEXT
+keymap u PEEK   
+keymap U PEEK_LINK  
+keymap r RELOAD
+keymap P PRINT          
+keymap B ADD_BOOKMARK
+keymap gt NEXT_TAB
+keymap gT PREV_TAB
+keymap ,f TAB_MENU

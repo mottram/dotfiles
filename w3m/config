@@ -38,8 +38,8 @@ no_cache 0
 noproxy_netaddr 1
 no_proxy 
 ftp_proxy 
-https_proxy 192.168.1.71:8118
-http_proxy 192.168.1.71:8118
+https_proxy eee:8118
+http_proxy eee:8118
 use_proxy 0
 max_news 50
 nntpmode 
@@ -64,10 +64,10 @@ use_lessopen 0
 bgextviewer 1
 extbrowser3 
 extbrowser2 
-extbrowser /usr/bin/mozilla
-mailer /usr/bin/mail
+extbrowser sh -c 'echo "$0" | xsel'
+mailer /usr/bin/msmtp
 mailto_options 1
-editor /usr/bin/vi
+editor /usr/bin/vim
 urimethodmap ~/.w3m/urimethodmap, /usr/etc/w3m/urimethodmap
 mailcap ~/.w3m/mailcap, /usr/etc/w3m/mailcap
 mime_types ~/.mime.types, /usr/etc/mime.types
@@ -89,7 +89,7 @@ mark 0
 close_tab_back 0
 confirm_qq 1
 save_hist 1
-history 100
+history 200
 use_history 1
 pagerline 10000
 visited_color magenta
@@ -105,14 +105,14 @@ basic_color terminal
 color 1
 nextpage_topline 0
 label_topline 0
-show_srch_str 1
+show_srch_str 0
 show_lnum 0
-fold_line 0
+fold_line 1
 image_map_list 1
 imgdisplay w3mimgdisplay
 image_scale 100
 ext_image_viewer 1
-max_load_image 4
+max_load_image 8
 auto_image 0
 pseudo_inlines 1
 display_image 1
