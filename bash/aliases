@@ -1,13 +1,4 @@
 # Aliases for bash and zsh-------------------------------------------------
-# Christian's nag
-
-alias n='head -1 ~/.nag'
-alias na='echo >> ~/.nag'
-alias nl='nl ~/.nag'
-function nd() { sed -i -e ${1:-1}d ~/.nag }
-alias nc='true > ~/.nag'
-
-
 # General laziness---------------------------------------------------------
 alias c='clear'
 alias x='exit'
@@ -29,15 +20,17 @@ alias dtm='dtach -A /tmp/m mutt'
 alias tdn='cat ~/.t'
 alias p='ping -c 4 google.com'
 alias bc='bc -q'
+alias vp='vimpager'
+alias tw='twidge'
+alias twu='twidge update'
+alias twc='(twidge lsrecent -asu; twidge lsreplies -asu) | less'
 # SSH----------------------------------------------------------------------
 alias avimsh='ssh -p 30300 jack@67.23.46.82'
 alias textdrivesh='ssh mottram@howe.textdrive.com'
-alias remotedb='ssh -p30300 -L 3307:localhost:3306 jack@83.170.85.158 -N'
+alias remotedb='ssh -p 30300 -L 3307:localhost:3306 jack@83.170.85.158 -N'
 alias dyn='ssh mottram@mottram.ath.cx'
 alias socks='ssh -vND 9999 -p 22 mot@devio.us'
 alias se='ssh -p 51977 eee'
-
-
 # Specific to the MacBook--------------------------------------------------
 # Lock screen
 alias lock='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
@@ -101,7 +94,3 @@ alias tpd='trickle -s -d 100 plowdown'
 
 # Packer
 alias ug='packer -Syu'
-
-# Twidge
-alias tw='~/.cabal/bin/twidge'
-alias twj='~/.cabal/bin/twidge --config=/home/jack/.twidgerc-jack'
