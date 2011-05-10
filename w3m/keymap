@@ -10,3 +10,4 @@ keymap B ADD_BOOKMARK
 keymap gt NEXT_TAB
 keymap gT PREV_TAB
 keymap ,f TAB_MENU
+keymap U GOTO
