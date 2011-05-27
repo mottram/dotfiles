@@ -1,10 +1,5 @@
-while true; do
-	xsetroot -name "$( date +"%a %b %d %R" )"
-	sleep 1m
-done &
-feh --bg-scale ~/.desktop.jpg
 setxkbmap gb
 unclutter &
 autocutsel -f
 clipbored
-exec dwm-start
+exec wmfs
