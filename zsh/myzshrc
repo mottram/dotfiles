@@ -1,8 +1,5 @@
 PATH="$PATH:/usr/local/bin/:$HOME/bin:$HOME/dotfiles/weblog:$HOME/.gem/ruby/1.8/bin:$HOME/.gem/ruby/1.9.1/bin:$HOME/.cabal/bin"
 
-# vi style
-bindkey -v
-
 # Fixes unknown parameter issue on OS X - why? 
 zmodload zsh/terminfo
 
@@ -29,6 +26,7 @@ fi
 
 # Show battery level on the 1018P
 if [ `hostname` = "pest" ]; then
+    PATH="$PATH:/usr/lib/surfraw"
     BATTERY=1
     MAILCHECK=0
 fi
