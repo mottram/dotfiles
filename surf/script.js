@@ -1,22 +1,3 @@
-/* Middle click opens in new window */
-
-window.addEventListener("click", function(e) {
-    if (
-                  //|| e.button == 1 // for middle click
-                  e.ctrlKey   // for ctrl + click
-               ) {
-        var new_uri = e.srcElement.href;
-        if (new_uri) {
-            e.stopPropagation();
-            e.preventDefault();
-            window.open(new_uri);
-        }
-    }
-}, false);
-})();
-
-
-/* Link highlighting with Ctrl-F */
 /* based on chromium plugin code, adapted by Nibble<.gs@gmail.com> */
 var hint_num_str = '';
 var hint_elems = [];

@@ -7,7 +7,6 @@ static char *scriptfile     = ".surf/script.js";
 static char *cookiefile     = ".surf/cookies.txt";
 static time_t sessiontime   = 9999999;
 #define NOBACKGROUND 0
-
 #define SETPROP(p, q)     { .v = (char *[]){ "/bin/sh", "-c", \
 	"prop=\"`xprop -id $2 $0 | cut -d '\"' -f 2 | dmenu`\" &&" \
 	"xprop -id $2 -f $1 8s -set $1 \"$prop\"", \

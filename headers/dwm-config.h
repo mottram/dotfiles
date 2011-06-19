@@ -18,8 +18,10 @@ static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9"};
 
 static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
-    { "surf",     NULL,       NULL,       1,            False,       -1  },
+	{ "Gimp",     NULL,       NULL,       0,            True,        -1 },
+	{ "Firefox",  NULL,       NULL,       1 << 8,       False,       -1 },
 };
+
 
 /* layout(s) */
 static const float mfact      = 0.50; /* factor of master area size [0.05..0.95] */
@@ -48,7 +50,6 @@ static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, 
 static const char *termcmd[]  = { "xterm", NULL };
 static const char *dclipcmd[] = { "mydmenuclip", NULL };
 static const char *lockcmd[] = { "slock", NULL };
-static const char *chromcmd[] = { "chr", NULL };
 static const char *dmpccmd[] = { "dmpc", NULL };
 static const char *datecmd[] = { "datey", NULL };
 static const char *calccmd[] = { "calcy", NULL };
@@ -88,7 +89,6 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY|ShiftMask,           	XK_v, 	   spawn,          {.v = dclipcmd } },
 	{ MODKEY|ShiftMask,           	XK_l, 	   spawn,          {.v = lockcmd } },
-	{ MODKEY,                   	XK_c, 	   spawn,          {.v = chromcmd } },
     { MODKEY|ShiftMask,             XK_m,      spawn,          {.v = dmpccmd } },
 	{ MODKEY,                       XK_d, 	   spawn,          {.v = datecmd } },
 	{ MODKEY|ShiftMask,             XK_d, 	   spawn,          {.v = calccmd } },
