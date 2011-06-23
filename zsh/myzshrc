@@ -29,6 +29,7 @@ if [ `hostname` = "pest" ]; then
     PATH="$PATH:/usr/lib/surfraw"
     BATTERY=1
     MAILCHECK=0
+    alias open='mimeo'
 fi
 
 # Use MacVim's vim on OS X
