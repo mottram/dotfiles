@@ -44,4 +44,6 @@ static Key keys[] = {
     { MODKEY|GDK_SHIFT_MASK,GDK_n,      find,       { .b = FALSE } },
     { MODKEY,               GDK_b,      spawn,      BM_PICK },
     { MODKEY,   GDK_i,  spawn,  { .v = (char *[]){ "/bin/sh", "-c", "curl -s -d username=\"$(cat ~/.surf/instapaper | sed -n '1p')\" -d password=\"$(cat ~/.surf/instapaper | sed -n '2p')\" -d url=\"$(xprop -id $0 _SURF_URI | cut -d '\"' -f 2)\" https://www.instapaper.com/api/add > /dev/null", winid, NULL } } },
+    { MODKEY|GDK_SHIFT_MASK,GDK_i,      spawn, SETPROP("http://instapaper.com/text?u=", "_SURF_URI") },
+
 };
