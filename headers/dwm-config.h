@@ -1,12 +1,12 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const char font[]            = "terminus-12";
-static const char normbordercolor[] = "#000000";
-static const char normbgcolor[]     = "#000000";
-static const char normfgcolor[]     = "#DDDDDD";
-static const char selbordercolor[]  = "#000000";
-static const char selbgcolor[]      = "#333333";
+static const char font[]            = "Inconsolata-10";
+static const char normbordercolor[] = "#FFFFFF";
+static const char normbgcolor[]     = "#FFFFFF";
+static const char normfgcolor[]     = "#444444";
+static const char selbordercolor[]  = "#FFFFFF";
+static const char selbgcolor[]      = "#FAFAFA";
 static const char selfgcolor[]      = "#000000";
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
