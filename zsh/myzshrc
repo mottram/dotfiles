@@ -13,7 +13,6 @@ alias -s markdown=vim
 alias -s txt=vim
 alias -s css=vim
 alias -s html=vim
-alias -s py=vim
 
 # Keep crap out of history
 export HISTIGNORE="&:ls:[bf]g:exit:reset:clear:cd*"
@@ -29,6 +28,7 @@ if [ `hostname` = "pest" ]; then
     PATH="$PATH:/usr/lib/surfraw"
     BATTERY=1
     MAILCHECK=0
+    COLOR="NO" # Packer
     alias open='mimeo'
 fi
 
