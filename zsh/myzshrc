@@ -24,10 +24,12 @@ if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then
   logout
 fi
 
-# Show battery level on the 1018P
+# 1018P stuff
 if [ `hostname` = "pest" ]; then
+    PATH="$PATH:/usr/lib/surfraw"
     BATTERY=1
     MAILCHECK=0
+    alias open='mimeo'
 fi
 
 # Use MacVim's vim on OS X

@@ -1,4 +1,4 @@
-static const char *font        = "-*-terminus-medium-r-normal-*-12-*-*-*-*-*-*-*";
+static const char *font        = "-*-terminus-medium-r-normal-*-8-*-*-*-*-*-*-*";
 static const char *normbgcolor = "#ffffff";
 static const char *normfgcolor = "#555555";
 static const char *selbgcolor  = "#eeeeee";

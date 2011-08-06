@@ -1,3 +1,10 @@
+# Syntax highlighting - TODO add as submodile
+source ~/src/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
+
+# History search
+source ~/src/zsh-history-substring-search/history-substring-search.zsh
+
 # bsd ls is different
 if [ `uname` = "OpenBSD" ]; then
     alias ls="/bin/ls"

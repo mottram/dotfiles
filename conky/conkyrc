@@ -1,6 +1,6 @@
 background yes 
 use_xft yes 
-xftfont Sans:size=9
+xftfont Inconsolata:size=9
 xftalpha 1 
 update_interval 1.0 
 total_run_times 0 
@@ -14,7 +14,7 @@ draw_shades no
 draw_outline no 
 draw_borders no 
 draw_graph_borders yes 
-default_color 888888 
+default_color 444444 
 default_shade_color black 
 default_outline_color 888888 
 alignment top_right
@@ -26,25 +26,24 @@ cpu_avg_samples 2
 override_utf8_locale yes 
 text_buffer_size 5000 
 TEXT
-
 ${color}${time %I:%M:%p, %A %d %B}${font}$hr 
 CPU:${color}$cpu% $alignr${color}${top name 1} 
 ${cpugraph 15,300 cccccc 000000} 
-${color}
-RAM:${color}$memperc% $alignr${color}${top_mem name 1} 
+${color}RAM:${color}$memperc% $alignr${color}${top_mem name 1} 
 ${membar} 
 ${color}Home: $color${fs_used /home/jack} of ${fs_size /home/jack} 
 ${fs_bar 6 /home/jack} 
 ${color}SD: ${fs_used /media/SD} of ${fs_size /media/SD} 
 ${fs_bar 6 /media/SD} 
+${color}Backup: ${fs_used /media/backup} of ${fs_size /media/backup} 
+${fs_bar 6 /media/backup} 
 Wifi: ${wireless_essid wlan0}/${addr wlan0} 
 ${wireless_link_bar wlan0} 
 ${color}Up: ${upspeed wlan0}$alignr${color}Down: ${downspeed wlan0} 
 ${upspeedgraph wlan0 15,140 cccccc 000000}$alignr${color}${downspeedgraph wlan0 15,140 cccccc 000000} 
-
 Battery:
 ${battery_bar}$
-
 Pacman: ${execi 600 ~/bin/conky-pacman}
-Dropbox: ${execi 600 ~/bin/conky-dropbox}
-OTW: ${rss http://onethingwell.org/rss 30 item_titles 1}
+Dropbox: ${execi 600 ~/bin/dropbox-status}
+
+#${rss http://onethingwell.org/rss 30 item_titles 6}

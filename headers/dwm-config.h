@@ -1,13 +1,13 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const char font[]            = "Inconsolata-9";
-static const char normbordercolor[] = "#ffffff";
-static const char normbgcolor[]     = "#ffffff";
+static const char font[]            = "Inconsolata-10";
+static const char normbordercolor[] = "#FFFFFF";
+static const char normbgcolor[]     = "#FFFFFF";
 static const char normfgcolor[]     = "#444444";
-static const char selbordercolor[]  = "#CDD3F7";
-static const char selbgcolor[]      = "#CDD3F7";
-static const char selfgcolor[]      = "#444444";
+static const char selbordercolor[]  = "#FFFFFF";
+static const char selbgcolor[]      = "#FAFAFA";
+static const char selfgcolor[]      = "#000000";
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const Bool showbar           = False;     /* False means no bar */
@@ -21,6 +21,7 @@ static const Rule rules[] = {
 	{ "Gimp",     NULL,       NULL,       0,            True,        -1 },
 	{ "Firefox",  NULL,       NULL,       1 << 8,       False,       -1 },
 };
+
 
 /* layout(s) */
 static const float mfact      = 0.50; /* factor of master area size [0.05..0.95] */
@@ -49,7 +50,6 @@ static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, 
 static const char *termcmd[]  = { "xterm", NULL };
 static const char *dclipcmd[] = { "mydmenuclip", NULL };
 static const char *lockcmd[] = { "slock", NULL };
-static const char *chromcmd[] = { "chr", NULL };
 static const char *dmpccmd[] = { "dmpc", NULL };
 static const char *datecmd[] = { "datey", NULL };
 static const char *calccmd[] = { "calcy", NULL };
@@ -89,9 +89,8 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 	{ MODKEY|ShiftMask,           	XK_v, 	   spawn,          {.v = dclipcmd } },
 	{ MODKEY|ShiftMask,           	XK_l, 	   spawn,          {.v = lockcmd } },
-	{ MODKEY,           	XK_c, 	   spawn,          {.v = chromcmd } },
-    { MODKEY|ShiftMask,             XK_m,       spawn, {.v = dmpccmd } },
-	{ MODKEY,             XK_d, 	   spawn,          {.v = datecmd } },
+    { MODKEY|ShiftMask,             XK_m,      spawn,          {.v = dmpccmd } },
+	{ MODKEY,                       XK_d, 	   spawn,          {.v = datecmd } },
 	{ MODKEY|ShiftMask,             XK_d, 	   spawn,          {.v = calccmd } },
 };
 
