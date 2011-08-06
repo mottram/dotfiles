@@ -55,3 +55,8 @@ if [ "$TERM" = "linux" ]; then
     echo -en "\e]PFc0c0c0" #white
     clear # bring us back to default input colours
 fi
+
+. ~/src/z/z.sh
+function precmd () {
+     _z --add "$(pwd -P)"
+}
