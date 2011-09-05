@@ -1,5 +1,12 @@
+while true; do
+	xsetroot -name "$( date +"%a %b %d %R" )"
+	sleep 1m
+done &
 setxkbmap gb
+xmodmap ~/.config/X/Xmodmap
+xmodmap -e "pointer = 1 2 3 5 4"
 unclutter &
 autocutsel -f
 clipbored
-exec wmfs
+find ~/.wallpaper -type f -name "*.jpg" -print0 | shuf -n1 -z | xargs -0 imlibsetroot -s f
+exec dwm-start
