@@ -16,14 +16,9 @@ mkdir -p "$*"
 cd "$*"
 }
 
-# list and grep
+# list and ack
 function lgr {
   ls -a | ack -i $1 
-}
-
-# quick google from the command line
-function googler {
-  w3m google.com/search?q=$1 
 }
 
 # new tmux session
