@@ -164,7 +164,6 @@ usbutils
 util-linux
 vi
 vim
-vimpager
 vlc
 w3m
 wget
