@@ -60,7 +60,7 @@ bk() {
 
 # timer
 alarm() {
-    utimer -c $1 ; espeak $2 	
+    utimer -c $1 1>/dev/null ; espeak $2 2>/dev/null && notify-send $2
 }
 
 # Instapaper - $1 is pw, $2 url
