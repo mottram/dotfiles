@@ -29,6 +29,7 @@ if [ `hostname` = "pest" ]; then
     BATTERY=1
     MAILCHECK=0
     COLOR="NO" # Packer
+    BROWSER="surf"
     alias open='mimeo'
 fi
 

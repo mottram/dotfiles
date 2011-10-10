@@ -45,7 +45,7 @@ max_news 50
 nntpmode 
 nntpserver 
 dns_order 0
-meta_refresh 0
+meta_refresh 1
 follow_redirection 10
 default_url 0
 retry_http 1

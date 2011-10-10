@@ -27,7 +27,7 @@ xterm*faceName: Inconsolata:pixelsize=13
 *color12: rgb:41/86/be
 *color13: rgb:cf/9e/be
 *color14: rgb:71/be/be
-*color15: rgb:d/dd/dd
+*color15: rgb:dd/dd/dd
 
 ! Darkness
 !*background: rgb:01/01/01
