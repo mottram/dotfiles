@@ -38,6 +38,10 @@ if [ `uname` = "Darwin" ]; then
     alias v="/Applications/MacVim.app/Contents/MacOS/Vim"
 fi
 
+export WORKON_HOME=$HOME/envs
+source /usr/bin/virtualenvwrapper.sh
+
+
 # Colours for TTY courtesy of jwr
 if [ "$TERM" = "linux" ]; then
     echo -en "\e]P0000000" #black

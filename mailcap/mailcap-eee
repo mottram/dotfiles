@@ -2,5 +2,5 @@
 # text/html; /usr/bin/html2text -nobs %s; copiousoutput; description=HTML Text # Faster, messier...
 text/html;                      links %s; nametemplate=%s.html
 text/html;                      links -dump %s; nametemplate=%s.html; copiousoutput
-image/*; feh %s
+image/*; sxiv %s
 application/postscript; zathura %s
