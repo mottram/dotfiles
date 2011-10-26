@@ -18,10 +18,10 @@ alias -s html=vim
 export HISTIGNORE="&:ls:[bf]g:exit:reset:clear:cd*"
 
 # Start X at login
-if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then
-  startx
-  logout
-fi
+#if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then
+#  startx
+#  logout
+#fi
 
 # 1018P stuff
 if [ `hostname` = "pest" ]; then
@@ -37,10 +37,6 @@ fi
 if [ `uname` = "Darwin" ]; then
     alias v="/Applications/MacVim.app/Contents/MacOS/Vim"
 fi
-
-export WORKON_HOME=$HOME/envs
-source /usr/bin/virtualenvwrapper.sh
-
 
 # Colours for TTY courtesy of jwr
 if [ "$TERM" = "linux" ]; then

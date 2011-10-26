@@ -66,3 +66,5 @@ alias pdf='zathura'
 alias play='mplayer -playlist <(find "$PWD" -type f | sort -n)'
 # Packer upgrade
 alias ug='packer -Syu'
+# Virtualenvwrapper
+alias venv='export WORKON_HOME=~/envs;source /usr/bin/virtualenvwrapper.sh'
