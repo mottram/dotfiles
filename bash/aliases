@@ -44,14 +44,13 @@ alias dispoff='sleep 1 && xset dpms force off'
 # Suspend
 alias bye='sudo pm-suspend'
 # Wifi select
-alias wifiselect='sudo wifi-select eth1'
+alias wifiselect='sudo wifi-select wlan0'
 # Battery
 alias bat='acpi -b'
 # Mount USB stick
 alias mt16='sudo mount /dev/disk/by-label/16 /home/jack/usb -o rw,users,async,noatime,umask=000'
 # Mplayer without X
-alias cmplayer='mplayer -vo fbdev'
-alias fbmplayer='mplayer -vo fbdev -fs -zoom'
+alias fbplayer='mplayer -vo fbdev -screenw 1024 -screenh 600 -zoom -fs -xy 1024'
 # Stream Radio 4, 6 and the World Service with mplayer
 alias radio4='mplayer -playlist http://www.bbc.co.uk/radio/listen/live/r4.asx'
 alias radio6='mplayer -playlist http://www.bbc.co.uk/radio/listen/live/r6.asx'
@@ -68,3 +67,5 @@ alias play='mplayer -playlist <(find "$PWD" -type f | sort -n)'
 alias ug='packer -Syu'
 # Virtualenvwrapper
 alias venv='export WORKON_HOME=~/envs;source /usr/bin/virtualenvwrapper.sh'
+# Search arch-wiki-docs
+alias aw='wiki-search-html'

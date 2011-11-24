@@ -7,7 +7,7 @@ Xft*hintstyle: hintslight
 
 ! xterm
 xterm*faceName: Inconsolata:pixelsize=13
-
+!xterm*faceName: terminus:pixelsize=12
 
 ! Colours
 *background: rgb:F5/F5/F5
