@@ -2,11 +2,11 @@
 
 /* appearance */
 static const char font[]            = "Inconsolata-10";
-static const char normbordercolor[] = "#FFFFFF";
-static const char normbgcolor[]     = "#FFFFFF";
+static const char normbordercolor[] = "#ffffff";
+static const char normbgcolor[]     = "#ffffff";
 static const char normfgcolor[]     = "#444444";
-static const char selbordercolor[]  = "#FFFFFF";
-static const char selbgcolor[]      = "#FAFAFA";
+static const char selbordercolor[]  = "#ffffff";
+static const char selbgcolor[]      = "#fafafa";
 static const char selfgcolor[]      = "#000000";
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
@@ -14,7 +14,7 @@ static const Bool showbar           = False;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4"},
+static const char *tags[] = { "1", "2", "3", "4"};
 
 static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
@@ -22,16 +22,15 @@ static const Rule rules[] = {
 	{ "Firefox",  NULL,       NULL,       1 << 8,       False,       -1 },
 };
 
-
 /* layout(s) */
 static const float mfact      = 0.50; /* factor of master area size [0.05..0.95] */
 static const Bool resizehints = False; /* True means respect size hints in tiled resizals */
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "M",      monocle },
-	{ "T",      tile },    /* first entry is default */
+	{ "M",      tile },    /* first entry is default */
 	{ "F",      NULL },    /* no layout function means floating behavior */
+	{ "F",      monocle },
 };
 
 /* key definitions */
@@ -49,10 +48,6 @@ static const Layout layouts[] = {
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "xterm", NULL };
 static const char *dclipcmd[] = { "mydmenuclip", NULL };
-static const char *lockcmd[] = { "slock", NULL };
-static const char *dmpccmd[] = { "dmpc", NULL };
-static const char *datecmd[] = { "datey", NULL };
-static const char *calccmd[] = { "calcy", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -66,9 +61,9 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
-	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[1]} },
-	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[3]} },
-	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[0]} },
+	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
+	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
+	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
@@ -77,6 +72,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+	{ MODKEY|ShiftMask,           	XK_v, 	   spawn,          {.v = dclipcmd } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
@@ -87,14 +83,9 @@ static Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-	{ MODKEY|ShiftMask,           	XK_v, 	   spawn,          {.v = dclipcmd } },
-	{ MODKEY|ShiftMask,           	XK_l, 	   spawn,          {.v = lockcmd } },
-    { MODKEY|ShiftMask,             XK_m,      spawn,          {.v = dmpccmd } },
-	{ MODKEY,                       XK_d, 	   spawn,          {.v = datecmd } },
-	{ MODKEY|ShiftMask,             XK_d, 	   spawn,          {.v = calccmd } },
 };
 
-/* button definitions *#/
+/* button definitions */
 /* click can be ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
 static Button buttons[] = {
 	/* click                event mask      button          function        argument */
@@ -110,3 +101,4 @@ static Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
+
