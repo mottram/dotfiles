@@ -1,0 +1,46 @@
+" vim: filetype=vifm :
+" You can edit this file by hand.
+" The " character at the beginning of a line comments out the line.
+" Blank lines are ignored.
+
+" The Default color scheme is used for any directory that does not have
+" a specified scheme and for parts of user interface like menus. A
+" color scheme set for a base directory will also
+" be used for the sub directories.
+
+" The standard ncurses colors are:
+" Default = -1 = None, can be used for transparency or default color
+" Black = 0
+" Red = 1
+" Green = 2
+" Yellow = 3
+" Blue = 4
+" Magenta = 5
+" Cyan = 6
+" White = 7
+
+" Vifm supports 256 colors you can use color numbers 0-255
+" (requires properly set up terminal: set your TERM environment variable
+" (directly or using resources) to some color terminal name (e.g.
+" xterm-256color) from /usr/lib/terminfo/; you can check current number
+" of colors in your terminal with tput colors command)
+
+" highlight group ctermfg=foreground_color ctermbg=background_color
+
+highlight Win cterm=none ctermfg=black ctermbg=white
+highlight Directory cterm=bold ctermfg=cyan ctermbg=white
+highlight Link cterm=bold ctermfg=green ctermbg=white
+highlight BrokenLink cterm=bold ctermfg=red ctermbg=none
+highlight Socket cterm=bold ctermfg=magenta ctermbg=white
+highlight Device cterm=bold ctermfg=red ctermbg=white
+highlight Fifo cterm=bold ctermfg=cyan ctermbg=none
+highlight Executable cterm=bold ctermfg=green ctermbg=white
+highlight Selected cterm=bold ctermfg=magenta ctermbg=white
+highlight CurrLine cterm=bold ctermfg=white ctermbg=blue
+highlight TopLine cterm=none ctermfg=black ctermbg=white
+highlight TopLineSel cterm=bold ctermfg=black ctermbg=none
+highlight StatusLine cterm=bold ctermfg=black ctermbg=white
+highlight WildMenu cterm=underline,reverse ctermfg=black ctermbg=white
+highlight CmdLine cterm=none ctermfg=black ctermbg=white
+highlight ErrorMsg cterm=none ctermfg=red ctermbg=white
+highlight Border cterm=none ctermfg=black ctermbg=white
