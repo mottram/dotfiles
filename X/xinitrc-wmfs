@@ -1,0 +1,8 @@
+setxkbmap gb
+#xmodmap -e 'remove Lock = Caps_Lock' -e 'keysym Caps_Lock = Control_L' -e 'add Control = Control_L'
+xmodmap ~/.config/X/Xmodmap
+xmodmap -e "pointer = 1 2 3 5 4"
+unclutter &
+autocutsel -f
+clipbored
+exec wmfs

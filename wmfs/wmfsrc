@@ -1,5 +1,5 @@
 [misc]
-        font                  = "Inconsolata-9"
+        font                  = "Inconsolata-8"
         raisefocus            = true
         focus_follow_mouse    = true
         focus_follow_movement = false
@@ -137,7 +137,7 @@
 
 [root]
        # Command you can execute to set the background.
-        background_command = "feh --bg-scale ~/.desktop.jpg"
+        background_command = "feh --bg-scale ~/.wallpaper/misty-danube.jpg"
 
         [mouse] button = "4" func = "tag_next"              [/mouse]
         [mouse] button = "5" func = "tag_prev"              [/mouse]
