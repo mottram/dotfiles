@@ -1,5 +1,8 @@
 PATH="$PATH:/usr/local/bin/:$HOME/bin:$HOME/dotfiles/weblog:$HOME/.gem/ruby/1.8/bin:$HOME/.gem/ruby/1.9.1/bin:$HOME/.cabal/bin"
 
+# Trying out f
+source ~/src/f/f.sh
+
 # Fixes unknown parameter issue on OS X - why? 
 zmodload zsh/terminfo
 
