@@ -26,6 +26,8 @@ cpu_avg_samples 2
 override_utf8_locale yes 
 text_buffer_size 5000 
 TEXT
+
+
 ${color}${time %I:%M:%p, %A %d %B}${font}$hr 
 CPU:${color}$cpu% $alignr${color}${top name 1} 
 ${cpugraph 15,300 cccccc 000000} 
@@ -37,10 +39,10 @@ ${color}SD: ${fs_used /media/SD} of ${fs_size /media/SD}
 ${fs_bar 6 /media/SD} 
 ${color}Backup: ${fs_used /media/backup} of ${fs_size /media/backup} 
 ${fs_bar 6 /media/backup} 
-Wifi: ${wireless_essid eth1}/${addr eth1} 
-${wireless_link_bar eth1} 
-${color}Up: ${upspeed eth1}$alignr${color}Down: ${downspeed eth1} 
-${upspeedgraph eth1 15,140 cccccc 000000}$alignr${color}${downspeedgraph eth1 15,140 cccccc 000000} 
+Wifi: ${wireless_essid wlan0}/${addr wlan0} 
+${wireless_link_bar wlan0} 
+${color}Up: ${upspeed wlan0}$alignr${color}Down: ${downspeed wlan0} 
+${upspeedgraph wlan0 15,140 cccccc 000000}$alignr${color}${downspeedgraph wlan0 15,140 cccccc 000000} 
 Battery:
 ${battery_bar}$
 Pacman: ${execi 600 ~/bin/conky-pacman}

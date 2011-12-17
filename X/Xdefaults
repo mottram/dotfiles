@@ -10,15 +10,17 @@ xterm*faceName: Inconsolata:pixelsize=12
 URxvt.scrollBar: off
 URxvt.font: xft:Terminus:pixelsize=12:antialias=false
 URxvt.perl-ext-common:  default,tabbedex,matcher
+! fix remote issue
+URxvt*termName:rxvt
 !! launching urls
-URxvt.urlLauncher: /usr/bin/surf
+URxvt.urlLauncher: /usr/bin/chromium
 URxvt.underlineURLs: true
 URxvt.matcher.button: 1
 !! tabs
-URxvt.tabbed.tabbar-fg: 7
-URxvt.tabbed.tabbar-bg: 0
-URxvt.tabbed.tab-fg:    7
-URxvt.tabbed.tab-bg:    8
+URxvt.tabbed.tabbar-fg: 11
+URxvt.tabbed.tabbar-bg: 8
+URxvt.tabbed.tab-fg:    11
+URxvt.tabbed.tab-bg:    0
 !! tabbedex
 URxvt.tabbed.title: no
 !! solarized colours

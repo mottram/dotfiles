@@ -259,7 +259,7 @@
         [key] mod = {"Mod4", "Shift"} key = "d" func = "set_nmaster" cmd = "-1" [/key]
 
         #Launcher.
-        [key] mod = {"Mod4"} key = "p" func = "launcher" cmd = "launcher_exec" [/key]
+        [key] mod = {"Mod4"} key = "x" func = "launcher" cmd = "launcher_exec" [/key]
 
         #ViWMFS
         [key] mod = {"Mod4"} key = "Escape" func = "launcher" cmd = "viwmfs" [/key]
@@ -291,6 +291,12 @@
         [key] mod = {"Super", "Shift"} key = "z" func = "client_screen_prev" [/key]
 
         [key] mod = {"Mod4"} key = "e" func = "toggle_tag_expose" [/key]
+
+
+        # launch dmenu
+        [key] mod = {"Mod4"} key = "p" func = "spawn" cmd = "dmenu_run" [/key]
+
+
 
         # unlisted fonctions that can be used in [key] func = ""
         # client_focus_{right, left, top, bottom}
