@@ -33,6 +33,7 @@ if [ `hostname` = "pest" ]; then
     MAILCHECK=0
     COLOR="NO" # Packer
     BROWSER="surf"
+    export wiki_browser=/usr/bin/w3m
     alias open='mimeo'
 fi
 

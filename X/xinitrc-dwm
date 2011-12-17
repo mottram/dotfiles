@@ -6,7 +6,9 @@ setxkbmap gb
 xmodmap ~/.config/X/Xmodmap
 xmodmap -e "pointer = 1 2 3 5 4"
 unclutter &
-autocutsel -f
+autocutsel -fork &
+autocutsel -selection PRIMARY -fork &
 clipbored
+#dunst -key space -mod ctrl -nb "#FFF" -to 5 &
 find ~/.wallpaper -type f -name "*.jpg" -print0 | shuf -n1 -z | xargs -0 imlibsetroot -s f
 exec dwm-start

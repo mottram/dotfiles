@@ -9,3 +9,8 @@ source ~/dotfiles/zsh/zsh-history-substring-search/zsh-history-substring-search.
 if [ `uname` = "OpenBSD" ]; then
     alias ls="/bin/ls"
 fi
+
+# Fixes xterm weirdness on Arch
+if [ `uname` = "Linux" ]; then
+    cd 
+fi
