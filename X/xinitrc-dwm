@@ -11,5 +11,4 @@ autocutsel -selection PRIMARY -fork &
 clipbored
 #dunst -key space -mod ctrl -nb "#FFF" -to 5 &
 find ~/.wallpaper -type f -name "*.jpg" -print0 | shuf -n1 -z | xargs -0 imlibsetroot -s f
-urxvtd &
 exec dwm-start
