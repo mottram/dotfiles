@@ -1,3 +1,4 @@
+#!/bin/sh
 while true; do
 	xsetroot -name "$( date +"%a %b %d %R" )"
 	sleep 1m
@@ -9,6 +10,5 @@ unclutter &
 autocutsel -fork &
 autocutsel -selection PRIMARY -fork &
 clipbored
-#dunst -key space -mod ctrl -nb "#FFF" -to 5 &
 find ~/.wallpaper -type f -name "*.jpg" -print0 | shuf -n1 -z | xargs -0 imlibsetroot -s f
 exec dwm-start
