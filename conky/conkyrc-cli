@@ -1,0 +1,12 @@
+out_to_console yes
+out_to_x no
+background no
+update_interval 3
+total_run_times 0
+use_spacer none
+
+TEXT
+$if_mpd_playingê $mpd_smart$endif ­ ${execi 600 /home/jack/bin/getvol} ${if_up wlan0}£ ${wireless_essid wlan0} ${wireless_link_qual_perc wlan0}% $endifò $battery_percent% É ${time %R}
+
+#${time %A%e %B %H:%M%P}
+# ${if_up wlan0}Û ${upspeed wlan0} Ú ${downspeed wlan0}
