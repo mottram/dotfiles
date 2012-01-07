@@ -1,5 +1,46 @@
 # Functions for bash and zsh-----------------------------------------------
 
+# Diary
+
+diary() {
+    echo -e "\n\n## $(date -R)\n" >> ~/Dropbox/diary/diary.txt
+    cat >> ~/Dropbox/diary/diary.txt
+}
+
+diary2() {
+    # TODO check diary file exists
+    # TODO show last entry
+    diary="/home/jack/Dropbox/diary/diary.txt"
+    tmpfile="/tmp/diary.$RANDOM"
+    dateline="\n----\n\n## $(date -R)\n"
+    $EDITOR $tmpfile &&
+    echo -e $dateline >> $diary
+    cat $tmpfile >> $diary
+#    echo -e "\n----" >> $diary
+    rm $tmpfile
+}
+
+
+
+# mpc search 'n' play
+
+mpcplay() {
+    type=$(echo "$1" | sed 's/\<./\u&/')
+    term=$(echo "$2" | sed 's/\<./\u&/')
+    if pidof -x mpd >/dev/null
+        then
+            mpc -q pause
+            mpc -q clear
+            mpc search "$1" "$2" | mpc add
+            mpc -q shuffle
+            mpc -q play
+            echo ":: $type '$term' now playing."
+    else
+        echo ":: MPD isn't running"
+    fi
+}
+
+
 # quick git commit
 function gg {
   git commit -v -a -m "$*"
@@ -7,7 +48,7 @@ function gg {
 
 # view source files with pygments syntax colouring
 function pless {
-  pygmentize $1 | less -r
+  pygmentize $1 | less -rN
 }
 
 # mkdir, cd into it

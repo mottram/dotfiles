@@ -63,8 +63,9 @@ alias myip="curl whatismyip.org;echo"
 alias pdf='zathura'
 # Play songs
 alias play='mplayer -playlist <(find "$PWD" -type f | sort -n)'
-# Packer upgrade
-alias ug='packer -Syu'
+# Pacman, pacaur & cower
+alias ud='pacman -Qu && cower -u'
+alias ug='pacaur -Syu'
 # Virtualenvwrapper
 alias venv='export WORKON_HOME=~/envs;source /usr/bin/virtualenvwrapper.sh'
 # Search arch-wiki-docs
