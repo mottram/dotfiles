@@ -52,7 +52,7 @@ alias mt16='sudo mount /dev/disk/by-label/16 /home/jack/usb -o rw,users,async,no
 # Mplayer without X
 alias fbplayer='mplayer -vo fbdev -screenw 1024 -screenh 600 -zoom -fs -xy 1024'
 # Stream Radio 4, 6 and the World Service with mplayer
-alias radio4='mplayer -playlist http://www.bbc.co.uk/radio/listen/live/r4.asx'
+alias radio4='mplayer -cache 1024 -playlist http://www.bbc.co.uk/radio/listen/live/r4.asx'
 alias radio6='mplayer -playlist http://www.bbc.co.uk/radio/listen/live/r6.asx'
 alias radiows='mplayer -playlist http://www.bbc.co.uk/worldservice/meta/tx/nb/live_infent_au_nb.asx'
 # Todo.txt
