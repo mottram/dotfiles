@@ -4,11 +4,12 @@ PATH="$PATH:/usr/local/bin/:$HOME/bin:$HOME/dotfiles/weblog:$HOME/.gem/ruby/1.8/
 source ~/src/f/f.sh
 
 # Fixes unknown parameter issue on OS X - why? 
-zmodload zsh/terminfo
+# zmodload zsh/terminfo
 
-# Source my aliases and functions
+# Source my aliases, functions and completions
 source ~/dotfiles/bash/func
 source ~/dotfiles/bash/aliases
+fpath=(~/dotfiles/zsh/zsh-completions $fpath)
 
 # Open various files in vim
 alias -s md=vim
