@@ -4,7 +4,7 @@ PATH="$PATH:/usr/local/bin/:$HOME/bin:$HOME/dotfiles/weblog:$HOME/.gem/ruby/1.8/
 source ~/src/f/f.sh
 
 # Fixes unknown parameter issue on OS X - why? 
-zmodload zsh/terminfo
+# zmodload zsh/terminfo
 
 # Source my aliases and functions
 source ~/dotfiles/bash/func
