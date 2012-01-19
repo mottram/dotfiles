@@ -1,30 +1,3 @@
-
-# Diary
-
-diary() {
-    while getopts "ln" opt; do
-        case $opt in
-            l)
-               tac Dropbox/diary/diary.txt | grep -m1 -B 9999  "\-\-\-\-" | tac | sed 's/\-\-\-\-//g' && echo -e "\n"
-            ;;
-            n)
-                diary="/home/jack/Dropbox/diary/diary.txt"
-                tmpfile="/tmp/diary.$RANDOM"
-                dateline="\n----\n\n## $(date -R)\n"
-                vim -c 'startinsert' $tmpfile &&
-                echo -e $dateline >> $diary
-                cat $tmpfile >> $diary
-                echo -e ":: Diary updated! ::\n"
-                cat $tmpfile
-                echo -e "\n"
-                rm $tmpfile
-            ;;
-        esac
-    done
-}
-
-
-
 # mpc search 'n' play
 
 mpcplay() {
