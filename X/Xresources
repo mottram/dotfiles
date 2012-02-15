@@ -1,3 +1,5 @@
-R_x11*geometry: 1024x600+0+0
-XTerm*geometry: 1024x600+0+0
-surf*geometry: 1024x600+0+0
+xterm*geometry: 170x49+0+0
+URxvt*geometry: 171x50+0+0
+surf*geometry: 170x49+0+0
+Xcursor.theme: Vanilla-DMZ-AA
+Xcursor.size:  12

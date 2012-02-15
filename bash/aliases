@@ -21,7 +21,7 @@ alias bc='bc -q'
 alias tw='twidge'
 alias twu='twidge update'
 alias twc='(twidge lsrecent -asu; twidge lsreplies -asu) | less'
-
+alias ed='ed --prompt="~ "'
 # SSH----------------------------------------------------------------------
 alias avimsh='ssh -p 30300 jack@67.23.46.82'
 alias textdrivesh='ssh mottram@howe.textdrive.com'
@@ -48,7 +48,7 @@ alias wifiselect='sudo wifi-select wlan0'
 # Battery
 alias bat='acpi -b'
 # Mount USB stick
-alias mt16='sudo mount /dev/disk/by-label/16 /home/jack/usb -o rw,users,async,noatime,umask=000'
+alias mt16='sudo mount /dev/disk/by-label/16 /media/usb -o rw,users,async,noatime,umask=000'
 # Mplayer without X
 alias fbplayer='mplayer -vo fbdev -screenw 1024 -screenh 600 -zoom -fs -xy 1024'
 # Stream Radio 4, 6 and the World Service with mplayer
