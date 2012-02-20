@@ -1,5 +1,5 @@
 xterm*geometry: 170x49+0+0
 URxvt*geometry: 171x50+0+0
 surf*geometry: 170x49+0+0
-Xcursor.theme: Vanilla-DMZ-AA
-Xcursor.size:  12
+!Xcursor.theme: Vanilla-DMZ-AA
+!Xcursor.size:  12

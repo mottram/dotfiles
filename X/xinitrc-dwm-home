@@ -1,6 +1,7 @@
 #!/bin/sh
 # Wallpaper
-find ~/.wallpaper -type f -name "*.jpg" -print0 | shuf -n1 -z | xargs -0 imlibsetroot -s f
+#find ~/.wallpaper -type f -name "*.jpg" -print0 | shuf -n1 -z | xargs -0 imlibsetroot -s f
+imlibsetroot -s f .wallpaper/misty-danube.jpg
 # Keyboard & Trackpad
 setxkbmap gb
 xmodmap ~/.config/X/Xmodmap
