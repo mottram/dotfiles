@@ -6,6 +6,7 @@ Xft*hinting: true
 Xft*hintstyle: hintslight
 !! xterm
 xterm*faceName: Terminus:pixelsize=12
+!!xterm*faceName: Inconsolata:pixelsize=11
 !! rxvt-unicode
 URxvt.scrollBar: off
 URxvt.font: xft:Terminus:pixelsize=12:antialias=false
