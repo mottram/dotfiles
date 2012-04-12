@@ -1,0 +1,35 @@
+#!/bin/bash
+# ~/.xinitrc for no-wm
+# https://github.com/patrickhaller/no-wm
+while ! xprop -root | grep -q Free; do sleep 1; done
+# Desktop picture
+imlibsetroot -s f .wallpaper/misty-danube.jpg
+# UK keyboard
+setxkbmap gb
+# Rebind Caps Lock to Escape
+xmodmap ${HOME}/.config/X/Xmodmap
+# OS X-style scrolling
+xmodmap -e "pointer = 1 2 3 5 4"
+# Window geometry
+xrdb -merge ${HOME}/.Xresources
+# xterm & rxvt-unicode settings, colours, &c.
+xrdb -merge ${HOME}/.Xdefaults
+# Bell off
+xset b off
+# Load fonts
+xset +fp /usr/share/fonts/local
+xset fp rehash
+# Hide the cursor after two seconds of inactivity
+unclutter -idle 2 &
+# Show notifications from notify-send wih dunst
+dunst -key space -mod ctrl -to 4 -fn -*-terminus-*-r-normal-*-*-120-*-*-*-*-iso8859-* -geometry x2+1+1 -nb "#657b83" -nf "#002b36" &
+# Make the clipboard a bit more sensible
+autocutsel -fork &
+autocutsel -selection PRIMARY -fork &
+clipbored
+# rxvt-unicode daemon
+urxvtd -q -o -f
+# Keybindings
+exec speckeysd ${HOME}/.config/speckeysd/speckeysd.conf
+exec x-focus-manager &
+exec x-session
