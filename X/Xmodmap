@@ -1,2 +1,9 @@
+!remove Lock = Caps_Lock
+!keysym Caps_Lock = Escape
+
 remove Lock = Caps_Lock
-keysym Caps_Lock = Escape
+remove Control = Control_R
+keysym Control_R = Caps_Lock
+keysym Caps_Lock = Control_R
+add Lock = Caps_Lock
+add Control = Control_R 
