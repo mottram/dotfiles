@@ -58,7 +58,7 @@ alias radiows='mplayer -playlist http://www.bbc.co.uk/worldservice/meta/tx/nb/li
 # Todo.txt
 alias tt='~/dotfiles/todo/todo.sh -d ~/dotfiles/todo/eee-todo.cfg'
 # IP Address
-alias myip="curl whatismyip.org;echo"
+alias myip="curl icanhazip.com"
 # View PDF files
 alias pdf='zathura'
 # Play songs
