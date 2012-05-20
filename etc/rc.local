@@ -1,0 +1,13 @@
+#!/bin/bash
+#
+# /etc/rc.local: Local multi-user startup script.
+#
+# Mount the SD card
+mount /dev/disk/by-label/backup /media/backup -o async,noatime,rw,users
+mount /dev/disk/by-label/main /media/SD -o async,noatime,rw,users
+# Turn off NMI Watchdog
+echo 0 > /proc/sys/kernel/nmi_watchdog
+# Start MPD
+#su jack -c "mpd /home/jack/.config/mpd/mpd.conf"
+# Start scmpc (last.fm) scrobbler
+#su jack -c "scmpc -f /home/jack/.config/scmpc/scmpc.conf"
