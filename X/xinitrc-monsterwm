@@ -1,17 +1,16 @@
+#!/bin/sh
+# ~/.xinitrc for monsterwm
+imlibsetroot -s f .wallpaper/misty-danube.jpg
 setxkbmap gb
 xmodmap ~/.config/X/Xmodmap
 xmodmap -e "pointer = 1 2 3 5 4"
 xsetroot -cursor_name left_ptr &
-imlibsetroot -s f .wallpaper/misty-danube.jpg
-
-
-# Load fonts
-xset +fp /usr/share/fonts/local
-xset fp rehash
-
 unclutter &
 autocutsel -fork &
 autocutsel -selection PRIMARY -fork &
 clipbored
+xset +fp /usr/share/fonts/local
+xset fp rehash
+dzconky
 exec monsterwm
 
