@@ -11,12 +11,12 @@
 
 /** generic settings **/
 #define MASTER_SIZE     0.52
-#define SHOW_PANEL      True      /* show panel by default on exec */
+#define SHOW_PANEL      False     /* show panel by default on exec */
 #define TOP_PANEL       True      /* False mean panel is on bottom */
 #define PANEL_HEIGHT    14        /* 0 for no space for panel, thus no panel */
 #define DEFAULT_MODE    TILE      /* TILE MONOCLE BSTACK GRID */
 #define ATTACH_ASIDE    True      /* False means new window is master */
-#define FOLLOW_MOUSE    True     /* Focus the window the mouse just entered */
+#define FOLLOW_MOUSE    True      /* Focus the window the mouse just entered */
 #define FOLLOW_WINDOW   False     /* Follow the window when moved to a different desktop */
 #define CLICK_TO_FOCUS  True      /* Focus an unfocused window when clicked */
 #define BORDER_WIDTH    1         /* window border width */
