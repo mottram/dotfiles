@@ -22,7 +22,7 @@ auto_detect 2
 document_charset UTF-8
 display_charset UTF-8
 cookie_avoid_wrong_number_of_dots 
-cookie_accept_domains google.com
+cookie_accept_domains metafilter.com
 cookie_reject_domains 
 accept_bad_cookie 0
 accept_cookie 1
@@ -32,7 +32,7 @@ ssl_ca_file
 ssl_ca_path 
 ssl_key_file 
 ssl_cert_file 
-ssl_verify_server 0
+ssl_verify_server 1
 ssl_forbid_method 
 no_cache 0
 noproxy_netaddr 1
@@ -135,7 +135,7 @@ open_tab_dl_list 0
 open_tab_blank 0
 target_self 0
 frame 0
-pixel_per_line 14
-pixel_per_char 7
+pixel_per_line 13
+pixel_per_char 6
 indent_incr 4
 tabstop 4
