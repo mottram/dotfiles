@@ -2,7 +2,8 @@
 
 /* appearance */
 /* static const char font[]            = "-*-terminus-*-r-normal-*-*-120-*-*-*-*-iso8859-*"; */
-static const char font[]            = "-*-terminusmod.icons-medium-r-*-*-12-*-*-*-*-*-*-*";
+/*static const char font[]            = "-*-terminusmod.icons-medium-r-*-*-12-*-*-*-*-*-*-*";*/
+static const char font[]            = "-*-termsyn.icons-medium-r-*-*-12-*-*-*-*-*-*-*";
 static const char normbordercolor[] = "#000000";
 static const char normbgcolor[]     = "#002b36";
 static const char normfgcolor[]     = "#657b83";
@@ -15,7 +16,7 @@ static const Bool showbar           = True;     /* False means no bar */
 static const Bool topbar            = True;     /* False means bottom bar */
 
 /* tagging */
-static const char *tags[] = { "1", "2", "3", "4" };
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8" };
 
 static const Rule rules[] = {
 	/* class      instance    title       tags mask     isfloating   monitor */
@@ -50,6 +51,9 @@ static const Layout layouts[] = {
 static const char *dmenucmd[] = { "dmenu_run", "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbgcolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "uxterm", NULL };
 static const char *dclipcmd[] = { "mydmenuclip", NULL };
+static const char *volupcmd[] = { "/home/jack/bin/dvol", "raise", NULL };
+static const char *voldowncmd[] = { "/home/jack/bin/dvol", "lower", NULL };
+static const char *voltogglecmd[] = { "/home/jack/bin/dvol", "toggle", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -77,6 +81,9 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY|ShiftMask,           	XK_v, 	   spawn,          {.v = dclipcmd } },
+    { MODKEY|ShiftMask,             XK_u,      spawn,          {.v = volupcmd } },
+    { MODKEY|ShiftMask,             XK_d,      spawn,          {.v = voldowncmd } },
+    { MODKEY|ShiftMask,             XK_t,      spawn,          {.v = voltogglecmd } },
     TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)

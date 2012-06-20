@@ -6,7 +6,7 @@ imlibsetroot -s f .wallpaper/misty-danube.jpg
 setxkbmap gb
 xmodmap ~/.config/X/Xmodmap
 xmodmap -e "pointer = 1 2 3 5 4"
-unclutter &
+unclutter -idle 2 &
 # Clipboard
 autocutsel -fork &
 autocutsel -selection PRIMARY -fork &
@@ -15,7 +15,7 @@ clipbored
 xset +fp /usr/share/fonts/local
 xset fp rehash
 # Notifications with dunst
-dunst -key space -mod ctrl -to 4 -fn -*-terminus-*-r-normal-*-*-120-*-*-*-*-iso8859-* -geometry x2+1+1 -nb "#657b83" -nf "#002b36" &
+#dunst -key space -mod ctrl -to 4 -fn -*-terminus-*-r-normal-*-*-120-*-*-*-*-iso8859-* -geometry x2+1+1 -nb "#657b83" -nf "#002b36" &
 # Conky status bar
 conky | while read -r; do xsetroot -name "$REPLY"; done &
 # Start dwm
