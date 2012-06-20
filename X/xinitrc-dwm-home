@@ -16,6 +16,7 @@ xset +fp /usr/share/fonts/local
 xset fp rehash
 # Notifications with dunst
 #dunst -key space -mod ctrl -to 4 -fn -*-terminus-*-r-normal-*-*-120-*-*-*-*-iso8859-* -geometry x2+1+1 -nb "#657b83" -nf "#002b36" &
+dunst -config /home/jack/.config/dunst/dunstrc &
 # Conky status bar
 conky | while read -r; do xsetroot -name "$REPLY"; done &
 # Start dwm
