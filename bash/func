@@ -57,11 +57,6 @@ function nls {
   ls -c ~/notes | ack "$*"
 	}
 
-# View man pages in TextMate
-tman () {
-  MANWIDTH=160 MANPAGER='col -bx' man $@ | mate
-}
-
 # Calc
 calc(){ awk "BEGIN{ print $* }" ;}
 
@@ -102,12 +97,22 @@ any() {
     fi
 }
 
-# Volume control on the 701/1018
+# Volume control on the 1018
 
 vol() { 
     amixer set 'Master' "$1%" &>/dev/null
 }
 
+# Notify when finished/failed
+
+function nwf {
+    "$@"
+    if [ $? -gt 0 ]; then
+        notify-send -u critical "$1 FAILED"
+    else
+        notify-send -u critical "$1 finished"
+    fi
+}
 
 # Improved xclip from 
 # http://madebynathan.com/2011/10/04/a-nicer-way-to-use-xclip/
