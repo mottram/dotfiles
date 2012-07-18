@@ -22,20 +22,18 @@ alias -s html=vim
 export HISTIGNORE="&:ls:[bf]g:exit:reset:clear:cd*"
 
 # Start X at login
-#if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then
-#  startx
-#  logout
-#fi
+if [[ -z "$DISPLAY" ]] && [[ $(tty) = /dev/tty1 ]]; then
+  startx
+  logout
+fi
 
 # 1018P stuff
 if [ `hostname` = "pest" ]; then
     PATH="$PATH:/usr/lib/surfraw"
     BATTERY=1
     MAILCHECK=0
-    COLOR="NO" # Packer
     BROWSER="surf"
     export wiki_browser=/usr/bin/w3m
-    # export TERM=xterm-256color 
     alias open='mimeo'
 fi
 
