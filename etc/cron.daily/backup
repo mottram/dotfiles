@@ -1,0 +1,7 @@
+#!/bin/sh
+#cp /boot/grub/menu.lst /media/backup/grub/
+cp /boot/syslinux/syslinux.cfg /media/backup/syslinux/
+pacman -Qqe | grep -vx "$(pacman -Qqm)" > /media/backup/installed/installed.txt
+tar -cjf /media/backup/pacman/pacman-db.tar.bz2 /var/lib/pacman/local &>/dev/null &
+tar -cjf /media/backup/etc/etc-backup.tar.bz2 /etc &>/dev/null &
+rsync -a --delete /var/ /media/backup/var
