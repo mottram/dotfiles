@@ -179,6 +179,11 @@ isdarwin(){
     return 1
 }
 
+isfreebsd(){
+    [[ $OSTYPE == freebsd* ]] && return 0
+    return 1
+}
+
 #f1# are we running within an utf environment?
 isutfenv() {
     case "$LANG $CHARSET $LANGUAGE" in
@@ -533,8 +538,9 @@ export SHELL='/bin/zsh'
 
 # color setup for ls:
 check_com -c dircolors && eval $(dircolors -b)
-# color setup for ls on OS X:
+# color setup for ls on OS X / FreeBSD:
 isdarwin && export CLICOLOR=1
+isfreebsd && export CLICOLOR=1
 
 # do MacPorts setup on darwin
 if isdarwin && [[ -d /opt/local ]]; then
@@ -898,7 +904,7 @@ abk=(
     '....' '../../..'
     'BG'   '& exit'
     'C'    '| wc -l'
-    'G'    '|& grep '${grep_options:+"${grep_options[*]} "}
+    'G'    '|& grep '${grep_options:+"${grep_options[*]}"}
     'H'    '| head'
     'Hl'   ' --help |& less -r'    #d (Display help in pager)
     'L'    '| less'
@@ -963,7 +969,6 @@ if zrcautoload compinit ; then
     compinit || print 'Notice: no compinit available :('
 else
     print 'Notice: no compinit available :('
-    function zstyle { }
     function compdef { }
 fi
 
@@ -1137,85 +1142,39 @@ chpwd() {
 
 if is433 ; then
 
-CHPWD_PROFILE='default'
+# chpwd_profiles(): Directory Profiles, Quickstart:
+#
+# In .zshrc.local:
+#
+#   zstyle ':chpwd:profiles:/usr/src/grml(|/|/*)'   profile grml
+#   zstyle ':chpwd:profiles:/usr/src/debian(|/|/*)' profile debian
+#   chpwd_profiles
+#
+# For details see the `grmlzshrc.5' manual page.
 function chpwd_profiles() {
-    # Say you want certain settings to be active in certain directories.
-    # This is what you want.
-    #
-    # zstyle ':chpwd:profiles:/usr/src/grml(|/|/*)'   profile grml
-    # zstyle ':chpwd:profiles:/usr/src/debian(|/|/*)' profile debian
-    #
-    # When that's done and you enter a directory that matches the pattern
-    # in the third part of the context, a function called chpwd_profile_grml,
-    # for example, is called (if it exists).
-    #
-    # If no pattern matches (read: no profile is detected) the profile is
-    # set to 'default', which means chpwd_profile_default is attempted to
-    # be called.
-    #
-    # A word about the context (the ':chpwd:profiles:*' stuff in the zstyle
-    # command) which is used: The third part in the context is matched against
-    # ${PWD}. That's why using a pattern such as /foo/bar(|/|/*) makes sense.
-    # Because that way the profile is detected for all these values of ${PWD}:
-    #   /foo/bar
-    #   /foo/bar/
-    #   /foo/bar/baz
-    # So, if you want to make double damn sure a profile works in /foo/bar
-    # and everywhere deeper in that tree, just use (|/|/*) and be happy.
-    #
-    # The name of the detected profile will be available in a variable called
-    # 'profile' in your functions. You don't need to do anything, it'll just
-    # be there.
-    #
-    # Then there is the parameter $CHPWD_PROFILE is set to the profile, that
-    # was is currently active. That way you can avoid running code for a
-    # profile that is already active, by running code such as the following
-    # at the start of your function:
-    #
-    # function chpwd_profile_grml() {
-    #     [[ ${profile} == ${CHPWD_PROFILE} ]] && return 1
-    #   ...
-    # }
-    #
-    # The initial value for $CHPWD_PROFILE is 'default'.
-    #
-    # Version requirement:
-    #   This feature requires zsh 4.3.3 or newer.
-    #   If you use this feature and need to know whether it is active in your
-    #   current shell, there are several ways to do that. Here are two simple
-    #   ways:
-    #
-    #   a) If knowing if the profiles feature is active when zsh starts is
-    #      good enough for you, you can put the following snippet into your
-    #      .zshrc.local:
-    #
-    #   (( ${+functions[chpwd_profiles]} )) && print "directory profiles active"
-    #
-    #   b) If that is not good enough, and you would prefer to be notified
-    #      whenever a profile changes, you can solve that by making sure you
-    #      start *every* profile function you create like this:
-    #
-    #   function chpwd_profile_myprofilename() {
-    #       [[ ${profile} == ${CHPWD_PROFILE} ]] && return 1
-    #       print "chpwd(): Switching to profile: $profile"
-    #     ...
-    #   }
-    #
-    #      That makes sure you only get notified if a profile is *changed*,
-    #      not everytime you change directory, which would probably piss
-    #      you off fairly quickly. :-)
-    #
-    # There you go. Now have fun with that.
-    local -x profile
+    local profile context
+    local -i reexecute
 
-    zstyle -s ":chpwd:profiles:${PWD}" profile profile || profile='default'
-    if (( ${+functions[chpwd_profile_$profile]} )) ; then
-        chpwd_profile_${profile}
+    context=":chpwd:profiles:$PWD"
+    zstyle -s "$context" profile profile || profile='default'
+    zstyle -T "$context" re-execute && reexecute=1 || reexecute=0
+
+    if (( ${+parameters[CHPWD_PROFILE]} == 0 )); then
+        typeset -g CHPWD_PROFILE
+        local CHPWD_PROFILES_INIT=1
+        (( ${+functions[chpwd_profiles_init]} )) && chpwd_profiles_init
+    elif [[ $profile != $CHPWD_PROFILE ]]; then
+        (( ${+functions[chpwd_leave_profile_$CHPWD_PROFILE]} )) \
+            && chpwd_leave_profile_${CHPWD_PROFILE}
+    fi
+    if (( reexecute )) || [[ $profile != $CHPWD_PROFILE ]]; then
+        (( ${+functions[chpwd_profile_$profile]} )) && chpwd_profile_${profile}
     fi
 
     CHPWD_PROFILE="${profile}"
     return 0
 }
+
 chpwd_functions=( ${chpwd_functions} chpwd_profiles )
 
 fi # is433
@@ -1474,15 +1433,15 @@ fi
 # do we have GNU ls with color-support?
 if [[ "$TERM" != dumb ]]; then
     #a1# execute \kbd{@a@}:\quad ls with colors
-    alias ls='ls -b -CF '${ls_options:+"${ls_options[*]} "}
+    alias ls='ls -b -CF '${ls_options:+"${ls_options[*]}"}
     #a1# execute \kbd{@a@}:\quad list all files, with colors
-    alias la='ls -la '${ls_options:+"${ls_options[*]} "}
+    alias la='ls -la '${ls_options:+"${ls_options[*]}"}
     #a1# long colored list, without dotfiles (@a@)
-    alias ll='ls -l '${ls_options:+"${ls_options[*]} "}
+    alias ll='ls -l '${ls_options:+"${ls_options[*]}"}
     #a1# long colored list, human readable sizes (@a@)
-    alias lh='ls -hAl '${ls_options:+"${ls_options[*]} "}
+    alias lh='ls -hAl '${ls_options:+"${ls_options[*]}"}
     #a1# List files, append qualifier to filenames \\&\quad(\kbd{/} for directories, \kbd{@} for symlinks ...)
-    alias l='ls -lF '${ls_options:+"${ls_options[*]} "}
+    alias l='ls -lF '${ls_options:+"${ls_options[*]}"}
 else
     alias ls='ls -b -CF'
     alias la='ls -la'
@@ -1966,6 +1925,7 @@ compdef _functions edfunc
 #m# f6 Stop() \kbd{/etc/init.d/\em{process}}\quad\kbd{stop}
 #m# f6 Reload() \kbd{/etc/init.d/\em{process}}\quad\kbd{reload}
 #m# f6 Force-Reload() \kbd{/etc/init.d/\em{process}}\quad\kbd{force-reload}
+#m# f6 Status() \kbd{/etc/init.d/\em{process}}\quad\kbd{status}
 if [[ -d /etc/init.d || -d /etc/service ]] ; then
     __start_stop() {
         local action_="${1:l}"  # e.g Start/Stop/Restart
@@ -1997,7 +1957,7 @@ if [[ -d /etc/init.d || -d /etc/service ]] ; then
         _describe "service startup script" scripts
     }
 
-    for i in Start Restart Stop Force-Reload Reload ; do
+    for i in Start Restart Stop Force-Reload Reload Status ; do
         eval "$i() { __start_stop $i \"\$1\" \"\$2\" ; }"
         compdef _grmlinitd $i
     done
@@ -2195,9 +2155,11 @@ deswap() {
 #           VIM_OPTIONS=( -p )
 #       This will cause vim to send every file given on the
 #       commandline to be send to it's own tab (needs vim7).
-vim() {
-    VIM_PLEASE_SET_TITLE='yes' command vim ${VIM_OPTIONS} "$@"
-}
+if check_com vim; then
+    vim() {
+        VIM_PLEASE_SET_TITLE='yes' command vim ${VIM_OPTIONS} "$@"
+    }
+fi
 
 # make a backup of a file
 bk() {
@@ -2268,29 +2230,29 @@ alias j='jobs -l'
 #a2# Execute \kbd{ls -lSrah}
 alias dir="ls -lSrah"
 #a2# Only show dot-directories
-alias lad='ls -d .*(/)'                # only show dot-directories
+alias lad='ls -d .*(/)'
 #a2# Only show dot-files
-alias lsa='ls -a .*(.)'                # only show dot-files
+alias lsa='ls -a .*(.)'
 #a2# Only files with setgid/setuid/sticky flag
-alias lss='ls -l *(s,S,t)'             # only files with setgid/setuid/sticky flag
-#a2# Only show 1st ten symlinks
-alias lsl='ls -l *(@)'                 # only symlinks
+alias lss='ls -l *(s,S,t)'
+#a2# Only show symlinks
+alias lsl='ls -l *(@)'
 #a2# Display only executables
-alias lsx='ls -l *(*)'                 # only executables
+alias lsx='ls -l *(*)'
 #a2# Display world-{readable,writable,executable} files
-alias lsw='ls -ld *(R,W,X.^ND/)'       # world-{readable,writable,executable} files
+alias lsw='ls -ld *(R,W,X.^ND/)'
 #a2# Display the ten biggest files
-alias lsbig="ls -flh *(.OL[1,10])"     # display the biggest files
+alias lsbig="ls -flh *(.OL[1,10])"
 #a2# Only show directories
-alias lsd='ls -d *(/)'                 # only show directories
+alias lsd='ls -d *(/)'
 #a2# Only show empty directories
-alias lse='ls -d *(/^F)'               # only show empty directories
+alias lse='ls -d *(/^F)'
 #a2# Display the ten newest files
-alias lsnew="ls -rtlh *(D.om[1,10])"   # display the newest files
+alias lsnew="ls -rtlh *(D.om[1,10])"
 #a2# Display the ten oldest files
-alias lsold="ls -rtlh *(D.Om[1,10])"   # display the oldest files
+alias lsold="ls -rtlh *(D.Om[1,10])"
 #a2# Display the ten smallest files
-alias lssmall="ls -Srl *(.oL[1,10])"   # display the smallest files
+alias lssmall="ls -Srl *(.oL[1,10])"
 #a2# Display the ten newest directories and ten newest .directories
 alias lsnewdir="ls -rthdl *(/om[1,10]) .*(D/om[1,10])"
 #a2# Display the ten oldest directories and ten oldest .directories
@@ -2303,9 +2265,6 @@ alias rmcdir='cd ..; rmdir $OLDPWD || cd $OLDPWD'
 #a2# ssh with StrictHostKeyChecking=no \\&\quad and UserKnownHostsFile unset
 alias insecssh='ssh -o "StrictHostKeyChecking=no" -o "UserKnownHostsFile=/dev/null"'
 alias insecscp='scp -o "StrictHostKeyChecking=no" -o "UserKnownHostsFile=/dev/null"'
-
-# simple webserver
-check_com -c python && alias http="python -m SimpleHTTPServer"
 
 # work around non utf8 capable software in utf environment via $LANG and luit
 if check_com isutfenv && check_com luit ; then
@@ -2352,7 +2311,16 @@ cd() {
 
 #f5# Create Directoy and \kbd{cd} to it
 mkcd() {
-    mkdir -p "$@" && cd "$@"
+    if (( ARGC != 1 )); then
+        printf 'usage: mkcd <new-directory>\n'
+        return 1;
+    fi
+    if [[ ! -d "$1" ]]; then
+        command mkdir -p "$1"
+    else
+        printf '`%s'\'' already exists: cd-ing.\n' "$1"
+    fi
+    builtin cd "$1"
 }
 
 #f5# Create temporary directory and \kbd{cd} to it
@@ -2387,6 +2355,7 @@ inplaceMkDirs() {
         PATHTOMKDIR="${(Q)bufwords[iword]}"
     fi
     [[ -z "${PATHTOMKDIR}" ]] && return 1
+    PATHTOMKDIR=${~PATHTOMKDIR}
     if [[ -e "${PATHTOMKDIR}" ]]; then
         zle -M " path already exists, doing nothing"
     else
@@ -2419,7 +2388,7 @@ check_com new || alias new=modified
 
 # use colors when GNU grep with color-support
 #a2# Execute \kbd{grep -{}-color=auto}
-(( $#grep_options > 0 )) && alias grep='grep '${grep_options:+"${grep_options[*]} "}
+(( $#grep_options > 0 )) && alias grep='grep '${grep_options:+"${grep_options[*]}"}
 
 # Translate DE<=>EN
 # 'translate' looks up fot a word in a file with language-to-language
@@ -2634,46 +2603,39 @@ xtrename() {
     return 0
 }
 
-# TODO:
-# Rewrite this by either using tinyurl.com's API
-# or using another shortening service to comply with
-# tinyurl.com's policy.
-#
-# Create small urls via http://tinyurl.com using wget(1).
-#function zurl() {
-#    emulate -L zsh
-#    [[ -z $1 ]] && { print "USAGE: zurl <URL>" ; return 1 }
-#
-#    local PN url tiny grabber search result preview
-#    PN=$0
-#    url=$1
-##   Check existence of given URL with the help of ping(1).
-##   N.B. ping(1) only works without an eventual given protocol.
-#    ping -c 1 ${${url#(ftp|http)://}%%/*} >& /dev/null || \
-#        read -q "?Given host ${${url#http://*/}%/*} is not reachable by pinging. Proceed anyway? [y|n] "
-#
-#    if (( $? == 0 )) ; then
-##           Prepend 'http://' to given URL where necessary for later output.
-#            [[ ${url} != http(s|)://* ]] && url='http://'${url}
-#            tiny='http://tinyurl.com/create.php?url='
-#            if check_com -c wget ; then
-#                grabber='wget -O- -o/dev/null'
-#            else
-#                print "wget is not available, but mandatory for ${PN}. Aborting."
-#            fi
-##           Looking for i.e.`copy('http://tinyurl.com/7efkze')' in TinyURL's HTML code.
-#            search='copy\(?http://tinyurl.com/[[:alnum:]]##*'
-#            result=${(M)${${${(f)"$(${=grabber} ${tiny}${url})"}[(fr)${search}*]}//[()\';]/}%%http:*}
-##           TinyURL provides the rather new feature preview for more confidence. <http://tinyurl.com/preview.php>
-#            preview='http://preview.'${result#http://}
-#
-#            printf '%s\n\n' "${PN} - Shrinking long URLs via webservice TinyURL <http://tinyurl.com>."
-#            printf '%s\t%s\n\n' 'Given URL:' ${url}
-#            printf '%s\t%s\n\t\t%s\n' 'TinyURL:' ${result} ${preview}
-#    else
-#        return 1
-#    fi
-#}
+# Create small urls via http://goo.gl using curl(1).
+# API reference: https://code.google.com/apis/urlshortener/
+function zurl() {
+    emulate -L zsh
+    if [[ -z $1 ]]; then
+        print "USAGE: zurl <URL>"
+        return 1
+    fi
+
+    local PN url prog api json data
+    PN=$0
+    url=$1
+
+    # Prepend 'http://' to given URL where necessary for later output.
+    if [[ ${url} != http(s|)://* ]]; then
+        url='http://'${url}
+    fi
+
+    if check_com -c curl; then
+        prog=curl
+    else
+        print "curl is not available, but mandatory for ${PN}. Aborting."
+        return 1
+    fi
+    api='https://www.googleapis.com/urlshortener/v1/url'
+    contenttype="Content-Type: application/json"
+    json="{\"longUrl\": \"${url}\"}"
+    data=$($prog --silent -H ${contenttype} -d ${json} $api)
+    # Match against a regex and print it
+    if [[ $data =~ '"id": "(http://goo.gl/[[:alnum:]]+)"' ]]; then
+        print $match;
+    fi
+}
 
 #f2# Find history events by search pattern and list them by date.
 whatwhen()  {
@@ -2788,5 +2750,3 @@ zrclocal
 # Local variables:
 # mode: sh
 # End:
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

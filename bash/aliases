@@ -36,7 +36,9 @@ alias lock='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resourc
 # Open current dir as TextMate project
 alias matey='mate .'
 # Todo.txt
-alias t='~/dotfiles/todo/todo.sh -d ~/dotfiles/todo/mac-todo.cfg'
+alias td='~/dotfiles/todo/todo.sh -d ~/dotfiles/todo/mac-todo.cfg'
+#alias blog-check='cd ~/Weblog;rake generate;open http://Weblog.dev'
+alias blog-deploy='cd ~/Weblog;rake integrate;rake gen_deploy'
 
 # Specific to the Eee PC-----------------------------------------------
 # Turn off the display
