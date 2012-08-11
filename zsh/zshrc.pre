@@ -2,9 +2,6 @@
 
 PATH="/usr/local/bin:/usr/local/sbin:$HOME/bin:$PATH"
 
-# Fixes unknown parameter issue on OS X - why? 
-# zmodload zsh/terminfo
-
 # Source my aliases, functions and completions
 source ~/dotfiles/bash/func
 source ~/dotfiles/bash/aliases
