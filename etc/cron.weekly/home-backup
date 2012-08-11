@@ -1,0 +1,2 @@
+#!/bin/bash
+su jack -c "rdup-simple -E ~/.rdup-exclude ~ /media/SD/home-backup"
