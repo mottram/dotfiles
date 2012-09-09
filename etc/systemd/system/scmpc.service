@@ -1,0 +1,10 @@
+[Unit]
+Description=scmpc
+After=sound.target network.target
+
+[Service]
+User=jack
+ExecStart=/usr/bin/scmpc -f /home/jack/.config/scmpc/scmpc.conf -n
+
+[Install]
+WantedBy=multi-user.target
