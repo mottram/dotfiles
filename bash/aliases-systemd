@@ -1,0 +1,37 @@
+if ! systemd-notify --booted; then # not using systemd
+  start() {
+    sudo rc.d start $1
+  }
+
+  restart() {
+    sudo rc.d restart $1
+  }
+
+  stop() {
+    sudo rc.d stop $1
+  }
+else
+  start() {
+    sudo systemctl start $1
+  }
+
+  restart() {
+    sudo systemctl restart $1
+  }
+
+  stop() {
+    sudo systemctl stop $1
+  }
+
+  enable() {
+    sudo systemctl enable $1
+  }
+
+  status() {
+    sudo systemctl status $1
+  }
+
+  disable() {
+    sudo systemctl disable $1
+  }
+fi

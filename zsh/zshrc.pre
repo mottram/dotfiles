@@ -6,6 +6,9 @@ PATH="/usr/local/bin:/usr/local/sbin:$HOME/bin:$PATH"
 source ~/dotfiles/bash/func
 source ~/dotfiles/bash/aliases
 fpath=(~/dotfiles/zsh/zsh-completions $fpath)
+if [[ -a "/etc/arch-release" ]]; then
+    source ~/dotfiles/bash/aliases-systemd
+fi
 
 # Open various files in vim
 alias -s md=vim

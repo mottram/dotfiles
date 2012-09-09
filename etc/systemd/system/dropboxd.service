@@ -1,0 +1,10 @@
+[Unit]
+Description=Dropbox
+After=local-fs.target network.target
+
+[Service]
+User=jack
+ExecStart=/usr/bin/dropboxd
+
+[Install]
+WantedBy=multi-user.target
