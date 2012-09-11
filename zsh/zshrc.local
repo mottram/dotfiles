@@ -11,9 +11,9 @@ if [ `uname` = "OpenBSD" ]; then
 fi
 
 # Fixes xterm weirdness on Arch
-if [ `uname` = "Linux" ]; then
-    cd 
-fi
+#if [ `uname` = "Linux" ]; then
+#    cd 
+#fi
 
 if [ `hostname` = "mbp" ]; then
     PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

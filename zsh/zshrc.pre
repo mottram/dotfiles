@@ -34,6 +34,7 @@ if [ `hostname` = "pest" ]; then
     BROWSER="surf"
     export wiki_browser=/usr/bin/w3m
     alias open='mimeo'
+    alias v='vim -X'
 fi
 
 # Use MacVim's vim on OS X
@@ -43,6 +44,7 @@ fi
 
 # Colours for TTY courtesy of jwr
 if [ "$TERM" = "linux" ]; then
+    setfont ter112n
     echo -en "\e]P0000000" #black
     echo -en "\e]P83d3d3d" #darkgrey
     echo -en "\e]P18c4665" #darkred
