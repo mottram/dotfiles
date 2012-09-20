@@ -14,6 +14,7 @@ fi
 #if [ `uname` = "Linux" ]; then
 #    cd 
 #fi
+setfont ter-112n
 
 if [ `hostname` = "mbp" ]; then
     PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

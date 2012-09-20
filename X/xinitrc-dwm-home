@@ -1,6 +1,5 @@
 #!/bin/sh
 # Wallpaper
-#find ~/.wallpaper -type f -name "*.jpg" -print0 | shuf -n1 -z | xargs -0 imlibsetroot -s f
 imlibsetroot -s f .wallpaper/misty-danube.jpg
 # Keyboard & Trackpad
 setxkbmap gb
@@ -14,10 +13,17 @@ clipbored
 # Load fonts
 xset +fp /usr/share/fonts/local
 xset fp rehash
+# Turn off screen after 5 minutes
+xset +dpms
+xset dpms 0 0 300
 # Notifications with dunst
-#dunst -key space -mod ctrl -to 4 -fn -*-terminus-*-r-normal-*-*-120-*-*-*-*-iso8859-* -geometry x2+1+1 -nb "#657b83" -nf "#002b36" &
 dunst -config /home/jack/.config/dunst/dunstrc &
-# Conky status bar
-conky | while read -r; do xsetroot -name "$REPLY"; done &
-# Start dwm
+# Status bar
+while true; do
+    xsetroot -name "£ $(netcfg current) $(awk 'END{print $4}' /proc/net/wireless | tr -d [:punct:])% ò $(acpi -b | awk 'sub(/,/,"") {print $4}' | tr -d [:punct:])% É $( date +"%A %d %B %R" ) "
+   sleep 1m    # Update time every minute
+done &
 exec dwm-start
+
+# Conky status bar
+#conky | while read -r; do xsetroot -name "$REPLY"; done &
