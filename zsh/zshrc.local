@@ -5,6 +5,9 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 # History search
 source ~/dotfiles/zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 
+CYAN='\033[0;36m'
+
+
 # bsd ls is different
 if [ `uname` = "OpenBSD" ]; then
     alias ls="/bin/ls"
