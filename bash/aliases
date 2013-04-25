@@ -16,7 +16,7 @@ alias la='ls -a'
 alias lla='ls -lah'
 alias v='vim'
 alias sv='sudo vim'
-alias p='ping -c 4 google.com'
+alias p='ping -c 8 google.com'
 alias bc='bc -q'
 alias tw='twidge'
 alias twu='twidge update'
@@ -39,6 +39,7 @@ alias matey='mate .'
 alias td='~/dotfiles/todo/todo.sh -d ~/dotfiles/todo/mac-todo.cfg'
 alias blog-deploy='cd ~/Weblog;rake integrate;rake gen_deploy'
 alias macvim='open -a MacVim'
+alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
 
 # Specific to the Eee PC-----------------------------------------------
 # Turn off the display

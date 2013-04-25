@@ -33,6 +33,11 @@ mkdir -p "$*"
 cd "$*"
 }
 
+# Move to Trash
+trash() {
+mv $1 ~/.Trash/
+}
+
 # list and ack
 function lgr {
   ls -a | ack -i $1 
@@ -81,6 +86,16 @@ insta() {
 ricepaper -u "jack.mottram@gmail.com" -p "$1" "$2"
 }
 
+# Tumblr
+
+tumqueue() {
+tumblr post --queue "$1" --host=onethingwell.org
+}
+
+tumdraft() {
+tumblr post --draft "$1" --host=onethingwell.org
+}
+
 # grep for running process
 
 any() {
@@ -94,6 +109,16 @@ any() {
         local FIRSCHAR=$(echo $(expr substr $STRING 1 1))
         local REST=$(echo $(expr substr $STRING 2 $LENGTH))
         ps xauwww| ack "[$FIRSCHAR]$REST"
+    fi
+}
+
+clip() {
+    type=`file "$1"|grep -c text`
+    if [ $type -gt 0 ]; then
+        cat "$@"|pbcopy
+        echo "Contents of $1 are in the clipboard."
+    else
+        echo "File \"$1\" is not plain text."
     fi
 }
 

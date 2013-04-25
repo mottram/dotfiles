@@ -36,6 +36,7 @@ fi
 # Use MacVim's vim on OS X
 if [ `uname` = "Darwin" ]; then
     alias v="/Applications/MacVim.app/Contents/MacOS/Vim"
+    source /usr/local/bin/virtualenvwrapper.sh
 fi
 
 # Colours for TTY courtesy of jwr
