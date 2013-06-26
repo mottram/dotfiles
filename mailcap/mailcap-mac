@@ -4,4 +4,5 @@ mime_lookup application/octet-stream
 video/*; view_attachment.sh %s -
 image/*; view_attachment.sh %s -
 application/*; view_attachment.sh %s -
-text/html; view_attachment.sh %s html
+#text/html; view_attachment.sh %s html
+text/html; w3m -I %{charset} -T text/html; copiousoutput;
