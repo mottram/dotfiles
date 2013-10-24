@@ -7,12 +7,6 @@ source ~/dotfiles/zsh/zsh-history-substring-search/zsh-history-substring-search.
 
 CYAN='\033[0;36m'
 
-
-# bsd ls is different
-if [ `uname` = "OpenBSD" ]; then
-    alias ls="/bin/ls"
-fi
-
 # Fixes xterm weirdness on Arch
 if [ `uname` = "Linux" ]; then
     cd 
