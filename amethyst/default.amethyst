@@ -1,8 +1,8 @@
 {
     "LAYOUTS": "----------------------",
     "layouts": [
-        "wide",
-        "fullscreen",
+        "tall",
+        "fullscreen"
     ],
 
     "MODIFIERS": "----------------------",
@@ -159,6 +159,9 @@
     },
 
     "MISC": "----------------------",
-    "floating": [],
+    "floating": [
+        "com.apple.systempreferences",
+        "com.apple.Terminal"
+    ],
     "ignore-menu-bar": "false"
 }
