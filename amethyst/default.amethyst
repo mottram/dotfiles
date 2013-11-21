@@ -161,7 +161,9 @@
     "MISC": "----------------------",
     "floating": [
         "com.apple.systempreferences",
-        "com.apple.Terminal"
+        "com.apple.Terminal",
+        "com.peterborgapps.Lingon3",
+        "com.apple.ActivityMonitor"
     ],
     "ignore-menu-bar": "false"
 }
