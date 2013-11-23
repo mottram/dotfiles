@@ -1,0 +1,13 @@
+#! /bin/sh
+
+if ! rulc -l > /dev/null ; then
+    (setsid ruld &)
+    while ! rulc -l > /dev/null ; do
+        sleep 0.1
+    done
+fi
+rules=$(rulc -l)
+if [ -z "$rules" ] ; then
+    rulc -a 'class=="luakit"' 'desktop=^1'
+    rulc -a 'class=="mpv"' 'desktop=^3, floating=on'
+fi

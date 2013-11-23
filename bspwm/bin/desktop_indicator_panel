@@ -1,0 +1,24 @@
+#!/usr/bin/env zsh
+PANEL_WIDTH="200"
+
+function statusbar() {
+
+	function tags() {
+	des=$(wmctrl -d | awk '/*/ {print $9}')
+	if [[ "$des" == "1" ]]; then
+		echo -e '^fg(#918B88)1 ^fg(#54746E)2 3 4'
+	elif [[ "$des" == "2" ]]; then
+		echo -e '^fg(#54746E)1 ^fg(#918B88)2 ^fg(#54746E)3 4'
+	elif [[ "$des" == "3" ]]; then
+		echo -e '^fg(#54746E)1 2 ^fg(#918B88)3 ^fg(#54746E)4'
+	elif [[ "$des" == "4" ]]; then
+		echo -e '^fg(#54746E)1 2 3 ^fg(#918B88)4 ^fg(#54746E)'
+	fi
+	}
+	echo "$(tags)"
+}
+	while true
+	do
+		echo " $(statusbar)"
+		sleep 0.2
+	done | dzen2 -ta l -tw $PANEL_WIDTH -p -h $PANEL_HEIGHT -fn $PANEL_FONT -bg $PANEL_BACKGROUND -fg $PANEL_FOREGROUND
