@@ -5,10 +5,7 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 # History search
 source ~/dotfiles/zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 
-# bsd ls is different
-if [ `uname` = "OpenBSD" ]; then
-    alias ls="/bin/ls"
-fi
+CYAN='\033[0;36m'
 
 setfont ter-112n
 

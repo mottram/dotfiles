@@ -17,16 +17,11 @@ alias lla='ls -lah'
 alias v='vim'
 alias sv='sudo vim'
 alias ssv='sudo vim -u NONE'
-alias p='ping -c 4 google.com'
+alias p='ping -c 8 google.com'
 alias bc='bc -q'
 alias tw='twidge'
-alias twu='twidge update'
-alias twc='(twidge lsrecent -asu; twidge lsreplies -asu) | less'
 alias ed='ed --prompt="~ "'
 # SSH----------------------------------------------------------------------
-alias avimsh='ssh -p 30300 jack@67.23.46.82'
-alias textdrivesh='ssh mottram@howe.textdrive.com'
-alias remotedb='ssh -p 30300 -L 3307:localhost:3306 jack@83.170.85.158 -N'
 alias dyn='ssh mottram@mottram.ath.cx'
 alias socks='ssh -vND 9999 -p 22 mot@devio.us'
 alias se='ssh -p 51977 eee'
@@ -35,11 +30,11 @@ alias se='ssh -p 51977 eee'
 # Lock screen
 alias lock='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
 # Open current dir as TextMate project
-alias matey='mate .'
-# Todo.txt
 alias td='~/dotfiles/todo/todo.sh -d ~/dotfiles/todo/mac-todo.cfg'
-#alias blog-check='cd ~/Weblog;rake generate;open http://Weblog.dev'
 alias blog-deploy='cd ~/Weblog;rake integrate;rake gen_deploy'
+alias macvim='open -a MacVim'
+alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
+alias transadd='transmission-remote macbook.local:9091 --add'
 
 # Specific to the Eee PC-----------------------------------------------
 # Turn off the display

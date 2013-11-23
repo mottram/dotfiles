@@ -2,6 +2,8 @@
 
 PATH="/usr/local/bin:/usr/local/sbin:$HOME/bin:$PATH"
 
+export PATH=/usr/local/share/python:$PATH
+
 # Source my aliases, functions and completions
 source ~/dotfiles/bash/func
 source ~/dotfiles/bash/aliases
@@ -40,6 +42,7 @@ fi
 # Use MacVim's vim on OS X
 if [ `uname` = "Darwin" ]; then
     alias v="/Applications/MacVim.app/Contents/MacOS/Vim"
+    source /usr/local/bin/virtualenvwrapper.sh
 fi
 
 # Colours for TTY courtesy of jwr
