@@ -16,6 +16,7 @@ alias la='ls -a'
 alias lla='ls -lah'
 alias v='vim'
 alias sv='sudo vim'
+alias ssv='sudo vim -u NONE'
 alias p='ping -c 4 google.com'
 alias bc='bc -q'
 alias tw='twidge'
@@ -62,7 +63,7 @@ alias tt='~/dotfiles/todo/todo.sh -d ~/dotfiles/todo/eee-todo.cfg'
 # IP Address
 alias myip="curl icanhazip.com"
 # View PDF files
-alias pdf='zathura'
+alias pdf='apvlv'
 # Play songs
 alias play='mplayer -playlist <(find "$PWD" -type f | sort -n)'
 # Pacman, pacaur & cower

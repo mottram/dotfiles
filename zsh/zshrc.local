@@ -10,10 +10,6 @@ if [ `uname` = "OpenBSD" ]; then
     alias ls="/bin/ls"
 fi
 
-# Fixes xterm weirdness on Arch
-#if [ `uname` = "Linux" ]; then
-#    cd 
-#fi
 setfont ter-112n
 
 if [ `hostname` = "mbp" ]; then

@@ -9,7 +9,7 @@ unclutter -idle 2 &
 # Clipboard
 autocutsel -fork &
 autocutsel -selection PRIMARY -fork &
-clipbored
+#clipbored
 # Load fonts
 xset +fp /usr/share/fonts/local
 xset fp rehash
@@ -18,6 +18,10 @@ xset +dpms
 xset dpms 0 0 300
 # Notifications with dunst
 dunst -config /home/jack/.config/dunst/dunstrc &
+# Compositing with compton
+compton --config ~/.config/compton/compton.conf &
+# Source .xprofile, loliclip
+[ -f ~/.xprofile ] && . ~/.xprofile
 # Status bar
 while true; do
     xsetroot -name "£ $(netcfg current) $(awk 'END{print $4}' /proc/net/wireless | tr -d [:punct:])% ò $(acpi -b | awk 'sub(/,/,"") {print $4}' | tr -d [:punct:])% É $( date +"%A %d %B %R" ) "

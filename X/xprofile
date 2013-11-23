@@ -1,0 +1,1 @@
+compton --config /home/jack/.config/compton/compton.conf

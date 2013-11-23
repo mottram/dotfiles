@@ -1,0 +1,59 @@
+#!/bin/sh
+# bspwm settings
+export XDG_CONFIG_HOME="$HOME/.config"
+export BSPWM_SOCKET="/tmp/bspwm-socket"
+export PATH=$PATH:/home/jack/.config/bspwm/bin
+
+# panel settings
+export PANEL_FONT="-*-termsyn.icons-medium-r-*-*-12-*-*-*-*-*-*-*"
+export PANEL_FOREGROUND="#657b83"
+export PANEL_BACKGROUND="#002b36"
+export PANEL_HEIGHT="14"
+
+# keyboard shortcuts
+sxhkd &
+
+# wallpaper
+imlibsetroot -s f .wallpaper/misty-danube.jpg
+
+# gb keyboard layout
+setxkbmap gb
+
+# Caps Lock = Escape
+xmodmap ~/.config/X/Xmodmap
+
+# os x-style scrolling
+xmodmap -e "pointer = 1 2 3 5 4"
+
+# set cursor
+xsetroot -cursor_name left_ptr &
+
+# hide cursor after 2 seconds
+unclutter -idle 2 &
+
+# clipboard
+autocutsel -fork &
+autocutsel -selection PRIMARY -fork &
+
+# source .xprofile for loliclip
+[ -f ~/.xprofile ] && . ~/.xprofile
+
+# load fonts
+xset +fp /usr/share/fonts/local
+xset fp rehash
+
+# turn off screen after 5 minutes
+xset +dpms
+xset dpms 0 0 300
+
+# notifications with dunst
+dunst -config /home/jack/.config/dunst/dunstrc &
+
+# compositing
+compton --config ~/.config/compton/compton.conf &
+
+# start panels, rules, bspwm
+info_panel
+desktop_indicator_panel &
+rulc -l > /dev/null || ruld &
+exec bspwm
