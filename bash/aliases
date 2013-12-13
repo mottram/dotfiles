@@ -20,6 +20,8 @@ alias p='ping -c 8 google.com'
 alias bc='bc -q'
 alias tw='twidge'
 alias ed='ed --prompt="~ "'
+alias d='dirs -v'
+
 # SSH----------------------------------------------------------------------
 alias dyn='ssh mottram@mottram.ath.cx'
 alias socks='ssh -vND 9999 -p 22 mot@devio.us'

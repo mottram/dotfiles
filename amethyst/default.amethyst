@@ -163,7 +163,9 @@
         "com.apple.systempreferences",
         "com.apple.Terminal",
         "com.peterborgapps.Lingon3",
-        "com.apple.ActivityMonitor"
+        "com.apple.ActivityMonitor",
+        "com.apple.QuickTimePlayerX",
+        "com.flyingmeat.Acorn"
     ],
     "ignore-menu-bar": "false"
 }
