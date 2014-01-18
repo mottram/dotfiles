@@ -80,6 +80,11 @@ preserve_timestamp 1
 auto_uncompress 0
 decode_cte 0
 clear_buffer 1
+fixed_wheel_scroll_count 5
+relative_wheel_scroll_ratio 30
+relative_wheel_scroll 0
+reverse_mouse 0
+use_mouse 1
 ignorecase_search 1
 wrap_search 0
 mark_all_pages 0
@@ -108,14 +113,8 @@ label_topline 0
 show_srch_str 0
 show_lnum 0
 fold_line 1
-image_map_list 1
-imgdisplay w3mimgdisplay
-image_scale 100
-ext_image_viewer 1
-max_load_image 8
-auto_image 0
 pseudo_inlines 1
-display_image 1
+display_image 0
 view_unseenobject 0
 ignore_null_img_alt 1
 display_ins_del 1
@@ -135,7 +134,6 @@ open_tab_dl_list 0
 open_tab_blank 0
 target_self 0
 frame 0
-pixel_per_line 13
 pixel_per_char 6
 indent_incr 4
 tabstop 4
