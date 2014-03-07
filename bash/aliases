@@ -35,7 +35,7 @@ alias td='~/dotfiles/todo/todo.sh -d ~/dotfiles/todo/mac-todo.cfg'
 alias blog-deploy='cd ~/Weblog;rake integrate;rake gen_deploy'
 alias macvim='open -a MacVim'
 alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
-alias transadd='transmission-remote macbook.local:9091 --add'
+alias transadd='transmission-remote raspberrypi.local:9091 --add'
 
 # Specific to the Eee PC-----------------------------------------------
 # Turn off the display
