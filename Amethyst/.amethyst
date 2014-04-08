@@ -26,6 +26,7 @@
     "COMMANDS": "----------------------",
     "Commands are": {
         "cycle-layout": "Cycle layout to the next layout",
+        "cycle-layout-backward": "Cycle layout to the previous layout",
         "focus-screen-1": "Focus the main window on the first screen",
         "focus-screen-2": "Focus the main window on the second screen",
         "focus-screen-3": "Focus the main window on the third screen",
@@ -56,6 +57,26 @@
     "cycle-layout": {
         "mod": "mod1",
         "key": "space"
+    },
+    "cycle-layout-backward": {
+        "mod": "mod2",
+        "key": "space"
+    },
+    "select-tall-layout": {
+        "mod": "mod1",
+        "key": "a"
+    },
+    "select-wide-layout": {
+        "mod": "mod1",
+        "key": "s"
+    },
+    "select-fullscreen-layout": {
+        "mod": "mod1",
+        "key": "d"
+    },
+    "select-column-layout": {
+        "mod": "mod1",
+        "key": "f"
     },
     "focus-screen-1": {
         "mod": "mod1",
@@ -104,6 +125,14 @@
     "focus-cw": {
         "mod": "mod1",
         "key": "k"
+    },
+    "swap-screen-ccw": {
+        "mod": "mod2",
+        "key": "h"
+    },
+    "swap-screen-cw": {
+        "mod": "mod2",
+        "key": "l"
     },
     "swap-ccw": {
         "mod": "mod2",
@@ -157,6 +186,14 @@
         "mod": "mod1",
         "key": "t"
     },
+    "toggle-tiling": {
+        "mod": "mod2",
+        "key": "t"
+    },
+    "display-current-layout": {
+        "mod": "mod1",
+        "key": "i"
+    },
 
     "MISC": "----------------------",
     "floating": [
@@ -167,5 +204,8 @@
         "com.apple.QuickTimePlayerX",
         "com.flyingmeat.Acorn"
     ],
-    "ignore-menu-bar": "false"
+    "float-small-windows": true,
+    "mouse-follows-focus": true,
+    "enables-layout-hud": false,
+    "enables-layout-hud-on-space-change": false
 }
