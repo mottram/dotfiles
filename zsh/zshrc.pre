@@ -2,8 +2,6 @@
 
 PATH="/usr/local/bin:/usr/local/sbin:$HOME/bin:$PATH"
 
-export PATH=/usr/local/share/python:$PATH
-
 # Source my aliases, functions and completions
 source ~/dotfiles/bash/func
 source ~/dotfiles/bash/aliases
