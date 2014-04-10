@@ -5,7 +5,7 @@ PATH="/usr/local/bin:/usr/local/sbin:$HOME/bin:$PATH"
 # Source my aliases, functions and completions
 source ~/dotfiles/bash/func
 source ~/dotfiles/bash/aliases
-fpath=(~/dotfiles/zsh/zsh-completions $fpath)
+fpath=(~/dotfiles/zsh/zsh-completions/src $fpath)
 
 # Open various files in vim
 alias -s md=vim
