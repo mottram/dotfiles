@@ -89,12 +89,12 @@ ricepaper -u "jack.mottram@gmail.com" -p "$1" "$2"
 # Tumblr
 
 tumqueue() {
-tumblr post --queue "$1" --host=onethingwell.org
+tumblr post --queue "$1" --host=onethingwell.org 2>/dev/null
 open https://www.tumblr.com/blog/onethingwell/queue
 }
 
 tumdraft() {
-tumblr post --draft "$1" --host=onethingwell.org
+tumblr post --draft "$1" --host=onethingwell.org 2>/dev/null
 open https://www.tumblr.com/blog/onethingwell/drafts
 }
 

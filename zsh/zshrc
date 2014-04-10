@@ -521,10 +521,6 @@ for var in LANG LC_ALL LC_MESSAGES ; do
     [[ -n ${(P)var} ]] && export $var
 done
 
-xsource "/etc/sysconfig/keyboard"
-
-TZ=$(xcat /etc/timezone)
-
 # set some variables
 if check_com -c vim ; then
 #v#
@@ -605,8 +601,9 @@ if is4 ; then
 fi
 
 # completion system
+COMPDUMPFILE=${COMPDUMPFILE:-${ZDOTDIR:-${HOME}}/.zcompdump}
 if zrcautoload compinit ; then
-    compinit || print 'Notice: no compinit available :('
+    compinit -d ${COMPDUMPFILE} || print 'Notice: no compinit available :('
 else
     print 'Notice: no compinit available :('
     function compdef { }
@@ -773,7 +770,7 @@ grmlcomp() {
 
     # use generic completion system for programs not yet defined; (_gnu_generic works
     # with commands that provide a --help option with "standard" gnu-like output.)
-    for compcom in cp deborphan df feh fetchipac head hnb ipacsum mv \
+    for compcom in cp deborphan df feh fetchipac gpasswd head hnb ipacsum mv \
                    pal stow tail uname ; do
         [[ -z ${_comps[$compcom]} ]] && compdef _gnu_generic ${compcom}
     done; unset compcom
@@ -1560,6 +1557,7 @@ if [[ -f ${DIRSTACKFILE} ]] && [[ ${#dirstack[*]} -eq 0 ]] ; then
 fi
 
 chpwd() {
+    if (( $DIRSTACKSIZE <= 0 )) || [[ -z $DIRSTACKFILE ]]; then return; fi
     local -ax my_stack
     my_stack=( ${PWD} ${dirstack} )
     if is42 ; then
@@ -2295,8 +2293,8 @@ fi
 
 # do we have GNU ls with color-support?
 if [[ "$TERM" != dumb ]]; then
-    #a1# List files with colors (\kbd{ls -b -CF \ldots})
-    alias ls='ls -b -CF '${ls_options:+"${ls_options[*]}"}
+    #a1# List files with colors (\kbd{ls -CF \ldots})
+    alias ls='ls -CF '${ls_options:+"${ls_options[*]}"}
     #a1# List all files, with colors (\kbd{ls -la \ldots})
     alias la='ls -la '${ls_options:+"${ls_options[*]}"}
     #a1# List files with long colored list, without dotfiles (\kbd{ls -l \ldots})
@@ -2306,7 +2304,7 @@ if [[ "$TERM" != dumb ]]; then
     #a1# List files with long colored list, append qualifier to filenames (\kbd{ls -lF \ldots})\\&\quad(\kbd{/} for directories, \kbd{@} for symlinks ...)
     alias l='ls -lF '${ls_options:+"${ls_options[*]}"}
 else
-    alias ls='ls -b -CF'
+    alias ls='ls -CF'
     alias la='ls -la'
     alias ll='ls -l'
     alias lh='ls -hAl'
@@ -2943,8 +2941,13 @@ modified() {
 check_com new || alias new=modified
 
 # use colors when GNU grep with color-support
-#a2# Execute \kbd{grep -{}-color=auto}
-(( $#grep_options > 0 )) && alias grep='grep '${grep_options:+"${grep_options[*]}"}
+if (( $#grep_options > 0 )); then
+    o=${grep_options:+"${grep_options[*]}"}
+    #a2# Execute \kbd{grep -{}-color=auto}
+    alias grep='grep '$o
+    alias egrep='egrep '$o
+    unset o
+fi
 
 # Translate DE<=>EN
 # 'translate' looks up fot a word in a file with language-to-language
