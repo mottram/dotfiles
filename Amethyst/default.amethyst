@@ -2,7 +2,9 @@
     "LAYOUTS": "----------------------",
     "layouts": [
         "tall",
-        "fullscreen"
+        "fullscreen",
+        "wide",
+        "column"
     ],
 
     "MODIFIERS": "----------------------",
@@ -68,15 +70,15 @@
     },
     "select-wide-layout": {
         "mod": "mod1",
-        "key": "s"
+        "key": "f"
     },
     "select-fullscreen-layout": {
         "mod": "mod1",
-        "key": "d"
+        "key": "s"
     },
     "select-column-layout": {
         "mod": "mod1",
-        "key": "f"
+        "key": "d"
     },
     "focus-screen-1": {
         "mod": "mod1",
@@ -206,7 +208,7 @@
         "cx.c3.theunarchiver"
     ],
     "float-small-windows": true,
-    "mouse-follows-focus": true,
+    "mouse-follows-focus": false,
     "enables-layout-hud": false,
     "enables-layout-hud-on-space-change": false
 }
