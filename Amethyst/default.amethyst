@@ -2,9 +2,7 @@
     "LAYOUTS": "----------------------",
     "layouts": [
         "tall",
-        "fullscreen",
-        "wide",
-        "column"
+        "fullscreen"
     ],
 
     "MODIFIERS": "----------------------",
