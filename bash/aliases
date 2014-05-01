@@ -22,11 +22,6 @@ alias tw='twidge'
 alias ed='ed --prompt="~ "'
 alias d='dirs -v'
 
-# SSH----------------------------------------------------------------------
-alias dyn='ssh mottram@mottram.ath.cx'
-alias socks='ssh -vND 9999 -p 22 mot@devio.us'
-alias se='ssh -p 51977 eee'
-
 # Transmission-------------------------------------------------------------
 # TODO: Work out why IP address is so much quicker than raspberrypi.local
 alias transadd='transmission-remote 192.168.1.77:9091 -n $(cat ~/.transmission-pi) --add'
