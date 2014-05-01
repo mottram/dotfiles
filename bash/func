@@ -56,8 +56,6 @@ fr() {
     find ./* -mtime -$1 -iname '*.*' | cut -c3-
 }
 
-
-
 # Tumblr
 
 tumqueue() {
