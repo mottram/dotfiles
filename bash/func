@@ -53,7 +53,7 @@ bk() {
 
 # Find files since $1 days
 fr() {
-    find ./* -mtime -$1 -iname '*.*' | cut -c3-
+    find ./* -mtime -$1 | cut -c3-
 }
 
 # Tumblr
