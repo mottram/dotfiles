@@ -32,10 +32,10 @@ alias transup='transmission-remote 192.168.1.77:9091 -n $(cat ~/.transmission-pi
 # Specific to the MacBook--------------------------------------------------
 # Lock screen
 alias lock='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
-# Open current dir as TextMate project
-alias td='~/dotfiles/todo/todo.sh -d ~/dotfiles/todo/mac-todo.cfg'
+alias t='~/dotfiles/todo/todo.sh -d ~/dotfiles/todo/mac-todo.cfg'
+alias te='v +sort ~/Dropbox/todo/todo.txt'
 alias blog-deploy='cd ~/Weblog;rake integrate;rake gen_deploy'
-alias macvim='open -a MacVim'
+alias macvim='v --servername=VIM --remote-tab'
 alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
 
 # Specific to the Eee PC--------------------------------------------------
