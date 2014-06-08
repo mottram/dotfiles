@@ -37,7 +37,7 @@ alias te='v +sort ~/Dropbox/todo/todo.txt'
 alias blog-deploy='cd ~/Weblog;rake integrate;rake gen_deploy'
 alias macvim='v --servername=VIM --remote-tab'
 alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
-alias email="mbsync -q fastsync&&notmuch new&&mutt"
+alias email="mbsync -q fastsync & mutt"
 
 # Specific to the Eee PC--------------------------------------------------
 # Turn off the display
