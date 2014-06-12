@@ -28,7 +28,7 @@ alias transadd='transmission-remote 192.168.1.77:9091 -n $(cat ~/.transmission-p
 alias translist='transmission-remote 192.168.1.77:9091 -n $(cat ~/.transmission-pi) --list'
 alias transdown='transmission-remote 192.168.1.77:9091 -n $(cat ~/.transmission-pi) --list | grep Down'
 alias transup='transmission-remote 192.168.1.77:9091 -n $(cat ~/.transmission-pi) --list | grep Up'
-
+alias transcli='transmission-remote-cli -c $(cat ~/.transmission-pi)@192.168.1.77:9091'
 # Specific to the MacBook--------------------------------------------------
 # Lock screen
 alias lock='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
@@ -37,7 +37,7 @@ alias te='v +sort ~/Dropbox/todo/todo.txt'
 alias blog-deploy='cd ~/Weblog;rake integrate;rake gen_deploy'
 alias macvim='v --servername=VIM --remote-tab'
 alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
-alias email="mbsync -q fastsync & mutt"
+alias email="mbsync -q fastsync;mutt"
 
 # Specific to the Eee PC--------------------------------------------------
 # Turn off the display
