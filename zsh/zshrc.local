@@ -5,6 +5,8 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 # History search
 source ~/dotfiles/zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 
+export PASSWORD_STORE_DIR=/Users/jack/Dropbox/Passwords
+
 CYAN='\033[0;36m'
 
 # Fixes xterm weirdness on Arch

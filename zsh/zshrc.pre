@@ -6,6 +6,7 @@ PATH="/usr/local/bin:/usr/local/sbin:$HOME/bin:$PATH"
 source ~/dotfiles/bash/func
 source ~/dotfiles/bash/aliases
 fpath=(~/dotfiles/zsh/zsh-completions/src $fpath)
+fpath=(/usr/local/share/zsh/site-functions $fpath)
 
 # Open various files in vim
 alias -s md=vim
@@ -33,7 +34,7 @@ if [ `hostname` = "pest" ]; then
     alias open='mimeo'
 fi
 
-# Use MacVim's vim on OS X
+# Use MacVim's vim on OS X, source virtualenv, variables for pass
 if [ `uname` = "Darwin" ]; then
     alias v="/Applications/MacVim.app/Contents/MacOS/Vim"
     alias mvim="/Applications/MacVim.app/Contents/MacOS/Vim --servername=VIM --remote-tab"
