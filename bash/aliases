@@ -29,6 +29,10 @@ alias translist='transmission-remote 192.168.1.77:9091 -n $(cat ~/.transmission-
 alias transdown='transmission-remote 192.168.1.77:9091 -n $(cat ~/.transmission-pi) --list | grep Down'
 alias transup='transmission-remote 192.168.1.77:9091 -n $(cat ~/.transmission-pi) --list | grep Up'
 alias transcli='transmission-remote-cli -c $(cat ~/.transmission-pi)@192.168.1.77:9091'
+
+# Music--------------------------------------------------------------------
+alias music="ncmpcpp -h 192.168.1.77"
+
 # Specific to the MacBook--------------------------------------------------
 # Lock screen
 alias lock='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
@@ -71,3 +75,6 @@ alias ug='pacaur -Syu'
 alias venv='export WORKON_HOME=~/envs;source /usr/bin/virtualenvwrapper.sh'
 # Search arch-wiki-docs
 alias aw='wiki-search-html'
+
+
+alias nv="export VIMRUNTIME=/Applications/MacVim.app/Contents/Resources/vim/runtime;nvim"

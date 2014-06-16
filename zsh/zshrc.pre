@@ -34,10 +34,8 @@ if [ `hostname` = "pest" ]; then
     alias open='mimeo'
 fi
 
-# Use MacVim's vim on OS X, source virtualenv, variables for pass
+# Source virtualenv on the Mac
 if [ `uname` = "Darwin" ]; then
-    alias v="/Applications/MacVim.app/Contents/MacOS/Vim"
-    alias mvim="/Applications/MacVim.app/Contents/MacOS/Vim --servername=VIM --remote-tab"
     source /usr/local/bin/virtualenvwrapper.sh
 fi
 
