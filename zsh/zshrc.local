@@ -1,34 +1,24 @@
 # Syntax highlighting 
 source ~/dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
-# History search
+# Fuzzy history search
 source ~/dotfiles/zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
-# Bind UP and DOWN arrow keys
+# Use vi mode
+bindkey -v
+# Bind Up and Down arrow keys
 zmodload zsh/terminfo
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
-# Bind P and N for EMACS mode
+# Bind P and N for Emacs mode
 bindkey -M emacs '^P' history-substring-search-up
 bindkey -M emacs '^N' history-substring-search-down
-# bind k and j for VI mode
+# bind k and j for Vi mode
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
-# Use vi mode
-bindkey -v
-# Use opp
-source ~/dotfiles/zsh/opp/opp.zsh
-source ~/dotfiles/zsh/opp/opp/*.zsh
-
-function zle-line-init zle-keymap-select {
-    VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]%  %{$reset_color%}"
-    RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $EPS1"
-    zle reset-prompt
-}
-
-zle -N zle-line-init
-zle -N zle-keymap-select
+# Use '.' for last argument
+bindkey -M vicmd '.' insert-last-word
+# Speed up mode switching
 export KEYTIMEOUT=1
-
 
 export PASSWORD_STORE_DIR=/Users/jack/Dropbox/Passwords
 
