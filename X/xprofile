@@ -1,1 +1,18 @@
-compton --config /home/jack/.config/compton/compton.conf
+#!/bin/sh
+# privoxy, polipo
+export http_proxy=localhost:8118
+
+# keyboard shortcuts
+sxhkd &
+
+# Launch xcmenu for clipboard history
+xcmenu --daemon
+
+# notifications with dunst
+dunst -config ~/.config/dunst/dunstrc &
+
+# compositing
+compton --config ~/.config/compton/compton.conf -b
+
+# hide cursor after 2 seconds
+unclutter -idle 2 &

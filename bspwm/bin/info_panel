@@ -1,12 +1,7 @@
 #!/bin/sh
 PANEL_WIDTH="1024"
-VOLUME_LEVEL=$(amixer get Master | tail -1 | sed 's/.*\[\([0-9]*%\)\].*/\1/')
-NETWORK_SIGNAL_STRENGTH=$(awk 'END{print $4}' /proc/net/wireless | tr -d [:punct:])
-BATTERY_LEVEL=$(acpi -b | awk 'sub(/,/,"") {print $4}' | tr -d [:punct:])
-DATE_AND_TIME=$(date +"%A %d %B %R")
-
 while true
 do
-    echo "­ $VOLUME_LEVEL £ $NETWORK_SIGNAL_STRENGTH% ò $BATTERY_LEVEL% $DATE_AND_TIME "
-    sleep 1m
+    echo "­ $(amixer get Master | tail -1 | sed 's/.*\[\([0-9]*%\)\].*/\1/') £ $(netctl list | awk '/*/ {print $2}' | sed 's/.*/\L&/; s/[a-z]*/\u&/g') $(awk 'END{print $4}' /proc/net/wireless | tr -d [:punct:])% ò $(acpi -b | awk 'sub(/,/,"") {print $4}' | tr -d [:punct:])% $(date +"%A %d %B %R") "
+    sleep 30
 done | dzen2 -ta r -tw $PANEL_WIDTH -h $PANEL_HEIGHT -fn $PANEL_FONT -bg $PANEL_BACKGROUND -fg $PANEL_FOREGROUND &

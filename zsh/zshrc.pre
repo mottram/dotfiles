@@ -8,9 +8,6 @@ export PATH=/usr/local/share/python:$PATH
 source ~/dotfiles/bash/func
 source ~/dotfiles/bash/aliases
 fpath=(~/dotfiles/zsh/zsh-completions $fpath)
-if [[ -a "/etc/arch-release" ]]; then
-    source ~/dotfiles/bash/aliases-systemd
-fi
 
 # Open various files in vim
 alias -s md=vim
@@ -33,8 +30,11 @@ if [ `hostname` = "pest" ]; then
     PATH="$PATH:/usr/lib/surfraw"
     BATTERY=1
     MAILCHECK=0
-    BROWSER="surf"
+    BROWSER="/usr/bin/dwb"
     export wiki_browser=/usr/bin/w3m
+    export PATH="/usr/lib/surfraw:$PATH"
+    source ~/.gpg-agent-info
+    export GPG_AGENT_INFO
     alias open='mimeo'
     alias v='vim -X'
 fi

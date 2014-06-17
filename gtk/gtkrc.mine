@@ -5,3 +5,16 @@ gtk-icon-sizes="gtk-menu=16,16:
 		gtk-dnd=16,16:
 		gtk-dialog=16,16"
 gtk-toolbar-style = GTK_TOOLBAR_ICONS
+
+style "scrollbar"
+{
+    GtkScrollbar::slider-width = 12
+}
+class "Gtk*Scrollbar" style "scrollbar"
+
+style "resize-grip"
+{
+    GtkWindow::resize-grip-height = 24
+    GtkWindow::resize-grip-width = 24
+}
+class "GtkWindow*" style "resize-grip"
