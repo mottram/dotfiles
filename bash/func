@@ -1,22 +1,3 @@
-# mpc search 'n' play
-
-mpcplay() {
-    type=$(echo "$1" | sed 's/\<./\u&/')
-    term=$(echo "$2" | sed 's/\<./\u&/')
-    if pidof -x mpd >/dev/null
-        then
-            mpc -q pause
-            mpc -q clear
-            mpc search "$1" "$2" | mpc add
-            mpc -q shuffle
-            mpc -q play
-            echo ":: $type '$term' now playing."
-    else
-        echo ":: MPD isn't running"
-    fi
-}
-
-
 # quick git commit
 function gg {
   git commit -v -a -m "$*"
@@ -65,35 +46,26 @@ function nls {
 # Calc
 calc(){ awk "BEGIN{ print $* }" ;}
 
-# Links list
-frsh() {
-echo "$1" >> ~/notes/fresh-links.txt
-}
-
 # make a backup of a file
 bk() {
     cp -a "$1" "${1}_$(date -u)"
 }
 
-# timer
-alarm() {
-    utimer -c $1 1>/dev/null ; espeak $2 2>/dev/null && notify-send $2
-}
-
-# Instapaper - $1 is pw, $2 url
-
-insta() {
-ricepaper -u "jack.mottram@gmail.com" -p "$1" "$2"
+# Find files since $1 days
+fr() {
+    find ./* -mtime -$1 | cut -c3-
 }
 
 # Tumblr
 
 tumqueue() {
-tumblr post --queue "$1" --host=onethingwell.org
+tumblr post --queue "$1" --host=onethingwell.org 2>/dev/null
+open https://www.tumblr.com/blog/onethingwell/queue
 }
 
 tumdraft() {
-tumblr post --draft "$1" --host=onethingwell.org
+tumblr post --draft "$1" --host=onethingwell.org 2>/dev/null
+open https://www.tumblr.com/blog/onethingwell/drafts
 }
 
 # grep for running process
@@ -136,6 +108,24 @@ function nwf {
         notify-send -u critical "$1 FAILED"
     else
         notify-send -u critical "$1 finished"
+    fi
+}
+
+# mpc search 'n' play
+
+mpcplay() {
+    type=$(echo "$1" | sed 's/\<./\u&/')
+    term=$(echo "$2" | sed 's/\<./\u&/')
+    if pidof -x mpd >/dev/null
+        then
+            mpc -q pause
+            mpc -q clear
+            mpc search "$1" "$2" | mpc add
+            mpc -q shuffle
+            mpc -q play
+            echo ":: $type '$term' now playing."
+    else
+        echo ":: MPD isn't running"
     fi
 }
 

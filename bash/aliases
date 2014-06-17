@@ -22,22 +22,30 @@ alias p='ping -c 8 google.com'
 alias bc='bc -q'
 alias tw='twidge'
 alias ed='ed --prompt="~ "'
-# SSH----------------------------------------------------------------------
-alias dyn='ssh mottram@mottram.ath.cx'
-alias socks='ssh -vND 9999 -p 22 mot@devio.us'
-alias se='ssh -p 51977 eee'
+alias d='dirs -v'
+
+# Transmission-------------------------------------------------------------
+# TODO: Work out why IP address is so much quicker than raspberrypi.local
+alias transadd='transmission-remote 192.168.1.77:9091 -n $(cat ~/.transmission-pi) --add'
+alias translist='transmission-remote 192.168.1.77:9091 -n $(cat ~/.transmission-pi) --list'
+alias transdown='transmission-remote 192.168.1.77:9091 -n $(cat ~/.transmission-pi) --list | grep Down'
+alias transup='transmission-remote 192.168.1.77:9091 -n $(cat ~/.transmission-pi) --list | grep Up'
+alias transcli='transmission-remote-cli -c $(cat ~/.transmission-pi)@192.168.1.77:9091'
+
+# Music--------------------------------------------------------------------
+alias music="ncmpcpp -h 192.168.1.77"
 
 # Specific to the MacBook--------------------------------------------------
 # Lock screen
 alias lock='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
-# Open current dir as TextMate project
-alias td='~/dotfiles/todo/todo.sh -d ~/dotfiles/todo/mac-todo.cfg'
+alias t='~/dotfiles/todo/todo.sh -d ~/dotfiles/todo/mac-todo.cfg'
+alias te='v +sort ~/Dropbox/todo/todo.txt'
 alias blog-deploy='cd ~/Weblog;rake integrate;rake gen_deploy'
-alias macvim='open -a MacVim'
+alias macvim='v --servername=VIM --remote-tab'
 alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
-alias transadd='transmission-remote macbook.local:9091 --add'
+alias email="mbsync -q fastsync;mutt"
 
-# Specific to the Eee PC-----------------------------------------------
+# Specific to the Eee PC--------------------------------------------------
 # Turn off the display
 alias dispoff='sleep 1 && xset dpms force off' 
 # Suspend
@@ -69,3 +77,6 @@ alias ug='pacaur -Syu'
 alias venv='export WORKON_HOME=~/envs;source /usr/bin/virtualenvwrapper.sh'
 # Search arch-wiki-docs
 alias aw='wiki-search-html'
+
+
+alias nv="export VIMRUNTIME=/Applications/MacVim.app/Contents/Resources/vim/runtime;nvim"
