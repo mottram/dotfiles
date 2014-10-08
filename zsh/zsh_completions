@@ -12,14 +12,14 @@ grmlcomp() {
 
     # start menu completion only if it could find no unambiguous initial string
     zstyle ':completion:*:correct:*'       insert-unambiguous true
-    zstyle ':completion:*:corrections'     format $'%{\e[0;31m%}%d (errors: %e)%{\e[0m%}'
+    zstyle ':completion:*:corrections'     format $'%{\e[0;32m%}%d (errors: %e)%{\e[0m%}'
     zstyle ':completion:*:correct:*'       original true
 
     # activate color-completion
     zstyle ':completion:*:default'         list-colors ${(s.:.)LS_COLORS}
 
     # format on completion
-    zstyle ':completion:*:descriptions'    format $'%{\e[0;31m%}completing %B%d%b%{\e[0m%}'
+    zstyle ':completion:*:descriptions'    format $'%{\e[0;32m%}completing %B%d%b%{\e[0m%}'
 
     # automatically complete 'cd -<tab>' and 'cd -<ctrl-d>' with menu
     # zstyle ':completion:*:*:cd:*:directory-stack' menu yes select
@@ -135,20 +135,20 @@ grmlcomp() {
                             zstyle ':completion::complete:*' cache-path $ZSHDIR/cache/
 
     # host completion
-    # if is42 ; then
-    #     [[ -r ~/.ssh/known_hosts ]] && _ssh_hosts=(${${${${(f)"$(<$HOME/.ssh/known_hosts)"}:#[\|]*}%%\ *}%%,*}) || _ssh_hosts=()
-    #     [[ -r /etc/hosts ]] && : ${(A)_etc_hosts:=${(s: :)${(ps:\t:)${${(f)~~"$(</etc/hosts)"}%%\#*}##[:blank:]#[^[:blank:]]#}}} || _etc_hosts=()
-    # else
-    #     _ssh_hosts=()
-    #     _etc_hosts=()
-    # fi
-    # hosts=(
-    #     $(hostname)
-    #     "$_ssh_hosts[@]"
-    #     "$_etc_hosts[@]"
-    #     localhost
-    # )
-    # zstyle ':completion:*:hosts' hosts $hosts
+    
+         [[ -r ~/.ssh/known_hosts ]] && _ssh_hosts=(${${${${(f)"$(<$HOME/.ssh/known_hosts)"}:#[\|]*}%%\ *}%%,*}) || _ssh_hosts=()
+         [[ -r /etc/hosts ]] && : ${(A)_etc_hosts:=${(s: :)${(ps:\t:)${${(f)~~"$(</etc/hosts)"}%%\#*}##[:blank:]#[^[:blank:]]#}}} || _etc_hosts=()
+         
+         _ssh_hosts=()
+         _etc_hosts=()
+
+     hosts=(
+         $(hostname)
+         "$_ssh_hosts[@]"
+         "$_etc_hosts[@]"
+         localhost
+     )
+     zstyle ':completion:*:hosts' hosts $hosts
     # TODO: so, why is this here?
     #  zstyle '*' hosts $hosts
 
@@ -163,4 +163,3 @@ grmlcomp() {
     compdef _hosts upgrade
 }
 
-grmlcomp

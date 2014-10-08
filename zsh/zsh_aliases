@@ -36,7 +36,7 @@ alias music="ncmpcpp -h 192.168.1.77"
 # Specific to the MacBook--------------------------------------------------
 # Lock screen
 alias lock='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
-alias t='~/dotfiles/todo/todo.sh -d ~/dotfiles/todo/mac-todo.cfg'
+alias t='/usr/local/bin/todo.sh -d ~/dotfiles/todo/mac-todo.cfg'
 alias te='v +sort ~/Dropbox/todo/todo.txt'
 alias blog-deploy='cd ~/Weblog;rake integrate;rake gen_deploy'
 alias macvim='v --servername=VIM --remote-tab'
