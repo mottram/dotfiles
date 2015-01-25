@@ -5,11 +5,6 @@
 # TODO: tidy up aliases & functions, use checks
 # General
 PATH="/usr/local/bin:/usr/local/sbin:$HOME/bin:$PATH"
-if [[ $IS_OSX -eq 1 ]]; then
-    export EDITOR=/usr/local/bin/vim
-elif [[ $IS_LINUX -eq 1 ]]; then
-    export EDITOR=vim
-fi
 
 # Source checks, aliases, functions, plugins & prompt
 export ZSH_DIR=$HOME/dotfiles/zsh
@@ -29,3 +24,9 @@ source $ZSH_DIR/opp/opp.zsh
 source $ZSH_DIR/opp/opp/*.zsh
 source $ZSH_DIR/prompt.zsh
 
+
+if [[ $IS_OSX -eq 1 ]]; then
+    export EDITOR=/usr/local/bin/vim
+elif [[ $IS_LINUX -eq 1 ]]; then
+    export EDITOR=vim
+fi
