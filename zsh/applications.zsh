@@ -35,3 +35,8 @@ if [[ $IS_OSX -eq 1 ]]; then
     zle -N zle-keymap-select
 fi
 
+# Fixes xterm weirdness on Arch
+# TODO: Check if needed
+#if [[ $IS_LINUX -eq 1 ]]; then
+#    cd 
+#fi
