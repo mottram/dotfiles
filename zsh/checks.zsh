@@ -3,7 +3,11 @@ if [[ $(uname) = 'Linux' ]]; then
 fi
 
 if [[ $(uname) = 'Darwin' ]]; then
-    IS_MAC=1
+    IS_OSX=1
+fi
+
+if [[ $(uname) = 'FreeBSD' ]]; then
+    IS_FREEBSD=1
 fi
 
 if [[ -x `which brew` ]]; then

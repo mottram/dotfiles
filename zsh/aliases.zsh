@@ -22,6 +22,28 @@ alias tw='twidge'
 alias ed='ed --prompt="~ "'
 alias d='dirs -v'
 
+# Package management crossplatformisation
+# TODO: FreeBSD
+if [[ $HAS_BREW -eq 1 ]]; then
+    alias pkg_update='brew update'
+    alias pkg_outdated='brew outdated'
+    alias pkg_upgrade='brew upgrade'
+    alias pkg_clean='brew cleanup'
+    alias pkg_search='brew search'
+elif [[ $HAS_PACMAN -eq 1 ]]; then
+    alias pkg_update='pacman -Syy'
+    alias pkg_outdated='pacman -Qu'
+    alias pkg_upgrade='pacman -Syu'
+    alias pkg_clean='paccache -r && paccache -ruk0'
+    alias pkg_search='pacman -Ss'
+elif [[ $HAS_APT -eq 1 ]]; then
+    alias pkg_update='sudo apt-get update'
+    alias pkg_outdated='sudo apt-get update && sudo apt-get -s upgrade'
+    alias pkg_upgrade='sudo apt-get upgrade'
+    alias pkg_clean='sudo apt-get clean'
+    alias pkg_search='apt-cache search'
+fi
+
 # Transmission-------------------------------------------------------------
 # TODO: Work out why IP address is so much quicker than raspberrypi.local
 alias transadd='transmission-remote 192.168.1.77:9091 -n $(cat ~/.transmission-pi) --add'
