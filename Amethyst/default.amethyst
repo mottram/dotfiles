@@ -203,6 +203,7 @@
         "com.apple.ActivityMonitor",
         "com.apple.QuickTimePlayerX",
         "com.flyingmeat.Acorn4",
+        "com.twitter.twitter-mac",
         "cx.c3.theunarchiver"
     ],
     "float-small-windows": true,

@@ -4,6 +4,8 @@
 
 # General
 PATH="/usr/local/bin:/usr/local/sbin:$HOME/bin:$PATH"
+# TODO: Check if OS X or Linux first!
+export EDITOR=/usr/local/bin/vim
 
 # Source aliases and functions
 source ~/dotfiles/zsh/functions.zsh

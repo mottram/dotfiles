@@ -50,21 +50,19 @@ tumblr post --draft "$1" --host=onethingwell.org 2>/dev/null
 open https://www.tumblr.com/blog/onethingwell/drafts
 }
 
-# grep for running process
+# grep for running processes
 
 any() {
-    emulate -L zsh
     if [[ -z "$1" ]] ; then
-        echo "any - ack for process(es) by keyword" >&2
+        echo "any - grep for process(es) by keyword" >&2
         echo "Usage: any <keyword>" >&2 ; return 1
     else
-        local STRING=$1
-        local LENGTH=$(expr length $STRING)
-        local FIRSCHAR=$(echo $(expr substr $STRING 1 1))
-        local REST=$(echo $(expr substr $STRING 2 $LENGTH))
-        ps xauwww| ack "[$FIRSCHAR]$REST"
+        ps xauwww | grep -i "$1" | grep -v "grep"
     fi
 }
+
+
+# Add contents of a file to the OS X clipboard
 
 clip() {
     type=`file "$1"|grep -c text`
