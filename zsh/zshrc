@@ -7,19 +7,21 @@ PATH="/usr/local/bin:/usr/local/sbin:$HOME/bin:$PATH"
 # TODO: Check if OS X or Linux first!
 export EDITOR=/usr/local/bin/vim
 
-# Source aliases and functions
-source ~/dotfiles/zsh/functions.zsh
-source ~/dotfiles/zsh/aliases.zsh
-source ~/dotfiles/zsh/completions.zsh
+# Source checks, aliases and functions
+export ZSH_DIR=$HOME/dotfiles/zsh
+source $ZSH_DIR/checks.zsh
+source $ZSH_DIR/functions.zsh
+source $ZSH_DIR/aliases.zsh
+source $ZSH_DIR/completions.zsh
 
-fpath=(~/dotfiles/zsh/zsh-completions/src $fpath)
+fpath=($ZSH_DIR/zsh-completions/src $fpath)
 fpath=(/usr/local/share/zsh/site-functions $fpath)
 
-source ~/dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $ZSH_DIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
-source ~/dotfiles/zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
-source ~/dotfiles/zsh/opp/opp.zsh
-source ~/dotfiles/zsh/opp/opp/*.zsh
+source $ZSH_DIR/zsh-history-substring-search/zsh-history-substring-search.zsh
+source $ZSH_DIR/opp/opp.zsh
+source $ZSH_DIR/opp/opp/*.zsh
 
 export PASSWORD_STORE_DIR=/Users/jack/Dropbox/Passwords
 
@@ -31,10 +33,11 @@ colors
 grmlcomp
 setopt prompt_subst extended_glob longlistjobs nonomatch notify completeinword auto_cd auto_pushd pushdignoredups
 
+# History
 HISTCONTROL=erasedups
 HISTFILE=~/.zsh_history
-HISTSIZE=500  || HISTSIZE=5000
-SAVEHIST=1000 || SAVEHIST=10000
+HISTSIZE=10000
+SAVEHIST=10000
 setopt  append_history share_history hist_verify extended_history histignorespace hist_ignore_all_dups
 export HISTIGNORE="&:ls:ll:la:l.:pwd:exit:clear:clr:c:x:[bf]g"
 
@@ -100,4 +103,4 @@ if [ `hostname` = "mbp" ]; then
     [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 fi
 
-source ~/dotfiles/zsh/prompt.zsh
+source $ZSH_DIR/prompt.zsh
