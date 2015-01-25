@@ -15,6 +15,7 @@ export ZSH_DIR=$HOME/dotfiles/zsh
 source $ZSH_DIR/checks.zsh
 source $ZSH_DIR/functions.zsh
 source $ZSH_DIR/aliases.zsh
+source $ZSH_DIR/history.zsh
 source $ZSH_DIR/completions.zsh
 fpath=($ZSH_DIR/zsh-completions/src $fpath)
 fpath=(/usr/local/share/zsh/site-functions $fpath)
@@ -24,14 +25,6 @@ source $ZSH_DIR/zsh-history-substring-search/zsh-history-substring-search.zsh
 source $ZSH_DIR/opp/opp.zsh
 source $ZSH_DIR/opp/opp/*.zsh
 source $ZSH_DIR/prompt.zsh
-
-# History
-HISTCONTROL=erasedups
-HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
-setopt  append_history share_history hist_verify extended_history histignorespace hist_ignore_all_dups
-export HISTIGNORE="&:ls:ll:la:l.:pwd:exit:clear:clr:c:x:[bf]g"
 
 # Vi mode
 bindkey -v
@@ -72,21 +65,6 @@ if [[ $IS_OSX -eq 1 ]]; then
     zle -N zle-keymap-select
 fi
 
-# dirs -v
-DIRSTACKSIZE=${DIRSTACKSIZE:-20}
-DIRSTACKFILE=${DIRSTACKFILE:-${ZDOTDIR:-${HOME}}/.zsh_directory_history}
-
-if [[ -f ${DIRSTACKFILE} ]] && [[ ${#dirstack[*]} -eq 0 ]] ; then
-    dirstack=( ${(f)"$(< $DIRSTACKFILE)"} )
-    [[ -d $dirstack[1] ]] && cd $dirstack[1] && cd $OLDPWD
-fi
-
-chpwd() {
-    if (( $DIRSTACKSIZE <= 0 )) || [[ -z $DIRSTACKFILE ]]; then return; fi
-    local -ax my_stack
-    my_stack=( ${PWD} ${dirstack} )
-    builtin print -l ${(u)my_stack} >! ${DIRSTACKFILE}
-}
 
 # RVM and Virtualenv
 if [ `hostname` = "mbp" ]; then
