@@ -10,7 +10,7 @@ elif [[ $IS_LINUX -eq 1 ]]; then
     export EDITOR=vim
 fi
 
-# Source checks, aliases, functions and plugins
+# Source checks, aliases, functions, plugins & prompt
 export ZSH_DIR=$HOME/dotfiles/zsh
 source $ZSH_DIR/checks.zsh
 source $ZSH_DIR/functions.zsh
@@ -23,13 +23,7 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 source $ZSH_DIR/zsh-history-substring-search/zsh-history-substring-search.zsh
 source $ZSH_DIR/opp/opp.zsh
 source $ZSH_DIR/opp/opp/*.zsh
-
-autoload -U compinit promptinit colors
-compinit
-promptinit
-colors
-grmlcomp
-setopt prompt_subst extended_glob longlistjobs nonomatch notify completeinword auto_cd auto_pushd pushdignoredups
+source $ZSH_DIR/prompt.zsh
 
 # History
 HISTCONTROL=erasedups
@@ -101,7 +95,6 @@ if [ `hostname` = "mbp" ]; then
     [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
 fi
 
-source $ZSH_DIR/prompt.zsh
-
 # pass(1) 
 export PASSWORD_STORE_DIR=$HOME/Dropbox/Passwords
+

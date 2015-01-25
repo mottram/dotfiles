@@ -1,4 +1,10 @@
-# Prompt
+autoload -U compinit promptinit colors
+compinit
+promptinit
+colors
+grmlcomp
+setopt prompt_subst extended_glob longlistjobs nonomatch notify completeinword auto_cd auto_pushd pushdignoredups
+
 zsh_prompt_red="%{$fg_bold[red]%}"
 zsh_prompt_green="%{$fg[green]%}"
 zsh_prompt_reset_colour="%{$reset_color%}"
