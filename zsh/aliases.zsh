@@ -17,6 +17,13 @@ alias p='ping -c 8 google.com'
 alias ed='ed --prompt="~ "'
 alias d='dirs -v'
 
+# Open various files in vim
+alias -s md=vim
+alias -s markdown=vim
+alias -s txt=vim
+alias -s css=vim
+alias -s html=vim
+
 # Package management crossplatformisation
 # TODO: FreeBSD
 if [[ $HAS_BREW -eq 1 ]]; then
