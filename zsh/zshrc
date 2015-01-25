@@ -1,31 +1,29 @@
 # File: ~/.zshrc
-# Version: 0.2
+# Version: 0.3
 # Author: Jack Mottram <j@ck.mottr.am>
 
 # General
 PATH="/usr/local/bin:/usr/local/sbin:$HOME/bin:$PATH"
-# TODO: Check if OS X or Linux first!
-export EDITOR=/usr/local/bin/vim
+if [[ $IS_OSX -eq 1 ]]; then
+    export EDITOR=/usr/local/bin/vim
+elif [[ $IS_LINUX -eq 1 ]]; then
+    export EDITOR=vim
+fi
 
-# Source checks, aliases and functions
+# Source checks, aliases, functions and plugins
 export ZSH_DIR=$HOME/dotfiles/zsh
 source $ZSH_DIR/checks.zsh
 source $ZSH_DIR/functions.zsh
 source $ZSH_DIR/aliases.zsh
 source $ZSH_DIR/completions.zsh
-
 fpath=($ZSH_DIR/zsh-completions/src $fpath)
 fpath=(/usr/local/share/zsh/site-functions $fpath)
-
 source $ZSH_DIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
 source $ZSH_DIR/zsh-history-substring-search/zsh-history-substring-search.zsh
 source $ZSH_DIR/opp/opp.zsh
 source $ZSH_DIR/opp/opp/*.zsh
 
-export PASSWORD_STORE_DIR=/Users/jack/Dropbox/Passwords
-
-# This has to come after fpath stuff?
 autoload -U compinit promptinit colors
 compinit
 promptinit
@@ -58,7 +56,7 @@ bindkey -M vicmd 'j' history-substring-search-down
 # Change cursor shape according to vi mode in iTerm 2
 # | = insert mode
 # ▌ = normal mode
-if [ `uname` = "Darwin" ]; then
+if [[ $IS_OSX -eq 1 ]]; then
     function zle-keymap-select zle-line-init
     {
         case $KEYMAP in
@@ -104,3 +102,6 @@ if [ `hostname` = "mbp" ]; then
 fi
 
 source $ZSH_DIR/prompt.zsh
+
+# pass(1) 
+export PASSWORD_STORE_DIR=$HOME/Dropbox/Passwords
