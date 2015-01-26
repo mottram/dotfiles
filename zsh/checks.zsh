@@ -10,14 +10,14 @@ if [[ $(uname) = 'FreeBSD' ]]; then
     IS_FREEBSD=1
 fi
 
-if [[ -x `which brew` ]]; then
+if (( $+commands[brew] )); then
     HAS_BREW=1
 fi
 
-if [[ -x `which apt-get` ]]; then
+if (( $+commands[apt-get] )); then
     HAS_APT=1
 fi
 
-if [[ -x `which pacman` ]]; then
+if (( $+commands[pacman] )); then
     HAS_PACMAN=1
 fi
