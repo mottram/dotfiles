@@ -1,3 +1,6 @@
+fpath=($ZSH_DIR/zsh-completions/src $fpath)
+fpath=(/usr/local/share/zsh/site-functions $fpath)
+
 grmlcomp() {
     # TODO: This could use some additional information
 
@@ -162,4 +165,3 @@ grmlcomp() {
     # see upgrade function in this file
     compdef _hosts upgrade
 }
-

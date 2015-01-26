@@ -1,4 +1,10 @@
-# Application-specific settings
+# Use the right vim
+if [[ $IS_OSX -eq 1 ]]; then
+    export EDITOR=/usr/local/bin/vim
+elif [[ $IS_LINUX -eq 1 ]]; then
+    export EDITOR=vim
+fi
+
 # Virtualenv
 if [[ $IS_OSX -eq 1 ]]; then
     source /usr/local/bin/virtualenvwrapper.sh

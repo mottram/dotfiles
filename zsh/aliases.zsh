@@ -2,24 +2,27 @@ alias c='clear'
 alias x='exit'
 alias g='git status'
 alias h='history'
-alias ls='ls -G'
+alias d='dirs -v'
 alias ..='cd ..'
 alias ...='cd .. ; cd ..'
+if (( $IS_OSX ));then
+    alias ls='ls -G'
+fi
 alias ll='ls -hl'
 alias la='ls -ahl'
 alias lt='ls -ahlt'
-alias v='vim'
-alias sv='sudo vim'
+alias v='$EDITOR'
+alias vi='$EDITOR'
+alias sv='sudo $EDITOR'
 alias p='ping -c 8 google.com'
 alias myip="curl icanhazip.com"
 alias ed='ed -p=" ~ "'
-alias d='dirs -v'
-# Open various files in vim
-alias -s md=vim
-alias -s markdown=vim
-alias -s txt=vim
-alias -s css=vim
-alias -s html=vim
+# Open various files in $EDITOR
+alias -s md=$EDITOR
+alias -s markdown=$EDITOR
+alias -s txt=$EDITOR
+alias -s css=$EDITOR
+alias -s html=$EDITOR
 
 if [[ $IS_OSX -eq 1 ]]; then
     alias td='/usr/local/bin/todo.sh -d ~/dotfiles/todo/mac-todo.cfg'

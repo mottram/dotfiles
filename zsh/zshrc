@@ -1,12 +1,10 @@
 # File: ~/.zshrc
 # Version: 0.3
 # Author: Jack Mottram <j@ck.mottr.am>
-# TODO: exports.zsh
 # TODO: tidy up aliases & functions, use checks
-# General
+# TODO: sort out grmlcomp - need all of it?
+# TODO: move path?
 PATH="/usr/local/bin:/usr/local/sbin:$HOME/bin:$PATH"
-
-# Source checks, aliases, functions, plugins & prompt
 export ZSH_DIR=$HOME/dotfiles/zsh
 source $ZSH_DIR/checks.zsh
 source $ZSH_DIR/functions.zsh
@@ -14,19 +12,6 @@ source $ZSH_DIR/aliases.zsh
 source $ZSH_DIR/history.zsh
 source $ZSH_DIR/bindkeys.zsh
 source $ZSH_DIR/applications.zsh
+source $ZSH_DIR/plugins.zsh
 source $ZSH_DIR/completions.zsh
-fpath=($ZSH_DIR/zsh-completions/src $fpath)
-fpath=(/usr/local/share/zsh/site-functions $fpath)
-source $ZSH_DIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern)
-source $ZSH_DIR/zsh-history-substring-search/zsh-history-substring-search.zsh
-source $ZSH_DIR/opp/opp.zsh
-source $ZSH_DIR/opp/opp/*.zsh
 source $ZSH_DIR/prompt.zsh
-
-
-if [[ $IS_OSX -eq 1 ]]; then
-    export EDITOR=/usr/local/bin/vim
-elif [[ $IS_LINUX -eq 1 ]]; then
-    export EDITOR=vim
-fi
