@@ -21,3 +21,7 @@ fi
 if (( $+commands[pacman] )); then
     HAS_PACMAN=1
 fi
+
+if [[ $IS_OSX -eq 1 && -x /usr/local/bin/gls ]]; then
+    HAS_GNU_COREUTILS=1
+fi
