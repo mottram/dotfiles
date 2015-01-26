@@ -21,29 +21,6 @@ alias -s txt=vim
 alias -s css=vim
 alias -s html=vim
 
-if [[ $HAS_BREW -eq 1 ]]; then
-    alias pkg_update='brew update'
-    alias pkg_outdated='brew outdated'
-    alias pkg_upgrade='brew upgrade'
-    alias pkg_clean='brew cleanup'
-    alias pkg_search='brew search'
-    alias pkg_install='brew install'
-elif [[ $HAS_PACMAN -eq 1 ]]; then
-    alias pkg_update='pacman -Syy'
-    alias pkg_outdated='pacman -Qu'
-    alias pkg_upgrade='pacman -Syu'
-    alias pkg_clean='paccache -r && paccache -ruk0'
-    alias pkg_search='pacman -Ss'
-    alias pkg_install='pacman -S'
-elif [[ $HAS_APT -eq 1 ]]; then
-    alias pkg_update='sudo apt-get update'
-    alias pkg_outdated='sudo apt-get update && sudo apt-get -s upgrade'
-    alias pkg_upgrade='sudo apt-get upgrade'
-    alias pkg_clean='sudo apt-get clean'
-    alias pkg_search='apt-cache search'
-    alias pkg_install='sudo apt-get install'
-fi
-
 if [[ $IS_OSX -eq 1 ]]; then
     alias td='/usr/local/bin/todo.sh -d ~/dotfiles/todo/mac-todo.cfg'
     alias te='v +sort ~/Dropbox/todo/todo.txt'
@@ -61,8 +38,6 @@ if [[ $HAS_PACMAN -eq 1 ]]; then
     alias wifiselect='sudo wifi-select wlan0'
     # Battery
     alias bat='acpi -b'
-    # Mount USB stick
-    alias mt16='sudo mount /dev/disk/by-label/16 /media/usb -o rw,users,async,noatime,umask=000'
     # Mplayer without X
     alias fbplayer='mplayer -vo fbdev -screenw 1024 -screenh 600 -zoom -fs -xy 1024'
     # Stream Radio 4, 6 and the World Service with mplayer
@@ -75,9 +50,6 @@ if [[ $HAS_PACMAN -eq 1 ]]; then
     alias pdf='zathura'
     # Play songs
     alias play='mplayer -playlist <(find "$PWD" -type f | sort -n)'
-    # Pacman, pacaur & cower
-    alias ud='pacman -Qu && cower -u'
-    alias ug='pacaur -Syu'
     # Virtualenvwrapper
     alias venv='export WORKON_HOME=~/envs;source /usr/bin/virtualenvwrapper.sh'
     # Search arch-wiki-docs
