@@ -1,4 +1,4 @@
-fpath=($ZSH_DIR/zsh-completions/src $fpath)
+fpath=(/usr/local/share/zsh-completions $fpath)
 fpath=(/usr/local/share/zsh/site-functions $fpath)
 
 grmlcomp() {
