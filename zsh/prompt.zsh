@@ -1,8 +1,6 @@
-autoload -U compinit promptinit colors
-compinit
+autoload -U promptinit colors
 promptinit
 colors
-grmlcomp
 setopt prompt_subst extended_glob longlistjobs nonomatch notify completeinword auto_cd auto_pushd pushdignoredups
 
 zsh_prompt_red="%{$fg_bold[red]%}"
@@ -20,4 +18,4 @@ zsh_prompt_git_branch() {
     fi
 }
 
-PROMPT='%~$zsh_prompt_green$(zsh_prompt_git_branch)$zsh_prompt_reset_colour$zsh_prompt_red$(zsh_prompt_git_status)$zsh_prompt_reset_colour %# '
+PROMPT='%~$zsh_prompt_green$(zsh_prompt_git_branch)$zsh_prompt_reset_colour$zsh_prompt_red$(zsh_prompt_git_status)%(1j.%j.)$zsh_prompt_reset_colour %# '
