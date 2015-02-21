@@ -1,10 +1,10 @@
+# Application-specific settings
 # Use the right vim
 if [[ $IS_OSX -eq 1 ]]; then
     export EDITOR=/usr/local/bin/vim
 elif [[ $IS_LINUX -eq 1 ]]; then
     export EDITOR=vim
 fi
-
 # Virtualenv
 if [[ $IS_OSX -eq 1 ]]; then
     source /usr/local/bin/virtualenvwrapper.sh
@@ -40,7 +40,10 @@ if [[ $IS_OSX -eq 1 ]]; then
     zle -N zle-line-finish
     zle -N zle-keymap-select
 fi
-
+# Prettier gruvbox theme colours in iTerm2
+if [[ $IS_OSX -eq 1 ]]; then
+    source $HOME/.vim/plugged/gruvbox/gruvbox_256palette_osx.sh
+fi
 # Fixes xterm weirdness on Arch
 # TODO: Check if needed
 #if [[ $IS_LINUX -eq 1 ]]; then
