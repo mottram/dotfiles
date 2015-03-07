@@ -1,7 +1,7 @@
 # Vi mode
 bindkey -v
 autoload -Uz edit-command-line
-bindkey -M vicmd 'v' edit-command-line
+bindkey -M vicmd 'v' edit-command-line; zle -N edit-command-line
 bindkey -M vicmd '.' insert-last-word
 export KEYTIMEOUT=1
 
