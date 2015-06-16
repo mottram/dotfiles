@@ -1,6 +1,6 @@
 alias c='clear'
 alias x='exit'
-alias g='git status'
+alias g='git status --ignore-submodules'
 alias h='history'
 alias d='dirs -v'
 alias ..='cd ..'
@@ -17,6 +17,7 @@ alias sv='sudo $EDITOR'
 alias p='ping -c 8 google.com'
 alias myip="curl icanhazip.com"
 alias ed='ed -p=" ~ "'
+alias fzf='~/.fzf/bin/fzf'
 # Open various files in $EDITOR
 alias -s md=$EDITOR
 alias -s markdown=$EDITOR

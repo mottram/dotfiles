@@ -1,8 +1,8 @@
 # File: ~/.zshrc
 # Version: 0.3
 # Author: Jack Mottram <j@ck.mottr.am>
-# TODO: tidy up aliases & functions, use checks
-# TODO: sort out grmlcomp - need all of it?
+# TODO: tidy up aliases & functions, use checks.
+# TODO: sort out completion - bit iffy at the moment.
 # TODO: move path & exports?
 PATH="/usr/local/bin:/usr/local/sbin:$HOME/bin:$PATH"
 export ZSH_DIR=$HOME/dotfiles/zsh
@@ -15,3 +15,4 @@ source $ZSH_DIR/applications.zsh
 source $ZSH_DIR/plugins.zsh
 source $ZSH_DIR/completions.zsh
 source $ZSH_DIR/prompt.zsh
+source $ZSH_DIR/twiddling.zsh
