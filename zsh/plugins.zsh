@@ -9,4 +9,3 @@ zle-line-init() {
     }
 zle -N zle-line-init
 bindkey '^f' vi-forward-blank-word
-AUTOSUGGESTION_ACCEPT_RIGHT_ARROW=1

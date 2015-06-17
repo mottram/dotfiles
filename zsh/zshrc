@@ -12,7 +12,7 @@ source $ZSH_DIR/aliases.zsh
 source $ZSH_DIR/history.zsh
 source $ZSH_DIR/bindkeys.zsh
 source $ZSH_DIR/applications.zsh
-source $ZSH_DIR/plugins.zsh
 source $ZSH_DIR/completions.zsh
+source $ZSH_DIR/plugins.zsh
 source $ZSH_DIR/prompt.zsh
 source $ZSH_DIR/twiddling.zsh
