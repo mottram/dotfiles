@@ -13,6 +13,3 @@
 [submodule "zsh/zsh-autosuggestions"]
 	path = zsh/zsh-autosuggestions
 	url = https://github.com/tarruda/zsh-autosuggestions.git
-[submodule "zsh/k"]
-	path = zsh/k
-	url = https://github.com/supercrabtree/k.git
