@@ -9,14 +9,9 @@ function pless {
 }
 
 # mkdir, cd into it
-mkcd () {
+function mkcd {
 mkdir -p "$*"
 cd "$*"
-}
-
-# Move to Trash
-trash() {
-mv $1 ~/.Trash/
 }
 
 # list and ack
@@ -24,27 +19,14 @@ function lgr {
   ls -a | ack -i $1 
 }
 
-# new tmux session
-function tmn {
-  tmux new -s $1 
-}
-
-# attach a tmux Session
-function tma {
-  tmux att -t $1	
-} 
-
-# Poor man's Notational Velocity!
+# Poor man's Notational Velocity
 function note {
   vim ~/notes/"$*".txt	
 }
 
 function nls {
   ls -c ~/notes | ack "$*"
-	}
-
-# Calc
-calc(){ awk "BEGIN{ print $* }" ;}
+}
 
 # make a backup of a file
 bk() {
@@ -68,21 +50,19 @@ tumblr post --draft "$1" --host=onethingwell.org 2>/dev/null
 open https://www.tumblr.com/blog/onethingwell/drafts
 }
 
-# grep for running process
+# grep for running processes
 
 any() {
-    emulate -L zsh
     if [[ -z "$1" ]] ; then
-        echo "any - ack for process(es) by keyword" >&2
+        echo "any - grep for process(es) by keyword" >&2
         echo "Usage: any <keyword>" >&2 ; return 1
     else
-        local STRING=$1
-        local LENGTH=$(expr length $STRING)
-        local FIRSCHAR=$(echo $(expr substr $STRING 1 1))
-        local REST=$(echo $(expr substr $STRING 2 $LENGTH))
-        ps xauwww| ack "[$FIRSCHAR]$REST"
+        ps xauwww | grep -i "$1" | grep -v "grep"
     fi
 }
+
+
+# Add contents of a file to the OS X clipboard
 
 clip() {
     type=`file "$1"|grep -c text`
@@ -92,12 +72,6 @@ clip() {
     else
         echo "File \"$1\" is not plain text."
     fi
-}
-
-# Volume control on the 1018
-
-vol() { 
-    amixer set 'Master' "$1%" &>/dev/null
 }
 
 # Notify when finished/failed

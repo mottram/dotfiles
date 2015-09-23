@@ -1,8 +1,17 @@
-allow_physical_files_deletion    = "no"
-allow_physical_folders_deletion  = "no"
+# File: ~/.ncmpcpp/config
+# Author: Jack Mottram <j@ck.mottr.am>
+
+mpd_host                         = "localhost"
+mpd_port                         = "6600"
+mpd_music_dir                    = "~/Music/iTunes/iTunes\ Media/Music"
+song_list_format                 = "$3{%A }|{%a }$7{%b }$0{%t}| $4$R{%7l}$9"
+now_playing_prefix               = "$r"
+now_playing_suffix               = "$/r"
+colors_enabled                   = "no"
+allow_for_physical_item_deletion = "no"
 playlist_display_mode            = "columns"
 browser_display_mode             = "columns"
 search_engine_display_mode       = "columns"
 playlist_disable_highlight_delay = "0"
-fancy_scrolling                  = "yes"
+cyclic_scrolling                 = "yes"
 ignore_leading_the               = "yes"
