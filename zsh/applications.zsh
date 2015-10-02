@@ -3,7 +3,7 @@
 if [[ $IS_OSX -eq 1 ]]; then
     export EDITOR=/usr/local/bin/nvim
 elif [[ $IS_LINUX -eq 1 ]]; then
-    export EDITOR=vim
+    export EDITOR=/usr/bin/nvim
 fi
 # Virtualenv
 if [[ $IS_OSX -eq 1 ]]; then
