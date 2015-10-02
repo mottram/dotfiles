@@ -1,7 +1,7 @@
 # Application-specific settings
 # Use the right vim
 if [[ $IS_OSX -eq 1 ]]; then
-    export EDITOR=/usr/local/bin/vim
+    export EDITOR=/usr/local/bin/nvim
 elif [[ $IS_LINUX -eq 1 ]]; then
     export EDITOR=vim
 fi
