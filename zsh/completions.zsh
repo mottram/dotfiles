@@ -42,6 +42,9 @@ zstyle ':completion:*' group-name ''
 # Turn off autocorrection
 unsetopt correct
 
+# Enable command flag completion for aliased commands
+setopt completealiases
+
 # Ignore completion functions (until the _ignored completer)
 zstyle ':completion:*:functions' ignored-patterns '_*'
 
