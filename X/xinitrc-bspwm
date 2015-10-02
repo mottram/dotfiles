@@ -17,7 +17,7 @@ export PANEL_HEIGHT="14"
 [ -f ~/.xprofile ] && . ~/.xprofile
 
 # wallpaper
-imlibsetroot --bg 88,110,117
+hsetroot -solid "#FAFAFA"
 
 # gb keyboard layout
 setxkbmap gb
