@@ -1,0 +1,134 @@
+#
+# bspwm hotkeys
+#
+super + alt + Escape
+    bspc quit
+
+super + w
+    bspc window -c
+
+super + t
+    bspc desktop -l next
+
+super + x
+    bspc desktop -B
+
+super + {s,f}
+    bspc window -t {floating,fullscreen}
+
+super + {grave,Tab}
+    bspc {window,desktop} -f last
+
+super + apostrophe
+    bspc window -s last
+
+super + {o,i}
+    bspc control --record-history off; \
+    bspc window {older,newer} -f; \
+    bspc control --record-history on
+
+super + y
+    bspc window -w last.manual
+
+super + m
+    bspc window -s biggest
+
+super + {_,shift + }{h,j,k,l}
+    bspc window -{f,s} {left,down,up,right}
+
+super + {_,shift + }c
+    bspc window -f {next,prev}
+
+super + {comma,period}
+    bspc desktop -C {backward,forward}
+
+super + bracket{left,right}
+    bspc desktop -f {prev,next}
+
+super + ctrl + {h,j,k,l}
+    bspc window -p {left,down,up,right}
+
+super + ctrl + {_,shift + }space
+    bspc {window -p cancel,desktop -c}
+
+super + alt + {h,j,k,l}
+    bspc window -e {left,down,up,right} push
+
+super + alt + shift + {h,j,k,l}
+    bspc window -e {right,up,down,left} pull
+
+super + ctrl + {1-9}
+    bspc window -r 0.{1-9}
+
+super + {_,shift + }{1-9,0}
+    bspc {desktop -f,window -d} ^{1-9,10}
+
+~button1
+    bspc pointer -g focus
+
+super + button{1-3}
+    bspc pointer -g {move,resize_side,resize_corner}
+
+super + !button{1-3}
+    bspc pointer -t %i %i
+
+super + @button{1-3}
+    bspc pointer -u
+
+#
+# wm independent hotkeys
+#
+
+# toggle panel
+super + b
+    {info_panel; desktop_indicator_panel & bspc config top_padding 14 , pkill info_panel;pkill desktop_indicator_panel; pkill dzen2; bspc config top_padding 0 }
+
+# launch xterm
+super + Return
+    xterm
+
+# launch dmenu
+super + p
+    dmenu_run -nb "#1d2021" -nf "#a89984" -sb "#1d2021" -sf "#83a598"
+
+# launch clipboard history
+super + shift + v
+    xcmenuctrl
+
+# sync PRIMARY to CLIPBOARD
+super + shift + s
+    xcmenuctrl -spc
+
+# launch ncmpcpp
+super + shift + m
+    launch-ncmpcpp 
+
+# launch mutt
+super + shift + e
+    launch-mutt
+
+# launch ranger
+super + shift + r
+    st -e ranger
+
+# launch clock
+super + alt + c
+    st -e vtclock -B -2
+
+# reload sxhkd
+super + Escape
+    pkill -USR1 -x sxhkd
+
+# volume control
+super + shift + u
+    dvol raise
+
+super + shift + d
+    dvol lower
+
+super + shift + t
+    dvol toggle
+
+# make window 'private'
+super + alt + p
+    bspc window -t private

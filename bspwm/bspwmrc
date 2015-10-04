@@ -7,10 +7,10 @@ bspc config window_gap          6
 bspc config split_ratio         0.5
 bspc config borderless_monocle  true
 bspc config gapless_monocle     true
-bspc config normal_border_color "#002b36"
-bspc config focused_border_color "#93a1a1"
-bspc config active_private_border_color = "#268bd2"
-bspc config normal_private_border_color = "#002b36"
+bspc config normal_border_color "#3c3836"
+bspc config focused_border_color "#504945"
+bspc config active_private_border_color "#98971a"
+bspc config normal_private_border_color "#504945"
 bspc config focus_follows_pointer true
 
 bspc rule -a mpv floating=on

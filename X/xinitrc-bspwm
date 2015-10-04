@@ -9,15 +9,15 @@ export PATH=$PATH:/home/jack/.config/bspwm/bin
 
 # panel settings
 export PANEL_FONT="-*-termsyn.icons-medium-r-*-*-12-*-*-*-*-*-*-*"
-export PANEL_FOREGROUND="#657b83"
-export PANEL_BACKGROUND="#002b36"
+export PANEL_FOREGROUND="#a89984"
+export PANEL_BACKGROUND="#1d2021"
 export PANEL_HEIGHT="14"
 
 # source .xprofile
 [ -f ~/.xprofile ] && . ~/.xprofile
 
 # wallpaper
-hsetroot -solid "#FAFAFA"
+hsetroot -add "#32302f" -addd "#928374" "25" -gradient "45"
 
 # gb keyboard layout
 setxkbmap gb

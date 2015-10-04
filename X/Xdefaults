@@ -30,39 +30,68 @@ URxvt.tabbed.tab-bg:    0
 !! tabbedex
 URxvt.tabbed.title: no
 
+!! gruvbox colours
+*background: #1d2021
+! *background: #282828
+! soft contrast: *background: #32302f
+*foreground: #ebdbb2
+! Black + DarkGrey
+*color0:  #282828
+*color8:  #928374
+! DarkRed + Red
+*color1:  #cc241d
+*color9:  #fb4934
+! DarkGreen + Green
+*color2:  #98971a
+*color10: #b8bb26
+! DarkYellow + Yellow
+*color3:  #d79921
+*color11: #fabd2f
+! DarkBlue + Blue
+*color4:  #458588
+*color12: #83a598
+! DarkMagenta + Magenta
+*color5:  #b16286
+*color13: #d3869b
+! DarkCyan + Cyan
+*color6:  #689d6a
+*color14: #8ec07c
+! LightGrey + White
+*color7:  #a89984
+*color15: #ebdbb2
 
 !! solarized colours
-*background:            #002b36
-*foreground:            #657b83
-URxvt.fading:           0
-URxvt.transparent:      false
-*cursorColor:           #93a1a1
-*pointerColorBackground:#586e75
-*pointerColorForeground:#93a1a1
-!! black dark/light
-*color0:                #073642
-*color8:                #002b36
-!! red dark/light
-*color1:                #dc322f
-*color9:                #cb4b16
-!! green dark/light
-*color2:                #859900
-*color10:               #586e75
-!! yellow dark/light
-*color3:                #b58900
-*color11:               #657b83
-!! blue dark/light
-*color4:                #268bd2
-*color12:               #839496
-!! magenta dark/light
-*color5:                #d33682
-*color13:               #6c71c4
-!! cyan dark/light
-*color6:                #2aa198
-*color14:               #93a1a1
-!! white dark/light
-*color7:                #eee8d5
-*color15:               #fdf6e3
+! *background:            #002b36
+! *foreground:            #657b83
+! URxvt.fading:           0
+! URxvt.transparent:      false
+! *cursorColor:           #93a1a1
+! *pointerColorBackground:#586e75
+! *pointerColorForeground:#93a1a1
+! !! black dark/light
+! *color0:                #073642
+! *color8:                #002b36
+! !! red dark/light
+! *color1:                #dc322f
+! *color9:                #cb4b16
+! !! green dark/light
+! *color2:                #859900
+! *color10:               #586e75
+! !! yellow dark/light
+! *color3:                #b58900
+! *color11:               #657b83
+! !! blue dark/light
+! *color4:                #268bd2
+! *color12:               #839496
+! !! magenta dark/light
+! *color5:                #d33682
+! *color13:               #6c71c4
+! !! cyan dark/light
+! *color6:                #2aa198
+! *color14:               #93a1a1
+! !! white dark/light
+! *color7:                #eee8d5
+! *color15:               #fdf6e3
 
 ! Colours
 !*background: rgb:F4/F4/F4
