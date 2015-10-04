@@ -70,7 +70,7 @@ zstyle ':completion:*:original' list-colors "=*=$color[red];$color[bold]"
 zstyle ':completion:*:reserved-words' list-colors "=*=$color[red]"
 
 ### Colorize hostname completion
-zstyle ':completion:*:*:*:*:hosts' list-colors "=*=$color[cyan];$color[bg-black]"
+#zstyle ':completion:*:*:*:*:hosts' list-colors "=*=$color[cyan];$color[bg-black]"
 
 # Disable completion of usernames
 zstyle ':completion:*' users off
