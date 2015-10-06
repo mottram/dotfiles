@@ -44,8 +44,7 @@ fi
 if [[ $IS_OSX -eq 1 ]]; then
     source $HOME/.vim/plugged/gruvbox/gruvbox_256palette_osx.sh
 fi
-# Fixes xterm weirdness on Arch
-# TODO: Check if needed
-#if [[ $IS_LINUX -eq 1 ]]; then
-#    cd 
-#fi
+
+if [[ $IS_LINUX -eq 1 ]]; then
+    export ONEPASSWORD_KEYCHAIN=/home/jack/Dropbox/1Password/1Password.agilekeychain
+fi
