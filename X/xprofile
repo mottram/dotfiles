@@ -11,8 +11,5 @@ xcmenu --daemon
 # notifications with dunst
 dunst -config ~/.config/dunst/dunstrc &
 
-# compositing
-compton --config ~/.config/compton/compton.conf -b
-
 # hide cursor after 2 seconds
 unclutter -idle 2 &
