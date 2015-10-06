@@ -4,6 +4,11 @@ vim/backup
 vim/temp
 vim/.netrwhist
 vim/.VimballRecord
+neovim/temp
+neovim/undo
+neovim/autoload
+neovim/plugins
+neovim/.netrwhist
 surf/cookies.txt
 surf/dl
 surf/instapaper
