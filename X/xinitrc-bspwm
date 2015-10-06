@@ -17,7 +17,7 @@ export PANEL_HEIGHT="14"
 [ -f ~/.xprofile ] && . ~/.xprofile
 
 # wallpaper
-hsetroot -add "#32302f" -addd "#928374" "25" -gradient "45"
+hsetroot -solid "#282828"
 
 # gb keyboard layout
 setxkbmap gb
