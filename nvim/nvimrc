@@ -77,11 +77,9 @@ endif
 nmap <leader>m :CtrlPMRUFiles<cr>
 nmap <leader>f :CtrlP<cr>
 let g:buffergator_viewport_split_policy='T'
-if has('nvim')
-  tnoremap <leader>e <c-\><c-n>
-  nmap <leader>x :new<cr>:term<cr>
-  let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-endif
+tnoremap <leader>e <c-\><c-n>
+nmap <leader>x :new<cr>:term<cr>
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 vmap <expr>  ++  VMATH_YankAndAnalyse()
 nmap         ++  vip++
 autocmd vimrc BufNewFile,BufReadPost *.md set filetype=markdown
