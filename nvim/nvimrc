@@ -20,7 +20,6 @@ Plug 'jeetsukumaran/vim-buffergator'
 Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
 Plug 'mattly/vim-markdown-enhancements', { 'for': 'markdown' }
 Plug 'kien/ctrlp.vim'
-Plug 'nixon/vim-vmath'
 call plug#end()
 scriptencoding utf-8
 augroup vimrc
@@ -80,8 +79,6 @@ let g:buffergator_viewport_split_policy='T'
 tnoremap <leader>e <c-\><c-n>
 nmap <leader>x :new<cr>:term<cr>
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-vmap <expr>  ++  VMATH_YankAndAnalyse()
-nmap         ++  vip++
 autocmd vimrc BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd vimrc BufRead,BufNewfile ~/Dropbox/Notes/* set filetype=markdown
 autocmd vimrc InsertLeave * set nopaste
