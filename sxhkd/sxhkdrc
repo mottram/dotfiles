@@ -95,10 +95,6 @@ super + p
 super + shift + v
     clipmenu -nb "#1d2021" -nf "#a89984" -sb "#1d2021" -sf "#83a598"
 
-# sync PRIMARY to CLIPBOARD
-super + shift + s
-    xcmenuctrl -spc
-
 # launch ncmpcpp
 super + shift + m
     launch-ncmpcpp 
@@ -109,11 +105,11 @@ super + shift + e
 
 # launch ranger
 super + shift + r
-    st -e ranger
+    xterm -e ranger
 
 # launch clock
 super + alt + c
-    st -e vtclock -B -2
+    xterm -e vtclock -B -2
 
 # reload sxhkd
 super + Escape
