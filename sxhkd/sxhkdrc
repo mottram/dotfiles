@@ -93,7 +93,7 @@ super + p
 
 # launch clipboard history
 super + shift + v
-    xcmenuctrl
+    clipmenu -nb "#1d2021" -nf "#a89984" -sb "#1d2021" -sf "#83a598"
 
 # sync PRIMARY to CLIPBOARD
 super + shift + s
