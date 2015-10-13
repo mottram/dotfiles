@@ -39,6 +39,9 @@ xset fp rehash
 xset +dpms
 xset dpms 0 0 300
 
+# synchronise & select from clipboards
+clipmenud &
+
 # start gpg-agent
 eval $(gpg-agent --daemon) &
 

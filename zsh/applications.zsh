@@ -44,8 +44,3 @@ fi
 if [[ $IS_OSX -eq 1 ]]; then
     source $HOME/.vim/plugged/gruvbox/gruvbox_256palette_osx.sh
 fi
-# Fixes xterm weirdness on Arch
-# TODO: Check if needed
-#if [[ $IS_LINUX -eq 1 ]]; then
-#    cd 
-#fi
