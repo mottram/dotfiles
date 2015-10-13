@@ -34,7 +34,7 @@ runtime! plugin/sensible.vim
 runtime! plugin/opinion.vim " Required to override vim-opinion
 let g:mapleader=','
 set shortmess+=I
-set history=1000
+set history=10000
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
@@ -70,7 +70,7 @@ let g:ctrlp_switch_buffer = 0
 let g:ctrlp_working_path = 0
 if executable('ag')
   set grepprg=ag\ --nogroup\ --nocolor
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
   let g:ctrlp_use_caching = 0
 endif
 nmap <leader>m :CtrlPMRUFiles<cr>
