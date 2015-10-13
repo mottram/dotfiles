@@ -39,9 +39,7 @@ xset fp rehash
 xset +dpms
 xset dpms 0 0 300
 
-# synchronise clipboards and start clipmenu
-autocutsel -fork &
-autocutsel -selection PRIMARY -fork &
+# synchronise & select from clipboards
 clipmenud &
 
 # start gpg-agent
