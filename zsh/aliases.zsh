@@ -29,8 +29,7 @@ if [[ $IS_OSX -eq 1 ]]; then
     alias td='/usr/local/bin/todo.sh -d ~/dotfiles/todo/mac-todo.cfg'
     alias te='v +sort ~/Dropbox/todo/todo.txt'
     alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
-    alias email="mbsync -q fastsync;mutt"
-    alias nv="export VIMRUNTIME=/Applications/MacVim.app/Contents/Resources/vim/runtime;nvim"
+    alias e="dtach -A /tmp/dtach-mail -r winch mutt"
 fi
 
 if [[ $HAS_PACMAN -eq 1 ]]; then
