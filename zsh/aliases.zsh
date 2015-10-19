@@ -18,6 +18,8 @@ alias p='ping -c 8 google.com'
 alias myip="curl icanhazip.com"
 alias ed='ed -p=" ~ "'
 alias fzf='~/.fzf/bin/fzf'
+alias e="dtach -A /tmp/dtach-mail -r winch mutt"
+alias wm="dtach -A /tmp/dtach-dvtm -r winch dvtm"
 # Open various files in $EDITOR
 alias -s md=$EDITOR
 alias -s markdown=$EDITOR
@@ -29,7 +31,6 @@ if [[ $IS_OSX -eq 1 ]]; then
     alias td='/usr/local/bin/todo.sh -d ~/dotfiles/todo/mac-todo.cfg'
     alias te='v +sort ~/Dropbox/todo/todo.txt'
     alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
-    alias e="dtach -A /tmp/dtach-mail -r winch mutt"
 fi
 
 if [[ $HAS_PACMAN -eq 1 ]]; then
