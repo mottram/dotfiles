@@ -16,3 +16,5 @@ source $ZSH_DIR/completions.zsh
 source $ZSH_DIR/plugins.zsh
 source $ZSH_DIR/prompt.zsh
 source $ZSH_DIR/twiddling.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
