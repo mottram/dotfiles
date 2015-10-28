@@ -1,6 +1,6 @@
 " ~/.config/nvim/init.vim
 " Jack Mottram <j@ck.mottr.am>
-call plug#begin('~/.nvim/plugins')
+call plug#begin('$XDG_CONFIG_HOME/nvim/plugins')
 Plug 'tpope/vim-sensible'
 Plug 'rstacruz/vim-opinion'
 Plug 'morhetz/gruvbox'
@@ -36,8 +36,8 @@ set shiftwidth=4
 set softtabstop=4
 set numberwidth=4
 set undofile
-set directory=~/.nvim/temp
-set undodir=~/.nvim/undo
+set directory=$XDG_CONFIG_HOME/nvim/temp
+set undodir=$XDG_CONFIG_HOME/nvim/undo
 set confirm
 set wrap
 set wildmode=longest:full,list:full
