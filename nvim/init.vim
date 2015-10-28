@@ -1,4 +1,4 @@
-" ~/.nvim/nvimrc
+" ~/.config/nvim/init.vim
 " Jack Mottram <j@ck.mottr.am>
 call plug#begin('~/.nvim/plugins')
 Plug 'tpope/vim-sensible'
@@ -16,23 +16,20 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-eunuch'
 Plug 'vim-scripts/renamer.vim'
 Plug 'ap/vim-buftabline'
-Plug 'jeetsukumaran/vim-buffergator'
 Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
 Plug 'mattly/vim-markdown-enhancements', { 'for': 'markdown' }
-Plug 'kien/ctrlp.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 scriptencoding utf-8
-augroup vimrc
-    autocmd!
-augroup END
 colorscheme gruvbox
 set background=dark
 let g:gruvbox_sign_column='dark0'
 let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_invert_selection='0'
 runtime! plugin/sensible.vim
-runtime! plugin/opinion.vim " Required to override vim-opinion
-let g:mapleader=','
+runtime! plugin/opinion.vim
+let g:mapleader="\<Space>"
 set shortmess+=I
 set history=10000
 set tabstop=4
@@ -51,12 +48,17 @@ set wildignore+=*.swp,*~,._*
 set path=**
 set suffixesadd+=.markdown,.md,.py,.txt,.sh,.rb,.js,.c,.h,.go,.html,.css
 set clipboard=unnamed
+set splitbelow
+set splitright
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
+tnoremap <leader>e <c-\><c-n>
+nmap <leader>x :new<cr>:term<cr>
+nmap <silent> <leader>cd :lcd %:h<CR>
 call yankstack#setup()
 nmap <leader>p <Plug>yankstack_substitute_older_paste
 nmap <leader>P <Plug>yankstack_substitute_newer_paste
 nmap <leader>y :Yanks<cr>
 map Y y$
-nmap <silent> <leader>cd :lcd %:h<CR>
 function! MapCR()
     nnoremap <cr> :nohlsearch<cr>:<backspace>
 endfunction
@@ -65,26 +67,17 @@ nmap s <Plug>(SneakStreak)
 nmap S <Plug>(SneakStreakBackward)
 xmap s <Plug>Sneak_s
 xmap S <Plug>Sneak_S
-let g:ctrlp_match_window = 'top'
-let g:ctrlp_switch_buffer = 0
-let g:ctrlp_working_path = 0
-if executable('ag')
-  set grepprg=ag\ --nogroup\ --nocolor
-  let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -g ""'
-  let g:ctrlp_use_caching = 0
-endif
-nmap <leader>m :CtrlPMRUFiles<cr>
-nmap <leader>f :CtrlP<cr>
-let g:buffergator_viewport_split_policy='T'
-tnoremap <leader>e <c-\><c-n>
-nmap <leader>x :new<cr>:term<cr>
-let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-autocmd vimrc BufNewFile,BufReadPost *.md set filetype=markdown
-autocmd vimrc BufRead,BufNewfile ~/Dropbox/Notes/* set filetype=markdown
-autocmd vimrc InsertLeave * set nopaste
-autocmd vimrc FileType mail set tw=65
-set splitbelow
-set splitright
+let g:fzf_layout = { 'up': '~20%' }
+nmap <leader>f :Files<cr>
+nmap <leader>m :History<cr>
+nmap <leader>b :Buffers<cr>
+augroup nvimrc
+    autocmd!
+    autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+    autocmd BufRead,BufNewfile ~/Dropbox/Notes/* set filetype=markdown
+    autocmd InsertLeave * set nopaste
+    autocmd FileType mail set tw=65
+augroup END
 set statusline=
 set statusline+=\ %n.
 set statusline+=\ %F\ 
