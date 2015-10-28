@@ -13,7 +13,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'vim-scripts/renamer.vim'
 Plug 'ap/vim-buftabline'
 Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
 Plug 'mattly/vim-markdown-enhancements', { 'for': 'markdown' }
