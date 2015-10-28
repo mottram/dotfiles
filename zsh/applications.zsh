@@ -1,4 +1,8 @@
 # Application-specific settings
+# Set XDG base directories
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
 # Use the right vim
 if [[ $IS_OSX -eq 1 ]]; then
     export EDITOR=/usr/local/bin/nvim
