@@ -70,6 +70,7 @@ let g:fzf_layout = { 'up': '~20%' }
 nmap <leader>f :Files<cr>
 nmap <leader>m :History<cr>
 nmap <leader>b :Buffers<cr>
+nmap <leader>w :Windows<cr>
 augroup nvimrc
     autocmd!
     autocmd BufNewFile,BufReadPost *.md set filetype=markdown
