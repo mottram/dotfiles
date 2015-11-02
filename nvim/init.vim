@@ -16,7 +16,7 @@ Plug 'tpope/vim-surround'
 Plug 'ap/vim-buftabline'
 Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
 Plug 'mattly/vim-markdown-enhancements', { 'for': 'markdown' }
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'dir': '$HOME/.fzf', 'do': './install --key-bindings --no-completion --no-update-rc' }
 Plug 'junegunn/fzf.vim'
 call plug#end()
 scriptencoding utf-8
@@ -57,6 +57,10 @@ nmap <leader>p <Plug>yankstack_substitute_older_paste
 nmap <leader>P <Plug>yankstack_substitute_newer_paste
 nmap <leader>y :Yanks<cr>
 map Y y$
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
 function! MapCR()
     nnoremap <cr> :nohlsearch<cr>:<backspace>
 endfunction
