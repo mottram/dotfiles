@@ -31,6 +31,8 @@ if [[ $IS_OSX -eq 1 ]]; then
     alias td='/usr/local/bin/todo.sh -d ~/dotfiles/todo/mac-todo.cfg'
     alias te='v +sort ~/Dropbox/todo/todo.txt'
     alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
+    alias o='open "$(fzf)"'
+    alias vo='$EDITOR "$(fzf)"'
 fi
 
 if [[ $HAS_PACMAN -eq 1 ]]; then

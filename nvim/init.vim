@@ -13,11 +13,11 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
-Plug 'vim-scripts/renamer.vim'
 Plug 'ap/vim-buftabline'
 Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
 Plug 'mattly/vim-markdown-enhancements', { 'for': 'markdown' }
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'roman/golden-ratio'
+Plug 'junegunn/fzf', { 'dir': '$HOME/.fzf', 'do': './install --key-bindings --no-completion --no-update-rc' }
 Plug 'junegunn/fzf.vim'
 call plug#end()
 scriptencoding utf-8
@@ -70,10 +70,11 @@ let g:fzf_layout = { 'up': '~20%' }
 nmap <leader>f :Files<cr>
 nmap <leader>m :History<cr>
 nmap <leader>b :Buffers<cr>
+nmap <leader>w :Windows<cr>
 augroup nvimrc
     autocmd!
     autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-    autocmd BufRead,BufNewfile ~/Dropbox/Notes/* set filetype=markdown
+    autocmd BufRead,BufNewfile $HOME/Dropbox/Notes/* set filetype=markdown
     autocmd InsertLeave * set nopaste
     autocmd FileType mail set tw=65
 augroup END
