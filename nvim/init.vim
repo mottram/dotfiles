@@ -74,7 +74,7 @@ nmap <leader>w :Windows<cr>
 augroup nvimrc
     autocmd!
     autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-    autocmd BufRead,BufNewfile ~/Dropbox/Notes/* set filetype=markdown
+    autocmd BufRead,BufNewfile $HOME/Dropbox/Notes/* set filetype=markdown
     autocmd InsertLeave * set nopaste
     autocmd FileType mail set tw=65
 augroup END
