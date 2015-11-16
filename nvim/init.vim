@@ -19,7 +19,7 @@ Plug 'mattly/vim-markdown-enhancements', { 'for': 'markdown' }
 Plug 'roman/golden-ratio'
 Plug 'junegunn/fzf', { 'dir': '$HOME/.fzf', 'do': './install --key-bindings --no-completion --no-update-rc' }
 Plug 'junegunn/fzf.vim'
-Plug 'benekastah/neomake'
+Plug 'benekastah/neomake', { 'on': 'Neomake' }
 call plug#end()
 scriptencoding utf-8
 colorscheme gruvbox
