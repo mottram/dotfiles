@@ -69,9 +69,11 @@ xmap s <Plug>Sneak_s
 xmap S <Plug>Sneak_S
 let g:fzf_layout = { 'up': '~20%' }
 nmap <leader>f :Files<cr>
-nmap <leader>m :History<cr>
+nmap <leader>h :History<cr>
 nmap <leader>b :Buffers<cr>
 nmap <leader>w :Windows<cr>
+nmap <leader>m :w<cr>:NeomakeFile<cr>
+nmap <leader>s :w<cr> 
 let g:neomake_error_sign = {
     \ 'text': '>>',
     \ 'texthl': 'Normal',
