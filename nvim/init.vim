@@ -72,6 +72,14 @@ nmap <leader>f :Files<cr>
 nmap <leader>m :History<cr>
 nmap <leader>b :Buffers<cr>
 nmap <leader>w :Windows<cr>
+let g:neomake_error_sign = {
+    \ 'text': '>>',
+    \ 'texthl': 'Normal',
+    \ }
+let g:neomake_markdown_mdl_maker = {
+    \ 'args': ['-s', '$HOME/.mdl.rb'],
+    \ }
+let g:neomake_markdown_enabled_makers = ['mdl']
 let g:neomake_python_enabled_makers = ['pyflakes']
 augroup nvimrc
     autocmd!
