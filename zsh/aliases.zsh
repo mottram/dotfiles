@@ -60,4 +60,11 @@ if [[ $HAS_PACMAN -eq 1 ]]; then
     alias venv='export WORKON_HOME=~/envs;source /usr/bin/virtualenvwrapper.sh'
     # Search arch-wiki-docs
     alias aw='wiki-search-html'
-fi 
+fi
+
+if [[ $IS_NVIM -eq 1 ]]; then
+    # Use : to run commands from a terminal inside nvim
+    alias :="$(which nvimex.py)"
+    # Don't accidentally open nvim inside a terminal inside nvim!
+    alias v="$(which nvimex.py) badd"
+fi
