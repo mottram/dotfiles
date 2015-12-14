@@ -31,5 +31,5 @@ fi
 
 # Check to see if we're inside Neovim
 if [ "$NVIM_LISTEN_ADDRESS" != "" ]; then
-    IS_NEOVIM=1
+    IS_NVIM=1
 fi
