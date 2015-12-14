@@ -63,8 +63,8 @@ if [[ $HAS_PACMAN -eq 1 ]]; then
 fi
 
 if [[ $IS_NVIM -eq 1 ]]; then
-    # Use : to run commands from a terminal inside nvim
-    alias :="$(which nvimex.py)"
+    # Run commands from a terminal inside nvim
+    alias vx="$(which nvimex.py)"
     # Don't accidentally open nvim inside a terminal inside nvim!
     alias v="$(which nvimex.py) badd"
 fi
