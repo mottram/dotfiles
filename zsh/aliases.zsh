@@ -33,6 +33,7 @@ if [[ $IS_OSX -eq 1 ]]; then
     alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
     alias o='open "$(fzf)"'
     alias vo='$EDITOR "$(fzf)"'
+    alias kwmc='$HOME/src/kwm/bin/kwmc'
 fi
 
 if [[ $HAS_PACMAN -eq 1 ]]; then
