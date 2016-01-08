@@ -57,6 +57,8 @@ set splitright
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 let g:mapleader="\<Space>"
 nmap <leader>s :w<cr>
+nmap <leader><right> :bn<cr>
+nmap <leader><left> :bp<cr>
 tnoremap <esc><esc> <c-\><c-n>
 nmap <leader>x :new<cr>:term<cr>
 nmap <leader>F :Sexplore<cr>
