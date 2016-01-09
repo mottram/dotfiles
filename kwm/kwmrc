@@ -1,121 +1,52 @@
-# TODO:
-# - Remove unused commands
-# - Choose better key combo - ctrl+alt+cmd awkward
-# This is a sample config for Kwm
-# The commands listed here can be of
-# two types. 
-#
-# Commands prefixed with 'kwmc' will call
-# local functions corresponding to the
-# kwmc syntax.
-#
-# To run a system command, use the prefix
-# 'sys' and then the requested command
-# e.g 'sys mvim' would open macvim
-
+## Settings
 # Set default values for screen padding
 kwmc config padding top 35
 kwmc config padding bottom 15
 kwmc config padding left 15
 kwmc config padding right 15
-
 # Set default values for container gaps
 kwmc config gap vertical 15
 kwmc config gap horizontal 15
-
 # Let Kwm listen for hotkeys
 kwmc config hotkeys enable
-
-# Set global prefix for all of Kwms hotkeys
-# This hotkey must be pressed for binds to activate!
-# kwmc config prefix ctrl-k
-
-# Turn off focus-follows-mouse if any
-# context-menus or the menubar is visible.
-# If the menubar is not set to auto-hide,
-# disable this setting.
+# Disable menu-fix, as the menu bar is visible
 kwmc config menu-fix disable
-
-# Set focus-follows-mouse-mode to disabled
+# Disable focus-follows-mouse
 kwmc config focus disabled
-
 # Enable mouse-follows-focus
 kwmc config focus mouse-follows enable
-
-# Window can be made floating through drag&drop
+# Float windows when dragged
 kwmc config dragndrop enable
-
-# Allow Kwm to tile windows
+# Enable tiling
 kwmc config tiling enable
-
 # Default tiling mode for new spaces
 kwmc config space bsp
-
 # Set default split ratio
 kwmc config split-ratio 0.5
-
-# Add custom tiling rules for applications that
-# does not get tiled by Kwm by default.
-# This is because some applications do not have the
-# AXWindowRole and AXStandardWindowSubRole
+# Tile iTerm windows without a title bar
 kwmc config add-role AXDialog iTerm2
-
-# The following command blacklists a specific application
-# from Kwms tiling (PS: The app name is case-sensitive)
-# If the name consist of multiple words, the command
-# looks like: kwmc config float Google Chrome
-# kwmc config float Steam
-# kwmc config float Photoshop
-
-#### Default Keybindings For Interacting With Kwm
-kwmc bind cmd+alt+ctrl-t config focus toggle
-kwmc bind cmd+alt+ctrl-r window -c refresh
-kwmc bind cmd+alt+ctrl-r config reload
-kwmc bind cmd+alt+ctrl-q quit
-
-kwmc bind cmd+alt+ctrl-m window -t mark
-kwmc bind cmd+alt+ctrl-s window -c split
-kwmc bind cmd+alt+ctrl-h window -c reduce 0.1
-kwmc bind cmd+alt+ctrl-l window -c expand 0.1
-
-kwmc bind cmd+alt+ctrl-f window -t fullscreen
-kwmc bind cmd+alt+ctrl-p window -t parent
-kwmc bind cmd+alt+ctrl-w window -t float
-kwmc bind cmd+alt+ctrl-return sys open -na /Applications/iTerm.app
-
-kwmc bind alt+shift-s space -t bsp
-kwmc bind alt+shift-f space -t monocle
-kwmc bind alt+shift-d space -t float
-kwmc bind alt+shift-r space -r 90
-
+# Always float the following applications
+kwmc config float System Preferences
+# Keybindings
+# Rotate the window tree by 180 degrees
+kwmc bind alt+shift-1 space -r 180
+# Mark a window
+kwmc bind alt+shift-x window -t mark
+# Toggle _w_indow float
+kwmc bind alt+shift-w window -t float
+# Toggle _f_ullscreen
+kwmc bind alt+shift-f window -t fullscreen
+# Expand window to fill _u_p parent space
+kwmc bind alt+shift-u window -t parent
+# Focus next/prev window
 kwmc bind alt+shift-h window -f prev
 kwmc bind alt+shift-l window -f next
-
+# Swap current window with next/prev/marked window
 kwmc bind alt+shift-p window -s prev
 kwmc bind alt+shift-n window -s next
 kwmc bind alt+shift-m window -s mark
-
-# Unused defaults:
-
-# kwmc bind ctrl+alt-p screen -m prev
-# kwmc bind ctrl+alt-n screen -m next
-
-# kwmc bind ctrl+alt-1 screen -m 0
-# kwmc bind ctrl+alt-2 screen -m 1
-# kwmc bind ctrl+alt-3 screen -m 2
-
-# kwmc bind ctrl+alt-x space -g increase horizontal
-# kwmc bind ctrl+alt-y space -g increase vertical
-
-# kwmc bind ctrl+alt-leftarrow space -p increase left
-# kwmc bind ctrl+alt-rightarrow space -p increase right
-# kwmc bind ctrl+alt-uparrow space -p increase top
-# kwmc bind ctrl+alt-downarrow space -p increase bottom
-
-# kwmc bind cmd+alt-x space -g decrease horizontal
-# kwmc bind cmd+alt-y space -g decrease vertical
-
-# kwmc bind cmd+alt-leftarrow space -p decrease left
-# kwmc bind cmd+alt-rightarrow space -p decrease right
-# kwmc bind cmd+alt-uparrow space -p decrease top
-# kwmc bind cmd+alt-downarrow space -p decrease bottom
+# Reduce/expand window
+kwmc bind cmd+alt+ctrl-h window -c reduce 0.1
+kwmc bind cmd+alt+ctrl-l window -c expand 0.1
+# Quit kwm
+kwmc bind cmd+alt+ctrl-q quit
