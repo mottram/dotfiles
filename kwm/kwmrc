@@ -25,31 +25,29 @@ kwmc config space bsp
 kwmc config split-ratio 0.5
 # Tile iTerm windows without a title bar
 kwmc config add-role AXDialog iTerm2
-# Always float the following applications
-kwmc config float System Preferences
 # Keybindings
 # Rotate the window tree by 180 degrees
-kwmc bind alt+shift-e tree -r 90
-kwmc bind alt+shift-r tree -r 180
-kwmc bind alt+shift-t tree -r 270
+kwmc bind alt+shift+ctrl+cmd-e tree -r 90
+kwmc bind alt+shift+ctrl+cmd-r tree -r 180
+kwmc bind alt+shift+ctrl+cmd-t tree -r 270
 # Mark a window
-kwmc bind alt+shift-x window -t mark
+kwmc bind alt+shift+ctrl+cmd-x window -t mark
 # Toggle _w_indow float
-kwmc bind alt+shift-w window -t float
+kwmc bind alt+shift+ctrl+cmd-w window -t float
 # Toggle _f_ullscreen
-kwmc bind alt+shift-f window -t fullscreen
+kwmc bind alt+shift+ctrl+cmd-f window -t fullscreen
 # Expand window to fill _u_p parent space
-kwmc bind alt+shift-u window -t parent
+kwmc bind alt+shift+ctrl+cmd-u window -t parent
 # Focus next/prev window
-kwmc bind alt+shift-h window -f prev
-kwmc bind alt+shift-l window -f next
+kwmc bind alt+shift+cmd+ctrl-h window -f prev
+kwmc bind alt+shift+cmd+ctrl-l window -f next
 # Swap current window with next/prev/marked window
-kwmc bind alt+shift-p window -s prev
-kwmc bind alt+shift-n window -s next
-kwmc bind alt+shift-m window -s mark
+kwmc bind alt+shift+ctrl+cmd-p window -s prev
+kwmc bind alt+shift+ctrl+cmd-n window -s next
+kwmc bind alt+shift+ctrl+cmd-m window -s mark
 # Reduce/expand window
-kwmc bind cmd+alt+ctrl-h window -c reduce 0.1
-kwmc bind cmd+alt+ctrl-l window -c expand 0.1
+kwmc bind shift+alt-h window -c reduce 0.1
+kwmc bind shift+alt-l window -c expand 0.1
 # Switch between tiling, monocle and floating
 kwmc bind shift+alt-1 space -t bsp
 kwmc bind shift+alt-2 space -t monocle
@@ -57,4 +55,4 @@ kwmc bind shift+alt-3 space -t float
 # Refresh layout
 kwmc bind shift+alt-4 tree -c refresh
 # Quit kwm
-kwmc bind cmd+alt+ctrl-q quit
+kwmc bind shift+alt+cmd-q quit
