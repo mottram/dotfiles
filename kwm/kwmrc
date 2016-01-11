@@ -1,12 +1,12 @@
 ## Settings
 # Set default values for screen padding
-kwmc config padding top 35
-kwmc config padding bottom 15
-kwmc config padding left 15
-kwmc config padding right 15
+kwmc config padding top 40
+kwmc config padding bottom 20
+kwmc config padding left 20
+kwmc config padding right 20
 # Set default values for container gaps
-kwmc config gap vertical 15
-kwmc config gap horizontal 15
+kwmc config gap vertical 20
+kwmc config gap horizontal 20
 # Let Kwm listen for hotkeys
 kwmc config hotkeys enable
 # Disable menu-fix, as the menu bar is visible
@@ -29,7 +29,9 @@ kwmc config add-role AXDialog iTerm2
 kwmc config float System Preferences
 # Keybindings
 # Rotate the window tree by 180 degrees
-kwmc bind alt+shift-1 space -r 180
+kwmc bind alt+shift-e tree -r 90
+kwmc bind alt+shift-r tree -r 180
+kwmc bind alt+shift-t tree -r 270
 # Mark a window
 kwmc bind alt+shift-x window -t mark
 # Toggle _w_indow float
@@ -48,5 +50,11 @@ kwmc bind alt+shift-m window -s mark
 # Reduce/expand window
 kwmc bind cmd+alt+ctrl-h window -c reduce 0.1
 kwmc bind cmd+alt+ctrl-l window -c expand 0.1
+# Switch between tiling, monocle and floating
+kwmc bind shift+alt-1 space -t bsp
+kwmc bind shift+alt-2 space -t monocle
+kwmc bind shift+alt-3 space -t float
+# Refresh layout
+kwmc bind shift+alt-4 tree -c refresh
 # Quit kwm
 kwmc bind cmd+alt+ctrl-q quit
