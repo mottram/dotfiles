@@ -77,6 +77,7 @@ nmap s <Plug>(SneakStreak)
 nmap S <Plug>(SneakStreakBackward)
 xmap s <Plug>Sneak_s
 xmap S <Plug>Sneak_S
+nnoremap n nzz
 function! MapCR()
     nnoremap <cr> :nohlsearch<cr>:<backspace>
 endfunction
