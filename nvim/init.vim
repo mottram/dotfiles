@@ -67,6 +67,9 @@ nmap <leader>h :History<cr>
 nmap <leader>b :Buffers<cr>
 nmap <leader>w :Windows<cr>
 nmap <leader>m :w<cr>:NeomakeFile<cr>
+nmap <leader>g :Gstatus<cr>
+nmap <leader>gw :Gwrite<cr>
+nmap <leader>gc :Gcommit<cr>
 nmap <silent> <leader>cd :lcd %:h<cr>:pwd<cr>
 call yankstack#setup()
 nmap <leader>p <Plug>yankstack_substitute_older_paste
