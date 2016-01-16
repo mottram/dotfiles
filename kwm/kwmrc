@@ -23,10 +23,13 @@ kwmc config tiling enable
 kwmc config space bsp
 # Set default split ratio
 kwmc config split-ratio 0.5
+# Ignore applications
+kwmc config float System Preferences 
 # Tile windows that don't want to be tiled
 kwmc config add-role AXDialog iTerm2
 kwmc config add-role AXDialog Catch
 kwmc config add-role AXFloatingWindow Transmission
+kwmc config add-role AXSystemDialog Bartender
 # Keybindings
 # Rotate the window tree by 180 degrees
 kwmc bind alt+shift+ctrl+cmd-e tree -r 90
@@ -47,6 +50,8 @@ kwmc bind alt+shift+cmd+ctrl-l window -f next
 kwmc bind alt+shift+ctrl+cmd-p window -s prev
 kwmc bind alt+shift+ctrl+cmd-n window -s next
 kwmc bind alt+shift+ctrl+cmd-m window -s mark
+# Move marked window to focussed container
+kwmc bind alt+shift+ctrl+cmd-y window -x
 # Reduce/expand window
 kwmc bind shift+alt-h window -c reduce 0.1
 kwmc bind shift+alt-l window -c expand 0.1
@@ -54,7 +59,11 @@ kwmc bind shift+alt-l window -c expand 0.1
 kwmc bind shift+alt-1 space -t bsp
 kwmc bind shift+alt-2 space -t monocle
 kwmc bind shift+alt-3 space -t float
+# Toggle between horizontal and vertical split
+kwmc bind alt+shift+ctrl+cmd-s window -c split
+# Restore default layout
+kwmc bind shift+alt-4 tree restore default
 # Refresh layout
-kwmc bind shift+alt-4 tree -c refresh
+kwmc bind shift+alt-5 tree -c refresh
 # Quit kwm
 kwmc bind shift+alt+cmd-q quit
