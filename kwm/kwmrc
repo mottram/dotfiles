@@ -29,7 +29,7 @@ kwmc config float System Preferences
 kwmc config add-role AXDialog iTerm2
 kwmc config add-role AXDialog Catch
 kwmc config add-role AXFloatingWindow Transmission
-kwmc config add-role AXSystemDialog Bartender
+kwmc config add-role AXSystemDialog Bartender 2
 # Keybindings
 # Rotate the window tree by 180 degrees
 kwmc bind alt+shift+ctrl+cmd-e tree -r 90
