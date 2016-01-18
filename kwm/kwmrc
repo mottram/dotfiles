@@ -67,3 +67,9 @@ kwmc bind shift+alt-4 tree restore default
 kwmc bind shift+alt-5 tree -c refresh
 # Quit kwm
 kwmc bind shift+alt+cmd-q quit
+
+# Window borders
+# Not working at the moment
+# kwmc config focused-border enable
+# kwmc config focused-border color ff555555
+# kwmc config focused-border size 4
