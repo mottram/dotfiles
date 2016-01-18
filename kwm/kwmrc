@@ -15,8 +15,8 @@ kwmc config menu-fix disable
 kwmc config focus disabled
 # Enable mouse-follows-focus
 kwmc config focus mouse-follows enable
-# Float windows when dragged
-kwmc config dragndrop enable
+# Don't float windows when dragged
+kwmc config dragndrop disable
 # Enable tiling
 kwmc config tiling enable
 # Default tiling mode for new spaces
