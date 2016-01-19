@@ -9,8 +9,6 @@ kwmc config gap vertical 20
 kwmc config gap horizontal 20
 # Let Kwm listen for hotkeys
 kwmc config hotkeys enable
-# Disable menu-fix, as the menu bar is visible
-kwmc config menu-fix disable
 # Disable focus-follows-mouse
 kwmc config focus disabled
 # Enable mouse-follows-focus
@@ -30,6 +28,10 @@ kwmc config add-role AXDialog iTerm2
 kwmc config add-role AXDialog Catch
 kwmc config add-role AXFloatingWindow Transmission
 kwmc config add-role AXSystemDialog Bartender 2
+# Window borders
+kwmc config focused-border enable
+kwmc config focused-border color aa555555
+kwmc config focused-border size 6
 # Keybindings
 # Rotate the window tree by 180 degrees
 kwmc bind alt+shift+ctrl+cmd-e tree -r 90
@@ -67,9 +69,3 @@ kwmc bind shift+alt-4 tree restore default
 kwmc bind shift+alt-5 tree -c refresh
 # Quit kwm
 kwmc bind shift+alt+cmd-q quit
-
-# Window borders
-# Not working at the moment
-# kwmc config focused-border enable
-# kwmc config focused-border color ff555555
-# kwmc config focused-border size 4
