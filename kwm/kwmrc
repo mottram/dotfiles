@@ -17,6 +17,8 @@ kwmc config focus mouse-follows enable
 kwmc config dragndrop disable
 # Enable tiling
 kwmc config tiling enable
+# New splits should become the left leaf-node
+kwmc config spawn left
 # Default tiling mode for new spaces
 kwmc config space bsp
 # Set default split ratio
@@ -28,10 +30,13 @@ kwmc config add-role AXDialog iTerm2
 kwmc config add-role AXDialog Catch
 kwmc config add-role AXFloatingWindow Transmission
 kwmc config add-role AXSystemDialog Bartender 2
-# Window borders
+# Borders for focussed and marked windows
 kwmc config focused-border enable
-kwmc config focused-border color aa555555
-kwmc config focused-border size 6
+kwmc config focused-border color 99555555
+kwmc config focused-border size 8
+kwmc config marked-border enable
+kwmc config marked-border size 8
+kwmc config marked-border color 918515E
 # Keybindings
 # Rotate the window tree by 180 degrees
 kwmc bind alt+shift+ctrl+cmd-e tree -r 90
