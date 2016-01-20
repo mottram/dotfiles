@@ -33,10 +33,10 @@ kwmc config add-role AXSystemDialog Bartender 2
 # Borders for focussed and marked windows
 kwmc config focused-border enable
 kwmc config focused-border color 99555555
-kwmc config focused-border size 8
+kwmc config focused-border size 5
 kwmc config marked-border enable
-kwmc config marked-border size 8
-kwmc config marked-border color 918515E
+kwmc config marked-border size 5
+kwmc config marked-border color 9918515E
 # Keybindings
 # Rotate the window tree by 180 degrees
 kwmc bind alt+shift+ctrl+cmd-e tree -r 90
