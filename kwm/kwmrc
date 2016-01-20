@@ -13,6 +13,8 @@ kwmc config hotkeys enable
 kwmc config focus disabled
 # Enable mouse-follows-focus
 kwmc config focus mouse-follows enable
+# Let next/previous focus wrap around
+kwmc config cycle-focus all
 # Don't float windows when dragged
 kwmc config dragndrop disable
 # Enable tiling
@@ -50,10 +52,12 @@ kwmc bind alt+shift+ctrl+cmd-w window -t float
 kwmc bind alt+shift+ctrl+cmd-f window -t fullscreen
 # Expand window to fill _u_p parent space
 kwmc bind alt+shift+ctrl+cmd-u window -t parent
-# Focus next/prev window
+# Focus next/previous/first/last window
 kwmc bind alt+shift+cmd+ctrl-h window -f prev
 kwmc bind alt+shift+cmd+ctrl-l window -f next
-# Swap current window with next/prev/marked window
+kwmc bind alt+shift+cmd+ctrl-; window -f first
+kwmc bind alt+shift+cmd+ctrl-' window -f last
+# Swap current window with next/previous/marked window
 kwmc bind alt+shift+ctrl+cmd-p window -s prev
 kwmc bind alt+shift+ctrl+cmd-n window -s next
 kwmc bind alt+shift+ctrl+cmd-m window -s mark
