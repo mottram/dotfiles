@@ -49,18 +49,22 @@ kwmc bind alt+shift+ctrl+cmd-t tree -r 270
 kwmc bind alt+shift+ctrl+cmd-x window -t mark
 # Toggle _w_indow float
 kwmc bind alt+shift+ctrl+cmd-w window -t float
-# Toggle _f_ullscreen
-kwmc bind alt+shift+ctrl+cmd-f window -t fullscreen
 # Expand window to fill _u_p parent space
 kwmc bind alt+shift+ctrl+cmd-u window -t parent
 # Focus next/previous/first/last window
-kwmc bind alt+shift+cmd+ctrl-h window -f prev
-kwmc bind alt+shift+cmd+ctrl-l window -f next
+kwmc bind alt+shift+cmd+ctrl-h window -f west
+kwmc bind alt+shift+cmd+ctrl-l window -f east
+kwmc bind alt+shift+cmd+ctrl-j window -f south
+kwmc bind alt+shift+cmd+ctrl-k window -f north
 kwmc bind alt+shift+cmd+ctrl-; window -f first
 kwmc bind alt+shift+cmd+ctrl-' window -f last
 # Swap current window with next/previous/marked window
 kwmc bind alt+shift+ctrl+cmd-p window -s prev
 kwmc bind alt+shift+ctrl+cmd-n window -s next
+kwmc bind alt+shift+ctrl+cmd-a window -s west
+kwmc bind alt+shift+ctrl+cmd-s window -s south
+kwmc bind alt+shift+ctrl+cmd-d window -s north
+kwmc bind alt+shift+ctrl+cmd-f window -s east
 kwmc bind alt+shift+ctrl+cmd-m window -s mark
 # Move marked window to focussed container
 kwmc bind alt+shift+ctrl+cmd-y window -x
@@ -71,11 +75,18 @@ kwmc bind shift+alt-l window -c expand 0.1
 kwmc bind shift+alt-1 space -t bsp
 kwmc bind shift+alt-2 space -t monocle
 kwmc bind shift+alt-3 space -t float
-# Toggle between horizontal and vertical split
-kwmc bind alt+shift+ctrl+cmd-s window -c split
 # Restore default layout
 kwmc bind shift+alt-4 tree restore default
 # Refresh layout
 kwmc bind shift+alt-5 tree -c refresh
 # Quit kwm
 kwmc bind shift+alt+cmd-q quit
+
+# TODO: new bindings for these commands?
+# Toggle between horizontal and vertical split
+# kwmc bind alt+shift+ctrl+cmd-s window -c split
+#
+# kwmc bind alt+shift+cmd+ctrl-h window -f prev
+# kwmc bind alt+shift+cmd+ctrl-l window -f next
+# Toggle _f_ullscreen
+# kwmc bind alt+shift+ctrl+cmd-f window -t fullscreen
