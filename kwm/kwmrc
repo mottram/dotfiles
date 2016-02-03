@@ -82,7 +82,17 @@ kwmc bind shift+alt-5 tree -c refresh
 # Quit kwm
 kwmc bind shift+alt+cmd-q quit
 
-# TODO: new bindings for these commands?
+# TODO: New bindings needed?
+# Detach Focused Window And Reinsert In Direction
+kwmc bind ctrl+shift-k window -x north
+kwmc bind ctrl+shift-l window -x east
+kwmc bind ctrl+shift-j window -x south
+kwmc bind ctrl+shift-h window -x west
+# Detach Marked Window And Reinsert At Focused Window
+kwmc bind ctrl+shift-x window -x mark
+
+
+# TODO: new bindings for these commands? Do I use them?
 # Toggle between horizontal and vertical split
 # kwmc bind alt+shift+ctrl+cmd-s window -c split
 #
