@@ -33,13 +33,10 @@ kwmc config add-role AXDialog iTerm2
 kwmc config add-role AXDialog Catch
 kwmc config add-role AXFloatingWindow Transmission
 kwmc config add-role AXSystemDialog Bartender 2
-# Borders for focussed and marked windows
-# kwmc config focused-border enable
-# kwmc config focused-border color 99555555
-# kwmc config focused-border size 5
-# kwmc config marked-border enable
-# kwmc config marked-border size 5
-# kwmc config marked-border color 9918515E
+# Borders for marked windows
+kwmc config marked-border enable
+kwmc config marked-border size 5
+kwmc config marked-border color 9918515E
 # Keybindings
 # Rotate the window tree by 180 degrees
 kwmc bind alt+shift+ctrl+cmd-e tree -r 90
@@ -90,7 +87,6 @@ kwmc bind ctrl+shift-j window -x south
 kwmc bind ctrl+shift-h window -x west
 # Detach Marked Window And Reinsert At Focused Window
 kwmc bind ctrl+shift-x window -x mark
-
 
 # TODO: new bindings for these commands? Do I use them?
 # Toggle between horizontal and vertical split
