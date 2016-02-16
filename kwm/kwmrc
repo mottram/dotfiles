@@ -28,6 +28,7 @@ kwmc config split-ratio 0.5
 # Ignore applications
 kwmc config float System Preferences 
 kwmc config float mpv
+kwmc config float Quicktime Player
 # Tile windows that don't want to be tiled
 kwmc config add-role AXDialog iTerm2
 kwmc config add-role AXDialog Catch
@@ -36,25 +37,25 @@ kwmc config add-role AXSystemDialog Bartender 2
 # Borders for marked windows
 kwmc config marked-border enable
 kwmc config marked-border size 5
-kwmc config marked-border color 9918515E
+kwmc config marked-border color FF555555
 # Keybindings
 # Rotate the window tree by 180 degrees
 kwmc bind alt+shift+ctrl+cmd-e tree -r 90
 kwmc bind alt+shift+ctrl+cmd-r tree -r 180
 kwmc bind alt+shift+ctrl+cmd-t tree -r 270
 # Mark a window
-kwmc bind alt+shift+ctrl+cmd-x window -t mark
+kwmc bind alt+shift+ctrl+cmd-x mark -w focused
 # Toggle _w_indow float
 kwmc bind alt+shift+ctrl+cmd-w window -t float
 # Expand window to fill _u_p parent space
 kwmc bind alt+shift+ctrl+cmd-u window -t parent
 # Focus next/previous/first/last window
-kwmc bind alt+shift+cmd+ctrl-h window -f west
-kwmc bind alt+shift+cmd+ctrl-l window -f east
-kwmc bind alt+shift+cmd+ctrl-j window -f south
-kwmc bind alt+shift+cmd+ctrl-k window -f north
-kwmc bind alt+shift+cmd+ctrl-; window -f first
-kwmc bind alt+shift+cmd+ctrl-' window -f last
+kwmc bind alt+shift+ctrl+cmd-h window -f west
+kwmc bind alt+shift+ctrl+cmd-l window -f east
+kwmc bind alt+shift+ctrl+cmd-j window -f south
+kwmc bind alt+shift+ctrl+cmd-k window -f north
+kwmc bind alt+shift+ctrl+cmd-; window -f first
+kwmc bind alt+shift+ctrl+cmd-' window -f last
 # Swap current window with next/previous/marked window
 kwmc bind alt+shift+ctrl+cmd-p window -s prev
 kwmc bind alt+shift+ctrl+cmd-n window -s next
@@ -69,15 +70,17 @@ kwmc bind alt+shift+ctrl+cmd-y window -x
 kwmc bind shift+alt-h window -c reduce 0.1
 kwmc bind shift+alt-l window -c expand 0.1
 # Switch between tiling, monocle and floating
-kwmc bind shift+alt-1 space -t bsp
-kwmc bind shift+alt-2 space -t monocle
-kwmc bind shift+alt-3 space -t float
+kwmc bind alt+shift-1 space -t bsp
+kwmc bind alt+shift-2 space -t monocle
+kwmc bind alt+shift-3 space -t float
 # Restore default layout
-kwmc bind shift+alt-4 tree restore default
+kwmc bind alt+shift-4 tree restore default
 # Refresh layout
-kwmc bind shift+alt-5 tree -c refresh
+kwmc bind alt+shift-5 tree -c refresh
+# Make the focussed window fullscreen
+kwmc bind alt+shift+ctrl+cmd-1 window -t fullscreen
 # Quit kwm
-kwmc bind shift+alt+cmd-q quit
+# kwmc bind shift+alt+cmd-q quit
 
 # TODO: New bindings needed?
 # Detach Focused Window And Reinsert In Direction
