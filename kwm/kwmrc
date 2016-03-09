@@ -66,6 +66,21 @@ kwmc bind alt+shift+ctrl+cmd-f window -s east
 kwmc bind alt+shift+ctrl+cmd-m window -s mark
 # Move marked window to focussed container
 kwmc bind alt+shift+ctrl+cmd-y window -x
+# Detach focused window and reinsert in direction
+kwmc bind ctrl+shift-k window -x north
+kwmc bind ctrl+shift-l window -x east
+kwmc bind ctrl+shift-j window -x south
+kwmc bind ctrl+shift-h window -x west
+# Detach marked window and reinsert at focused window
+kwmc bind ctrl+shift-x window -x mark
+# Move windows to spaces
+kwmc config spaces-key ctrl
+kwmc bind ctrl+cmd-1 window -s space 1
+kwmc bind ctrl+cmd-2 window -s space 2
+kwmc bind ctrl+cmd-3 window -s space 3
+kwmc bind ctrl+cmd-4 window -s space 4
+kwmc bind ctrl+cmd-right window -s space right
+kwmc bind ctrl+cmd-left window -s space left
 # Reduce/expand window
 kwmc bind shift+alt-h window -c reduce 0.1
 kwmc bind shift+alt-l window -c expand 0.1
@@ -79,23 +94,3 @@ kwmc bind alt+shift-4 tree restore default
 kwmc bind alt+shift-5 tree -c refresh
 # Make the focussed window fullscreen
 kwmc bind alt+shift+ctrl+cmd-1 window -t fullscreen
-# Quit kwm
-# kwmc bind shift+alt+cmd-q quit
-
-# TODO: New bindings needed?
-# Detach Focused Window And Reinsert In Direction
-kwmc bind ctrl+shift-k window -x north
-kwmc bind ctrl+shift-l window -x east
-kwmc bind ctrl+shift-j window -x south
-kwmc bind ctrl+shift-h window -x west
-# Detach Marked Window And Reinsert At Focused Window
-kwmc bind ctrl+shift-x window -x mark
-
-# TODO: new bindings for these commands? Do I use them?
-# Toggle between horizontal and vertical split
-# kwmc bind alt+shift+ctrl+cmd-s window -c split
-#
-# kwmc bind alt+shift+cmd+ctrl-h window -f prev
-# kwmc bind alt+shift+cmd+ctrl-l window -f next
-# Toggle _f_ullscreen
-# kwmc bind alt+shift+ctrl+cmd-f window -t fullscreen
