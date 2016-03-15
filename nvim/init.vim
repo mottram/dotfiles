@@ -26,6 +26,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'benekastah/neomake'
 Plug 'sheerun/vim-polyglot'
 Plug 'terryma/vim-expand-region'
+Plug 'wellle/targets.vim'
 call plug#end()
 scriptencoding utf-8
 colorscheme gruvbox
