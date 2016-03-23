@@ -1,12 +1,8 @@
 ## Settings
 # Set default values for screen padding
-kwmc config padding top 40
-kwmc config padding bottom 20
-kwmc config padding left 20
-kwmc config padding right 20
+kwmc config padding 40 20 20 20
 # Set default values for container gaps
-kwmc config gap vertical 20
-kwmc config gap horizontal 20
+kwmc config gap 15 15
 # Let Kwm listen for hotkeys
 kwmc config hotkeys on
 # Disable focus-follows-mouse
