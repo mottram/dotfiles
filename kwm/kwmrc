@@ -6,9 +6,9 @@ kwmc config gap 15 15
 # Let Kwm listen for hotkeys
 kwmc config hotkeys on
 # Disable focus-follows-mouse
-kwmc config focus off
+kwmc config focus-follows-mouse off
 # Enable mouse-follows-focus
-kwmc config focus mouse-follows on
+kwmc config mouse-follows-focus on
 # Let next/previous focus wrap around
 kwmc config cycle-focus all
 # Don't float windows when dragged
@@ -22,9 +22,9 @@ kwmc config space bsp
 # Set default split ratio
 kwmc config split-ratio 0.5
 # Ignore applications
-kwmc config float System Preferences 
-kwmc config float mpv
-kwmc config float Quicktime Player
+kwmc rule owner="System Preferences" properties={float="true"}
+kwmc rule owner="mpv" properties={float="true"}
+kwmc rule owner="QuickTime Player" properties={float="true"}
 # Tile windows that don't want to be tiled
 kwmc config add-role AXDialog iTerm2
 kwmc config add-role AXDialog Catch
@@ -32,19 +32,20 @@ kwmc config add-role AXFloatingWindow Transmission
 kwmc config add-role AXSystemDialog Bartender 2
 # Borders for marked windows
 kwmc config marked-border on
-kwmc config marked-border size 5
+kwmc config marked-border size 2
 kwmc config marked-border color FF555555
+kwmc config marked-border radius 2
 # Keybindings
 # Rotate the window tree by 180 degrees
 kwmc bind alt+shift+ctrl+cmd-e tree -r 90
 kwmc bind alt+shift+ctrl+cmd-r tree -r 180
 kwmc bind alt+shift+ctrl+cmd-t tree -r 270
 # Mark a window
-kwmc bind alt+shift+ctrl+cmd-x mark -w focused
+kwmc bind alt+shift+ctrl+cmd-x window -mk focused
 # Toggle _w_indow float
 kwmc bind alt+shift+ctrl+cmd-w window -t float
 # Expand window to fill _u_p parent space
-kwmc bind alt+shift+ctrl+cmd-u window -t parent
+kwmc bind alt+shift+ctrl+cmd-u window -z parent
 # Focus next/previous/first/last window
 kwmc bind alt+shift+ctrl+cmd-h window -f west
 kwmc bind alt+shift+ctrl+cmd-l window -f east
@@ -71,12 +72,12 @@ kwmc bind ctrl+shift-h window -x west
 kwmc bind ctrl+shift-x window -x mark
 # Move windows to spaces
 kwmc config spaces-key ctrl
-kwmc bind ctrl+cmd-1 window -s space 1
-kwmc bind ctrl+cmd-2 window -s space 2
-kwmc bind ctrl+cmd-3 window -s space 3
-kwmc bind ctrl+cmd-4 window -s space 4
-kwmc bind ctrl+cmd-right window -s space right
-kwmc bind ctrl+cmd-left window -s space left
+kwmc bind ctrl+cmd-1 window -m space 1
+kwmc bind ctrl+cmd-2 window -m space 2
+kwmc bind ctrl+cmd-3 window -m space 3
+kwmc bind ctrl+cmd-4 window -m space 4
+kwmc bind ctrl+cmd-right window -m space right
+kwmc bind ctrl+cmd-left window -m space left
 # Reduce/expand window
 kwmc bind shift+alt-h window -c reduce 0.1
 kwmc bind shift+alt-l window -c expand 0.1
@@ -89,4 +90,10 @@ kwmc bind alt+shift-4 tree restore default
 # Refresh layout
 kwmc bind alt+shift-5 tree -c refresh
 # Make the focussed window fullscreen
-kwmc bind alt+shift+ctrl+cmd-1 window -t fullscreen
+kwmc bind alt+shift+ctrl+cmd-1 window -z fullscreen
+# Quit kwm
+kwmc bind cmd+alt+ctrl-q quit
+
+# TODO: add rules for spaces, or stick to OS X method?
+# E.g.:
+# kwmc rule owner="iTunes" properties={display="1"}
