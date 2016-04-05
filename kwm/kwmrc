@@ -42,13 +42,13 @@ kwmc config marked-border color FF555555
 kwmc config marked-border radius 2
 # Keybindings
 # Rotate the window tree by 180 degrees
-kwmc bind alt+shift+ctrl+cmd-e tree -r 90
-kwmc bind alt+shift+ctrl+cmd-r tree -r 180
-kwmc bind alt+shift+ctrl+cmd-t tree -r 270
+kwmc bind alt+shift+ctrl+cmd-e tree rotate 90
+kwmc bind alt+shift+ctrl+cmd-r tree rotate 180
+kwmc bind alt+shift+ctrl+cmd-t tree rotate 270
 # Mark a window
 kwmc bind alt+shift+ctrl+cmd-x window -mk focused
 # Toggle _w_indow float
-kwmc bind alt+shift+ctrl+cmd-w window -t float
+# kwmc bind alt+shift+ctrl+cmd-w window -t float
 # Expand window to fill _u_p parent space
 kwmc bind alt+shift+ctrl+cmd-u window -z parent
 # Focus next/previous/first/last window
