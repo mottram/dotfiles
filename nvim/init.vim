@@ -28,6 +28,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'terryma/vim-expand-region'
 Plug 'wellle/targets.vim'
 Plug 'mhinz/vim-startify'
+Plug 'mrtazz/simplenote.vim'
 call plug#end()
 scriptencoding utf-8
 colorscheme gruvbox
@@ -99,6 +100,7 @@ let g:vim_markdown_frontmatter=1
 let g:netrw_liststyle=0
 let g:netrw_browse_split=4
 let g:netrw_banner=0
+source $XDG_CONFIG_HOME/simplenote/config
 augroup nvimrc
     autocmd!
     autocmd BufNewFile,BufReadPost *.md set filetype=markdown
