@@ -31,73 +31,83 @@ kwmc rule owner="mpv" properties={float="true"}
 kwmc rule owner="QuickTime Player" properties={float="true"}
 kwmc rule owner="VLC" properties={float="true"}
 # Tile windows that don't want to be tiled
-kwmc config add-role AXDialog iTerm2
-kwmc config add-role AXDialog Catch
-kwmc config add-role AXFloatingWindow Transmission
-kwmc config add-role AXSystemDialog Bartender 2
+kwmc rule owner="iTerm2" properties={role="AXDialog"}
+kwmc rule owner="Catch" properties={role="AXDialog"}
+kwmc rule owner="Bartender 2" properties={role="AXDialog"}
+kwmc rule owner="Transmission" properties={role="AXFloatingWindow"}
+# # Enable border for focused window
+# kwmc config focused-border on
+# kwmc config focused-border size 1
+# kwmc config focused-border color FF555555
+# kwmc config focused-border radius 4
 # Borders for marked windows
 kwmc config marked-border on
-kwmc config marked-border size 2
+kwmc config marked-border size 4
 kwmc config marked-border color FF555555
-kwmc config marked-border radius 2
+kwmc config marked-border radius 4
 # Keybindings
 # Rotate the window tree by 180 degrees
-kwmc bind alt+shift+ctrl+cmd-e tree rotate 90
-kwmc bind alt+shift+ctrl+cmd-r tree rotate 180
-kwmc bind alt+shift+ctrl+cmd-t tree rotate 270
+kwmc bindsym alt+shift+ctrl+cmd-e tree rotate 90
+kwmc bindsym alt+shift+ctrl+cmd-r tree rotate 180
+kwmc bindsym alt+shift+ctrl+cmd-t tree rotate 270
 # Mark a window
-kwmc bind alt+shift+ctrl+cmd-x window -mk focused
+kwmc bindsym alt+shift+ctrl+cmd-x window -mk focused
 # Toggle _w_indow float
-# kwmc bind alt+shift+ctrl+cmd-w window -t float
+kwmc bindsym alt+shift+ctrl+cmd-w window -t focused
 # Expand window to fill _u_p parent space
-kwmc bind alt+shift+ctrl+cmd-u window -z parent
+kwmc bindsym alt+shift+ctrl+cmd-u window -z parent
 # Focus next/previous/first/last window
-kwmc bind alt+shift+ctrl+cmd-h window -f west
-kwmc bind alt+shift+ctrl+cmd-l window -f east
-kwmc bind alt+shift+ctrl+cmd-j window -f south
-kwmc bind alt+shift+ctrl+cmd-k window -f north
-kwmc bind alt+shift+ctrl+cmd-; window -f first
-kwmc bind alt+shift+ctrl+cmd-' window -f last
+kwmc bindsym alt+shift+ctrl+cmd-h window -f west
+kwmc bindsym alt+shift+ctrl+cmd-l window -f east
+kwmc bindsym alt+shift+ctrl+cmd-j window -f south
+kwmc bindsym alt+shift+ctrl+cmd-k window -f north
+kwmc bindsym alt+shift+ctrl+cmd-; window -f first
+kwmc bindsym alt+shift+ctrl+cmd-' window -f last
 # Swap current window with next/previous/marked window
-kwmc bind alt+shift+ctrl+cmd-p window -s prev
-kwmc bind alt+shift+ctrl+cmd-n window -s next
-kwmc bind alt+shift+ctrl+cmd-a window -s west
-kwmc bind alt+shift+ctrl+cmd-s window -s south
-kwmc bind alt+shift+ctrl+cmd-d window -s north
-kwmc bind alt+shift+ctrl+cmd-f window -s east
-kwmc bind alt+shift+ctrl+cmd-m window -s mark
+kwmc bindsym alt+shift+ctrl+cmd-p window -s prev
+kwmc bindsym alt+shift+ctrl+cmd-n window -s next
+kwmc bindsym alt+shift+ctrl+cmd-a window -s west
+kwmc bindsym alt+shift+ctrl+cmd-s window -s south
+kwmc bindsym alt+shift+ctrl+cmd-d window -s north
+kwmc bindsym alt+shift+ctrl+cmd-f window -s east
+kwmc bindsym alt+shift+ctrl+cmd-m window -s mark
 # Move marked window to focussed container
-kwmc bind alt+shift+ctrl+cmd-y window -x
+kwmc bindsym alt+shift+ctrl+cmd-y window -x
 # Detach focused window and reinsert in direction
-kwmc bind ctrl+shift-k window -x north
-kwmc bind ctrl+shift-l window -x east
-kwmc bind ctrl+shift-j window -x south
-kwmc bind ctrl+shift-h window -x west
+kwmc bindsym ctrl+shift-k window -x north
+kwmc bindsym ctrl+shift-l window -x east
+kwmc bindsym ctrl+shift-j window -x south
+kwmc bindsym ctrl+shift-h window -x west
 # Detach marked window and reinsert at focused window
-kwmc bind ctrl+shift-x window -x mark
+kwmc bindsym ctrl+shift-x window -x mark
 # Move windows to spaces
 kwmc config spaces-key ctrl
-kwmc bind ctrl+cmd-1 window -m space 1
-kwmc bind ctrl+cmd-2 window -m space 2
-kwmc bind ctrl+cmd-3 window -m space 3
-kwmc bind ctrl+cmd-4 window -m space 4
-kwmc bind ctrl+cmd-right window -m space right
-kwmc bind ctrl+cmd-left window -m space left
+kwmc bindsym ctrl+cmd-1 window -m space 1
+kwmc bindsym ctrl+cmd-2 window -m space 2
+kwmc bindsym ctrl+cmd-3 window -m space 3
+kwmc bindsym ctrl+cmd-4 window -m space 4
+kwmc bindsym ctrl+cmd-right window -m space right
+kwmc bindsym ctrl+cmd-left window -m space left
+# Jump to a space without animated transition 
+kwmc bindsym ctrl+shift-1 space -fExperimental 1
+kwmc bindsym ctrl+shift-2 space -fExperimental 2
+kwmc bindsym ctrl+shift-3 space -fExperimental 3
+kwmc bindsym ctrl+shift-4 space -fExperimental 4
 # Reduce/expand window
-kwmc bind shift+alt-h window -c reduce 0.1
-kwmc bind shift+alt-l window -c expand 0.1
+kwmc bindsym shift+alt-h window -c reduce 0.1
+kwmc bindsym shift+alt-l window -c expand 0.1
 # Switch between tiling, monocle and floating
-kwmc bind alt+shift-1 space -t bsp
-kwmc bind alt+shift-2 space -t monocle
-kwmc bind alt+shift-3 space -t float
+kwmc bindsym alt+shift-1 space -t bsp
+kwmc bindsym alt+shift-2 space -t monocle
+kwmc bindsym alt+shift-3 space -t float
 # Restore default layout
-kwmc bind alt+shift-4 tree restore default
+kwmc bindsym alt+shift-4 tree restore default
 # Refresh layout
-kwmc bind alt+shift-5 tree -c refresh
+kwmc bindsym alt+shift-5 tree -c refresh
 # Make the focussed window fullscreen
-kwmc bind alt+shift+ctrl+cmd-1 window -z fullscreen
+kwmc bindsym alt+shift+ctrl+cmd-1 window -z fullscreen
 # Quit kwm
-kwmc bind cmd+alt+ctrl-q quit
+# kwmc bindsym alt+shift+ctrl+cmd-0 quit
 
 # TODO: add rules for spaces, or stick to OS X method?
 # E.g.:
