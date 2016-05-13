@@ -1,4 +1,3 @@
-" ~/.config/nvim/init.vim
 " Jack Mottram <j@ck.mottr.am>
 call plug#begin('$XDG_CONFIG_HOME/nvim/plugins')
 Plug 'tpope/vim-sensible'
@@ -10,6 +9,7 @@ Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 Plug 'justinmk/vim-sneak'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
@@ -74,7 +74,7 @@ nmap <leader>m :w<cr>:NeomakeFile<cr>
 nmap <leader>gs :Gstatus<cr>
 nmap <leader>gw :Gwrite<cr>
 nmap <leader>gc :Gcommit<cr>
-nmap <leader>gl :Glog
+nmap <leader>gl :Glog<cr>
 nmap <silent> <leader>cd :lcd %:h<cr>:pwd<cr>
 call yankstack#setup()
 nmap <leader>p <Plug>yankstack_substitute_older_paste
@@ -91,6 +91,9 @@ function! MapCR()
 endfunction
 call MapCR()
 let g:startify_custom_header=[]
+let g:startify_change_to_dir=1
+let g:startify_change_to_vcs_root=1
+let g:startify_bookmarks=[ {'c': '~/dotfiles/nvim/init.vim'} ]
 let g:fzf_layout={ 'up': '~30%' }
 let g:neomake_open_list=2
 let g:neomake_error_sign={ 'text': '>', 'texthl': 'WarningMsg' }
@@ -101,6 +104,14 @@ let g:vim_markdown_frontmatter=1
 let g:netrw_liststyle=0
 let g:netrw_browse_split=4
 let g:netrw_banner=0
+hi StartifySpecial ctermfg=White
+hi StartifyPath ctermfg=LightGray
+hi StartifySection ctermfg=Gray
+hi StartifyNumber ctermfg=White
+hi link SneakPluginTarget ErrorMsg
+hi link SneakStreakTarget ErrorMsg
+hi link SneakPluginScope ErrorMsg
+hi link SneakStreakMask ErrorMsg
 source $XDG_CONFIG_HOME/simplenote/config
 augroup nvimrc
     autocmd!
