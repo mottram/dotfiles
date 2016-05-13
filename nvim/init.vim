@@ -90,6 +90,7 @@ function! MapCR()
     nnoremap <cr> :nohlsearch<cr>:<backspace>
 endfunction
 call MapCR()
+let g:startify_custom_header=[]
 let g:fzf_layout={ 'up': '~30%' }
 let g:neomake_open_list=2
 let g:neomake_error_sign={ 'text': '>', 'texthl': 'WarningMsg' }
