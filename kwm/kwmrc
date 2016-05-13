@@ -10,15 +10,11 @@ kwmc config focus-follows-mouse off
 # Enable mouse-follows-focus
 kwmc config mouse-follows-focus on
 # Let next/previous focus wrap around
-kwmc config cycle-focus all
-# Don't float windows when dragged
-kwmc config dragndrop off
-# Enable tiling
-kwmc config tiling on
+kwmc config cycle-focus screen
+# Set default tiling mode to bsp
+kwmc config tiling bsp
 # New splits should become the left leaf-node
 kwmc config spawn left
-# Default tiling mode for new spaces
-kwmc config space bsp
 # Set default split ratio
 kwmc config split-ratio 0.5
 # Automatically float windows that fail to resize
@@ -36,20 +32,18 @@ kwmc rule owner="Catch" properties={role="AXDialog"}
 kwmc rule owner="Bartender 2" properties={role="AXDialog"}
 kwmc rule owner="Transmission" properties={role="AXFloatingWindow"}
 # # Enable border for focused window
-# kwmc config focused-border on
-# kwmc config focused-border size 1
-# kwmc config focused-border color FF555555
-# kwmc config focused-border radius 4
+kwmc config border focused on
+kwmc config border focused size 2
+kwmc config border focused color 0x80AAAAAA
+kwmc config border focused radius 6
 # Borders for marked windows
-kwmc config marked-border on
-kwmc config marked-border size 4
-kwmc config marked-border color FF555555
-kwmc config marked-border radius 4
+kwmc config border marked on
+kwmc config border marked size 2
+kwmc config border marked color 0x80555555
+kwmc config border marked radius 6
 # Keybindings
 # Rotate the window tree by 180 degrees
-kwmc bindsym alt+shift+ctrl+cmd-e tree rotate 90
 kwmc bindsym alt+shift+ctrl+cmd-r tree rotate 180
-kwmc bindsym alt+shift+ctrl+cmd-t tree rotate 270
 # Mark a window
 kwmc bindsym alt+shift+ctrl+cmd-x window -mk focused
 # Toggle _w_indow float
@@ -74,12 +68,12 @@ kwmc bindsym alt+shift+ctrl+cmd-m window -s mark
 # Move marked window to focussed container
 kwmc bindsym alt+shift+ctrl+cmd-y window -x
 # Detach focused window and reinsert in direction
-kwmc bindsym ctrl+shift-k window -x north
-kwmc bindsym ctrl+shift-l window -x east
-kwmc bindsym ctrl+shift-j window -x south
-kwmc bindsym ctrl+shift-h window -x west
+kwmc bindsym ctrl+shift-k window -m north
+kwmc bindsym ctrl+shift-l window -m east
+kwmc bindsym ctrl+shift-j window -m south
+kwmc bindsym ctrl+shift-h window -m west
 # Detach marked window and reinsert at focused window
-kwmc bindsym ctrl+shift-x window -x mark
+kwmc bindsym ctrl+shift-x window -m mark
 # Move windows to spaces
 kwmc config spaces-key ctrl
 kwmc bindsym ctrl+cmd-1 window -m space 1
@@ -106,9 +100,10 @@ kwmc bindsym alt+shift-4 tree restore default
 kwmc bindsym alt+shift-5 tree -c refresh
 # Make the focussed window fullscreen
 kwmc bindsym alt+shift+ctrl+cmd-1 window -z fullscreen
+# Open iTerm
+kwmc bindsym cmd-return exec open -na /Applications/iTerm2.app
 # Quit kwm
 # kwmc bindsym alt+shift+ctrl+cmd-0 quit
-
 # TODO: add rules for spaces, or stick to OS X method?
 # E.g.:
 # kwmc rule owner="iTunes" properties={display="1"}
