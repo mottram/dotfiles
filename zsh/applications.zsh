@@ -48,3 +48,7 @@ fi
 if [[ $IS_OSX -eq 1 ]]; then
     source $HOME/.vim/plugged/gruvbox/gruvbox_256palette_osx.sh
 fi
+# Disable homebrew analytics
+if [[ $IS_OSX -eq 1 ]]; then
+    export HOMEBREW_NO_ANALYTICS=1
+fi
