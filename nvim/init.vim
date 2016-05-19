@@ -2,33 +2,34 @@
 call plug#begin('$XDG_CONFIG_HOME/nvim/plugins')
 Plug 'tpope/vim-sensible'
 Plug 'rstacruz/vim-opinion'
-Plug 'morhetz/gruvbox'
 Plug 'airblade/vim-gitgutter'
-Plug 'ervandew/supertab'
-Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
-Plug 'justinmk/vim-sneak'
-Plug 'maxbrunsfeld/vim-yankstack'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
 Plug 'ap/vim-buftabline'
+Plug 'benekastah/neomake'
+Plug 'ervandew/supertab'
+Plug 'freitass/todo.txt-vim'
 Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
-Plug 'mattly/vim-markdown-enhancements', { 'for': 'markdown' }
-Plug 'roman/golden-ratio'
+Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 Plug 'junegunn/fzf', {
     \ 'dir': '$HOME/.fzf',
     \ 'do': './install --key-bindings --no-completion --no-update-rc',
     \ 'frozen': 1 
     \ }
 Plug 'junegunn/fzf.vim'
-Plug 'benekastah/neomake'
+Plug 'justinmk/vim-sneak'
+Plug 'mattly/vim-markdown-enhancements', { 'for': 'markdown' }
+Plug 'maxbrunsfeld/vim-yankstack'
+Plug 'mhinz/vim-startify'
+Plug 'morhetz/gruvbox'
+Plug 'mrtazz/simplenote.vim'
+Plug 'roman/golden-ratio'
 Plug 'sheerun/vim-polyglot'
 Plug 'terryma/vim-expand-region'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
 Plug 'wellle/targets.vim'
-Plug 'mhinz/vim-startify'
-Plug 'mrtazz/simplenote.vim'
 call plug#end()
 scriptencoding utf-8
 colorscheme gruvbox
@@ -90,28 +91,47 @@ function! MapCR()
     nnoremap <cr> :nohlsearch<cr>:<backspace>
 endfunction
 call MapCR()
+let g:golden_ratio_exclude_nonmodifiable = 1
+let g:SimplenoteFiletype="markdown"
+let g:SimplenoteListHeight=10
 let g:startify_custom_header=[]
+let g:startify_enable_special=0
 let g:startify_change_to_dir=1
 let g:startify_change_to_vcs_root=1
-let g:startify_bookmarks=[ {'c': '~/dotfiles/nvim/init.vim'} ]
+let g:startify_bookmarks=[ 
+        \ {'c': '~/dotfiles/nvim/init.vim'},
+        \ {'?': '~/Dropbox/todo/todo.txt'},
+        \ {'d': '~/dotfiles'},
+        \ {'n': '~/notes'}
+        \ ]  " Don't use: qeibsvt
+let g:startify_list_order = [
+        \ ['   Recent files:'],
+        \ 'files',
+        \ ['   Recent files in the current directory:'],
+        \ 'dir',
+        \ ['   Bookmarks:'],
+        \ 'bookmarks',
+        \ ]
 let g:fzf_layout={ 'up': '~30%' }
-let g:neomake_open_list=2
 let g:neomake_error_sign={ 'text': '>', 'texthl': 'WarningMsg' }
-let g:neomake_markdown_mdl_maker={ 'args': ['-s', '$HOME/.mdl.rb'] }
 let g:neomake_markdown_enabled_makers=['mdl']
+let g:neomake_markdown_mdl_maker={ 'args': ['-s', '$HOME/.mdl.rb'] }
+let g:neomake_open_list=2
 let g:neomake_python_enabled_makers=['pyflakes']
 let g:vim_markdown_frontmatter=1
 let g:netrw_liststyle=0
 let g:netrw_browse_split=4
 let g:netrw_banner=0
-hi StartifySpecial ctermfg=White
-hi StartifyPath ctermfg=LightGray
-hi StartifySection ctermfg=Gray
-hi StartifyNumber ctermfg=White
-hi link SneakPluginTarget ErrorMsg
-hi link SneakStreakTarget ErrorMsg
+hi StartifyBracket ctermfg=223
+hi StartifyFile ctermfg=142
+hi StartifyNumber ctermfg=142
+hi StartifyPath ctermfg=223
+hi StartifySection ctermfg=214
+hi StartifySpecial ctermfg=208
 hi link SneakPluginScope ErrorMsg
+hi link SneakPluginTarget ErrorMsg
 hi link SneakStreakMask ErrorMsg
+hi link SneakStreakTarget ErrorMsg
 source $XDG_CONFIG_HOME/simplenote/config
 augroup nvimrc
     autocmd!
