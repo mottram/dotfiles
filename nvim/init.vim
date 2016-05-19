@@ -136,12 +136,6 @@ let g:fzf_colors =
         \ 'marker':  ['fg', 'Keyword'],
         \ 'spinner': ['fg', 'Label'],
         \ 'header':  ['fg', 'Comment'] }
-hi StartifyBracket ctermfg=223
-hi StartifyFile ctermfg=142
-hi StartifyNumber ctermfg=142
-hi StartifyPath ctermfg=223
-hi StartifySection ctermfg=214
-hi StartifySpecial ctermfg=208
 hi link SneakPluginScope ErrorMsg
 hi link SneakPluginTarget ErrorMsg
 hi link SneakStreakMask ErrorMsg
