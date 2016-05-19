@@ -147,6 +147,7 @@ augroup nvimrc
     autocmd BufRead,BufNewfile $HOME/Dropbox/Notes/* set filetype=markdown
     autocmd InsertLeave * set nopaste
     autocmd FileType mail set tw=65
+    autocmd FileType gitcommit execute "normal! 0" | startinsert
 augroup END
 set statusline=
 set statusline+=\ %n.
