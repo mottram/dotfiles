@@ -59,6 +59,7 @@ set suffixesadd+=.markdown,.md,.py,.txt,.sh,.rb,.js,.c,.h,.go,.html,.css
 set clipboard=unnamed
 set splitbelow
 set splitright
+set termguicolors
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 let g:mapleader="\<Space>"
 nmap <leader>s :w<cr>
