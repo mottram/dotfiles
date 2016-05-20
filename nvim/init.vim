@@ -60,6 +60,8 @@ set clipboard=unnamed
 set splitbelow
 set splitright
 set termguicolors
+set cursorline
+set pastetoggle=<F6>
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 let g:mapleader="\<Space>"
 nmap <leader>s :w<cr>
@@ -149,12 +151,34 @@ augroup nvimrc
     autocmd FileType mail set tw=65
     autocmd FileType gitcommit execute "normal! 0" | startinsert
 augroup END
+hi! StatusLine guifg=#1d2021 guibg=#d5c4a1 
 set statusline=
-set statusline+=\ %n.
+set statusline+=%{PasteStatus()}
+set statusline+=%n.
 set statusline+=\ %F\ 
 set statusline+=%{&filetype}\ 
 set statusline+=%{&fileformat}\ 
 set statusline+=%{&fileencoding}\ 
-set statusline+=%m\ 
+set statusline+=%{FileStatus()}\ 
+set statusline+=
 set statusline+=%=
-set statusline+=%c\ %l/%L
+set statusline+=%L\ lines\ 
+
+function! FileStatus()
+  if &filetype ==# 'help'
+    return ''
+  elseif &readonly
+    return '[read only]'
+  elseif &modified
+    return '[modified]'
+  else
+    return ''
+  endif
+endfunction
+
+function! PasteStatus()
+    if &paste
+        return '[PASTE] '
+    en
+        return ''
+endfunction
