@@ -56,10 +56,12 @@ set wildignore+=*.zip,*.tar.gz,*.tar.bz2,*.rar,*.tar.xz
 set wildignore+=*.swp,*~,._*
 set path=**
 set suffixesadd+=.markdown,.md,.py,.txt,.sh,.rb,.js,.c,.h,.go,.html,.css
+set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:_
 set clipboard=unnamed
 set splitbelow
 set splitright
 set termguicolors
+set noshowmode
 set cursorline
 set pastetoggle=<F6>
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
@@ -95,7 +97,7 @@ function! MapCR()
 endfunction
 call MapCR()
 let g:golden_ratio_exclude_nonmodifiable = 1
-let g:SimplenoteFiletype="markdown"
+let g:SimplenoteFiletype='markdown'
 let g:SimplenoteListHeight=10
 let g:startify_custom_header=[]
 let g:startify_enable_special=0
@@ -116,28 +118,17 @@ let g:startify_list_order = [
         \ 'bookmarks',
         \ ]
 let g:fzf_layout={ 'up': '~30%' }
-let g:neomake_error_sign={ 'text': '>', 'texthl': 'WarningMsg' }
+let g:neomake_error_sign={ 'text': 'E', 'texthl': 'WarningMsg' }
+let g:neomake_warning_sign={ 'text': 'W', 'texthl': 'WarningMsg' }
 let g:neomake_markdown_enabled_makers=['mdl']
 let g:neomake_markdown_mdl_maker={ 'args': ['-s', '$HOME/.mdl.rb'] }
+let g:neomake_list_height=20
 let g:neomake_open_list=2
 let g:neomake_python_enabled_makers=['pyflakes']
 let g:vim_markdown_frontmatter=1
 let g:netrw_liststyle=0
 let g:netrw_browse_split=4
 let g:netrw_banner=0
-let g:fzf_colors =
-        \ { 'fg':      ['fg', 'Normal'],
-        \ 'bg':      ['bg', 'Normal'],
-        \ 'hl':      ['fg', 'Comment'],
-        \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-        \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-        \ 'hl+':     ['fg', 'Statement'],
-        \ 'info':    ['fg', 'PreProc'],
-        \ 'prompt':  ['fg', 'Conditional'],
-        \ 'pointer': ['fg', 'Exception'],
-        \ 'marker':  ['fg', 'Keyword'],
-        \ 'spinner': ['fg', 'Label'],
-        \ 'header':  ['fg', 'Comment'] }
 hi link SneakPluginScope ErrorMsg
 hi link SneakPluginTarget ErrorMsg
 hi link SneakStreakMask ErrorMsg
@@ -149,13 +140,14 @@ augroup nvimrc
     autocmd BufRead,BufNewfile $HOME/Dropbox/Notes/* set filetype=markdown
     autocmd InsertLeave * set nopaste
     autocmd FileType mail set tw=65
-    autocmd FileType gitcommit execute "normal! 0" | startinsert
+    autocmd BufRead COMMIT_EDITMSG execute "normal! 0" | startinsert
 augroup END
 hi! StatusLine guifg=#1d2021 guibg=#d5c4a1 
 set statusline=
+set statusline+=%{ModeStatus()}
 set statusline+=%{PasteStatus()}
-set statusline+=%n.
-set statusline+=\ %F\ 
+" set statusline+=\ %n.
+set statusline+=%F\ 
 set statusline+=%{&filetype}\ 
 set statusline+=%{&fileformat}\ 
 set statusline+=%{&fileencoding}\ 
@@ -163,7 +155,6 @@ set statusline+=%{FileStatus()}\
 set statusline+=
 set statusline+=%=
 set statusline+=%L\ lines\ 
-
 function! FileStatus()
   if &filetype ==# 'help'
     return ''
@@ -175,10 +166,21 @@ function! FileStatus()
     return ''
   endif
 endfunction
-
 function! PasteStatus()
     if &paste
         return '[PASTE] '
     en
         return ''
+endfunction
+function! ModeStatus()
+    redraw
+    let l:mode = mode()
+    if     mode ==# 'n' | return ' '
+    elseif mode ==# 'i' | return 'INSERT '
+    elseif mode ==# 'v' | return 'VISUAL '
+    elseif mode ==# 'V' | return 'V-LINE '
+    elseif mode ==# '' | return 'V-BLOCK '
+    elseif mode ==# 'R'  | return 'REPLACE '
+    else                 | return l:mode
+    endif
 endfunction
