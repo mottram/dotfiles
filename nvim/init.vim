@@ -76,11 +76,13 @@ nmap <leader>f :Files<cr>
 nmap <leader>h :History<cr>
 nmap <leader>b :Buffers<cr>
 nmap <leader>w :Windows<cr>
+nmap <leader>ch :History:<cr>
 nmap <leader>m :w<cr>:NeomakeFile<cr>
 nmap <leader>gs :Gstatus<cr>
 nmap <leader>gw :Gwrite<cr>
 nmap <leader>gc :Gcommit<cr>
 nmap <leader>gl :Glog<cr>
+nmap <leader>gn :GitGutterNextHunk<cr>
 nmap <silent> <leader>cd :lcd %:h<cr>:pwd<cr>
 call yankstack#setup()
 nmap <leader>p <Plug>yankstack_substitute_older_paste
@@ -142,19 +144,24 @@ augroup nvimrc
     autocmd FileType mail set tw=65
     autocmd BufRead COMMIT_EDITMSG execute "normal! 0" | startinsert
 augroup END
-hi! StatusLine guifg=#1d2021 guibg=#d5c4a1 
+hi StatusLine guifg=#1d2021 guibg=#bdae93
+hi User1 guibg=#1d2021 guifg=#bdae93
+hi User2 guibg=#1d2021 guifg=#d65d0e
 set statusline=
+set statusline+=%2*
 set statusline+=%{ModeStatus()}
 set statusline+=%{PasteStatus()}
-" set statusline+=\ %n.
+set statusline+=%1*
 set statusline+=%F\ 
+set statusline+=%2*
 set statusline+=%{&filetype}\ 
 set statusline+=%{&fileformat}\ 
 set statusline+=%{&fileencoding}\ 
+set statusline+=%1*
 set statusline+=%{FileStatus()}\ 
 set statusline+=
 set statusline+=%=
-set statusline+=%L\ lines\ 
+set statusline+=%L\ 
 function! FileStatus()
   if &filetype ==# 'help'
     return ''
@@ -176,11 +183,11 @@ function! ModeStatus()
     redraw
     let l:mode = mode()
     if     mode ==# 'n' | return ' '
-    elseif mode ==# 'i' | return 'INSERT '
-    elseif mode ==# 'v' | return 'VISUAL '
-    elseif mode ==# 'V' | return 'V-LINE '
-    elseif mode ==# '' | return 'V-BLOCK '
-    elseif mode ==# 'R'  | return 'REPLACE '
+    elseif mode ==# 'i' | return '[INSERT] '
+    elseif mode ==# 'v' | return '[VISUAL] '
+    elseif mode ==# 'V' | return '[V-LINE] '
+    elseif mode ==# '' | return '[V-BLOCK] '
+    elseif mode ==# 'R'  | return '[REPLACE] '
     else                 | return l:mode
     endif
 endfunction
