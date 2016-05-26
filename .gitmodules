@@ -13,3 +13,6 @@
 [submodule "zsh/zsh-autosuggestions"]
 	path = zsh/zsh-autosuggestions
 	url = https://github.com/tarruda/zsh-autosuggestions.git
+[submodule "zsh/deer"]
+	path = zsh/deer
+	url = https://github.com/Vifon/deer
