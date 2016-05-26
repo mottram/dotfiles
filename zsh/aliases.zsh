@@ -20,6 +20,8 @@ alias ed='ed -p=" ~ "'
 alias fzf='~/.fzf/bin/fzf'
 alias e="dtach -A /tmp/dtach-mail -r winch mutt"
 alias wm="dtach -A /tmp/dtach-dvtm -r winch dvtm"
+alias bo="brew update && brew outdated"
+alias bu="brew upgrade && brew cleanup"
 # Open various files in $EDITOR
 alias -s md=$EDITOR
 alias -s markdown=$EDITOR
