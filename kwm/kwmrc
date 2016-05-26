@@ -14,7 +14,7 @@ kwmc config cycle-focus screen
 # Set default tiling mode to bsp
 kwmc config tiling bsp
 # New splits should become the left leaf-node
-kwmc config spawn left
+kwmc config spawn right
 # Set default split ratio
 kwmc config split-ratio 0.5
 # Automatically float windows that fail to resize
@@ -83,10 +83,10 @@ kwmc bindsym ctrl+cmd-4 window -m space 4
 kwmc bindsym ctrl+cmd-right window -m space right
 kwmc bindsym ctrl+cmd-left window -m space left
 # Jump to a space without animated transition 
-kwmc bindsym ctrl+shift-1 space -fExperimental 1
-kwmc bindsym ctrl+shift-2 space -fExperimental 2
-kwmc bindsym ctrl+shift-3 space -fExperimental 3
-kwmc bindsym ctrl+shift-4 space -fExperimental 4
+kwmc bindsym alt+shift+ctrl+cmd-1 space -fExperimental 1
+kwmc bindsym alt+shift+ctrl+cmd-2 space -fExperimental 2
+kwmc bindsym alt+shift+ctrl+cmd-3 space -fExperimental 3
+kwmc bindsym alt+shift+ctrl+cmd-4 space -fExperimental 4
 # Reduce/expand window
 kwmc bindsym shift+alt-h window -c reduce 0.1
 kwmc bindsym shift+alt-l window -c expand 0.1
@@ -99,7 +99,7 @@ kwmc bindsym alt+shift-4 tree restore default
 # Refresh layout
 kwmc bindsym alt+shift-5 tree -c refresh
 # Make the focussed window fullscreen
-kwmc bindsym alt+shift+ctrl+cmd-1 window -z fullscreen
+kwmc bindsym alt+shift-f window -z fullscreen
 # Open iTerm
 kwmc bindsym cmd-return exec open -na /Applications/iTerm2.app
 # Quit kwm
