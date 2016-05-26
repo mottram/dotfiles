@@ -29,30 +29,39 @@ function nls {
 }
 
 # make a backup of a file
-bk() {
+function bk {
     cp -a "$1" "${1}_$(date -u)"
 }
 
 # Find files since $1 days
-fr() {
+function fr {
     find ./* -mtime -$1 | cut -c3-
+}
+
+function cdf {
+    target=`osascript -e 'tell application "Finder" to if (count of Finder windows) > 0 then get POSIX path of (target of front Finder window as text)'`
+    if [ "$target" != "" ]; then
+        cd "$target"; pwd
+    else
+        echo 'No Finder window found' >&2
+    fi
 }
 
 # Tumblr
 
-tumqueue() {
-tumblr post --queue "$1" --host=onethingwell.org 2>/dev/null
-open https://www.tumblr.com/blog/onethingwell/queue
-}
+# tumqueue() {
+# tumblr post --queue "$1" --host=onethingwell.org 2>/dev/null
+# open https://www.tumblr.com/blog/onethingwell/queue
+# }
 
-tumdraft() {
-tumblr post --draft "$1" --host=onethingwell.org 2>/dev/null
-open https://www.tumblr.com/blog/onethingwell/drafts
-}
+# tumdraft() {
+# tumblr post --draft "$1" --host=onethingwell.org 2>/dev/null
+# open https://www.tumblr.com/blog/onethingwell/drafts
+# }
 
 # grep for running processes
 
-any() {
+function any {
     if [[ -z "$1" ]] ; then
         echo "any - grep for process(es) by keyword" >&2
         echo "Usage: any <keyword>" >&2 ; return 1
@@ -64,7 +73,7 @@ any() {
 
 # Add contents of a file to the OS X clipboard
 
-clip() {
+function clip {
     type=`file "$1"|grep -c text`
     if [ $type -gt 0 ]; then
         cat "$@"|pbcopy
@@ -87,7 +96,7 @@ function nwf {
 
 # mpc search 'n' play
 
-mpcplay() {
+function mpcplay {
     type=$(echo "$1" | sed 's/\<./\u&/')
     term=$(echo "$2" | sed 's/\<./\u&/')
     if pidof -x mpd >/dev/null
@@ -104,7 +113,7 @@ mpcplay() {
 }
 
 # Coloured man pages
-man() {
+function man {
   env \
 LESS_TERMCAP_mb=$(printf "\e[1;31m") \
 LESS_TERMCAP_md=$(printf "\e[1;31m") \
@@ -119,7 +128,7 @@ LESS_TERMCAP_us=$(printf "\e[1;32m") \
 # Improved xclip from 
 # http://madebynathan.com/2011/10/04/a-nicer-way-to-use-xclip/
 
-cb() {
+function cb {
   local _scs_col="\e[0;32m"; local _wrn_col='\e[1;31m'; local _trn_col='\e[0;33m'
   # Check that xclip is installed.
   if ! type xclip > /dev/null 2>&1; then
