@@ -23,6 +23,7 @@ kwmc config float-non-resizable on
 kwmc config lock-to-container on
 # Ignore applications
 kwmc rule owner="System Preferences" properties={float="true"}
+kwmc rule owner="ReadKit" properties={float="true"}
 kwmc rule owner="mpv" properties={float="true"}
 kwmc rule owner="QuickTime Player" properties={float="true"}
 kwmc rule owner="VLC" properties={float="true"}
