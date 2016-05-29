@@ -46,7 +46,7 @@ if [[ $IS_OSX -eq 1 ]]; then
 fi
 # Prettier gruvbox theme colours in iTerm2
 if [[ $IS_OSX -eq 1 ]]; then
-    source $HOME/.vim/plugged/gruvbox/gruvbox_256palette_osx.sh
+    source $HOME/.config/nvim/plugins/gruvbox/gruvbox_256palette_osx.sh
 fi
 # Disable homebrew analytics
 if [[ $IS_OSX -eq 1 ]]; then
@@ -54,8 +54,7 @@ if [[ $IS_OSX -eq 1 ]]; then
 fi
 # Use deer on OS X
 if [[ $IS_OSX -eq 1 ]]; then
-    source $ZSH_DIR/deer/deer.sh
+    source $ZSH_PLUGINS_DIR/deer/deer.sh
     zle -N deer
     bindkey '\ek' deer
 fi
-

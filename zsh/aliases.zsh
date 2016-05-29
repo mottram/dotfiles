@@ -22,6 +22,7 @@ alias e="dtach -A /tmp/dtach-mail -r winch mutt"
 alias wm="dtach -A /tmp/dtach-dvtm -r winch dvtm"
 alias bo="brew update && brew outdated"
 alias bu="brew upgrade && brew cleanup"
+alias ugz="cd $ZSH_DIR; git submodule foreach git pull"
 # Open various files in $EDITOR
 alias -s md=$EDITOR
 alias -s markdown=$EDITOR

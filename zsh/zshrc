@@ -6,6 +6,7 @@
 # TODO: move path & exports?
 PATH="/usr/local/bin:/usr/local/sbin:$HOME/bin:$PATH"
 export ZSH_DIR=$HOME/dotfiles/zsh
+export ZSH_PLUGINS_DIR=$ZSH_DIR/plugins
 source $ZSH_DIR/checks.zsh
 source $ZSH_DIR/functions.zsh
 source $ZSH_DIR/aliases.zsh
