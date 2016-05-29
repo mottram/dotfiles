@@ -1,0 +1,24 @@
+[submodule "zsh/plugins/deer"]
+	path = zsh/plugins/deer
+	url = https://github.com/Vifon/deer
+[submodule "zsh/plugins/calc"]
+	path = zsh/plugins/calc
+	url = https://github.com/arzzen/calc.plugin.zsh
+[submodule "zsh/plugins/zsh-autosuggestions"]
+	path = zsh/plugins/zsh-autosuggestions
+	url = https://github.com/tarruda/zsh-autosuggestions.git
+[submodule "zsh/plugins/fzf-marks"]
+	path = zsh/plugins/fzf-marks
+	url = https://github.com/urbainvaes/fzf-marks
+[submodule "zsh/plugins/zsh-completions"]
+	path = zsh/plugins/zsh-completions
+	url = https://github.com/zsh-users/zsh-completions.git
+[submodule "zsh/plugins/zsh-history-substring-search"]
+	path = zsh/plugins/zsh-history-substring-search
+	url = https://github.com/zsh-users/zsh-history-substring-search.git
+[submodule "zsh/plugins/zsh-syntax-highlighting"]
+	path = zsh/plugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "zsh/plugins/opp"]
+	path = zsh/plugins/opp
+	url = https://github.com/hchbaw/opp.zsh.git
