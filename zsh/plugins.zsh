@@ -6,6 +6,6 @@ bindkey '^j' jump
 source $ZSH_PLUGINS_DIR/calc/calc.plugin.zsh
 if [[ $IS_OSX -eq 1 ]]; then
     source $ZSH_PLUGINS_DIR/zsh-autosuggestions/zsh-autosuggestions.zsh
-    bindkey '^f' autosuggest-accept
+    bindkey '^f' vi-forward-word
     bindkey '^g' autosuggest-clear
 fi
