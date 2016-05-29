@@ -16,3 +16,9 @@
 [submodule "zsh/deer"]
 	path = zsh/deer
 	url = https://github.com/Vifon/deer
+[submodule "zsh/fzf-marks"]
+	path = zsh/fzf-marks
+	url = https://github.com/urbainvaes/fzf-marks
+[submodule "zsh/calc"]
+	path = zsh/calc
+	url = https://github.com/arzzen/calc.plugin.zsh
