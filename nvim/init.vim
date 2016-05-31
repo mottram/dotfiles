@@ -159,6 +159,7 @@ augroup nvimrc
     autocmd InsertLeave * set nopaste
     autocmd FileType mail set tw=65
     autocmd BufRead COMMIT_EDITMSG execute "normal! 0" | startinsert
+    autocmd FileType qf set nobuflisted
 augroup END
 hi StatusLine guifg=#1d2021 guibg=#bdae93
 hi User1 guibg=#1d2021 guifg=#bdae93
