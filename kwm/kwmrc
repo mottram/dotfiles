@@ -97,8 +97,10 @@ kwmc bindsym alt+shift-2 space -t monocle
 kwmc bindsym alt+shift-3 space -t float
 # Restore default layout
 kwmc bindsym alt+shift-4 tree restore default
+# Restore halves layout
+kwmc bindsym alt+shift-5 tree restore halves
 # Refresh layout
-kwmc bindsym alt+shift-5 tree -c refresh
+kwmc bindsym alt+shift-6 tree -c refresh
 # Make the focussed window fullscreen
 kwmc bindsym alt+shift-f window -z fullscreen
 # Open iTerm
