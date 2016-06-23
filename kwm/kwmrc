@@ -1,112 +1,102 @@
-## Settings
-# Set default values for screen padding
+/* Settings */
+/* Set default values for screen padding */
 kwmc config padding 40 20 20 20
-# Set default values for container gaps
+/* Set default values for container gaps */
 kwmc config gap 15 15
-# Let Kwm listen for hotkeys
+/* Let Kwm listen for hotkeys */
 kwmc config hotkeys on
-# Disable focus-follows-mouse
+/* Disable focus-follows-mouse */
 kwmc config focus-follows-mouse off
-# Enable mouse-follows-focus
+/* Enable mouse-follows-focus */
 kwmc config mouse-follows-focus on
-# Let next/previous focus wrap around
-kwmc config cycle-focus screen
-# Set default tiling mode to bsp
+/* Let next/previous focus wrap around */
+kwmc config cycle-focus on
+/* Set default tiling mode to bsp */
 kwmc config tiling bsp
-# New splits should become the left leaf-node
+/* New splits should become the left leaf-node */
 kwmc config spawn right
-# Set default split ratio
+/* Set default split ratio */
 kwmc config split-ratio 0.5
-# Automatically float windows that fail to resize
+/* Automatically float windows that fail to resize */
 kwmc config float-non-resizable on
-# Automatically resize the window to its container
+/* Automatically resize the window to its container */
 kwmc config lock-to-container on
-# Ignore applications
+/* Ignore applications */
 kwmc rule owner="System Preferences" properties={float="true"}
 kwmc rule owner="ReadKit" properties={float="true"}
 kwmc rule owner="mpv" properties={float="true"}
 kwmc rule owner="QuickTime Player" properties={float="true"}
 kwmc rule owner="VLC" properties={float="true"}
-# Tile windows that don't want to be tiled
+/* Tile windows that don't want to be tiled */
 kwmc rule owner="iTerm2" properties={role="AXDialog"}
 kwmc rule owner="Catch" properties={role="AXDialog"}
 kwmc rule owner="Bartender 2" properties={role="AXDialog"}
 kwmc rule owner="Transmission" properties={role="AXFloatingWindow"}
-# # Enable border for focused window
-kwmc config border focused on
-kwmc config border focused size 2
-kwmc config border focused color 0x80AAAAAA
-kwmc config border focused radius 6
-# Borders for marked windows
-kwmc config border marked on
-kwmc config border marked size 2
-kwmc config border marked color 0x80555555
-kwmc config border marked radius 6
-# Keybindings
-# Rotate the window tree by 180 degrees
+/* Keybindings */
+/* Define hyper key */
+kwmc define hyper alt+shift+ctrl+cmd
+/* Rotate the window tree by 180 degrees */
 kwmc bindsym alt+shift+ctrl+cmd-r tree rotate 180
-# Mark a window
+/* Mark a window */
 kwmc bindsym alt+shift+ctrl+cmd-x window -mk focused
-# Toggle _w_indow float
+/* Toggle _w_indow float */
 kwmc bindsym alt+shift+ctrl+cmd-w window -t focused
-# Expand window to fill _u_p parent space
+/* Expand window to fill _u_p parent space */
 kwmc bindsym alt+shift+ctrl+cmd-u window -z parent
-# Focus next/previous/first/last window
-kwmc bindsym alt+shift+ctrl+cmd-h window -f west
-kwmc bindsym alt+shift+ctrl+cmd-l window -f east
-kwmc bindsym alt+shift+ctrl+cmd-j window -f south
-kwmc bindsym alt+shift+ctrl+cmd-k window -f north
-kwmc bindsym alt+shift+ctrl+cmd-; window -f first
-kwmc bindsym alt+shift+ctrl+cmd-' window -f last
-# Swap current window with next/previous/marked window
-kwmc bindsym alt+shift+ctrl+cmd-p window -s prev
-kwmc bindsym alt+shift+ctrl+cmd-n window -s next
-kwmc bindsym alt+shift+ctrl+cmd-a window -s west
-kwmc bindsym alt+shift+ctrl+cmd-s window -s south
-kwmc bindsym alt+shift+ctrl+cmd-d window -s north
-kwmc bindsym alt+shift+ctrl+cmd-f window -s east
-kwmc bindsym alt+shift+ctrl+cmd-m window -s mark
-# Move marked window to focussed container
+/* Focus next/previous/first/last window */
+kwmc bindsym hyper-h window -f west
+kwmc bindsym hyper-l window -f east
+kwmc bindsym hyper-j window -f south
+kwmc bindsym hyper-k window -f north
+kwmc bindsym hyper-; window -f first
+kwmc bindsym hyper-' window -f last
+/* Swap current window with next/previous/marked window */
+kwmc bindsym hyper-p window -s prev
+kwmc bindsym hyper-n window -s next
+kwmc bindsym hyper-a window -s west
+kwmc bindsym hyper-s window -s south
+kwmc bindsym hyper-d window -s north
+kwmc bindsym hyper-f window -s east
+kwmc bindsym hyper-m window -s mark
+/* Move marked window to focussed container */
 kwmc bindsym alt+shift+ctrl+cmd-y window -x
-# Detach focused window and reinsert in direction
+/* Detach focused window and reinsert in direction */
 kwmc bindsym ctrl+shift-k window -m north
 kwmc bindsym ctrl+shift-l window -m east
 kwmc bindsym ctrl+shift-j window -m south
 kwmc bindsym ctrl+shift-h window -m west
-# Detach marked window and reinsert at focused window
+/* Detach marked window and reinsert at focused window */
 kwmc bindsym ctrl+shift-x window -m mark
-# Move windows to spaces
-kwmc config spaces-key ctrl
+/* Move windows to spaces */
 kwmc bindsym ctrl+cmd-1 window -m space 1
 kwmc bindsym ctrl+cmd-2 window -m space 2
 kwmc bindsym ctrl+cmd-3 window -m space 3
 kwmc bindsym ctrl+cmd-4 window -m space 4
 kwmc bindsym ctrl+cmd-right window -m space right
 kwmc bindsym ctrl+cmd-left window -m space left
-# Jump to a space without animated transition 
-kwmc bindsym alt+shift+ctrl+cmd-1 space -fExperimental 1
-kwmc bindsym alt+shift+ctrl+cmd-2 space -fExperimental 2
-kwmc bindsym alt+shift+ctrl+cmd-3 space -fExperimental 3
-kwmc bindsym alt+shift+ctrl+cmd-4 space -fExperimental 4
-# Reduce/expand window
-kwmc bindsym shift+alt-h window -c reduce 0.1
-kwmc bindsym shift+alt-l window -c expand 0.1
-# Switch between tiling, monocle and floating
+/* Jump to a space without animated transition */ 
+/* This shouln't work, but does... */
+/* https://github.com/koekeishiya/kwm/issues/386 */
+kwmc bindsym hyper-1 space -fExperimental 1
+kwmc bindsym hyper-2 space -fExperimental 2
+kwmc bindsym hyper-3 space -fExperimental 3
+kwmc bindsym hyper-4 space -fExperimental 4
+/* Reduce/expand window */
+kwmc bindsym alt+shift-h window -c reduce 0.1
+kwmc bindsym alt+shift-l window -c expand 0.1
+/* Switch between tiling, monocle and floating */
 kwmc bindsym alt+shift-1 space -t bsp
 kwmc bindsym alt+shift-2 space -t monocle
 kwmc bindsym alt+shift-3 space -t float
-# Restore default layout
+/* Restore default layout */
 kwmc bindsym alt+shift-4 tree restore default
-# Restore halves layout
+/* Restore halves layout */
 kwmc bindsym alt+shift-5 tree restore halves
-# Refresh layout
+/* Refresh layout */
 kwmc bindsym alt+shift-6 tree -c refresh
-# Make the focussed window fullscreen
+/* Make the focussed window fullscreen */
 kwmc bindsym alt+shift-f window -z fullscreen
-# Open iTerm
+/* Open iTerm */
 kwmc bindsym cmd-return exec open -na /Applications/iTerm2.app
-# Quit kwm
-# kwmc bindsym alt+shift+ctrl+cmd-0 quit
-# TODO: add rules for spaces, or stick to OS X method?
-# E.g.:
-# kwmc rule owner="iTunes" properties={display="1"}
+/* Quit kwm */
+kwmc bindsym hyper-0 quit
