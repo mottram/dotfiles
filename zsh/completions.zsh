@@ -1,4 +1,4 @@
-fpath=($ZSH_DIR/zsh-completions/src $fpath)
+fpath=($ZSH_PLUGINS_DIR/zsh-completions/src $fpath)
 fpath=(/usr/local/share/zsh/site-functions $fpath)
 
 autoload -Uz compinit
