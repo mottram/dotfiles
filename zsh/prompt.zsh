@@ -1,7 +1,7 @@
 autoload -U promptinit colors
 promptinit
 colors
-setopt prompt_subst extended_glob longlistjobs nonomatch notify completeinword auto_cd auto_pushd pushdignoredups
+setopt prompt_subst extended_glob longlistjobs nonomatch notify completeinword auto_cd auto_pushd pushdignoredups pushdminus pushdsilent pushdtohome
 
 zsh_prompt_red="%{$fg_bold[red]%}"
 zsh_prompt_green="%{$fg[green]%}"
