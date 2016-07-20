@@ -7,9 +7,6 @@
 [submodule "zsh/plugins/zsh-autosuggestions"]
 	path = zsh/plugins/zsh-autosuggestions
 	url = https://github.com/tarruda/zsh-autosuggestions.git
-[submodule "zsh/plugins/fzf-marks"]
-	path = zsh/plugins/fzf-marks
-	url = https://github.com/urbainvaes/fzf-marks
 [submodule "zsh/plugins/zsh-completions"]
 	path = zsh/plugins/zsh-completions
 	url = https://github.com/zsh-users/zsh-completions.git
