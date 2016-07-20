@@ -1,6 +1,3 @@
-[submodule "zsh/plugins/deer"]
-	path = zsh/plugins/deer
-	url = https://github.com/Vifon/deer
 [submodule "zsh/plugins/calc"]
 	path = zsh/plugins/calc
 	url = https://github.com/arzzen/calc.plugin.zsh

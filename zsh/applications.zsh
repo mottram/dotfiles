@@ -52,9 +52,3 @@ fi
 if [[ $IS_OSX -eq 1 ]]; then
     export HOMEBREW_NO_ANALYTICS=1
 fi
-# Use deer on OS X
-if [[ $IS_OSX -eq 1 ]]; then
-    source $ZSH_PLUGINS_DIR/deer/deer.sh
-    zle -N deer
-    bindkey '\ek' deer
-fi
