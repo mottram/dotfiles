@@ -18,3 +18,13 @@ source $ZSH_DIR/plugins.zsh
 source $ZSH_DIR/prompt.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+
+# BOOKMARKS_FILE="$HOME/.named_directories"
+
+# function bm() {
+#     echo "export $1=$(pwd)" >> $BOOKMARKS_FILE
+#     source $BOOKMARKS_FILE
+# }
+
+# alias bmcd='cd $(cut -d= -f2- .named_directories | fzf)'

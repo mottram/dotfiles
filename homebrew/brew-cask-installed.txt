@@ -21,6 +21,9 @@ github-desktop
 grandperspective
 imagealpha
 imageoptim
+istat-menus
+iterm2-beta
+jawbone-updater
 lacona
 tripmode
 virtualbox

@@ -156,6 +156,7 @@ augroup nvimrc
     autocmd!
     autocmd BufNewFile,BufReadPost *.md set filetype=markdown
     autocmd BufRead,BufNewfile $HOME/Dropbox/Notes/* set filetype=markdown
+    autocmd BufRead $HOME/dotfiles/kwm/kwmrc set filetype=c
     autocmd InsertLeave * set nopaste
     autocmd FileType mail set tw=65
     autocmd BufRead COMMIT_EDITMSG execute "normal! 0" | startinsert
