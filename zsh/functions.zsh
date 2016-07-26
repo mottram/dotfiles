@@ -125,6 +125,15 @@ LESS_TERMCAP_us=$(printf "\e[1;32m") \
     man "$@"
 }
 
+# get_iplayer
+function get_radio {
+    get_iplayer --type=radio --pid=$1
+}
+
+function get_telly {
+    get_iplayer --type=tv --pid=$1
+}
+
 # Improved xclip from 
 # http://madebynathan.com/2011/10/04/a-nicer-way-to-use-xclip/
 
