@@ -27,6 +27,7 @@ kwmc rule owner="ReadKit" properties={float="true"}
 kwmc rule owner="mpv" properties={float="true"}
 kwmc rule owner="QuickTime Player" properties={float="true"}
 kwmc rule owner="VLC" properties={float="true"}
+kwmc rule owner="Calculator" properties={float="true"}
 /* Tile windows that don't want to be tiled */
 kwmc rule owner="iTerm2" properties={role="AXDialog"}
 kwmc rule owner="Catch" properties={role="AXDialog"}
