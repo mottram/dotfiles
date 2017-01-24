@@ -1,0 +1,47 @@
+# enable kwm compatibility mode
+khd kwm on
+# focus windows
+alt + shift + ctrl + cmd - h           : kwmc window -f west
+alt + shift + ctrl + cmd - l           : kwmc window -f east
+alt + shift + ctrl + cmd - j           : kwmc window -f south
+alt + shift + ctrl + cmd - k           : kwmc window -f north
+# mark a window
+alt + shift + ctrl + cmd - x           : kwmc window -mk focused
+# move marked window to focused window
+shift + ctrl - x                       : kwmc window -m mark
+# swap windows
+alt + shift + ctrl + cmd - p           : kwmc window -s prev
+alt + shift + ctrl + cmd - n           : kwmc window -s next
+alt + shift + ctrl + cmd - a           : kwmc window -s west
+alt + shift + ctrl + cmd - s           : kwmc window -s south
+alt + shift + ctrl + cmd - d           : kwmc window -s north
+alt + shift + ctrl + cmd - f           : kwmc window -s east
+alt + shift + ctrl + cmd - m           : kwmc window -s mark
+# expand window to fill parent
+alt + shift + ctrl + cmd - u           : kwmc window -z parent
+# switch spaces
+alt + shift + ctrl + cmd - 1           : kwmc space -fExperimental 1
+alt + shift + ctrl + cmd - 2           : kwmc space -fExperimental 2
+alt + shift + ctrl + cmd - 3           : kwmc space -fExperimental 3
+alt + shift + ctrl + cmd - 4           : kwmc space -fExperimental 4
+alt + shift + ctrl + cmd - 5           : kwmc space -fExperimental 5
+alt + shift + ctrl + cmd - 6           : kwmc space -fExperimental 6
+# move windows to spaces
+ctrl + cmd - 1                         : kwmc window -m space 1
+ctrl + cmd - 2                         : kwmc window -m space 2
+ctrl + cmd - 3                         : kwmc window -m space 3
+ctrl + cmd - 4                         : kwmc window -m space 4
+ctrl + cmd - right                     : kwmc window -m space right
+ctrl + cmd - left                      : kwmc window -m space left
+# switch modes
+alt + shift - 1                        : kwmc space -t bsp
+alt + shift - 2                        : kwmc space -t monocle
+# rotate tree
+alt + shift + ctrl + cmd - r           : kwmc tree rotate 180
+# quit kwm
+alt + shift + ctrl + cmd - 0           : kwmc quit
+# reload khd
+alt + shift + ctrl + cmd - 9           : khd -e "reload"
+# activate applications
+alt + shift + ctrl + cmd - i           : osascript -e 'activate application "iTerm"'
+alt + shift + ctrl + cmd - b           : osascript -e 'activate application "Safari"'
