@@ -13,6 +13,7 @@ alias la='ls -ahl'
 alias lt='ls -ahlt'
 alias v='$EDITOR'
 alias vi='$EDITOR'
+alias vu='$EDITOR -u NONE'
 alias sv='sudo $EDITOR'
 alias p='ping -c 8 google.com'
 alias myip="curl icanhazip.com"
@@ -32,10 +33,11 @@ alias -s html=$EDITOR
 
 if [[ $IS_OSX -eq 1 ]]; then
     alias td='/usr/local/bin/todo.sh -d ~/dotfiles/todo/mac-todo.cfg'
-    alias te='v +sort ~/Dropbox/todo/todo.txt'
+    alias te='$EDITOR +sort ~/Dropbox/todo/todo.txt'
     alias fixopenwith='/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user'
     alias o='open "$(fzf)"'
     alias vo='$EDITOR "$(fzf)"'
+    alias today='$EDITOR $(worque todo) +":cd $WORQUE_PATH"'
 fi
 
 if [[ $HAS_PACMAN -eq 1 ]]; then
