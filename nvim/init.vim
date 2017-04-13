@@ -30,7 +30,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'wellle/targets.vim'
-Plug 'huynhquancam/vim-worque'
 call plug#end()
 scriptencoding utf-8
 colorscheme gruvbox
